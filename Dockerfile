@@ -26,6 +26,7 @@ COPY scripts ./scripts
 COPY fixtures ./fixtures
 COPY docs/model-roster.json ./docs/model-roster.json
 COPY docs/model-roster.csv ./docs/model-roster.csv
+COPY data ./data
 
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_SKIP_ESLINT=1
