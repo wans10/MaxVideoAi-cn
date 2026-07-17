@@ -16,7 +16,6 @@ WORKDIR /app
 RUN npm install -g pnpm@10.18.2
 
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/packages/pricing/node_modules ./packages/pricing/node_modules
 COPY --from=deps /app/frontend/node_modules ./frontend/node_modules
 
 COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
@@ -25,6 +24,8 @@ COPY frontend ./frontend
 COPY content ./content
 COPY scripts ./scripts
 COPY fixtures ./fixtures
+COPY docs/model-roster.json ./docs/model-roster.json
+COPY docs/model-roster.csv ./docs/model-roster.csv
 
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_SKIP_ESLINT=1
