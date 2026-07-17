@@ -1,0 +1,107 @@
+import type { Metadata, Viewport } from 'next';
+import { cookies } from 'next/headers';
+import type { ReactNode } from 'react';
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
+import { AnalyticsScripts } from '@/components/analytics/AnalyticsScripts';
+import ConsentModeBootstrap from '@/components/analytics/ConsentModeBootstrap';
+import GA4EventBridge from '@/components/analytics/GA4EventBridge';
+import GA4RouteTracker from '@/components/analytics/GA4RouteTracker';
+import { CookieBanner } from '@/components/legal/CookieBanner';
+import { JsonLd } from '@/components/SeoJsonLd';
+import { SessionWatchdog } from '@/components/auth/SessionWatchdog';
+import { SWRFocusResync } from '@/components/swr/SWRFocusResync';
+import { SWRProvider } from '@/components/swr/SWRProvider';
+import { I18nProvider } from '@/lib/i18n/I18nProvider';
+import { defaultLocale, locales, type AppLocale } from '@/i18n/locales';
+import { LOCALE_COOKIE } from '@/lib/i18n/constants';
+import { resolveDictionary } from '@/lib/i18n/server';
+import { LocaleSync } from '@/components/i18n/LocaleSync';
+import { SITE_ORIGIN } from '@/lib/siteOrigin';
+const NORMALIZED_SITE_URL = SITE_ORIGIN;
+
+export const metadata: Metadata = {
+  metadataBase: new URL(`${NORMALIZED_SITE_URL}/`),
+  title: {
+    default: 'MaxVideoAI — AI Video Generator Hub',
+    template: '%s — MaxVideoAI',
+  },
+  description: 'Generate cinematic AI videos via Sora 2, Veo 3, Pika & more. Pay-as-you-go, no watermarks.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+    shortcut: ['/favicon.ico'],
+    other: [{ rel: 'mask-icon', url: '/favicon.svg', color: '#4F5D75' }],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#4F5D75',
+};
+
+export default async function CoreLayout({ children }: { children: ReactNode }) {
+  const cookieStore = await cookies();
+  const locale = [cookieStore.get(LOCALE_COOKIE)?.value, cookieStore.get('NEXT_LOCALE')?.value].find(
+    (candidate): candidate is AppLocale =>
+      typeof candidate === 'string' && (locales as readonly string[]).includes(candidate)
+  ) ?? defaultLocale;
+  const { dictionary, fallback } = await resolveDictionary({ locale });
+
+  const homeUrl = `${NORMALIZED_SITE_URL}/`;
+  const logoUrl = `${NORMALIZED_SITE_URL}/favicon-512.png`;
+  const orgSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'MaxVideoAI',
+    url: homeUrl,
+    logo: logoUrl,
+    sameAs: [
+      'https://x.com/MaxVideoAI',
+      'https://www.linkedin.com/company/maxvideoai/',
+      'https://github.com/camgraphe/maxvideoai',
+      'https://www.producthunt.com/products/maxvideoai',
+    ],
+  };
+
+  const enableSearchSchema = process.env.NEXT_PUBLIC_ENABLE_SEARCH_SCHEMA === 'true';
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    url: homeUrl,
+    name: 'MaxVideoAI',
+    ...(enableSearchSchema
+      ? {
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: `${homeUrl}search?q={query}`,
+            'query-input': 'required name=query',
+          },
+        }
+      : {}),
+  };
+
+  return (
+    <>
+      <ConsentModeBootstrap />
+      <GA4RouteTracker />
+      <GA4EventBridge />
+      <I18nProvider locale={locale} dictionary={dictionary} fallback={fallback}>
+        <SWRProvider>
+          <LocaleSync />
+          <SessionWatchdog />
+          <SWRFocusResync />
+          {children}
+        </SWRProvider>
+      </I18nProvider>
+      {process.env.NODE_ENV === 'production' ? <VercelAnalytics /> : null}
+      <AnalyticsScripts />
+      <CookieBanner />
+      <JsonLd json={orgSchema} />
+      <JsonLd json={websiteSchema} />
+    </>
+  );
+}

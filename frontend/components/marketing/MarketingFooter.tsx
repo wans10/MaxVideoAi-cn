@@ -1,0 +1,320 @@
+'use client';
+
+import Image from 'next/image';
+import { Link, usePathname, type LocalizedLinkHref } from '@/i18n/navigation';
+import { useI18n } from '@/lib/i18n/I18nProvider';
+import { LanguageToggle } from '@/components/marketing/LanguageToggle';
+import engineCatalog from '@/config/engine-catalog.json';
+import { MARKETING_FOOTER_EXAMPLES, MARKETING_NAV_BEST_FOR_HUB, MARKETING_NAV_BEST_FOR_USE_CASES } from '@/config/navigation';
+
+type FooterLink = { key: string; label: string; href: LocalizedLinkHref };
+type PolicyLink = { label: string; href: string; locale?: boolean };
+type SupportedLocale = 'en' | 'fr' | 'es';
+
+const canonicalCompareSlug = (left: string, right: string) => [left, right].sort().join('-vs-');
+const OPEN_COOKIE_PREFERENCES_EVENT = 'consent:open-preferences';
+
+function localizeFooterPath(locale: SupportedLocale, englishPath: string) {
+  if (locale === 'en' || englishPath === '/') {
+    return locale === 'en' ? englishPath : `/${locale}`;
+  }
+  return `/${locale}${englishPath}`;
+}
+
+export function MarketingFooter() {
+  const pathname = usePathname();
+  const isCompanyTrustHub = /^\/(?:fr\/|es\/)?company\/?$/.test(pathname ?? '');
+  const { locale, t } = useI18n();
+  if (isCompanyTrustHub) {
+    return null;
+  }
+
+  const labelFor = (key: string, fallback: string) => t(key, fallback) ?? fallback;
+  const openCookiePreferences = () => {
+    if (typeof window === 'undefined') return;
+    window.dispatchEvent(new Event(OPEN_COOKIE_PREFERENCES_EVENT));
+  };
+
+  const modelSlugSet = new Set(engineCatalog.map((entry) => entry.modelSlug));
+
+  const defaultPolicyLinks: PolicyLink[] = [
+    { label: 'Legal Center', href: '/legal', locale: false },
+    { label: 'Refund & Return Policy', href: '/return-policy', locale: false },
+  ];
+  const maybeLinks = t('footer.links', defaultPolicyLinks);
+  const links = Array.isArray(maybeLinks) && maybeLinks.length ? maybeLinks : defaultPolicyLinks;
+  const isPolicyLink = (item: PolicyLink) =>
+    typeof item.href === 'string' && (item.href.startsWith('/legal') || item.href === '/return-policy');
+  const policyLinks = links.filter(isPolicyLink);
+  const renderedPolicyLinks = policyLinks.length ? policyLinks : defaultPolicyLinks.filter(isPolicyLink);
+  const localizedPolicyLinks = renderedPolicyLinks.map((item) => ({
+    ...item,
+    href: item.href.startsWith('/legal') ? localizeFooterPath(locale, item.href) : item.href,
+  }));
+
+  const engineItems = [
+    { slug: 'seedance-2-0', labelKey: 'footer.sections.engines.items.seedance2_0', fallback: 'Seedance 2.0' },
+    { slug: 'kling-3-pro', labelKey: 'footer.sections.engines.items.kling3pro', fallback: 'Kling 3 Pro' },
+    { slug: 'veo-3-1', labelKey: 'footer.sections.engines.items.veo3_1', fallback: 'Veo 3.1' },
+    { slug: 'happy-horse-1-1', labelKey: 'footer.sections.engines.items.happyHorse11', fallback: 'Happy Horse 1.1' },
+    { slug: 'dreamina-seedance-2-0-mini', labelKey: 'footer.sections.engines.items.seedance2mini', fallback: 'Seedance 2.0 Mini' },
+    { slug: 'ltx-2-3-fast', labelKey: 'footer.sections.engines.items.ltx23fast', fallback: 'LTX 2.3 Fast' },
+    { slug: 'ltx-2-3-pro', labelKey: 'footer.sections.engines.items.ltx23pro', fallback: 'LTX 2.3 Pro' },
+    { slug: 'wan-2-6', labelKey: 'footer.sections.engines.items.wan2_6', fallback: 'Wan 2.6' },
+  ];
+  const engineLinks: FooterLink[] = engineItems
+    .filter((item) => modelSlugSet.has(item.slug))
+    .map<FooterLink>((item) => ({
+      key: item.slug,
+      label: labelFor(item.labelKey, item.fallback),
+      href: { pathname: '/models/[slug]', params: { slug: item.slug } },
+    }));
+
+  const comparisonItems = [
+    {
+      left: 'seedance-1-5-pro',
+      right: 'seedance-2-0',
+      labelKey: 'footer.sections.comparisons.items.seedance1_5pro_vs_seedance2_0',
+      fallback: 'Seedance 1.5 Pro vs Seedance 2.0',
+    },
+    {
+      left: 'ltx-2',
+      right: 'ltx-2-3-fast',
+      labelKey: 'footer.sections.comparisons.items.ltx2_vs_ltx23fast',
+      fallback: 'LTX 2 vs LTX 2.3 Fast',
+    },
+    {
+      left: 'ltx-2-3-fast',
+      right: 'seedance-2-0',
+      labelKey: 'footer.sections.comparisons.items.ltx23fast_vs_seedance2_0',
+      fallback: 'LTX 2.3 Fast vs Seedance 2.0',
+    },
+    {
+      left: 'ltx-2-3-fast',
+      right: 'veo-3-1',
+      labelKey: 'footer.sections.comparisons.items.ltx23fast_vs_veo3_1',
+      fallback: 'LTX 2.3 Fast vs Veo 3.1',
+    },
+    {
+      left: 'kling-3-pro',
+      right: 'ltx-2-3-pro',
+      labelKey: 'footer.sections.comparisons.items.kling3pro_vs_ltx23pro',
+      fallback: 'Kling 3 Pro vs LTX 2.3 Pro',
+    },
+    {
+      left: 'seedance-2-0',
+      right: 'veo-3-1',
+      labelKey: 'footer.sections.comparisons.items.seedance2_0_vs_veo3_1',
+      fallback: 'Seedance 2.0 vs Veo 3.1',
+    },
+    {
+      left: 'kling-3-pro',
+      right: 'veo-3-1',
+      labelKey: 'footer.sections.comparisons.items.kling3pro_vs_veo3_1',
+      fallback: 'Kling 3 Pro vs Veo 3.1',
+    },
+    {
+      left: 'ltx-2-3-pro',
+      right: 'veo-3-1',
+      labelKey: 'footer.sections.comparisons.items.ltx23pro_vs_veo3_1',
+      fallback: 'LTX 2.3 Pro vs Veo 3.1',
+    },
+    {
+      left: 'seedance-2-0',
+      right: 'seedance-2-0-fast',
+      labelKey: 'footer.sections.comparisons.items.seedance2_0_vs_seedance2_0fast',
+      fallback: 'Seedance 2.0 vs Seedance 2.0 Fast',
+    },
+    {
+      left: 'ltx-2-3-fast',
+      right: 'ltx-2-3-pro',
+      labelKey: 'footer.sections.comparisons.items.ltx23fast_vs_ltx23pro',
+      fallback: 'LTX 2.3 Fast vs Pro',
+    },
+  ];
+  const comparisonLinks: FooterLink[] = [
+    ...comparisonItems
+    .filter((item) => modelSlugSet.has(item.left) && modelSlugSet.has(item.right))
+    .map((item) => ({
+      key: `${item.left}-vs-${item.right}`,
+      label: labelFor(item.labelKey, item.fallback),
+      href: { pathname: '/ai-video-engines/[slug]', params: { slug: canonicalCompareSlug(item.left, item.right) } },
+    })),
+  ];
+
+  const useCaseLinks: FooterLink[] = [
+    {
+      key: MARKETING_NAV_BEST_FOR_HUB.key,
+      label: labelFor('footer.sections.useCases.items.bestFor', MARKETING_NAV_BEST_FOR_HUB.label),
+      href: MARKETING_NAV_BEST_FOR_HUB.href,
+    },
+    ...MARKETING_NAV_BEST_FOR_USE_CASES.map((item) => ({
+      key: item.key,
+      label: labelFor(`footer.sections.useCases.items.${item.key}`, item.label),
+      href: item.href,
+    })),
+  ];
+
+  const exampleLinks: FooterLink[] = [
+    ...MARKETING_FOOTER_EXAMPLES.map((item) => ({
+      key: item.key,
+      label: labelFor(`footer.sections.examples.items.${item.key}`, `${item.label} examples`),
+      href: item.href,
+    })),
+    {
+      key: 'all',
+      label: labelFor('footer.sections.examples.items.all', 'All examples'),
+      href: { pathname: '/examples' },
+    },
+  ];
+
+  const productLinks: FooterLink[] = [
+    {
+      key: 'angle',
+      label: labelFor('footer.sections.product.items.angle', 'Change Camera Angle'),
+      href: { pathname: '/tools/angle' },
+    },
+    {
+      key: 'characterBuilder',
+      label: labelFor('footer.sections.product.items.characterBuilder', 'Character Builder'),
+      href: { pathname: '/tools/character-builder' },
+    },
+    { key: 'pricing', label: labelFor('footer.sections.product.items.pricing', 'Pricing'), href: { pathname: '/pricing' } },
+    {
+      key: 'paygVideo',
+      label: labelFor('footer.sections.product.items.paygVideo', 'Pay-as-you-go AI video'),
+      href: { pathname: '/pay-as-you-go-ai-video-generator' },
+    },
+    { key: 'models', label: labelFor('footer.sections.product.items.models', 'All models'), href: { pathname: '/models' } },
+  ];
+
+  const companyLinks: FooterLink[] = [
+    { key: 'blog', label: labelFor('footer.sections.company.items.blog', 'Blog'), href: { pathname: '/blog' } },
+    {
+      key: 'companyHub',
+      label: labelFor('footer.sections.company.items.companyHub', 'Company & Trust'),
+      href: { pathname: '/company' },
+    },
+    { key: 'status', label: labelFor('footer.sections.company.items.status', 'Status'), href: { pathname: '/status' } },
+  ];
+
+  const brandLabel = t('nav.brand', 'MaxVideo AI') ?? 'MaxVideo AI';
+  const enginesTitle = labelFor('footer.sections.engines.title', 'AI Video Engines');
+  const comparisonsTitle = labelFor('footer.sections.comparisons.title', 'Popular comparisons');
+  const useCasesTitle = labelFor('footer.sections.useCases.title', 'Use cases');
+  const examplesTitle = labelFor('footer.sections.examples.title', 'Real examples');
+  const productTitle = labelFor('footer.sections.product.title', 'Product');
+  const companyTitle = labelFor('footer.sections.company.title', 'Company');
+  const policiesTitle = labelFor('footer.sections.policies.title', 'Policies');
+  const manageCookiesLabel = labelFor('footer.sections.policies.manageCookies', 'Cookie settings');
+  const sectionTitleClass = 'text-xs font-semibold uppercase tracking-micro text-text-primary';
+  const linkClass =
+    'text-sm text-text-secondary transition hover:text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-bg';
+
+  return (
+    <footer className="border-t border-hairline bg-surface">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4 text-sm text-text-muted">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-4 font-display text-lg font-semibold tracking-tight text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+          >
+            <Image src="/assets/branding/logo-mark.svg" alt="" aria-hidden="true" width={32} height={32} className="h-8 w-8" />
+            <span>{brandLabel}</span>
+          </Link>
+          <div className="flex items-center gap-4 md:gap-6">
+            <div className="flex items-center gap-1">
+              <LanguageToggle variant="icon" />
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-x-4 gap-y-6 text-text-secondary sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 lg:grid-cols-6 lg:gap-x-8">
+          <div>
+            <p className={sectionTitleClass}>{enginesTitle}</p>
+            <nav className="mt-3 flex flex-col gap-2" aria-label={enginesTitle}>
+              {engineLinks.map((item) => (
+                <Link key={item.key} href={item.href} className={linkClass}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div>
+            <p className={sectionTitleClass}>{comparisonsTitle}</p>
+            <nav className="mt-3 flex flex-col gap-2" aria-label={comparisonsTitle}>
+              {comparisonLinks.map((item) => (
+                <Link key={item.key} href={item.href} className={linkClass}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div>
+            <p className={sectionTitleClass}>{useCasesTitle}</p>
+            <nav className="mt-3 flex flex-col gap-2" aria-label={useCasesTitle}>
+              {useCaseLinks.map((item) => (
+                <Link key={item.key} href={item.href} className={linkClass}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div>
+            <p className={sectionTitleClass}>{examplesTitle}</p>
+            <nav className="mt-3 flex flex-col gap-2" aria-label={examplesTitle}>
+              {exampleLinks.map((item) => (
+                <Link key={item.key} href={item.href} className={linkClass}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div>
+            <p className={sectionTitleClass}>{productTitle}</p>
+            <nav className="mt-3 flex flex-col gap-2" aria-label={productTitle}>
+              {productLinks.map((item) => (
+                <Link key={item.key} href={item.href} className={linkClass}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div>
+            <p className={sectionTitleClass}>{companyTitle}</p>
+            <nav className="mt-3 flex flex-col gap-2" aria-label={companyTitle}>
+              {companyLinks.map((item) => (
+                <Link key={item.key} href={item.href} className={linkClass}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+
+        <div className="border-t border-hairline pt-6">
+          <p className={sectionTitleClass}>{policiesTitle}</p>
+          <nav className="mt-3 flex flex-wrap gap-4" aria-label={policiesTitle}>
+            {localizedPolicyLinks.map((item) => (
+              <Link
+                key={`policy-${item.href}`}
+                href={item.href}
+                locale={item.locale === true ? undefined : false}
+                className={linkClass}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <button
+              type="button"
+              onClick={openCookiePreferences}
+              className="text-xs text-text-muted transition hover:text-text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+            >
+              {manageCookiesLabel}
+            </button>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  );
+}

@@ -1,0 +1,358 @@
+{
+  "marketingName": "Kling 3.0 Omni Pro",
+  "versionLabel": "3.0 Omni Pro",
+  "seo": {
+    "title": "Kling 3.0 Omni Pro referencia, storyboard y video-to-video | MaxVideoAI",
+    "description": "Usa Kling 3.0 Omni Pro para video Kling guiado por imágenes de referencia, storyboard, video fuente V2V, anclas @Image y @Video1, audio nativo y precios actualizados."
+  },
+  "overview": "Kling 3.0 Omni Pro es la ruta Kling Omni para usar imágenes o un video fuente como guía visual sin convertir automáticamente la primera subida en el frame inicial.",
+  "pricingNotes": "Coste aproximado del proveedor antes del margen MaxVideoAI: $0.168/s con audio y $0.112/s sin audio.",
+  "custom": {
+    "relatedTitle": "Dónde encaja Kling 3.0 Omni Pro",
+    "relatedSubtitle": "Pro es la ruta O3 principal cuando las imágenes de referencia y el video fuente deben guiar el plano sin imponer un frame inicial fijo.",
+    "relatedItems": [
+      {
+        "brand": "kling",
+        "title": "Kling 3.0 Omni Standard",
+        "description": "Usa Standard para borradores O3 más baratos cuando pruebes imágenes de referencia, dirección storyboard o V2V antes de una pasada Pro.",
+        "modelSlug": "kling-o3-standard",
+        "ctaLabel": "Comparar Pro vs Standard ->"
+      },
+      {
+        "brand": "kling",
+        "title": "Kling 3 Pro",
+        "description": "Usa Kling 3 Pro cuando la imagen subida debe ser el frame inicial y el prompt debe animar desde esa imagen concreta.",
+        "modelSlug": "kling-3-pro",
+        "ctaLabel": "Abrir Kling 3 Pro ->"
+      },
+      {
+        "brand": "bytedance",
+        "title": "Seedance 2.0",
+        "description": "Compara con Seedance cuando el criterio sea continuidad storyboard-to-video, audio nativo, diálogo y estructura multi-prompt.",
+        "modelSlug": "seedance-2-0",
+        "ctaLabel": "Comparar con Seedance 2.0 ->"
+      }
+    ],
+    "finalPara1": "Kling 3.0 Omni Pro es la ruta Kling por defecto cuando las referencias deben guiar identidad, estilo, storyboard, cámara o movimiento desde video fuente sin convertirse en frames iniciales obligatorios.",
+    "finalPara2": "Úsalo para prompts de producción con anclas @Image y @Video1, y vuelve a Kling 3 solo cuando el objetivo sea una animación real desde start frame.",
+    "finalButton": "Generar con Kling 3.0 Omni Pro"
+  },
+  "hero": {
+    "title": "Kling 3.0 Omni Pro para referencias, storyboard y video-to-video",
+    "intro": "Usa Kling 3.0 Omni Pro cuando tus imágenes deben guiar estilo, personajes, objetos o estructura de storyboard sin forzarse como frame inicial. Usa V2V con video fuente cuando @Video1 debe guiar movimiento, lenguaje de cámara o continuidad. Usa Kling 3 Pro cuando la imagen subida debe abrir el clip.",
+    "badge": "Imágenes de referencia · Video fuente V2V · Anclas @Image1/@Video1 · Audio nativo",
+    "ctaPrimary": {
+      "label": "Generar con Kling 3.0 Omni Pro",
+      "href": "/app?engine=kling-o3-pro"
+    }
+  },
+  "technicalOverviewTitle": "Resumen técnico",
+  "technicalOverview": [
+    {
+      "label": "Modo Reference",
+      "body": "Sube imágenes de referencia o storyboard en modo Reference y menciónalas como @Image1, @Image2, etc. Guían la generación sin convertirse en el frame inicial obligatorio."
+    },
+    {
+      "label": "Video-to-video",
+      "body": "Sube un video fuente de 3 a 10 s para V2V y menciónalo como @Video1. Pro mantiene referencias @Image opcionales para estilo o storyboard, además de keep_audio cuando la banda sonora fuente debe preservarse."
+    },
+    {
+      "label": "Modo start frame",
+      "body": "Usa Image-to-video si la imagen subida debe ser el primer frame. Es un workflow distinto de reference-to-video."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "¿Qué diferencia hay entre Kling 3 y Kling 3.0 Omni?",
+      "a": "Kling 3 image-to-video trata la imagen subida como start frame. Kling 3.0 Omni reference-to-video puede usar imágenes como referencias o storyboard sin forzarlas como primer frame."
+    },
+    {
+      "q": "¿Kling 3.0 Omni Pro soporta video-to-video?",
+      "a": "Sí. Pro soporta V2V con un video fuente de 3 a 10 s referenciado como @Video1, referencias @Image1 opcionales y keep_audio para mantener el audio fuente."
+    }
+  ],
+  "decision": {
+    "modelSlug": "kling-o3-pro",
+    "hero": {
+      "eyebrow": "KLING 3.0 OMNI PRO",
+      "title": "Kling 3.0 Omni Pro",
+      "subtitle": "Reference-to-video, storyboard y V2V desde video fuente para tomas Kling donde los medios subidos deben guiar el render sin ser el primer frame.",
+      "subtitleHighlights": [
+        "Reference-to-video",
+        "storyboard",
+        "V2V desde video fuente"
+      ],
+      "paragraph": "Usa Kling 3.0 Omni Pro cuando imágenes de referencia, frames storyboard o un video fuente deben guiar estilo, continuidad, movimiento o lenguaje de cámara. Usa Kling 3 Pro cuando la imagen subida debe abrir el clip como start frame.",
+      "primaryCta": {
+        "label": "Generar con Kling 3.0 Omni Pro",
+        "href": "/app?engine=kling-o3-pro"
+      },
+      "secondaryCta": {
+        "label": "Comparar con Kling 3 Pro",
+        "href": "/es/comparativa/kling-3-pro-vs-kling-o3-pro"
+      },
+      "quickLinks": [
+        {
+          "label": "Comparar con Kling 3 Pro",
+          "href": "/es/comparativa/kling-3-pro-vs-kling-o3-pro"
+        },
+        {
+          "label": "Ver precios",
+          "href": "/es/precios#kling-o3-pro-pricing"
+        },
+        {
+          "label": "Ejemplos de prompts",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Ejemplo Kling 3.0 Omni Pro",
+      "description": "Render de producción guiado por storyboard",
+      "renderLabel": "Ver render",
+      "badges": [
+        "Storyboard",
+        "12 s",
+        "Audio activo"
+      ],
+      "altContext": "render Kling 3.0 Omni Pro guiado por storyboard con un pequeño farero"
+    },
+    "features": [
+      {
+        "title": "Imágenes de referencia",
+        "body": "Usa anclas @Image para estilo, sujeto, storyboard o continuidad sin forzar la primera imagen como apertura.",
+        "tone": "reference"
+      },
+      {
+        "title": "V2V con video fuente",
+        "body": "Adjunta un video fuente y cita @Video1 cuando movimiento, ritmo o cámara deben guiar la toma.",
+        "tone": "continuity"
+      },
+      {
+        "title": "Start/end opcionales",
+        "body": "Combina referencias con frames de inicio o final cuando la toma necesita más estructura.",
+        "tone": "reference"
+      },
+      {
+        "title": "Ruta con audio nativo",
+        "body": "Genera con audio cuando la ruta O3 seleccionada expone controles de audio.",
+        "tone": "audio"
+      },
+      {
+        "title": "Hasta 15 s",
+        "body": "Usa Pro para clips guiados por referencias antes de pasar finales a la ruta 4K.",
+        "tone": "duration"
+      },
+      {
+        "title": "Precio en vivo",
+        "body": "La app muestra el precio exacto antes de generar.",
+        "tone": "price"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "¿O3 Pro o Kling 3 Pro?",
+        "body": "Elige O3 Pro cuando las imágenes son referencias o storyboard. Elige Kling 3 Pro cuando una imagen debe ser el start frame visible.",
+        "cta": {
+          "label": "Comparar O3 Pro vs Kling 3 Pro",
+          "href": "/es/comparativa/kling-3-pro-vs-kling-o3-pro"
+        }
+      },
+      {
+        "title": "¿Necesitas guía V2V?",
+        "body": "Usa O3 Pro o Standard para V2V desde video fuente. Cita @Video1 cuando la fuente debe controlar movimiento o continuidad de cámara.",
+        "cta": {
+          "label": "Abrir compositor O3 Pro",
+          "href": "/app?engine=kling-o3-pro"
+        }
+      },
+      {
+        "title": "¿Necesitas 4K nativo?",
+        "body": "Usa O3 4K cuando la dirección por referencias ya está aprobada. Mantente en Pro para probar V2V y estructura storyboard.",
+        "cta": {
+          "label": "Ver O3 4K",
+          "href": "/es/modelos/kling-o3-4k"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Prompt solo",
+        "body": "Usa texto cuando no se necesita ancla visual."
+      },
+      {
+        "title": "Imágenes de referencia",
+        "body": "Usa @Image1, @Image2 y más para personaje, objeto, estilo o storyboard."
+      },
+      {
+        "title": "Frames inicio/final",
+        "body": "Agrega apertura o final opcional cuando la pose debe controlarse."
+      },
+      {
+        "title": "Video fuente",
+        "body": "Usa @Video1 para guiar movimiento, ritmo, composición o cámara en video-to-video."
+      },
+      {
+        "title": "Referencia más V2V",
+        "body": "Combina video fuente e imágenes de referencia cuando importan movimiento e identidad visual."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Precios de Kling 3.0 Omni Pro de un vistazo",
+      "subtitle": "Totales por escenario con referencias o video-to-video. Revisa el precio en vivo antes de generar.",
+      "footnote": "Todos los precios son precios mostrados por MaxVideoAI en créditos USD para escenarios predefinidos.",
+      "ctaLabel": "Ver precios completos",
+      "ctaHref": "/es/precios#kling-o3-pro-pricing"
+    },
+    "meta": {
+      "title": "Kling 3.0 Omni Pro: referencias, storyboard y V2V | MaxVideoAI",
+      "description": "Usa Kling 3.0 Omni Pro para reference-to-video, storyboard, V2V desde video fuente, prompts @Image y @Video1, audio nativo y precio en vivo."
+    }
+  },
+  "prompting": {
+    "modelSlug": "kling-o3-pro",
+    "section": {
+      "title": "Prompt Lab — Kling 3.0 Omni Pro referencias y V2V",
+      "intro": null,
+      "tip": null,
+      "guide": null,
+      "referencesTitle": "Cómo O3 Pro usa referencias y video fuente"
+    },
+    "tabs": [
+      {
+        "id": "quick",
+        "label": "Text",
+        "title": "Prompt text-to-video O3 Pro",
+        "description": "Úsalo cuando ningún asset debe guiar la escena.",
+        "copy": "Sujeto:\n[Personaje / producto / lugar + 2 rasgos visuales]\n\nAcción:\n[Una acción legible o 2-3 beats cortos]\n\nCámara:\n[Movimiento de cámara + encuadre + continuidad]\n\nEstilo:\n[Luz, textura, paleta, look cinematográfico]\n\nAudio:\n[Ambiente nativo, SFX cortos, diálogo breve si aplica]\n\nExample:\nUn diseñador cruza un estudio nocturno con un prototipo luminoso. Cámara: tracking bajo y leve push-in. Estilo: reflejos azules, metal cepillado, look premium. Audio: ambiente de estudio, hum eléctrico sutil, sin subtítulos."
+      },
+      {
+        "id": "structured",
+        "label": "Start/End",
+        "title": "Start/end opcionales con referencias",
+        "description": "Úsalo cuando la primera o última pose necesita control.",
+        "copy": "Opening frame opcional:\n[Qué debe estructurar el primer beat sin anular referencias]\n\nEnd frame opcional:\n[Pose final / composición / distancia de cámara esperada]\n\nReferencias:\n@Image1 = [composición o personaje]\n@Image2 = [estilo, luz u objeto]\n\nAcción y cámara:\n[Un movimiento legible entre apertura y final]\n\nExample:\nUsa @Image1 como composición inicial y @Image2 como estilo de luz. El personaje avanza lentamente hacia cámara y termina en una pose estable cercana al end frame. Luz coherente, sin cambio de escenario."
+      },
+      {
+        "id": "pro",
+        "label": "Refs + V2V",
+        "title": "Referencias y video fuente O3 Pro",
+        "description": "Úsalo cuando @Video1 guía movimiento y @Image guía identidad o estilo.",
+        "copy": "@Video1 = [ritmo de cámara / movimiento / pacing]\n@Image1 = [storyboard o composición]\n@Image2 = [personaje, producto o estilo]\n\nIntención:\n[Qué debe generar el video sin copiar cada frame fuente]\n\nContinuidad:\n[Qué no debe derivar: rostro, producto, lugar, luz]\n\nAudio:\n[generate_audio o keep_audio según necesidad]\n\nExample:\nUsa @Video1 para ritmo de cámara, @Image1 para composición storyboard y @Image2 para estilo de personaje. Genera una secuencia cinematográfica de 12 s en tres beats con continuidad estable, ambiente nativo y sin texto añadido."
+      },
+      {
+        "id": "storyboard",
+        "label": "Timeline",
+        "title": "Timeline O3 Pro multi-shot",
+        "description": "Úsalo para estructurar una secuencia con referencias y continuidad.",
+        "copy": "Duración: [8-15 s]\n\nShot 1 (0-4 s):\n[Composición guiada por @Image1 + acción legible]\n\nShot 2 (4-8 s):\n[Movimiento o cámara inspirado por @Video1]\n\nShot 3 (8-12 s):\n[Payoff / pose final / insert de producto]\n\nAnclas:\n[Estilo @Image2, vestuario, lugar, luz, audio]\n\nExample:\nShot 1: @Image1 define la escena. Shot 2: @Video1 guía velocidad de cámara. Shot 3: @Image2 fija el estilo final. Ambiente nativo corto, continuidad de personaje y lugar."
+      }
+    ],
+    "tabNotes": [],
+    "globalPrinciples": [
+      "Aclara si cada asset es una referencia o un frame visible.",
+      "Usa @Image1, @Image2 para imágenes y @Video1 solo para un video fuente V2V.",
+      "Cuando @Video1 está cargado, el flujo pasa a V2V: start/end frames no deben dirigir la toma.",
+      "Mantén una acción legible por toma y una sola función por referencia.",
+      "Usa keep_audio solo si el audio fuente debe conservarse."
+    ],
+    "engineWhy": [
+      "Pro es la opción correcta cuando referencias, storyboard y V2V deben mantener fidelidad.",
+      "Las imágenes no se fuerzan como start frame salvo que elijas explícitamente un frame inicial.",
+      "@Video1 sirve para movimiento, ritmo de cámara y continuidad, no para reemplazar el prompt.",
+      "Audio nativo y keep_audio deben ser cortos y ligados a acciones visibles."
+    ],
+    "demo": {
+      "title": "Prompt demo — O3 Pro V2V + referencias",
+      "promptLabel": "Prompt de texto",
+      "prompt": "Subject:\nA tiny lighthouse keeper no taller than a coffee cup, wearing a yellow raincoat and carrying a glowing lantern.\n\nAction:\nHe walks across a kitchen table during a storm, climbs a stack of books, and raises his lantern toward a toy lighthouse as the light begins to glow.\n\nCamera:\nMacro close tracking shot at table height, following his small steps. End with a slight push-in on the lantern and lighthouse.\n\nStyle:\nWarm cinematic macro realism, cozy indoor storm atmosphere, shallow depth of field, raindrops on the window, golden lantern light against cool blue shadows.\n\nAudio:\nRain tapping on glass, tiny footsteps on wood, soft lantern hum, distant thunder.",
+      "notes": [],
+      "summary": {
+        "subject": "Pequeño farero con impermeable amarillo",
+        "action": "Cruza una mesa, sube libros y enciende un faro de juguete",
+        "camera": "Macro tracking a altura de mesa, leve push-in final",
+        "style": "Macro realismo cálido, tormenta acogedora, luz dorada",
+        "output": "Lluvia en vidrio, pasos pequeños, hum de linterna, trueno lejano"
+      },
+      "presentationOverrides": {
+        "modeLabel": "Prompt de texto",
+        "outputLabel": "Audio",
+        "duration": null,
+        "aspectRatio": null,
+        "audioChipMode": "media",
+        "audioChipLabel": null,
+        "altContext": "Render de farero Kling 3.0 Omni Pro"
+      }
+    },
+    "imageExamples": null
+  },
+  "examples": {
+    "modelSlug": "kling-o3-pro",
+    "section": {
+      "title": "Demos Kling 3.0 Omni Pro storyboard y V2V",
+      "intro": "Revisa ejemplos Pro con imágenes de referencia, storyboard, V2V desde video fuente y audio nativo. Estos clips ayudan a comparar la guía O3 con los workflows Kling 3 donde la imagen subida se convierte en start frame.",
+      "defaultCtaLabel": "Ver ejemplos Kling ->",
+      "recreateLabel": "Recrear este resultado →"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "Todo"
+      },
+      {
+        "id": "cinematic",
+        "label": "Cinemático"
+      },
+      {
+        "id": "product",
+        "label": "Producto / Anuncio"
+      },
+      {
+        "id": "action",
+        "label": "Acción"
+      },
+      {
+        "id": "vertical",
+        "label": "Vertical"
+      },
+      {
+        "id": "audio",
+        "label": "Audio activado"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Resultados reales",
+        "body": "Mira qué es posible con Kling 3.0 Omni Pro para referencias, storyboard y video-to-video.",
+        "icon": "sparkles"
+      },
+      {
+        "id": "proof-2",
+        "title": "Recrear una toma",
+        "body": "Abre la app con un clic y reutiliza la configuración.",
+        "icon": "zap"
+      },
+      {
+        "id": "proof-3",
+        "title": "Audio nativo",
+        "body": "Diálogo, ambiente y efectos de sonido generados en sincronía.",
+        "icon": "audio"
+      },
+      {
+        "id": "proof-4",
+        "title": "Continuidad entre tomas",
+        "body": "Mantiene personajes, estilo y escena consistentes.",
+        "icon": "users"
+      },
+      {
+        "id": "proof-5",
+        "title": "Listo para producción",
+        "body": "Controles de seguridad y filtros integrados.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": null,
+    "showWhenEmpty": true
+  }
+}

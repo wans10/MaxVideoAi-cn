@@ -1,0 +1,582 @@
+{
+  "marketingName": "LTX 2",
+  "versionLabel": "2",
+  "seo": {
+    "title": "LTX 2 | Modelo de video IA, specs y precios | MaxVideoAI",
+    "description": "Usa el modelo LTX 2 aún compatible en MaxVideoAI para clips cortos de alta fidelidad y luego pasa a LTX 2.3 Pro para el workflow LTX actual.",
+    "image": "https://media.maxvideoai.com/renders/301cc489-d689-477f-94c4-0b051deda0bc/f397ab6d-d0ef-44eb-977a-3419f494d17e-job_cda079d3-9895-45a0-866c-2dbf57593463.jpg"
+  },
+  "overview": "LTX 2 sigue disponible en MaxVideoAI como modelo LTX anterior aún compatible para clips cortos de alta fidelidad y workflows legacy todavía útiles.",
+  "hero": {
+    "title": "LTX 2 — modelo LTX anterior aún compatible para clips cortos de alta fidelidad",
+    "intro": "LTX 2 sigue disponible para clips cortos de alta fidelidad y workflows legacy todavía útiles, mientras LTX 2.3 Pro es ahora el modelo LTX actual principal para workflows de audio, Extend y Retake.",
+    "badge": "1080p/1440p/4K · 6–10 s · Audio on/off · 25/50 fps",
+    "ctaPrimary": {
+      "label": "Generar con LTX 2",
+      "href": "/app?engine=ltx-2"
+    },
+    "secondaryLinks": [
+      {
+        "label": "Ver LTX 2.3 Pro",
+        "href": "/models/ltx-2-3-pro"
+      },
+      {
+        "label": "Ver ejemplos de LTX",
+        "href": "/examples/ltx"
+      },
+      {
+        "label": "Ver LTX 2.3 Fast",
+        "href": "/models/ltx-2-3-fast"
+      },
+      {
+        "label": "Comparar LTX 2.3 Fast vs LTX 2.3 Pro",
+        "href": "/ai-video-engines/ltx-2-3-fast-vs-ltx-2-3-pro"
+      }
+    ]
+  },
+  "bestUseCases": {
+    "title": "Casos de uso",
+    "items": [
+      {
+        "title": "Spots premium de producto",
+        "icon": "product"
+      },
+      {
+        "title": "Hero shots de marca",
+        "icon": "sparkles"
+      },
+      {
+        "title": "Paid ads y creatividades de campaña",
+        "icon": "ads"
+      },
+      {
+        "title": "Cutdowns sociales pulidos",
+        "icon": "scissors"
+      },
+      {
+        "title": "Pre‑viz con timing intacto",
+        "icon": "storyboard"
+      },
+      {
+        "title": "Beats con diálogo y hooks VO",
+        "icon": "mic"
+      }
+    ]
+  },
+  "technicalOverviewTitle": "Resumen técnico",
+  "technicalOverview": [
+    {
+      "label": "Duración",
+      "body": "6–10 s por render"
+    },
+    {
+      "label": "Resolución",
+      "body": "1080p, 1440p, 2160p (4K)"
+    },
+    {
+      "label": "Relación",
+      "body": "16:9"
+    },
+    {
+      "label": "FPS",
+      "body": "25 o 50 fps"
+    },
+    {
+      "label": "Entradas",
+      "body": "Texto → Video; Imagen → Video (PNG/JPG/WebP, ~25 MB), seed y prompt negativo soportados"
+    },
+    {
+      "label": "Audio",
+      "body": "Audio nativo activado por defecto; desactívalo para renders silenciosos"
+    },
+    {
+      "label": "Precio",
+      "body": "Por segundo; ej. $0.06/s en 1080p, $0.12/s en 1440p, $0.24/s en 4K"
+    }
+  ],
+  "promptStructure": {
+    "title": "Promptear LTX 2",
+    "quote": "[Sujeto] de alta fidelidad en [entorno], [movimiento de cámara], [luz/grade], [duración 6–10 s], 16:9, audio con [ambiente/música/diálogo].",
+    "description": "Escribe como un storyboard pulido: sujeto, cámara, estilo, duración y cue de audio.",
+    "steps": [
+      "Sujeto y escena (producto/personaje)",
+      "Movimiento de cámara y ritmo",
+      "Luz/grade y atmósfera",
+      "Duración (6–10 s) y resolución",
+      "Cue de audio (ambiente/música/diálogo) o desactivar audio"
+    ]
+  },
+  "tips": {
+    "title": "Consejos y límites",
+    "items": [
+      "Usa 50 fps para fluidez premium; 25 fps para un ritmo más suave.",
+      "Quédate en 6–10 s para arcos contundentes; encadena en edición para beats largos.",
+      "Mantén los prompts centrados en un sujeto hero y 1–2 acciones.",
+      "Audio on por defecto — apágalo si harás diseño sonoro completo en post."
+    ]
+  },
+  "prompts": [
+    {
+      "title": "Hero producto premium",
+      "prompt": "Plano beauty ultra‑cinemático de un frasco de perfume sobre mesa negra brillante, foco suave y partículas flotando, órbita de cámara 180° lenta, poca profundidad de campo, 4K, 50 fps, soundtrack atmosférico sutil."
+    },
+    {
+      "title": "Aéreo viaje I2V",
+      "prompt": "Desde esta foto de costa, conviértela en un plano aéreo dinámico: la cámara se desliza baja sobre el océano y luego se eleva suavemente sobre los acantilados hacia un atardecer cálido, luz cinematográfica, olas suaves y sonido ambiente."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "¿Qué duraciones soporta LTX 2?",
+      "a": "6–10 segundos por render en el routing Pro actual."
+    },
+    {
+      "q": "¿Incluye audio?",
+      "a": "Sí, el audio nativo está activado por defecto. Apágalo si vas a sonorizar en post."
+    },
+    {
+      "q": "¿Qué relaciones están soportadas?",
+      "a": "16:9 en esta configuración. Usa Wan u otros motores para necesidades multi‑relación."
+    }
+  ],
+  "custom": {
+    "heroSupportLine": "Ideal para spots premium de producto, brand stories y cutdowns listos para cliente cuando quieres el acabado más limpio.",
+    "whyTitle": "Por qué LTX 2 es potente",
+    "heroDesc1": "Renders de alta fidelidad de 6–10 s con audio nativo, hasta 4K/50 fps, para historias premium y hero shots. LTX‑2 Pro es el tier de mayor calidad de la familia LTX‑2, pensado para campañas finales más que para borradores.",
+    "heroDesc2": "Usa Pro cuando necesitas el detalle más limpio, motion estable y diseño sonoro sutil. Apaga el audio para sonorizar en post.",
+    "heroHighlights": [
+      "Sincronía audiovisual en una pasada||Diálogo, ambiente y SFX caen con la acción.",
+      "Acabado premium||Detalle más limpio y motion más suave para entregables finales.",
+      "Dirección fiable con prompts claros||Beats simples + lenguaje de cámara se traducen bien.",
+      "Pensado para producción||Mantén el sonido en drafts o silencia y termina en post."
+    ],
+    "specTitle": "Especificaciones reales — LTX 2 en MaxVideoAI",
+    "specNote": "Las specs reflejan el routing de Fal en producción.",
+    "specSections": [
+      {
+        "title": "Pulido de producción",
+        "intro": "Apunta a detalle más limpio y motion más suave para entregables finales. Ideal para ads premium y brand stories.",
+        "items": [
+          "Usa prompts concisos y estructurados.",
+          "Indica luz y sensación de lente.",
+          "Mantén constante la redacción del sujeto.",
+          "Ideal para cutdowns listos para cliente."
+        ]
+      },
+      {
+        "title": "Workflow de audio",
+        "intro": "Audio y visual se generan juntos, ayudando al pacing y la emoción. Mantén el sonido para drafts o termina en post.",
+        "items": [
+          "Añade uno o dos cues sonoros para anclar el timing.",
+          "Mantén el diálogo corto y claro.",
+          "Exporta varias variantes para elegir.",
+          "Silencia si planeas una mezcla externa."
+        ]
+      }
+    ],
+    "whatTitle": "Cómo funciona LTX 2 en MaxVideoAI",
+    "whatIntro1": "Elige modo texto o imagen, ajusta 6–10 s, selecciona resolución y fps, y luego promtea. El audio está on por defecto y se puede apagar.",
+    "whatIntro2": "Usa Pro cuando necesitas el detalle más limpio y sonido sincronizado para trabajo premium.",
+    "whatFlowTitle": "Workflow",
+    "whatFlowSteps": [
+      "Selecciona LTX 2, luego Texto → Video o Imagen → Video",
+      "Ajusta duración (6–10 s) y 16:9",
+      "Elige resolución (1080p/1440p/4K) y fps (25/50)",
+      "Audio on/off, añade prompt y seed/negativo opcional",
+      "Sube un still de referencia para I2V",
+      "Revisa el precio live y genera"
+    ],
+    "tipsTitle": "Consejos y límites",
+    "strengths": [
+      "Final takes (6–10 s): polish premium para ads, hero shots y brand cutdowns.",
+      "Salida 4K cuando el detalle importa (texturas de producto, luz limpia, motion controlado).",
+      "Usa 50 fps para acción / motion rápido; 25 fps para diálogo o planos más calmados.",
+      "El audio es más sólido con 1–2 cues deliberados (ambiente + un sonido clave). Mantén el diálogo corto."
+    ],
+    "boundaries": [
+      "6–10 s máximo por render en este routing.",
+      "Solo 16:9.",
+      "Imagen→Video usa una sola imagen de referencia (sin multi‑imagen).",
+      "El micro‑texto en pantalla sigue siendo poco fiable — añade texto en post."
+    ],
+    "safetyTitle": "Seguridad y personas / semejanza",
+    "safetyRules": [
+      "Nada de contenido sexual ni nada que involucre menores.",
+      "Nada de contenido de odio, acoso o violencia gráfica.",
+      "No suplantes a personas reales o figuras públicas; usa consentimiento para cualquier semejanza/voz.",
+      "No incluyas datos personales privados (rostros sin consentimiento, direcciones, teléfonos, documentos).",
+      "Mantén outputs brand‑safe; si usas diálogo, que sea limpio y corto."
+    ],
+    "safetyInterpretation": [],
+    "safetyNote": null,
+    "multishotTitle": "Clips secuenciados",
+    "multishotIntro1": "Encadena varios planos de 6–10 s para narrativas más largas.",
+    "multishotIntro2": "Reutiliza seeds y cues de estilo para mantener consistencia.",
+    "multishotTips": [
+      "Planifica 2–3 beats y renderiza cada clip por separado",
+      "Alinea relación y fps en todos los planos"
+    ],
+    "imageTitle": "Tips de Imagen → Video",
+    "imageIntro": "Anima un still de alta calidad en un beat premium.",
+    "imageFlow": [
+      "Sube 1 still (PNG/JPG/WebP, ~25 MB)",
+      "Ajusta duración (6–10 s) y resolución/fps",
+      "Describe movimiento de cámara, luz y audio"
+    ],
+    "imageWhy": [
+      "Ideal para retratos hero o stills de producto ya aprobados",
+      "Mantiene el encuadre acorde a las guías de marca"
+    ],
+    "comparisonTitle": "Cuándo elegir LTX 2",
+    "comparisonPoints": [
+      "Usa Pro para spots pulidos; usa Fast para ideación rápida",
+      "Elige Pro si necesitas 4K/50 fps y máxima fidelidad",
+      "Combínalo con Nano Banana para preparar keyframes fotorealistas"
+    ],
+    "comparisonCta": "Comparar LTX 2 vs Fast →",
+    "relatedTitle": "Versiones LTX 2.3 más nuevas",
+    "relatedSubtitle": "Usa LTX 2.3 Pro como la página LTX actual principal, o LTX 2.3 Fast para el workflow fast actual.",
+    "relatedItems": [
+      {
+        "brand": "ltx",
+        "title": "LTX 2.3 Pro",
+        "description": "Pasa a la página LTX actual principal para workflows de texto→video, imagen→video, audio→video, Extend y Retake desde una sola superficie.",
+        "modelSlug": "ltx-2-3-pro",
+        "ctaLabel": "Ver LTX 2.3 Pro ->"
+      },
+      {
+        "brand": "ltx",
+        "title": "LTX 2.3 Fast",
+        "description": "Usa la página LTX fast actual cuando quieras iteración más rápida de texto→video e imagen→video sobre el routing LTX 2.3.",
+        "modelSlug": "ltx-2-3-fast",
+        "ctaLabel": "Ver LTX 2.3 Fast ->"
+      }
+    ],
+    "finalPara1": "¿Listo para renderizar en LTX 2? Revisa el chip de precio antes de lanzar.",
+    "finalPara2": "Itera en LTX 2 Fast y luego cambia a Pro para finalizar.",
+    "finalButton": "Abrir LTX 2 en Generate →",
+    "tipsIntro": "LTX‑2 Pro es un tier final‑take: úsalo cuando el concepto está cerrado y quieres el acabado más limpio.",
+    "troubleshootingTitle": "Problemas comunes → soluciones rápidas",
+    "troubleshootingItems": [
+      "Se ve “cargado” o inestable → reduce a un solo movimiento de cámara y una acción principal; simplifica el fondo.",
+      "El sujeto deriva / cambia → mantén vestuario + luz + paleta constantes; parte de un still de referencia para consistencia.",
+      "El motion se siente flotante → ralentiza la acción, evita handheld rápido y mantiene el move suave (dolly/track/pan).",
+      "Lip sync se ve mal → acorta las líneas, baja la velocidad de habla y evita monólogos largos.",
+      "Texto/señalética falla → mantén el texto legible fuera de cuadro; evita labels UI pequeños y logos."
+    ]
+  },
+  "decision": {
+    "modelSlug": "ltx-2",
+    "hero": {
+      "eyebrow": "RUTA LTX 2 PRO AUN COMPATIBLE",
+      "title": "LTX 2",
+      "subtitle": "Clips 16:9 de alta fidelidad para texto a video o imagen a video, con checks de 1080p a 4K en la ruta LTX anterior compatible.",
+      "subtitleHighlights": [
+        "Clips 16:9 de alta fidelidad",
+        "texto a video o imagen a video",
+        "checks de 1080p a 4K"
+      ],
+      "paragraph": "Usa LTX 2 cuando necesites la ruta Pro anterior de LTX: clips 16:9 cortos de 6 a 10 s, imagen inicial, negative prompt, seed y revisiones en alta resolución. Usa LTX 2.3 Pro para el flujo de producción actual.",
+      "primaryCta": {
+        "label": "Generar con LTX 2",
+        "href": "/app?engine=ltx-2"
+      },
+      "secondaryCta": {
+        "label": "Ver ejemplos",
+        "href": "/es/galeria/ltx"
+      },
+      "quickLinks": [
+        {
+          "label": "Ver LTX 2.3 Pro",
+          "href": "/es/modelos/ltx-2-3-pro"
+        },
+        {
+          "label": "Ver precios",
+          "href": "/es/precios#ltx-2-pricing"
+        },
+        {
+          "label": "Ejemplos de prompts",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Ejemplo LTX 2",
+      "description": "Render 16:9 de alta fidelidad",
+      "renderLabel": "Ver render",
+      "badges": [
+        "Audio activo",
+        "10 s",
+        "16:9"
+      ],
+      "altContext": "render de video 16:9 de alta fidelidad con LTX 2"
+    },
+    "features": [
+      {
+        "title": "Fidelidad 16:9",
+        "body": "Usa LTX 2 para clips landscape cortos con look premium limpio.",
+        "tone": "quality"
+      },
+      {
+        "title": "Texto o imagen inicial",
+        "body": "Empieza desde un prompt o una imagen fija para imagen a video.",
+        "tone": "reference"
+      },
+      {
+        "title": "1080p a 4K",
+        "body": "Sube resolución cuando la dirección de movimiento ya está aprobada.",
+        "tone": "quality"
+      },
+      {
+        "title": "25 o 50 fps",
+        "body": "Elige la opción de frame rate disponible en la ruta de MaxVideoAI.",
+        "tone": "duration"
+      },
+      {
+        "title": "Máx. 10 s",
+        "body": "Mantén esta ruta anterior enfocada en renders cortos de un beat.",
+        "tone": "duration"
+      },
+      {
+        "title": "Pago por uso",
+        "body": "Ve el precio exacto antes de generar.",
+        "tone": "price"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "¿LTX 2 o LTX 2.3 Pro?",
+        "body": "Usa LTX 2 para clips 16:9 de alta fidelidad en la ruta anterior. Usa LTX 2.3 Pro cuando necesitas la ruta LTX de producción actual.",
+        "cta": {
+          "label": "Ver LTX 2.3 Pro",
+          "href": "/es/modelos/ltx-2-3-pro"
+        }
+      },
+      {
+        "title": "¿Necesitas un borrador LTX más rápido?",
+        "body": "Usa LTX 2 Fast para loops 16:9 más largos y de menor coste antes de decidir si la toma merece una pasada con más fidelidad.",
+        "cta": {
+          "label": "Ver LTX 2 Fast",
+          "href": "/es/modelos/ltx-2-fast"
+        }
+      },
+      {
+        "title": "¿Comparas motores premium?",
+        "body": "Compara LTX 2 con Veo 3.1 al elegir entre checks antiguos de alta resolución y rutas premium actuales.",
+        "cta": {
+          "label": "Comparar LTX 2 vs Veo 3.1",
+          "href": "/es/comparativa/ltx-2-vs-veo-3-1"
+        }
+      },
+      {
+        "title": "¿Necesitas ejemplos de prompts?",
+        "body": "Empieza con una estructura corta: sujeto, acción, cámara y negative prompt antes de pagar checks en alta resolución.",
+        "cta": {
+          "label": "Abrir Prompt Lab",
+          "href": "#prompting"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Prompt de texto",
+        "body": "Describe un sujeto, una acción visible, un movimiento de cámara y el acabado esperado."
+      },
+      {
+        "title": "Imagen inicial",
+        "body": "Usa una imagen limpia cuando producto, encuadre o identidad deban mantenerse estables."
+      },
+      {
+        "title": "Negative prompt",
+        "body": "Bloquea artefactos o estilos no deseados sin sumar demasiadas instrucciones positivas."
+      },
+      {
+        "title": "Seed",
+        "body": "Reutiliza seed para comparar variantes dentro de la misma dirección creativa."
+      },
+      {
+        "title": "Pasada en alta resolución",
+        "body": "Pasa a 1440p o 4K solo cuando el movimiento ya esté aprobado."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Precios de LTX 2 de un vistazo",
+      "subtitle": "Totales para esta ruta compatible. Consulta el precio exacto en la app antes de generar.",
+      "footnote": "Todos los precios son precios mostrados por MaxVideoAI en créditos USD para escenarios predefinidos.",
+      "ctaLabel": "Ver precios completos",
+      "maxDurationNote": "Ruta de 6-10 s; hasta 4K",
+      "ctaHref": "/es/precios#ltx-2-pricing"
+    },
+    "meta": {
+      "title": "LTX 2: precios, clips 4K y ejemplos | MaxVideoAI",
+      "description": "Usa LTX 2 para clips 16:9 de alta fidelidad aún compatibles, texto a video, imagen a video, checks de 1080p a 4K, precios y ejemplos."
+    }
+  },
+  "prompting": {
+    "modelSlug": "ltx-2",
+    "section": {
+      "title": "Cómo escribir un gran prompt LTX 2",
+      "intro": "LTX‑2 Pro responde a prompts estructurados tipo producción con dirección de cámara clara.",
+      "tip": "Tip: duración + fps se configuran en la UI - tu prompt controla sujeto, acción, cámara, luz, estilo y cues sonoros opcionales.",
+      "guide": {
+        "label": "LTX",
+        "href": "https://www.ltx.studio"
+      },
+      "referencesTitle": "Cómo LTX 2 usa referencias"
+    },
+    "tabs": [
+      {
+        "id": "quick",
+        "label": "Quick",
+        "title": "Prompt rápido (iteración)",
+        "description": "Usa 1–2 frases cuando quieras variaciones.",
+        "copy": "[Sujeto + acción] en [entorno], [movimiento de cámara], [luz/estilo], [cue de sonido opcional].\nNegativo: [texto, logos, personas extra, blur]"
+      },
+      {
+        "id": "structured",
+        "label": "Structured",
+        "title": "Prompt estructurado (más fiable)",
+        "description": "Separa la información para que el modelo la siga de forma consistente.",
+        "copy": "Sujeto:\n[Quién/qué + una acción.]\n\nEntorno:\n[Dónde + momento + 2 anclas.]\n\nCámara:\n[Plano + ángulo + un movimiento + sensación de lente.]\n\nLook:\n[Luz + paleta.]\n\nSonido (opcional):\n[Ambiente + 1–2 cues.]\n\nNegativo:\n[Qué evitar.]"
+      },
+      {
+        "id": "pro",
+        "label": "Pro",
+        "title": "Prompt Pro (brief “equipo de rodaje” ultra‑específico)",
+        "description": "Úsalo cuando necesites un look cinematográfico muy preciso o continuidad entre planos.",
+        "copy": "Brief de director:\n[Objetivo + vibe.]\n\nSujeto + vestuario:\n[Rasgos clave + materiales.]\n\nSet + continuidad:\n[Ubicación + anclas + momento del día.]\n\nCinematografía:\n[Encuadre + ángulo + un movimiento + lente + composición.]\n\nLuz + grade:\n[Key light + contraste + paleta.]\n\nSonido (opcional):\n[Ambiente + 1–2 cues.]\n\nNegativo:\n[Texto, logos, personajes extra, artefactos.]"
+      },
+      {
+        "id": "storyboard",
+        "label": "Storyboard",
+        "title": "Prompt storyboard (multi‑shot / lista de planos)",
+        "description": "Úsalo cuando quieras una mini‑story en un solo clip. Un prompt storyboard (multi‑shot / shot list) da timing claro, dirección de cámara y continuidad.",
+        "copy": "Lista de planos (mismo sujeto + mismo entorno)\nPlano 1: [acción + cámara]\nPlano 2: [acción + cámara]\nPlano 3: [acción final/reveal]\n\nLook:\n[Luz + paleta.]\n\nSonido (opcional):\n[Ambiente + 1–2 cues]"
+      }
+    ],
+    "tabNotes": [
+      {
+        "tabId": "quick",
+        "body": "Quick = variaciones. Úsalo para iterar rápido."
+      },
+      {
+        "tabId": "structured",
+        "body": "Structured = consistencia. Úsalo cuando necesites resultados fiables."
+      },
+      {
+        "tabId": "pro",
+        "body": "Pro = continuidad. Úsalo para looks precisos y repetibles."
+      },
+      {
+        "tabId": "storyboard",
+        "body": "Storyboard = timing de beats. Úsalo para mini‑stories en un clip."
+      }
+    ],
+    "globalPrinciples": [
+      "Define sujeto, acción y cámara en las primeras líneas.",
+      "Usa anclajes de lente + luz para consistencia.",
+      "Mantén los beats legibles; un move por plano."
+    ],
+    "engineWhy": [
+      "Los prompts más largos funcionan si están estructurados.",
+      "El lenguaje de cámara y los anclajes de luz impulsan la fidelidad.",
+      "Los prompts negativos ayudan a evitar artefactos."
+    ],
+    "demo": {
+      "title": "Prompt demo — hero producto premium",
+      "promptLabel": "Texto a video",
+      "prompt": "Sujeto: Megaciudad costera futurista\nAcción: La cámara atraviesa torres y tráfico aéreo\nCámara: Vista aérea amplia, travelling cinemático\nEstilo: Atardecer, cristal, reflejos premium, 4K\nAudio: Ambiente futurista sutil",
+      "notes": [
+        "Un solo sujeto hero",
+        "Movimiento de cámara y luz definidos",
+        "Audio incluido"
+      ],
+      "summary": {
+        "subject": "Megaciudad costera futurista",
+        "action": "La cámara atraviesa torres y tráfico aéreo",
+        "camera": "Vista aérea amplia, travelling cinemático",
+        "style": "Atardecer, cristal, reflejos premium, 4K",
+        "output": "Ambiente futurista sutil"
+      },
+      "presentationOverrides": {
+        "modeLabel": "Texto a video",
+        "outputLabel": "Audio",
+        "duration": null,
+        "aspectRatio": null,
+        "audioChipMode": "on",
+        "audioChipLabel": null,
+        "altContext": "Ejemplo de video IA de LTX 2: Prompt demo - hero producto premium"
+      }
+    },
+    "imageExamples": null
+  },
+  "examples": {
+    "modelSlug": "ltx-2",
+    "section": {
+      "title": "Ejemplos LTX 2",
+      "intro": "Renders recientes de LTX 2 con alta fidelidad y audio para spots premium y hero shots.",
+      "defaultCtaLabel": "Ver todos los ejemplos LTX 2 →",
+      "recreateLabel": "Recrear este plano →"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "Todo"
+      },
+      {
+        "id": "cinematic",
+        "label": "Cinemático"
+      },
+      {
+        "id": "product",
+        "label": "Producto / Anuncio"
+      },
+      {
+        "id": "action",
+        "label": "Acción"
+      },
+      {
+        "id": "vertical",
+        "label": "Vertical"
+      },
+      {
+        "id": "audio",
+        "label": "Audio activado"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Resultados reales",
+        "body": "Mira qué es posible con LTX 2 — modelo LTX anterior aún compatible para clips cortos de alta fidelidad.",
+        "icon": "sparkles"
+      },
+      {
+        "id": "proof-2",
+        "title": "Recrear una toma",
+        "body": "Abre la app con un clic y reutiliza la configuración.",
+        "icon": "zap"
+      },
+      {
+        "id": "proof-3",
+        "title": "Audio nativo",
+        "body": "Diálogo, ambiente y efectos de sonido generados en sincronía.",
+        "icon": "audio"
+      },
+      {
+        "id": "proof-4",
+        "title": "Continuidad entre tomas",
+        "body": "Mantiene personajes, estilo y escena consistentes.",
+        "icon": "users"
+      },
+      {
+        "id": "proof-5",
+        "title": "Listo para producción",
+        "body": "Controles de seguridad y filtros integrados.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": null,
+    "showWhenEmpty": true
+  }
+}

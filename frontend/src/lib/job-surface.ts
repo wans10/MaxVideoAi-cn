@@ -1,0 +1,73 @@
+import { getEngineAliases, listFalEngines } from '@/config/falEngines';
+import { parseStoredImageRenders } from '@/lib/image-renders';
+import type { JobSurface } from '@/types/billing';
+import { normalizeJobSurface, normalizeUserAssetSource } from '@/lib/job-surface-normalize';
+
+export { normalizeJobSurface, normalizeUserAssetSource };
+
+const IMAGE_ENGINE_ALIAS_SET = new Set(
+  listFalEngines()
+    .filter((engine) => (engine.category ?? 'video') === 'image')
+    .flatMap((engine) => getEngineAliases(engine))
+);
+
+function readSurfaceFromSnapshot(snapshot: unknown): string | null {
+  if (!snapshot || typeof snapshot !== 'object') return null;
+  const value = (snapshot as Record<string, unknown>).surface;
+  return typeof value === 'string' && value.trim().length ? value.trim().toLowerCase() : null;
+}
+
+export function deriveJobSurface(params: {
+  surface?: unknown;
+  settingsSnapshot?: unknown;
+  jobId?: string | null;
+  engineId?: string | null;
+  videoUrl?: string | null;
+  renderIds?: unknown;
+}): JobSurface {
+  const direct = normalizeJobSurface(params.surface);
+  if (direct && direct !== 'video') return direct;
+
+  const snapshotSurface = normalizeJobSurface(readSurfaceFromSnapshot(params.settingsSnapshot));
+  if (snapshotSurface && snapshotSurface !== 'video') return snapshotSurface;
+
+  const jobId = typeof params.jobId === 'string' ? params.jobId.trim() : '';
+  if (jobId.startsWith('tool_angle_') || jobId.startsWith('angle_')) {
+    return 'angle';
+  }
+  if (jobId.startsWith('tool_upscale_') || jobId.startsWith('upscale_')) {
+    return 'upscale';
+  }
+  if (jobId.startsWith('tool_background_removal_') || jobId.startsWith('background_removal_')) {
+    return 'background-removal';
+  }
+  if (jobId.startsWith('storyboard_')) {
+    return 'storyboard';
+  }
+
+  const parsedRenders = parseStoredImageRenders(params.renderIds);
+  if (parsedRenders.entries.length > 0) {
+    return 'image';
+  }
+
+  const engineId = typeof params.engineId === 'string' ? params.engineId.trim() : '';
+  if (engineId && IMAGE_ENGINE_ALIAS_SET.has(engineId)) {
+    return 'image';
+  }
+
+  if (snapshotSurface === 'video') {
+    return 'video';
+  }
+  if (direct === 'video') {
+    return 'video';
+  }
+  if (typeof params.videoUrl === 'string' && params.videoUrl.trim().length) {
+    return 'video';
+  }
+
+  return 'video';
+}
+
+export function isImageLikeSurface(surface: JobSurface): boolean {
+  return surface === 'image' || surface === 'storyboard' || surface === 'character' || surface === 'angle' || surface === 'upscale';
+}

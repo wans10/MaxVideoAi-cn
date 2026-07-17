@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/gallery", "destination": "/examples", "permanent": true }
+  ],
+  "crons": [
+    { "path": "/api/cron/fal-poll", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/byteplus-poll", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/kling-direct-poll", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/google-vertex-veo-poll", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/google-vertex-omni-poll", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/luma-agents-poll", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/reconcile-missing-jobs", "schedule": "*/10 * * * *" },
+    { "path": "/api/cron/background-removal-retention", "schedule": "37 3 * * *" },
+    { "path": "/api/cron/infra-costs-alert", "schedule": "0 8 * * *" }
+  ]
+}

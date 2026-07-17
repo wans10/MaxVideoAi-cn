@@ -1,0 +1,589 @@
+{
+  "marketingName": "LTX 2 Fast",
+  "versionLabel": "Fast",
+  "seo": {
+    "title": "LTX 2 Fast | Modèle vidéo IA, specs et prix | MaxVideoAI",
+    "description": "Utilisez le modèle LTX 2 Fast encore pris en charge sur MaxVideoAI pour des tests audio rapides, puis passez à LTX 2.3 Fast pour le workflow fast LTX actuel.",
+    "image": "https://media.maxvideoai.com/renders/301cc489-d689-477f-94c4-0b051deda0bc/1bd62e34-0e55-4f49-b434-295276b991d4-job_d895c3b0-562a-4e36-ae06-4ce083a47126.jpg"
+  },
+  "overview": "LTX 2 Fast reste disponible sur MaxVideoAI comme modèle LTX fast plus ancien encore pris en charge pour des tests audio rapides et des workflows fast hérités.",
+  "hero": {
+    "title": "LTX 2 Fast — modèle LTX plus ancien encore pris en charge pour des tests audio rapides",
+    "intro": "LTX 2 Fast reste disponible pour des tests audio rapides et des workflows fast plus anciens, tandis que LTX 2.3 Fast est désormais l’option fast LTX actuelle principale.",
+    "badge": "1080p/1440p/4K · 6–20 s · Audio on/off · 25/50 fps",
+    "ctaPrimary": {
+      "label": "Générer avec LTX 2 Fast",
+      "href": "/app?engine=ltx-2-fast"
+    },
+    "secondaryLinks": [
+      {
+        "label": "Voir LTX 2.3 Fast",
+        "href": "/models/ltx-2-3-fast"
+      },
+      {
+        "label": "Voir les exemples LTX",
+        "href": "/examples/ltx"
+      },
+      {
+        "label": "Voir LTX 2.3 Pro",
+        "href": "/models/ltx-2-3-pro"
+      },
+      {
+        "label": "Comparer LTX 2.3 Fast vs LTX 2.3 Pro",
+        "href": "/ai-video-engines/ltx-2-3-fast-vs-ltx-2-3-pro"
+      }
+    ]
+  },
+  "bestUseCases": {
+    "title": "Meilleurs cas d’usage",
+    "items": [
+      {
+        "title": "Tests de concepts rapides",
+        "icon": "zap"
+      },
+      {
+        "title": "Tests pub & tests de variantes",
+        "icon": "ads"
+      },
+      {
+        "title": "Clips sociaux & itérations rapides",
+        "icon": "smartphone"
+      },
+      {
+        "title": "Pré‑viz & beats de story",
+        "icon": "storyboard"
+      },
+      {
+        "title": "Mood pieces & B‑roll ciné",
+        "icon": "cinematic"
+      },
+      {
+        "title": "Séquences rough‑cut & boucles",
+        "icon": "repeat2"
+      }
+    ]
+  },
+  "technicalOverviewTitle": "Résumé technique",
+  "technicalOverview": [
+    {
+      "label": "Durée",
+      "body": "6–20 s (12–20 s nécessitent 1080p à 25 fps)"
+    },
+    {
+      "label": "Résolution",
+      "body": "1080p, 1440p, 2160p (4K)"
+    },
+    {
+      "label": "Formats",
+      "body": "16:9"
+    },
+    {
+      "label": "Fréquence d’images",
+      "body": "25 ou 50 fps"
+    },
+    {
+      "label": "Entrées",
+      "body": "Texte → Vidéo ; Image → Vidéo (PNG/JPG/WebP, ~25 Mo), prompt + seed/négatifs"
+    },
+    {
+      "label": "Audio",
+      "body": "Audio natif activé par défaut ; désactivez pour des rendus muets"
+    },
+    {
+      "label": "Tarifs",
+      "body": "À la seconde ; ex. 0,04 $/s en 1080p, 0,08 $/s en 1440p, 0,16 $/s en 4K"
+    }
+  ],
+  "promptStructure": {
+    "title": "Prompter LTX 2 Fast",
+    "quote": "[Sujet] cinématographique dans [lieu], [mouvement caméra], [lumière/style], [durée 6–20 s], 16:9, audio avec [ambiance/dialogue/musique].",
+    "description": "Allez à l’essentiel : sujet + décor + mouvement + style + durée + cue audio.",
+    "steps": [
+      "Sujet & décor",
+      "Mouvement caméra et rythme (rapide, lent, tracking, dolly)",
+      "Lumière/grade et mood",
+      "Durée et résolution (12–20 s = 1080p/25 fps)",
+      "Cue audio (ambiance/dialogue/musique) ou désactivation"
+    ]
+  },
+  "tips": {
+    "title": "Conseils & limites",
+    "items": [
+      "Pour 12–20 s, restez en 1080p/25 fps (contrainte Fal).",
+      "Utilisez 50 fps pour un mouvement plus net sur 6–10 s.",
+      "Gardez une action claire ; utilisez seeds/prompts négatifs pour affiner.",
+      "Audio activé par défaut — désactivez‑le pour des tests muets moins chers."
+    ]
+  },
+  "prompts": [
+    {
+      "title": "Test ciné T2V",
+      "prompt": "Un cow‑boy traverse une ville western poussiéreuse à midi, tracking shot depuis l’arrière, profondeur ciné, lumière réaliste, grain 4K, ambiance native."
+    },
+    {
+      "title": "Portrait néon I2V",
+      "prompt": "Une femme reste immobile dans une rue néon la nuit. La caméra dolly lentement vers son visage tandis que les passants se floutent, soulignant son calme. Les lumières urbaines scintillent et les reflets glissent sur sa veste en jean.",
+      "notes": "Réglez 6–10 s ou 12–20 s selon le rythme ; gardez 16:9."
+    },
+    {
+      "title": "Exemple — 8 s passage piéton",
+      "prompt": "Une jeune femme traverse une rue animée à l’heure dorée, caméra basse en suivi latéral lorsqu’elle s’engage sur le passage piéton et marche vers le trottoir opposé. La lumière chaude éclaire le côté de son visage, de légers lens flares apparaissent sur les bords du cadre, et des voitures passent en arrière‑plan. Audio : ambiance douce de ville (voitures, pas, voix lointaines) + un lit musical léger et upbeat, pas de dialogue, pas de texte à l’écran."
+    },
+    {
+      "title": "Exemple — 18–20 s walkthrough bureau",
+      "prompt": "Un plan continu de 18–20 secondes en 16:9 dans un bureau startup lumineux en journée. La caméra démarre à l’entrée quand la porte vitrée s’ouvre, puis avance en un mouvement fluide derrière une lead d’équipe. On passe devant des bureaux avec des personnes sur leurs laptops, un tableau blanc couvert de croquis, et un coin lounge où deux collègues rient autour d’un prototype. La caméra ne coupe jamais et se pose sur un plan moyen de la lead qui s’arrête près d’une grande fenêtre et se tourne vers la caméra avec un sourire détendu. Audio : ambiance naturelle de bureau (claviers, discussions basses, machine à café) avec une musique motivante légère dessous, pas de dialogue, pas de texte à l’écran."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Quelle durée pour LTX 2 Fast ?",
+      "a": "6–20 secondes. Les durées au‑delà de 10 s doivent être en 1080p et 25 fps selon les contraintes Fal."
+    },
+    {
+      "q": "LTX 2 Fast inclut‑il l’audio ?",
+      "a": "Oui, l’audio natif est activé par défaut. Vous pouvez le désactiver pour des exports muets."
+    },
+    {
+      "q": "Quels formats sont supportés ?",
+      "a": "16:9 uniquement dans le routage Fast actuel. Utilisez Wan ou Pika pour des formats flexibles."
+    }
+  ],
+  "custom": {
+    "whyTitle": "Pourquoi LTX 2 Fast dans MaxVideoAI",
+    "heroDesc1": "Créez des clips de 6–20 secondes avec audio natif, 1080p–4K et 25/50 fps dans une seule carte. LTX 2 Fast est le tier “instant” de la famille LTX‑2 : parfait pour des coupes sociales rapides, des tests, des storyboards et des mood pieces quand vous voulez du 4K sans attendre.",
+    "heroDesc2": "Au‑delà de 10 secondes, nous verrouillons automatiquement en 1080p/25 fps pour respecter le routage Fal et garder des délais fiables.",
+    "heroSupportLine": "À utiliser pour les hooks, le pacing et l’exploration d’ambiance, puis régénérer les gagnants en premium.",
+    "heroHighlights": [
+      "Conçu pour l’itération rapide||Faites beaucoup de variantes sans sur‑optimiser le premier rendu.",
+      "Plus d’espace par clip||Meilleur pour le pacing, la montée et les beats “mini‑scène” que les modèles ultra‑courts.",
+      "Tests prêts pour le son||Parfait pour caler dialogue/ambiance/SFX en temp (ou coupez l’audio et finissez en post).",
+      "Upgrade simple||Gardez la même structure de prompt et relancez les gagnants en LTX‑2 Pro."
+    ],
+    "specTitle": "Specs réelles — LTX 2 Fast dans MaxVideoAI",
+    "specNote": "Les specs reflètent le routage Fal en production.",
+    "specSections": [
+      {
+        "title": "Tests de vitesse",
+        "intro": "Conçu pour itérer vite et en volume. Idéal pour découvrir des hooks et le pacing avant de polisher.",
+        "items": [
+          "Générez de nombreuses variantes rapidement.",
+          "Gardez les prompts courts et directs.",
+          "Testez des openings différents à la suite.",
+          "Promeuvez les gagnants en Pro."
+        ]
+      },
+      {
+        "title": "Workflow draft",
+        "intro": "Le format de prompt est compatible avec LTX‑2 Pro, donc l’upgrade est simple. Utilisez Fast comme couche de brouillon.",
+        "items": [
+          "Réutilisez le langage de plan pour les finals.",
+          "Remplacez par de meilleures références ensuite.",
+          "Parfait pour tests sociaux et loops.",
+          "Sauvegardez vos templates de prompts."
+        ]
+      }
+    ],
+    "whatTitle": "Comment LTX 2 Fast fonctionne dans MaxVideoAI",
+    "whatIntro1": "Choisissez le mode texte ou image, réglez 6–20 s, choisissez résolution et fps, puis prompt. L’audio est activé par défaut et peut être coupé.",
+    "whatIntro2": "Pour 12–20 s, nous contraignons automatiquement à 1080p/25 fps pour garder une route stable.",
+    "whatFlowTitle": "Workflow",
+    "whatFlowSteps": [
+      "Sélectionnez LTX 2 Fast, puis Texte → Vidéo ou Image → Vidéo",
+      "Définissez la durée (6–20 s) et le format 16:9",
+      "Choisissez résolution/fps (12–20 s = 1080p/25)",
+      "Audio on/off, ajoutez prompt et seed/négatif optionnels",
+      "Uploadez un still de référence pour l’I2V",
+      "Vérifiez le prix live, puis générez"
+    ],
+    "tipsTitle": "Conseils & limites",
+    "strengths": [
+      "Workflow draft‑first : générez quelques variantes, choisissez un gagnant, puis relancez en Pro pour le polish.",
+      "Une action claire + un mouvement caméra valent mieux que des prompts “wish‑list”.",
+      "L’audio marche mieux avec 1–2 cues clairs (ambience + un son clé). Gardez les dialogues courts."
+    ],
+    "boundaries": [
+      "Les runs 12–20 s sont verrouillés en 1080p / 25 fps dans ce routage.",
+      "16:9 uniquement.",
+      "Image→Vidéo utilise une seule image de référence (pas de contrôle multi‑image)."
+    ],
+    "safetyTitle": "Sécurité & personnes / ressemblance",
+    "safetyRules": [
+      "Pas de contenu sexuel, et absolument rien impliquant des mineurs.",
+      "Pas de contenu haineux, harcelant ou violent/graphique.",
+      "N’imitez pas de personnes réelles ou de figures publiques; utilisez le consentement pour toute ressemblance/voix.",
+      "N’incluez pas de données personnelles privées (visages non consentis, adresses, numéros, documents).",
+      "Gardez des sorties brand‑safe; si vous utilisez du dialogue, qu’il reste propre et court."
+    ],
+    "safetyInterpretation": [],
+    "safetyNote": null,
+    "multishotTitle": "Clips séquencés",
+    "multishotIntro1": "Enchaînez plusieurs renders 6–10 s pour construire des séquences plus longues.",
+    "multishotIntro2": "Réutilisez seeds et style pour garder la cohérence.",
+    "multishotTips": [
+      "Un seul sujet; réutilisez la même ossature de prompt",
+      "Assemblez en montage; ajoutez VO/musique ensuite"
+    ],
+    "imageTitle": "Conseils Image → Vidéo",
+    "imageIntro": "Uploadez un seul still net et dirigez mouvement et audio.",
+    "imageFlow": [
+      "Uploadez 1 still (PNG/JPG/WebP, ~25 Mo)",
+      "Réglez durée et fps; 12–20 s verrouillent 1080p/25",
+      "Décrivez le mouvement caméra, le pacing et l’audio"
+    ],
+    "imageWhy": [
+      "Parfait pour des animatics rapides depuis un frame",
+      "Garde le cadrage marque/produit cohérent"
+    ],
+    "comparisonTitle": "Quand choisir LTX 2 Fast",
+    "comparisonPoints": [
+      "Utilisez Fast pour des clips sociaux rapides; passez en LTX‑2 Pro pour un polish premium",
+      "Pour des formats multi‑AR, combinez avec Wan ou Veo; Fast est 16:9 seulement",
+      "Pour des tests muets, coupez l’audio pour réduire le coût"
+    ],
+    "comparisonCta": "Comparer LTX 2 Fast vs Pro →",
+    "relatedTitle": "Versions LTX 2.3 plus récentes",
+    "relatedSubtitle": "Utilisez LTX 2.3 Fast comme page LTX fast actuelle principale, ou LTX 2.3 Pro quand le workflow demande la surface LTX actuelle la plus complète.",
+    "relatedItems": [
+      {
+        "brand": "ltx",
+        "title": "LTX 2.3 Fast",
+        "description": "Restez sur un workflow fast mais passez au routing LTX 2.3 Fast actuel pour une génération texte→vidéo et image→vidéo plus récente.",
+        "modelSlug": "ltx-2-3-fast",
+        "ctaLabel": "Voir LTX 2.3 Fast ->"
+      },
+      {
+        "brand": "ltx",
+        "title": "LTX 2.3 Pro",
+        "description": "Passez à LTX 2.3 Pro quand le projet a besoin d’audio→vidéo, Extend, Retake et d’un set de workflows LTX actuels plus large.",
+        "modelSlug": "ltx-2-3-pro",
+        "ctaLabel": "Voir LTX 2.3 Pro ->"
+      }
+    ],
+    "finalPara1": "Prêt à essayer LTX 2 Fast ? Chargez votre wallet et vérifiez le chip prix avant de lancer.",
+    "finalPara2": "Passez à LTX‑2 Pro quand vous avez besoin de fidélité max et d’un son synchro.",
+    "finalButton": "Ouvrir LTX 2 Fast dans Generate →",
+    "tipsIntro": "LTX‑2 Fast est le plus fiable quand vous le traitez comme une passe draft : plans simples, variations rapides, puis polish du gagnant.",
+    "troubleshootingTitle": "Problèmes fréquents → solutions rapides",
+    "troubleshootingItems": [
+      "Résultat aléatoire / incohérent → retirez des beats; relancez 2–3 variations serrées.",
+      "Mouvement étrange → ralentissez l’action et gardez un mouvement caméra simple; réduisez l’encombrement du décor.",
+      "Sujet qui dérive de la marque → partez d’une image de référence; verrouillez palette + lumière.",
+      "Texte incorrect → évitez la signalétique lisible, UI minuscule, micro‑labels. Gardez le texte hors‑champ.",
+      "Dialogue qui dérive → gardez les lignes courtes et percutantes; évitez les monologues longs."
+    ]
+  },
+  "decision": {
+    "modelSlug": "ltx-2-fast",
+    "hero": {
+      "eyebrow": "ROUTE LTX 2 FAST ENCORE PRISE EN CHARGE",
+      "title": "LTX 2 Fast",
+      "subtitle": "Drafts 16:9 rapides jusqu’à 20 s pour texte ou image de départ, revues avec audio et checks 1080p à 4K.",
+      "subtitleHighlights": [
+        "Drafts 16:9 rapides",
+        "jusqu’à 20 s",
+        "checks 1080p à 4K"
+      ],
+      "paragraph": "Utilisez LTX 2 Fast pour l’ancienne route fast LTX encore prise en charge : drafts 16:9 moins chers, tests de timing jusqu’à 20 s, image de départ et options haute résolution. Utilisez LTX 2.3 Fast pour le workflow fast LTX actuel.",
+      "primaryCta": {
+        "label": "Drafter avec LTX 2 Fast",
+        "href": "/app?engine=ltx-2-fast"
+      },
+      "secondaryCta": {
+        "label": "Voir les exemples",
+        "href": "/fr/galerie/ltx"
+      },
+      "quickLinks": [
+        {
+          "label": "Voir LTX 2.3 Fast",
+          "href": "/fr/modeles/ltx-2-3-fast"
+        },
+        {
+          "label": "Voir les tarifs",
+          "href": "/fr/tarifs#ltx-2-fast-pricing"
+        },
+        {
+          "label": "Exemples de prompts",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Exemple LTX 2 Fast",
+      "description": "Boucle draft 16:9 rapide",
+      "renderLabel": "Voir le brouillon",
+      "badges": [
+        "Fast",
+        "20 s max",
+        "16:9"
+      ],
+      "altContext": "rendu video draft 16:9 avec LTX 2 Fast"
+    },
+    "features": [
+      {
+        "title": "Drafts 16:9 rapides",
+        "body": "Avancez vite sur timing et composition dans l’ancien workflow LTX.",
+        "tone": "duration"
+      },
+      {
+        "title": "Texte ou image source",
+        "body": "Testez produit, sujet ou décor depuis un prompt ou une image fixe.",
+        "tone": "reference"
+      },
+      {
+        "title": "Jusqu’à 20 s",
+        "body": "Utilisez les boucles 1080p/25 fps quand le pacing compte plus que le polish.",
+        "tone": "duration"
+      },
+      {
+        "title": "1080p à 4K",
+        "body": "Les tests plus courts peuvent aussi servir à vérifier le détail.",
+        "tone": "quality"
+      },
+      {
+        "title": "Audio-ready",
+        "body": "Gardez le son actif quand le timing ou la revue en a besoin.",
+        "tone": "audio"
+      },
+      {
+        "title": "Paiement à l’usage",
+        "body": "Prix exact affiché avant génération.",
+        "tone": "price"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "LTX 2 Fast ou LTX 2.3 Fast ?",
+        "body": "Utilisez LTX 2 Fast pour d’anciens drafts 16:9 encore pris en charge. Choisissez LTX 2.3 Fast pour la route fast actuelle et plus de formats.",
+        "cta": {
+          "label": "Voir LTX 2.3 Fast",
+          "href": "/fr/modeles/ltx-2-3-fast"
+        }
+      },
+      {
+        "title": "Besoin de plus de fidélité ?",
+        "body": "Déplacez les directions validées vers LTX 2 ou LTX 2.3 Pro quand le plan mérite une passe plus propre.",
+        "cta": {
+          "label": "Voir LTX 2",
+          "href": "/fr/modeles/ltx-2"
+        }
+      },
+      {
+        "title": "Vous comparez des routes fast ?",
+        "body": "Comparez LTX 2 Fast et Wan 2.5 entre boucles LTX 16:9 plus longues et checks audio moins chers.",
+        "cta": {
+          "label": "Comparer LTX 2 Fast vs Wan 2.5",
+          "href": "/fr/comparatif/ltx-2-fast-vs-wan-2-5"
+        }
+      },
+      {
+        "title": "Besoin d’exemples de prompts ?",
+        "body": "Utilisez des prompts courts avec un beat de mouvement, une caméra et un objectif de revue clair.",
+        "cta": {
+          "label": "Ouvrir le Prompt Lab",
+          "href": "#prompting"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Prompt de draft",
+        "body": "Gardez un sujet, une idée de mouvement et un mouvement caméra pour rester lisible."
+      },
+      {
+        "title": "Image de départ",
+        "body": "Utilisez une image pour verrouiller produit, personnage ou environnement."
+      },
+      {
+        "title": "Boucle longue",
+        "body": "Réservez 12-20 s aux tests 1080p où le rythme compte plus que le détail."
+      },
+      {
+        "title": "Check court haute résolution",
+        "body": "Passez en 1440p ou 4K sur les clips courts quand il faut inspecter le détail."
+      },
+      {
+        "title": "Montée de gamme",
+        "body": "Envoyez les directions gagnantes vers LTX 2.3 Fast ou Pro selon le workflow actuel recherché."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Prix des drafts LTX 2 Fast",
+      "subtitle": "Totaux de brouillon par scénario — prix exact affiché dans l’app avant génération.",
+      "footnote": "Tous les prix sont des prix affichés MaxVideoAI en crédits USD pour des scénarios prédéfinis.",
+      "ctaLabel": "Voir tous les tarifs",
+      "maxDurationNote": "20 s en 1080p / 25 fps",
+      "ctaHref": "/fr/tarifs#ltx-2-fast-pricing"
+    },
+    "meta": {
+      "title": "LTX 2 Fast : tarifs, drafts 20 s et exemples | MaxVideoAI",
+      "description": "Utilisez LTX 2 Fast pour des drafts 16:9 encore pris en charge, tests de timing 20 s, text-to-video, image-to-video, checks haute résolution et tarifs."
+    }
+  },
+  "prompting": {
+    "modelSlug": "ltx-2-fast",
+    "section": {
+      "title": "Comment écrire un excellent prompt LTX 2 Fast",
+      "intro": "LTX‑2 Fast préfère des prompts courts avec une action claire et un seul mouvement caméra.",
+      "tip": "Astuce : durée + fps se règlent dans l’UI - votre prompt contrôle sujet, action, caméra, lumière, style et cues sonores optionnels.",
+      "guide": {
+        "label": "LTX",
+        "href": "https://www.ltx.studio"
+      },
+      "referencesTitle": "Comment LTX 2 Fast utilise les références"
+    },
+    "tabs": [
+      {
+        "id": "quick",
+        "label": "Quick",
+        "title": "Prompt rapide (itération)",
+        "description": "Utilisez 1–2 phrases quand vous voulez des variations.",
+        "copy": "[Sujet + action] dans [décor], [mouvement caméra], [lumière/style], [cue sonore optionnel].\nNégatif : [texte, logos, personnes en trop, flou]"
+      },
+      {
+        "id": "structured",
+        "label": "Structured",
+        "title": "Prompt structuré (plus fiable)",
+        "description": "Séparez l’information pour que le modèle la suive de façon cohérente.",
+        "copy": "Sujet :\n[Qui/quoi + une action.]\n\nDécor :\n[Où + moment + 2 ancrages.]\n\nCaméra :\n[Plan + angle + un mouvement + sensation de lentille.]\n\nLook :\n[Lumière + palette.]\n\nSon (optionnel) :\n[Ambiance + 1 cue.]\n\nNégatif :\n[Texte, logos, personnes en trop, flou.]"
+      },
+      {
+        "id": "pro",
+        "label": "Pro",
+        "title": "Prompt Pro (brief “équipe de tournage” ultra‑spécifique)",
+        "description": "À utiliser quand vous voulez un look cinématique très précis ou une continuité entre plans.",
+        "copy": "Brief :\n[Objectif + vibe.]\n\nSujet + tenue :\n[Traits clés + matières.]\n\nSet :\n[Lieu + ancrages.]\n\nCinématographie :\n[Cadrage + angle + un mouvement + lentille.]\n\nLumière + grade :\n[Key light + palette.]\n\nNégatif :\n[Ce qu’il faut éviter.]"
+      },
+      {
+        "id": "storyboard",
+        "label": "Storyboard",
+        "title": "Prompt storyboard (multi‑shot / liste de plans)",
+        "description": "À utiliser quand vous voulez une mini‑story en un seul clip. Un prompt storyboard (multi‑shot / shot list) donne un timing clair, une direction caméra et de la continuité.",
+        "copy": "Mini‑séquence (même sujet + même décor)\nBeat 1 (début) : [action + caméra]\nBeat 2 (milieu) : [action + caméra]\nBeat 3 (fin) : [action finale + pose]\n\nLook :\n[Lumière + palette.]\n\nSon (optionnel) :\n[Ambiance + 1–2 cues]"
+      }
+    ],
+    "tabNotes": [
+      {
+        "tabId": "quick",
+        "body": "Quick = variations. À utiliser pour itérer vite."
+      },
+      {
+        "tabId": "structured",
+        "body": "Structured = cohérence. À utiliser pour des résultats fiables."
+      },
+      {
+        "tabId": "pro",
+        "body": "Pro = continuité. À utiliser pour des looks précis et répétables."
+      },
+      {
+        "tabId": "storyboard",
+        "body": "Storyboard = timing des beats. À utiliser pour des mini‑stories en un clip."
+      }
+    ],
+    "globalPrinciples": [
+      "Un sujet, une action, un mouvement caméra.",
+      "Utilisez des ancrages visuels concrets.",
+      "Gardez les prompts courts; évitez les longues listes."
+    ],
+    "engineWhy": [
+      "Fast est optimisé pour des itérations rapides; les prompts simples gagnent.",
+      "Un langage caméra explicite réduit le drift.",
+      "Les prompts négatifs aident à retirer logos/texte."
+    ],
+    "demo": {
+      "title": "Prompt démo — clip social rapide",
+      "promptLabel": "Texte-vers-vidéo",
+      "prompt": "Sujet: Jeune femme à un passage piéton\nAction: Attend puis traverse dans la lumière golden hour\nCaméra: Départ derrière elle, puis suivi handheld fluide\nStyle: Ville animée, lumière chaude, clip social cinématique\nAudio: Ambiance urbaine, pas de dialogue",
+      "notes": [
+        "Action unique",
+        "Mouvement caméra clair et mood",
+        "Cue audio intégré"
+      ],
+      "summary": {
+        "subject": "Jeune femme à un passage piéton",
+        "action": "Attend puis traverse dans la lumière golden hour",
+        "camera": "Départ derrière elle, puis suivi handheld fluide",
+        "style": "Ville animée, lumière chaude, clip social cinématique",
+        "output": "Ambiance urbaine, pas de dialogue"
+      },
+      "presentationOverrides": {
+        "modeLabel": "Texte-vers-vidéo",
+        "outputLabel": "Audio",
+        "duration": null,
+        "aspectRatio": null,
+        "audioChipMode": "on",
+        "audioChipLabel": null,
+        "altContext": "Exemple video IA LTX 2 Fast: Prompt démo - clip social rapide"
+      }
+    },
+    "imageExamples": null
+  },
+  "examples": {
+    "modelSlug": "ltx-2-fast",
+    "section": {
+      "title": "Exemples LTX 2 Fast",
+      "intro": "Rendus LTX 2 Fast récents avec audio on/off pour clips sociaux et itérations rapides.",
+      "defaultCtaLabel": "Voir tous les exemples LTX 2 Fast →",
+      "recreateLabel": "Recréer ce plan →"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "Tous"
+      },
+      {
+        "id": "cinematic",
+        "label": "Cinématique"
+      },
+      {
+        "id": "product",
+        "label": "Produit / Pub"
+      },
+      {
+        "id": "action",
+        "label": "Action"
+      },
+      {
+        "id": "vertical",
+        "label": "Vertical"
+      },
+      {
+        "id": "audio",
+        "label": "Audio activé"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Rendus communautaires",
+        "body": "Voyez ce qui est possible avec LTX 2 Fast — modèle LTX plus ancien encore pris en charge pour des tests audio rapides.",
+        "icon": "sparkles"
+      },
+      {
+        "id": "proof-2",
+        "title": "Recréer un plan",
+        "body": "Ouvrez l’app en un clic et réutilisez la configuration.",
+        "icon": "zap"
+      },
+      {
+        "id": "proof-3",
+        "title": "Audio natif",
+        "body": "Dialogue, ambiance et SFX générés en synchro.",
+        "icon": "audio"
+      },
+      {
+        "id": "proof-4",
+        "title": "Continuité multi-plans",
+        "body": "Gardez personnages, style et scène cohérents.",
+        "icon": "users"
+      },
+      {
+        "id": "proof-5",
+        "title": "Prêt pour la production",
+        "body": "Garde-fous et filtres intégrés.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": null,
+    "showWhenEmpty": true
+  }
+}

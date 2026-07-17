@@ -1,0 +1,50 @@
+import type { MemberTier } from '@maxvideoai/pricing';
+import { normalizeEngineId } from '@/lib/engine-alias';
+
+export interface PricingScenario {
+  engineId: string;
+  durationSec: number;
+  resolution: string;
+  aspectRatio?: string;
+  memberTier?: MemberTier | string;
+  addons?: Record<string, boolean | number | undefined>;
+}
+
+export interface PricingScenarioInput {
+  engineId: string;
+  durationSec: number;
+  resolution: string;
+  aspectRatio?: string;
+  memberTier?: MemberTier;
+  addons?: Record<string, boolean | number | undefined>;
+}
+
+export const DEFAULT_MARKETING_SCENARIO: PricingScenario = {
+  engineId: 'veo-3-1-fast',
+  durationSec: 8,
+  resolution: '1080p',
+  memberTier: 'member',
+};
+
+function normalizeMemberTier(tier?: PricingScenario['memberTier']): MemberTier | undefined {
+  if (!tier) {
+    return undefined;
+  }
+  const normalized = tier.toString().toLowerCase();
+  if (normalized === 'member' || normalized === 'plus' || normalized === 'pro') {
+    return normalized as MemberTier;
+  }
+  return undefined;
+}
+
+export function scenarioToPricingInput(scenario: PricingScenario): PricingScenarioInput {
+  const canonicalId = normalizeEngineId(scenario.engineId) ?? scenario.engineId;
+  return {
+    engineId: canonicalId,
+    durationSec: scenario.durationSec,
+    resolution: scenario.resolution,
+    aspectRatio: scenario.aspectRatio,
+    memberTier: normalizeMemberTier(scenario.memberTier),
+    addons: scenario.addons,
+  };
+}

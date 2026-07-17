@@ -1,0 +1,123 @@
+'use client';
+
+import { useCallback, useRef } from 'react';
+import { USD_TOPUP_TIERS } from '@/config/topupTiers';
+import {
+  clearPendingTopupCancelledEvent,
+  persistPendingTopupCancelledEvent,
+  readPendingTopupCancelledEvent,
+} from '@/lib/analytics-client';
+import { hasAdsConsentInBrowser } from '@/lib/analytics/consent-client';
+import { dispatchGaEvent, dispatchGoogleAdsConversion } from '@/lib/analytics/ga-events';
+import { classifyTopupFailure } from '@/lib/analytics/topup-failure';
+import type { TopupQuote } from '../_lib/billing-types';
+
+const GOOGLE_ADS_CONVERSION_TARGET = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID ?? 'AW-992154028/7oDUCMuC9rQbEKyjjNkD';
+const GOOGLE_ADS_CONVERSION_CURRENCY = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_CURRENCY ?? 'EUR';
+const GOOGLE_ADS_CONVERSION_VALUE_ENV = Number(process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_VALUE ?? 1);
+const GOOGLE_ADS_CONVERSION_VALUE_FALLBACK = Number.isFinite(GOOGLE_ADS_CONVERSION_VALUE_ENV) ? GOOGLE_ADS_CONVERSION_VALUE_ENV : 1;
+
+export function useBillingTopupAnalytics(topupQuotes: Record<number, TopupQuote>) {
+  const conversionSentRef = useRef(false);
+
+  const triggerGoogleAdsConversion = useCallback((value?: number, currency?: string) => {
+    if (typeof window === 'undefined') return;
+    if (!GOOGLE_ADS_CONVERSION_TARGET) return;
+    if (!hasAdsConsentInBrowser()) return;
+    if (conversionSentRef.current) return;
+    conversionSentRef.current = true;
+
+    const normalizedValue = typeof value === 'number' && Number.isFinite(value) ? value : GOOGLE_ADS_CONVERSION_VALUE_FALLBACK;
+    const payload = {
+      send_to: GOOGLE_ADS_CONVERSION_TARGET,
+      value: normalizedValue,
+      currency: currency ?? GOOGLE_ADS_CONVERSION_CURRENCY,
+    };
+
+    void dispatchGoogleAdsConversion(payload, { maxAttempts: 20, retryDelayMs: 200 });
+  }, []);
+
+  const buildTopupAnalyticsPayload = useCallback(
+    (amountCents: number | null | undefined, chargeCurrency: string): Record<string, unknown> => {
+      const normalizedChargeCurrency = (chargeCurrency || 'USD').toUpperCase();
+      const normalizedAmount = Number.isFinite(amountCents) ? Math.max(0, Math.round(Number(amountCents))) : 0;
+      const payload: Record<string, unknown> = {
+        route_family: 'billing',
+        payment_provider: 'stripe',
+        payment_flow: 'checkout',
+        charge_currency: normalizedChargeCurrency,
+        wallet_amount_usd: normalizedAmount > 0 ? normalizedAmount / 100 : undefined,
+        wallet_amount_cents: normalizedAmount > 0 ? normalizedAmount : undefined,
+        credits_amount: normalizedAmount > 0 ? normalizedAmount / 100 : undefined,
+      };
+      if (normalizedAmount <= 0) {
+        return payload;
+      }
+      const tier = USD_TOPUP_TIERS.find((entry) => entry.amountCents === normalizedAmount);
+      const quote = topupQuotes[normalizedAmount];
+      payload.topup_amount_usd = normalizedAmount / 100;
+      payload.topup_amount_cents = normalizedAmount;
+      payload.topup_tier_id = tier?.id ?? 'custom';
+      payload.topup_tier_label = tier?.label ?? 'Custom';
+      payload.settlement_currency = quote?.currency ?? normalizedChargeCurrency;
+      payload.settlement_amount_minor = quote?.amountMinor ?? undefined;
+      if (quote?.currency && typeof quote.amountMinor === 'number' && Number.isFinite(quote.amountMinor)) {
+        payload.value = quote.amountMinor / 100;
+        payload.currency = quote.currency;
+      }
+      return payload;
+    },
+    [topupQuotes]
+  );
+
+  const triggerTopupStarted = useCallback(
+    (amountCents: number, chargeCurrency: string) => {
+      const payload = buildTopupAnalyticsPayload(amountCents, chargeCurrency);
+      void dispatchGaEvent('topup_started', payload);
+      void dispatchGaEvent('topup_checkout_opened', payload);
+    },
+    [buildTopupAnalyticsPayload]
+  );
+
+  const triggerTopupFailed = useCallback(
+    (amountCents: number | null | undefined, chargeCurrency: string, reason?: string) => {
+      const payload = buildTopupAnalyticsPayload(amountCents, chargeCurrency);
+      void dispatchGaEvent('topup_failed', {
+        ...payload,
+        failure_category: classifyTopupFailure(reason),
+      });
+    },
+    [buildTopupAnalyticsPayload]
+  );
+
+  const triggerTopupCancelled = useCallback(
+    (amountCents: number | null | undefined, chargeCurrency: string) => {
+      const payload = buildTopupAnalyticsPayload(amountCents, chargeCurrency);
+      persistPendingTopupCancelledEvent(payload);
+      void dispatchGaEvent('topup_cancelled', payload, { maxAttempts: 180, retryDelayMs: 500 }).then((sent) => {
+        if (sent) {
+          clearPendingTopupCancelledEvent();
+        }
+      });
+    },
+    [buildTopupAnalyticsPayload]
+  );
+
+  const replayPendingTopupCancelled = useCallback(() => {
+    const parsedPayload = readPendingTopupCancelledEvent();
+    if (!parsedPayload) return;
+    void dispatchGaEvent('topup_cancelled', parsedPayload, { maxAttempts: 180, retryDelayMs: 500 }).then((sent) => {
+      if (sent) {
+        clearPendingTopupCancelledEvent();
+      }
+    });
+  }, []);
+
+  return {
+    replayPendingTopupCancelled,
+    triggerGoogleAdsConversion,
+    triggerTopupCancelled,
+    triggerTopupFailed,
+    triggerTopupStarted,
+  };
+}

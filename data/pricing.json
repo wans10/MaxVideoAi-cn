@@ -1,0 +1,669 @@
+[
+  {
+    "engine": "Sora 2",
+    "catalogSlug": "sora-2",
+    "falSlug": "fal-ai/sora-2/text-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/sora-2/text-to-video",
+    "last_checked_at": "2025-02-14T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.1
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Sora 2 Pro",
+    "catalogSlug": "sora-2-pro",
+    "falSlug": "fal-ai/sora-2/text-to-video/pro",
+    "source_url": "https://fal.ai/models/fal-ai/sora-2/text-to-video/pro",
+    "last_checked_at": "2025-02-14T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": {
+          "resolution": "720p"
+        },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.3
+        }
+      },
+      {
+        "variant": {
+          "resolution": "1080p"
+        },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Google Veo 3.1",
+    "catalogSlug": "veo-3-1",
+    "falSlug": "fal-ai/veo3.1/reference-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/veo3.1/reference-to-video",
+    "last_checked_at": "2025-02-14T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": {
+          "resolution": "720p",
+          "audio": "off"
+        },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.2
+        }
+      },
+      {
+        "variant": {
+          "resolution": "720p",
+          "audio": "on"
+        },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.4
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Google Veo 3.1 Fast",
+    "catalogSlug": "veo-3-1-fast",
+    "falSlug": "fal-ai/veo3.1/fast/image-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/veo3.1/fast/image-to-video",
+    "last_checked_at": "2025-02-14T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": {
+          "resolution": "720p",
+          "audio": "off"
+        },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.1
+        }
+      },
+      {
+        "variant": {
+          "resolution": "720p",
+          "audio": "on"
+        },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.15
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Google Veo 3.1 Lite",
+    "catalogSlug": "veo-3-1-lite",
+    "falSlug": "fal-ai/veo3.1/lite",
+    "source_url": "https://fal.ai/models/fal-ai/veo3.1/lite",
+    "last_checked_at": "2026-04-02T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": {
+          "resolution": "720p",
+          "audio": "on"
+        },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.05
+        }
+      },
+      {
+        "variant": {
+          "resolution": "1080p",
+          "audio": "on"
+        },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.08
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Pika 2.2 Text & Image to Video",
+    "catalogSlug": "pika-text-to-video",
+    "falSlug": "fal-ai/pika/v2.2/text-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/pika/v2.2/text-to-video",
+    "last_checked_at": "2025-02-14T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": {
+          "resolution": "720p"
+        },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.04
+        }
+      },
+      {
+        "variant": {
+          "resolution": "1080p"
+        },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.09
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Kling 2.5 Turbo (Text & Pro Image)",
+    "catalogSlug": "kling-2-5-turbo",
+    "falSlug": "fal-ai/kling-video/v2.5-turbo/pro/text-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/kling-video/v2.5-turbo/pro/text-to-video",
+    "last_checked_at": "2025-02-14T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.07
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Kling 2.5 Turbo Standard (Image to Video)",
+    "catalogSlug": "kling-2-5-turbo-standard",
+    "falSlug": "fal-ai/kling-video/v2.5-turbo/standard/image-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/kling-video/v2.5-turbo/standard/image-to-video",
+    "last_checked_at": "2025-02-14T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.042
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Wan 2.5 Text & Image to Video",
+    "catalogSlug": "wan-2-5",
+    "falSlug": "fal-ai/wan-25-preview/text-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/wan-25-preview/text-to-video",
+    "last_checked_at": "2025-02-14T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "resolution": "480p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.05
+        }
+      },
+      {
+        "variant": { "resolution": "720p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.1
+        }
+      },
+      {
+        "variant": { "resolution": "1080p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.15
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Wan 2.6 Text, Image & Reference to Video",
+    "catalogSlug": "wan-2-6",
+    "falSlug": "wan/v2.6/text-to-video",
+    "source_url": "https://fal.ai/models/wan/v2.6/text-to-video",
+    "last_checked_at": "2025-03-20T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "resolution": "720p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.1
+        }
+      },
+      {
+        "variant": { "resolution": "1080p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.15
+        }
+      }
+    ]
+  },
+  {
+    "engine": "MiniMax Hailuo 02 Standard (Text & Image to Video)",
+    "catalogSlug": "minimax-hailuo-02-text",
+    "falSlug": "fal-ai/minimax/hailuo-02/standard/text-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/minimax/hailuo-02/standard/text-to-video",
+    "last_checked_at": "2025-02-14T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.045
+        }
+      }
+    ]
+  },
+  {
+    "engine": "LTX-2 Fast Text to Video",
+    "catalogSlug": "ltx-2-fast",
+    "falSlug": "fal-ai/ltx-2/text-to-video/fast",
+    "source_url": "https://fal.ai/models/fal-ai/ltx-2/text-to-video/fast",
+    "last_checked_at": "2025-03-05T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "resolution": "1080p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.04
+        }
+      },
+      {
+        "variant": { "resolution": "1440p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.08
+        }
+      },
+      {
+        "variant": { "resolution": "4k" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.16
+        }
+      }
+    ]
+  },
+  {
+    "engine": "LTX-2 Fast Image to Video",
+    "catalogSlug": "ltx-2-fast",
+    "falSlug": "fal-ai/ltx-2/image-to-video/fast",
+    "source_url": "https://fal.ai/models/fal-ai/ltx-2/image-to-video/fast",
+    "last_checked_at": "2025-03-05T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "resolution": "1080p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.04
+        }
+      },
+      {
+        "variant": { "resolution": "1440p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.08
+        }
+      },
+      {
+        "variant": { "resolution": "4k" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.16
+        }
+      }
+    ]
+  },
+  {
+    "engine": "LTX-2 Pro Text to Video",
+    "catalogSlug": "ltx-2",
+    "falSlug": "fal-ai/ltx-2/text-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/ltx-2/text-to-video",
+    "last_checked_at": "2025-03-05T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "resolution": "1080p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.06
+        }
+      },
+      {
+        "variant": { "resolution": "1440p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.12
+        }
+      },
+      {
+        "variant": { "resolution": "4k" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.24
+        }
+      }
+    ]
+  },
+  {
+    "engine": "LTX-2 Pro Image to Video",
+    "catalogSlug": "ltx-2",
+    "falSlug": "fal-ai/ltx-2/image-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/ltx-2/image-to-video",
+    "last_checked_at": "2025-03-05T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "resolution": "1080p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.06
+        }
+      },
+      {
+        "variant": { "resolution": "1440p" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.12
+        }
+      },
+      {
+        "variant": { "resolution": "4k" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.24
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Kling 2.6 Pro Text to Video",
+    "catalogSlug": "kling-2-6-pro",
+    "falSlug": "fal-ai/kling-video/v2.6/pro/text-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/kling-video/v2.6/pro/text-to-video",
+    "last_checked_at": "2025-03-05T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "audio": "off" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.07
+        }
+      },
+      {
+        "variant": { "audio": "on" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.14
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Kling 2.6 Pro Image to Video",
+    "catalogSlug": "kling-2-6-pro",
+    "falSlug": "fal-ai/kling-video/v2.6/pro/image-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/kling-video/v2.6/pro/image-to-video",
+    "last_checked_at": "2025-03-05T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "audio": "off" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.07
+        }
+      },
+      {
+        "variant": { "audio": "on" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.14
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Kling 3 Pro Text to Video",
+    "catalogSlug": "kling-3-pro",
+    "falSlug": "fal-ai/kling-video/v3/pro/text-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/kling-video/v3/pro/text-to-video",
+    "last_checked_at": "2026-04-25T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "audio": "off" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.112
+        }
+      },
+      {
+        "variant": { "audio": "on" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.168
+        }
+      },
+      {
+        "variant": { "audio": "voice_control" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.196
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Kling 3 Pro Image to Video",
+    "catalogSlug": "kling-3-pro",
+    "falSlug": "fal-ai/kling-video/v3/pro/image-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/kling-video/v3/pro/image-to-video",
+    "last_checked_at": "2026-04-25T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "audio": "off" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.112
+        }
+      },
+      {
+        "variant": { "audio": "on" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.168
+        }
+      },
+      {
+        "variant": { "audio": "voice_control" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.196
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Kling 3 Standard Text to Video",
+    "catalogSlug": "kling-3-standard",
+    "falSlug": "fal-ai/kling-video/v3/standard/text-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/kling-video/v3/standard/text-to-video",
+    "last_checked_at": "2026-04-25T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "audio": "off" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.084
+        }
+      },
+      {
+        "variant": { "audio": "on" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.126
+        }
+      },
+      {
+        "variant": { "audio": "voice_control" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.154
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Kling 3 Standard Image to Video",
+    "catalogSlug": "kling-3-standard",
+    "falSlug": "fal-ai/kling-video/v3/standard/image-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/kling-video/v3/standard/image-to-video",
+    "last_checked_at": "2026-04-25T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "audio": "off" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.084
+        }
+      },
+      {
+        "variant": { "audio": "on" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.126
+        }
+      },
+      {
+        "variant": { "audio": "voice_control" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.154
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Kling 3 4K Text to Video",
+    "catalogSlug": "kling-3-4k",
+    "falSlug": "fal-ai/kling-video/v3/4k/text-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/kling-video/v3/4k/text-to-video",
+    "last_checked_at": "2026-04-25T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "resolution": "4k" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.42
+        }
+      }
+    ]
+  },
+  {
+    "engine": "Kling 3 4K Image to Video",
+    "catalogSlug": "kling-3-4k",
+    "falSlug": "fal-ai/kling-video/v3/4k/image-to-video",
+    "source_url": "https://fal.ai/models/fal-ai/kling-video/v3/4k/image-to-video",
+    "last_checked_at": "2026-04-25T00:00:00",
+    "stale": false,
+    "checksum": "",
+    "prices": [
+      {
+        "variant": { "resolution": "4k" },
+        "raw": {
+          "currency": "USD",
+          "unit": "second",
+          "amount": 0.42
+        }
+      }
+    ]
+  }
+]

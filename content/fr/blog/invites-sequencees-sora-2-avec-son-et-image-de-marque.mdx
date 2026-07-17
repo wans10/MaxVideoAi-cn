@@ -1,0 +1,279 @@
+---
+title: Guide de prompts Sora 2 – Séquences avec son et image de marque
+description: >-
+  Apprenez à écrire des prompts séquencés pour Sora 2 et Sora 2 Pro avec son et
+  branding. Exemples chronologiques, modèles de prompts et workflow complet
+  dans MaxVideoAI.
+date: '2025-11-03'
+image: /images/blog/sora-2-sequenced-prompts.png
+keywords:
+  - Sora 2
+  - Sora 2 Pro
+  - AI video
+  - sequenced prompts
+  - MaxVideoAI
+slug: invites-sequencees-sora-2-avec-son-et-image-de-marque
+lang: fr
+canonical: 'https://maxvideoai.com/fr/blog/invites-sequencees-sora-2-avec-son-et-image-de-marque'
+canonicalSlug: sora-2-sequenced-prompts
+---
+# Guide de prompts Sora 2 – Séquences avec son et image de marque
+
+*Comment transformer la narration structurée en vidéos IA cinématographiques et de marque.*
+
+## Introduction
+
+Lorsque OpenAI a publié **Sora 2** et plus tard **Sora 2 Pro**, il ne s'agissait pas seulement d'une résolution plus élevée ou d'un mouvement plus fluide. Ces modèles ont introduit un nouveau niveau de contrôle créatif : **le prompting séquencé** et **génération prenant en compte l'audio**.
+
+Pour les créateurs et les marketeurs, cela signifie que vous pouvez enfin créer *histoires de marque courtes*—pas seulement des clips aléatoires—en définissant chaque scène, son ambiance, son rythme, et même la façon dont la bande-son évolue.
+
+Le secret ? Apprendre à “parler au modèle en timelines” : élaborer vos prompts comme **mini-scénarios** avec structure, rythme et éléments de marque tels qu'un logo ou un jingle.
+
+Et la façon la plus simple d'expérimenter sur des modèles comme Sora 2, Veo 3 et Pika 2.2 est d'utiliser le **[MaxVideoAI espace de travail](/fr)**—un environnement unifié où vous pouvez composer, prévisualiser les prix avant de générer, et envoyer le même brief à différents modèles sans toucher au code.
+
+***
+
+## Comprendre le prompting séquencé
+
+### Qu'est-ce qu'un prompt séquencé ?
+
+Un *prompt séquencé* est une description structurée divisée en **segments horodatés** (scènes). Chaque segment indique au modèle ce qui se passe, à quoi cela ressemble, et quel ton émotionnel ou quel son doit l'accompagner.
+
+Au lieu d'un long paragraphe (“un homme marchant sur la plage”), vous créez une **chronologie**:
+
+```text
+Scene 1 (0-3 s): Wide aerial of the beach at sunrise. Calm ambient sound.  
+Scene 2 (3-6 s): Close-up of footprints in the sand. Add soft acoustic guitar.  
+Scene 3 (6-8 s): Show brand logo forming in the water reflection.  
+Soundtrack: gentle whoosh + fade-out.  
+```
+
+Cette structure guide le processus de diffusion de Sora image par image, créant **cohérence** entre les coupes et les transitions.
+
+### Sora 2 vs Sora 2 Pro
+
+| Fonctionnalité          | Sora 2                            | Sora 2 Pro                                   |
+| ----------------------- | --------------------------------- | -------------------------------------------- |
+| Durée maximale          | 8 s                               | 12 s                                         |
+| Résolution              | 720p                              | 1080p                                        |
+| Prise en charge audio   | Oui (limité)                      | Audio multi-couches complet                  |
+| Cas d'utilisation idéal | extraits pour les réseaux sociaux | publicités, cinématiques, intégration vocale |
+
+Sora 2 Pro comprend aussi *la continuité temporelle*: si votre deuxième scène dit “continuer le travelling”, le modèle prolonge le mouvement de caméra et l'éclairage au lieu de repartir de zéro. Vous pouvez comparer les deux niveaux face à face sur la [page du modèle Sora 2](/fr/modeles/sora-2).
+
+***
+
+## Superposition audio : ajouter du son à vos prompts
+
+Le son n'est pas juste un bruit de fond — c'est un ancrage narratif. Avec le nouveau **champ de conditionnement audio**, vous pouvez intégrer ou décrire une bande-son directement dans le prompt textuel.
+
+### Décrire le son
+
+Utilisez des indices en langage naturel qui expriment le rythme et la texture :
+
+- “battement lo-fi ambiant, 80 BPM”
+- “montée orchestrale cinématographique avec une douce intro au piano”
+- “chuchotement de voix off disant *découvrez votre créativité*”
+
+### Faire correspondre le rythme audio et visuel
+
+Si votre séquence dure 8 secondes, alignez les changements sonores sur les coupures visuelles :
+
+```text
+Scene 1 (0–3 s): Intro shot with warm light. Sound: soft piano.  
+Scene 2 (3–6 s): Product close-up. Add subtle hi-hat rhythm.  
+Scene 3 (6–8 s): Logo reveal. Add whoosh + fade out.  
+```
+
+### Téléversement ou référence du son
+
+Sur MaxVideoAI, vous pouvez soit :
+
+- **Téléverser** une courte piste .mp3 (≤ 15 Mo) qui sert de *consigne audio*;
+- ou décrivez-le simplement par écrit. La plateforme synchronise cette description avec l'API de tarification en temps réel de Sora afin que vous voyiez comment l'activation de l'audio modifie le coût avant le rendu.
+
+### Astuce pro
+
+Veillez à ce que la durée totale du son soit égale ou inférieure à celle de votre vidéo — Sora coupe les données d'onde excédentaires au nombre final d'images.
+
+***
+
+## Intégration d'images et de logos pour des plans de marque
+
+### Pourquoi ajouter des images ?
+
+Cohérence de la marque. Que vous produisiez une publicité TikTok ou une intro de 10 secondes pour votre chaîne, faire apparaître votre **logo apparaisse naturellement** dans la scène générée rend votre vidéo reconnaissable et professionnelle.
+
+### Comment l'inclure
+
+Sora 2 et Pro interprètent les images fournies comme **ancres visuelles**—ils ne se contentent pas de les coller, ils *stylisent* autour d'eux.
+
+Exemple de prompt :
+
+```text
+Scene 2: Close-up of coffee cup on a table; embed brand logo on the mug surface.  
+Scene 3: Final frame shows the same logo glowing subtly in the corner.  
+```
+
+Lors de la génération via **MaxVideoAI**, vous pouvez glisser-déposer votre logo PNG (fond transparent recommandé) dans le *panneau Composer* panneau.
+Le système ajoute automatiquement des métadonnées (`image_reference_url`) à votre requête Sora afin que le modèle respecte l'échelle et la position.
+
+### Considérations de conception
+
+- Gardez les logos simples (≤ 512 × 512 px).
+- Contraste : logos lumineux sur scènes sombres, ou inversement.
+- Évitez de le placer exactement au centre dans les plans initiaux sauf si cela fait partie de la scène.
+
+### Combinaison avec l'audio
+
+Un signal sonore subtil — comme un court jingle ou carillon — lié à la révélation du logo renforce la mémorisation de la marque.
+
+***
+
+## Construire le flux de travail sur MaxVideoAI
+
+MaxVideoAI sert de **centre de commande** pour votre production vidéo IA : tous les modèles principaux, une interface cohérente. Le [hub des modèles vidéo IA](/fr/comparatif) conserve les dernières notes de disponibilité pour Sora, Veo, Pika et MiniMax.
+
+### Étape par étape
+
+1. **Choisir le modèle** – Sélectionnez *Sora 2* ou *Sora 2 Pro* dans le menu Modèles.
+2. **Définir la durée et la résolution** – 6–8 s (Sora 2) ou jusqu'à 12 s (Pro).
+3. **Rédiger une consigne séquencée** – Utilisez le format de chronologie structuré ci‑dessus.
+4. **Téléverser le logo (optionnel)** – PNG avec transparence.
+5. **Ajouter une bande-son** – Téléversez un .mp3 ou saisissez une description audio.
+6. **Prix d'aperçu** – La *pastille « Prix avant »* affiche le coût par seconde avant le rendu.
+7. **Générer le rendu** – Votre tâche apparaît dans le fil avec le statut, la miniature d'aperçu et le lien de téléchargement.
+8. **Comparer** – Envoyez instantanément la même invite à Veo 3 ou Pika 2.2 pour des variations stylistiques, ou consultez des compromis de tarification plus larges sur le [estimateur en temps réel](/fr/tarifs).
+
+### Pourquoi cela importe
+
+Au lieu de jongler avec des API ou des sandboxes sur liste d'attente, vous travaillez dans un **hub de production en temps réel**. Les créateurs peuvent tester des invites narratives, les marketeurs peuvent faire des tests A/B sur des versions de marque — le tout depuis un seul tableau de bord.
+
+***
+
+## Cas d'utilisation créatifs
+
+### 1. Clips d'introduction de marque
+
+Créez de courtes introductions avec logos animés et design sonore :
+
+> “Scène 1 (0-3 s) : des particules fluides forment le logo. Scène 2 (3-6 s) : le slogan apparaît avec un piano discret.”
+
+### 2. Publicités sociales (6–8 s)
+
+Utilisez des invites séquencées pour raconter des micro-histoires : déballage, transformation, avant/après. Chaque temps a sa propre ambiance et son signal sonore.
+
+### 3. Extraits narratifs
+
+Pour les créateurs de contenu, combinez des arcs narratifs avec un ton et un rythme cohérents — comme des bandes-annonces construites entièrement à partir de texte.
+
+### 4. Présentations produit
+
+Téléchargez l'image du produit + le logo de la marque → demandez à Sora 2 Pro de rendre une prise de vue cinématographique avec des reflets dynamiques et une musique d'ambiance correspondant au style de la marque.
+
+### 5. Localisation de campagne
+
+Générez la même chronologie dans plusieurs langues ou palettes sonores via le sélecteur de modèle de MaxVideoAI (par ex. Sora 2 Pro EN + Veo 3 ES pour les marchés bilingues).
+
+***
+
+## Erreurs courantes et comment les éviter
+
+| Problème                    | Pourquoi cela se produit                    | Correction                                                                     |
+| --------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Trop d'invites**          | Trop de commandes de scène se contredisent. | Limitez à 3–4 scènes par clip de 8 s.                                          |
+| **Décalage sonore**         | Audio > durée de la vidéo.                  | Rognez ou bouclez la piste pour adapter la durée.                              |
+| **Distorsion du logo**      | Image complexe ou mauvais rapport d'aspect. | Simplifiez le logo et utilisez un cadre carré.                                 |
+| **Inadéquation des coupes** | Aucune transition spécifiée.                | Ajoutez “fondu d'entrée/sortie” ou “raccord par coupe vers la scène suivante.” |
+
+***
+
+## L'avenir des invites séquencées
+
+La prochaine génération d'outils vidéo IA (Sora 3 annoncé pour 2026 selon les rumeurs) ajoutera probablement **contrôle des images-clés**, **audio multipiste**, et **storyboards éditables**.
+
+Des plateformes comme **MaxVideoAI** sont déjà prêtes — son architecture se synchronise directement avec les mises à jour de l'API de Fal.ai, donc dès qu'OpenAI étend les fonctionnalités, les utilisateurs y ont accès sans configuration manuelle.
+
+Cela signifie que votre flux de travail créatif gagne en puissance, sans augmenter en complexité.
+
+***
+
+## Conclusion
+
+Le prompting séquencé avec intégration audio et image transforme des clips statiques en *histoires*.
+Avec Sora 2 et Pro, vous pouvez diriger le ton, le rythme et l'identité de la marque en moins de dix secondes de séquence.
+Et en le gérant depuis **MaxVideoAI**, vous bénéficiez d'une transparence sur les tarifs, d'aperçus en temps réel et de la liberté de tester plusieurs modèles d'IA — le tout au même endroit.
+
+> 🎬 *Racontez votre histoire en plans, en sons et en symboles — MaxVideoAI la rend cinématographique.*
+
+***
+
+## FAQ
+
+**Q1. Puis-je télécharger ma propre bande-son sur Sora 2 via MaxVideoAI ?**
+Oui. Téléversez un fichier .mp3 court ou décrivez le son dans votre prompt ; les deux options sont prises en charge dans la version Pro de Sora 2 et synchronisées via l'API de Fal.ai.
+
+**Q2. L'ajout d'un logo coûte-t-il un supplément ?**
+Non — le prix dépend de la durée et de la résolution, pas des images fournies. Vous pouvez prévisualiser le coût avant la génération.
+
+**Q3. Sora 2 Pro est-il disponible en Europe ?**
+Oui, via le système de routage de MaxVideoAI (intégration Fal.ai). Si Sora est restreint par région, la plateforme redirige automatiquement vers un point de terminaison pris en charge.
+
+**Q4. Quelle est la durée idéale pour les publicités sur les réseaux sociaux ?**
+Entre 6 et 8 secondes — suffisant pour trois temps distincts (intro, produit, appel à l'action).
+
+**Q5. Comment comparer les résultats de Sora 2 et de Veo 3 ?**
+Exécutez le même prompt sur les deux modèles depuis votre espace de travail MaxVideoAI ; vous verrez la vitesse de rendu, le coût et la qualité face à face.
+
+***
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I upload my own soundtrack to Sora 2 through MaxVideoAI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Upload a short .mp3 file or describe the sound in your prompt; both options are supported in Sora 2 Pro and synchronized via Fal.ai’s API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does adding a logo cost extra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No—the price depends on duration and resolution, not on image inputs. You can preview the cost before generating."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Sora 2 Pro available in Europe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes via MaxVideoAI’s routing system (Fal.ai integration). If Sora is region-restricted, the platform automatically redirects to a supported endpoint."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What’s the ideal length for social ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Between 6 and 8 seconds — enough for three distinct beats (intro, product, CTA)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I compare Sora 2 and Veo 3 outputs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Run the same prompt on both models from your studio MaxVideoAI; you’ll see render speed, cost, and quality side-by-side."
+      }
+    }
+  ]
+}
+</script>
+
+***

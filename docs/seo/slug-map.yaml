@@ -1,0 +1,145 @@
+canonical_domain: https://maxvideoai.com
+redirect_domains:
+  - https://maxvideoai.com
+trailing_slash: false
+slug_collision_strategy: disallow-duplicate
+collections:
+  marketing:
+    - id: home
+      path: /
+      status: live
+    - id: models-index
+      path: /models
+      status: live
+    - id: models-detail
+      type: dynamic
+      pattern: /models/{slug}
+      status: live
+      slugs:
+        pika-text-to-video:
+          aliases:
+            - pika-2-2
+            - pika-image-to-video
+            - pika-image-video
+        sora-2:
+          aliases:
+            - openai-sora-2
+        sora-2-pro:
+          aliases:
+            - openai-sora-2-pro
+            - sora-pro
+        veo-3-1:
+          aliases:
+            - google-veo-3-1
+            - veo-3
+        veo-3-1-fast:
+          aliases:
+            - google-veo-3-1-fast
+            - veo-3-fast
+            - google-veo-3-fast
+        minimax-hailuo-02-text:
+          aliases:
+            - minimax-video-1
+            - minimax-video-01
+            - minimax-hailuo-02-pro
+            - minimax-hailuo-02
+    - id: examples
+      path: /examples
+      status: live
+    - id: workflows-index
+      path: /workflows
+      status: live
+    - id: workflows-detail
+      type: dynamic
+      pattern: /workflows/{slug}
+      status: planned
+      slugs:
+        prompt-director: {}
+        price-before-you-generate: {}
+    - id: pricing
+      path: /pricing
+      status: live
+    - id: pricing-calculator
+      path: /pricing-calculator
+      status: redirected
+      redirect: /pricing
+      aliases:
+        - /calculator
+    - id: about
+      path: /about
+      status: live
+    - id: contact
+      path: /contact
+      status: live
+    - id: changelog
+      path: /changelog
+      status: live
+    - id: status
+      path: /status
+      status: live
+    - id: partners
+      path: /partners
+      status: reserved
+    - id: affiliates
+      path: /affiliates
+      status: reserved
+  docs:
+    - id: docs-index
+      path: /docs
+      status: live
+    - id: docs-get-started
+      path: /docs/get-started
+      status: live
+      aliases:
+        - /docs/getting-started
+    - id: docs-brand-safety
+      path: /docs/brand-safety
+      status: live
+    - id: docs-wallet-credits
+      path: /docs/wallet-credits
+      status: planned
+    - id: docs-engines
+      path: /docs/engines
+      status: planned
+    - id: docs-pricing-policy
+      path: /docs/pricing-policy
+      status: planned
+    - id: docs-faqs
+      path: /docs/faqs
+      status: planned
+  blog:
+    - id: blog-index
+      path: /blog
+      status: live
+    - id: blog-topics
+      type: dynamic
+      pattern: /blog/topics/{topic}
+      status: planned
+    - id: blog-posts
+      type: dynamic
+      pattern: /blog/{slug}
+      status: live
+      slugs:
+        compare-ai-video-engines:
+          aliases:
+            - express-case-study
+            - sora-2-vs-veo-3-1
+        veo-3-updates:
+          aliases:
+            - veo-v2-arrives
+        sora-2-sequenced-prompts: {}
+        access-sora-2-without-invite: {}
+  legal:
+    - id: legal-hub
+      path: /legal
+      status: live
+    - id: legal-privacy
+      path: /legal/privacy
+      status: live
+      aliases:
+        - /privacy
+    - id: legal-terms
+      path: /legal/terms
+      status: live
+      aliases:
+        - /terms

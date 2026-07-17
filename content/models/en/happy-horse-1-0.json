@@ -1,0 +1,414 @@
+{
+  "marketingName": "Happy Horse 1.0",
+  "versionLabel": "1.0",
+  "seo": {
+    "title": "Happy Horse 1.0 | Legacy Video Edit Route | MaxVideoAI",
+    "description": "Use the legacy Happy Horse 1.0 video-edit route on MaxVideoAI. Use Happy Horse 1.1 for new text, image and reference generations.",
+    "image": "/assets/models/models-hero-horses-reference.webp"
+  },
+  "overview": "Happy Horse 1.0 is the legacy Happy Horse 1.0 video-edit route on MaxVideoAI. Use Happy Horse 1.1 for new text, image and reference generations, and keep 1.0 when a source clip needs video-to-video editing.",
+  "pricingNotes": "Text, image, and R2V runs use standard per-second rates by resolution. Video edit is billed at a combined input/output rate, so it costs double the standard rate for the selected resolution.",
+  "hero": {
+    "title": "Happy Horse 1.0 - legacy video-edit route",
+    "intro": "Use Happy Horse 1.0 when a selected source clip needs legacy video edit. Start new text, image, and reference generations on Happy Horse 1.1.",
+    "badge": "Text · Image · R2V · V2V · 720p/1080p · Native audio · Lip-sync",
+    "ctaPrimary": {
+      "label": "Generate with Happy Horse 1.0",
+      "href": "/app?engine=happy-horse-1-0"
+    },
+    "secondaryLinks": [
+      {
+        "label": "Compare Happy Horse 1.1 vs 1.0",
+        "href": "/ai-video-engines/happy-horse-1-1-vs-happy-horse-1-0"
+      },
+      {
+        "label": "Compare Happy Horse vs Veo 3.1",
+        "href": "/ai-video-engines/happy-horse-1-0-vs-veo-3-1"
+      },
+      {
+        "label": "See Kling 3 Pro",
+        "href": "/models/kling-3-pro"
+      }
+    ]
+  },
+  "compareLink": {
+    "label": "Compare Happy Horse 1.1 vs Happy Horse 1.0 ->",
+    "href": "/ai-video-engines/happy-horse-1-1-vs-happy-horse-1-0"
+  },
+  "bestUseCases": {
+    "title": "Best use cases",
+    "items": [
+      {
+        "title": "Native-audio spokesperson and dialogue clips",
+        "icon": "ugc",
+        "href": "/ai-video-engines/best-for/lipsync-dialogue"
+      },
+      {
+        "title": "Unified text, image, R2V, and V2V production workflows",
+        "icon": "layers",
+        "href": "/ai-video-engines/best-for/reference-to-video"
+      },
+      {
+        "title": "Reference-guided character and product consistency",
+        "icon": "product",
+        "href": "/ai-video-engines/best-for/character-reference"
+      },
+      {
+        "title": "Video edits with natural-language style direction",
+        "icon": "scissors",
+        "href": "/ai-video-engines/best-for/multi-shot-video"
+      }
+    ]
+  },
+  "technicalOverviewTitle": "Technical overview",
+  "technicalOverview": [
+    {
+      "label": "Workflows",
+      "body": "Happy Horse 1.0 remains available for legacy video edit. Use Happy Horse 1.1 for new text-to-video, image-to-video, and reference-to-video jobs."
+    },
+    {
+      "label": "Duration",
+      "body": "3-15 s for generation outputs; video edit accepts 3-60 s source clips and caps output to the first 15 s."
+    },
+    {
+      "label": "Resolution",
+      "body": "720p or 1080p"
+    },
+    {
+      "label": "R2V references",
+      "body": "1-9 images, addressed as character1 through character9 in the prompt."
+    },
+    {
+      "label": "V2V edit",
+      "body": "One source video, optional reference images up to five, and audio handling set to auto or origin."
+    },
+    {
+      "label": "Audio",
+      "body": "Native synchronized audio and lip-sync are treated as part of the generation."
+    }
+  ],
+  "promptStructure": {
+    "title": "Prompting Happy Horse 1.0",
+    "quote": "Subject + action + camera + audio cue + workflow-specific references.",
+    "description": "Keep prompts direct and assign each reference a clear role. In R2V, name each image as character1, character2, and so on.",
+    "steps": [
+      "Choose the workflow: text, image, R2V, or V2V",
+      "Describe the subject and visible action",
+      "Add camera movement and lighting",
+      "Specify native audio or dialogue cues",
+      "Name references explicitly when using R2V or V2V"
+    ]
+  },
+  "tips": {
+    "title": "Tips and limits",
+    "items": [
+      "Use T2V for fresh ideas and spokesperson-style native audio shots.",
+      "Use I2V when a key visual or first frame is already approved.",
+      "Use R2V when identity, wardrobe, product shape, or character continuity matters.",
+      "Use V2V when the source clip has the right motion but needs a new look or direction."
+    ]
+  },
+  "prompts": [
+    {
+      "title": "Native audio launch clip",
+      "prompt": "16:9 studio product launch clip, a confident creator speaks directly to camera with natural lip-sync, warm key light, subtle camera push, clean room tone and soft launch music."
+    },
+    {
+      "title": "R2V two-character demo",
+      "prompt": "Use character1 and character2 from the reference images in a cinematic two-person product demo, consistent wardrobe, stable faces, natural synchronized dialogue."
+    },
+    {
+      "title": "Video edit refresh",
+      "prompt": "Edit the uploaded clip into a premium launch scene: preserve the person and pacing, refresh the lighting to warm studio gold, keep audio natural with synchronized speech."
+    }
+  ],
+  "faqTitle": "FAQ - Happy Horse 1.0 on MaxVideoAI",
+  "faqs": [
+    {
+      "q": "What should Happy Horse 1.0 be used for now?",
+      "a": "Use Happy Horse 1.0 for the legacy video-edit route. Use Happy Horse 1.1 for new text, image and reference generations."
+    },
+    {
+      "q": "Does Happy Horse support lip-sync?",
+      "a": "Yes. Happy Horse is treated as a native-audio model with synchronized speech and lip-sync integrated into the generation flow."
+    },
+    {
+      "q": "Why is V2V priced differently?",
+      "a": "Happy Horse video edit is billed at a combined input/output rate, so V2V is double the standard per-second price for the same resolution."
+    }
+  ],
+  "custom": {
+    "quickPricingTitle": "Pricing route",
+    "quickPricingItems": [
+      "Use 720p for cheaper iteration across text, image, and R2V.",
+      "Use 1080p when the shot is ready for review or publication.",
+      "Use V2V after the source clip is selected, because video edit has the doubled input/output rate."
+    ],
+    "relatedTitle": "Where Happy Horse fits",
+    "relatedSubtitle": "Use Happy Horse when native audio, lip-sync, and multiple input workflows matter more than choosing a specialized single-mode model.",
+    "relatedItems": [
+      {
+        "brand": "bytedance",
+        "title": "Seedance 2.0",
+        "description": "Compare against Seedance when the decision is unified reference control, native audio behavior, and multi-shot generation.",
+        "modelSlug": "seedance-2-0",
+        "ctaLabel": "Compare Happy Horse vs Seedance 2.0 ->"
+      },
+      {
+        "brand": "google-veo",
+        "title": "Google Veo 3.1",
+        "description": "Compare against Veo when premium cinematic realism and audio-native output are the main criteria.",
+        "modelSlug": "veo-3-1",
+        "ctaLabel": "Compare Happy Horse vs Veo 3.1 ->"
+      }
+    ],
+    "finalPara1": "Happy Horse 1.0 fits best when an approved source clip needs a directed legacy video edit. Use Happy Horse 1.1 for new text, image and reference generations.",
+    "finalPara2": "For launch work, start on Happy Horse 1.1, Seedance, Kling or Veo, then return to 1.0 only when a source clip needs the legacy video-edit endpoint.",
+    "finalButton": "Generate with Happy Horse 1.0"
+  },
+  "decision": {
+    "modelSlug": "happy-horse-1-0",
+    "hero": {
+      "eyebrow": "LEGACY VIDEO EDIT ROUTE",
+      "title": "Happy Horse 1.0",
+      "subtitle": "Legacy video-edit route for source clip adjustments; use Happy Horse 1.1 for new text, image and reference generations.",
+      "subtitleHighlights": [
+        "legacy video-edit",
+        "source clip adjustments",
+        "Happy Horse 1.1"
+      ],
+      "paragraph": "Use Happy Horse 1.0 only when you need the legacy video-edit endpoint. Use Happy Horse 1.1 for new text, image and reference generations.",
+      "primaryCta": {
+        "label": "Generate with Happy Horse 1.0",
+        "href": "/app?engine=happy-horse-1-0"
+      },
+      "secondaryCta": {
+        "label": "View examples",
+        "href": "/examples/happy-horse"
+      },
+      "quickLinks": [
+        {
+          "label": "Compare vs Happy Horse 1.1",
+          "href": "/ai-video-engines/happy-horse-1-0-vs-happy-horse-1-1?order=happy-horse-1-1"
+        },
+        {
+          "label": "View pricing",
+          "href": "/pricing#happy-horse-1-0-pricing"
+        },
+        {
+          "label": "Prompt examples",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Happy Horse 1.0 example",
+      "description": "Legacy native-audio video-edit route",
+      "renderLabel": "View render",
+      "badges": [
+        "Native audio",
+        "R2V",
+        "1080p"
+      ],
+      "altContext": "Happy Horse 1.0 native audio reference-guided video example"
+    },
+    "features": [
+      {
+        "title": "Native audio",
+        "body": "Generate dialogue, ambience and SFX with the render when the route supports it.",
+        "tone": "audio"
+      },
+      {
+        "title": "Current route moved",
+        "body": "Use Happy Horse 1.1 for new text, image and reference generations.",
+        "tone": "reference"
+      },
+      {
+        "title": "R2V references",
+        "body": "Use multiple references to guide identity, motion, style or scene details.",
+        "tone": "continuity"
+      },
+      {
+        "title": "Video edit",
+        "body": "Modify an existing clip when you need a controlled visual adjustment.",
+        "tone": "quality"
+      },
+      {
+        "title": "720p or 1080p",
+        "body": "Choose the exposed MaxVideoAI resolution before generation.",
+        "tone": "quality"
+      },
+      {
+        "title": "Pay-as-you-go",
+        "body": "See exact live price before you generate.",
+        "tone": "price"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "Need the current Happy Horse?",
+        "body": "Start on Happy Horse 1.1 for new text, image and reference generations. Keep 1.0 only for legacy video-edit jobs.",
+        "cta": {
+          "label": "Open Happy Horse 1.1",
+          "href": "/models/happy-horse-1-1"
+        }
+      },
+      {
+        "title": "Working from references?",
+        "body": "Assign each file one job: identity, wardrobe, movement, environment or audio mood.",
+        "cta": {
+          "label": "Open Prompt Lab",
+          "href": "#prompting"
+        }
+      },
+      {
+        "title": "Need another audio-native route?",
+        "body": "Compare with Veo when you are choosing between cinematic Google output and a flexible audio-video workflow.",
+        "cta": {
+          "label": "Compare Happy Horse vs Veo",
+          "href": "/ai-video-engines/happy-horse-1-0-vs-veo-3-1"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Text-to-video",
+        "body": "Write the subject, action, camera, style and audio beats in a compact brief."
+      },
+      {
+        "title": "Image-to-video",
+        "body": "Use a still image to anchor subject, product, wardrobe or composition."
+      },
+      {
+        "title": "R2V references",
+        "body": "Give each reference one role so identity, movement and environment do not conflict."
+      },
+      {
+        "title": "Video edit",
+        "body": "Use source video when the job is to change look, pacing or detail without starting over."
+      },
+      {
+        "title": "Audio handling",
+        "body": "Keep dialogue short and tie SFX to visible actions for cleaner synchronized output."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Happy Horse 1.0 pricing at a glance",
+      "subtitle": "Preset native-audio totals - see the exact live price in the app before you generate.",
+      "footnote": "All prices are MaxVideoAI display prices in USD credits for preset scenarios.",
+      "ctaLabel": "View full pricing",
+      "maxDurationNote": "Up to 1080p",
+      "ctaHref": "/pricing#happy-horse-1-0-pricing"
+    },
+    "meta": {
+      "title": "Happy Horse 1.0 Legacy Video Edit Route | MaxVideoAI",
+      "description": "Use Happy Horse 1.0 as the legacy Alibaba video-edit route on MaxVideoAI. Use Happy Horse 1.1 for new text, image and reference generations."
+    }
+  },
+  "prompting": {
+    "modelSlug": "happy-horse-1-0",
+    "section": {
+      "title": "Prompt Lab — Happy Horse 1.0",
+      "intro": null,
+      "tip": null,
+      "guide": null,
+      "referencesTitle": "How Happy Horse 1.0 uses references"
+    },
+    "tabs": [],
+    "tabNotes": [],
+    "globalPrinciples": [],
+    "engineWhy": [],
+    "demo": {
+      "title": "Demo prompt - Happy Horse 1.0",
+      "promptLabel": "Text-to-video",
+      "prompt": "Subject: Museum curator in a portrait gallery\nAction: Walks through as painted faces come alive\nCamera: Smooth dolly through the gallery\nStyle: Surreal realism, dawn light, marble reflections and soft dust\nAudio: Quiet museum ambience, no dialogue",
+      "notes": [],
+      "summary": {
+        "subject": "Museum curator in a portrait gallery",
+        "action": "Walks through as painted faces come alive",
+        "camera": "Smooth dolly through the gallery",
+        "style": "Surreal realism, dawn light, marble reflections and soft dust",
+        "output": "Quiet museum ambience, no dialogue"
+      },
+      "presentationOverrides": {
+        "modeLabel": "Text-to-video",
+        "outputLabel": "Audio",
+        "duration": null,
+        "aspectRatio": null,
+        "audioChipMode": "on",
+        "audioChipLabel": null,
+        "altContext": "Happy Horse 1.0 AI video example: Demo prompt - Happy Horse 1.0"
+      }
+    },
+    "imageExamples": null
+  },
+  "examples": {
+    "modelSlug": "happy-horse-1-0",
+    "section": {
+      "title": "Happy Horse 1.0 model demos",
+      "intro": "Review legacy video-edit behavior. Comparison pages intentionally stay text/spec focused for this launch.",
+      "defaultCtaLabel": "Start a Happy Horse generation ->",
+      "recreateLabel": null
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "All"
+      },
+      {
+        "id": "cinematic",
+        "label": "Cinematic"
+      },
+      {
+        "id": "product",
+        "label": "Product / Ad"
+      },
+      {
+        "id": "action",
+        "label": "Action"
+      },
+      {
+        "id": "vertical",
+        "label": "Vertical"
+      },
+      {
+        "id": "audio",
+        "label": "Audio on"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Real community renders",
+        "body": "See what's possible with Happy Horse 1.0.",
+        "icon": "sparkles"
+      },
+      {
+        "id": "proof-2",
+        "title": "Recreate any shot",
+        "body": "Jump into the app with one click and reuse the setup.",
+        "icon": "zap"
+      },
+      {
+        "id": "proof-3",
+        "title": "Native audio",
+        "body": "Dialogue, ambience and SFX generated in sync.",
+        "icon": "audio"
+      },
+      {
+        "id": "proof-4",
+        "title": "Multi-shot continuity",
+        "body": "Keep characters, style and scene consistency across sequences.",
+        "icon": "users"
+      },
+      {
+        "id": "proof-5",
+        "title": "Production-aware",
+        "body": "Built-in guardrails and safety filters for responsible review.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": null,
+    "showWhenEmpty": true
+  }
+}

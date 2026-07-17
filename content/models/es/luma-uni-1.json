@@ -1,0 +1,551 @@
+{
+  "marketingName": "Luma Uni-1",
+  "versionLabel": "Uni-1",
+  "seo": {
+    "title": "Luma Uni-1: precios de imagen, referencias y edición | MaxVideoAI",
+    "description": "Usa Luma Uni-1 en MaxVideoAI para generar imágenes 2K, editar una imagen fuente, guiar la composición con varias referencias, usar investigación visual web opcional y consultar precios públicos de referencia."
+  },
+  "overview": "Luma Uni-1 es un modelo de imagen 2K en MaxVideoAI para conceptos visuales, ediciones de fuente, composición guiada, varias referencias e investigación visual. Es una ruta solo de imagen.",
+  "pricingNotes": "Los precios mostrados usan precios públicos de referencia de MaxVideoAI. Los ejemplos de edición y referencias incluyen los conteos de imagen indicados; la cotización exacta aparece en la app antes de generar.",
+  "hero": {
+    "title": "Luma Uni-1 - generación de imágenes 2K y edición",
+    "intro": "Crea imágenes fijas, edita una fuente y guía la composición con referencias antes de elegir la mejor imagen para producto, marca, storyboard o paso a movimiento.",
+    "badge": "Texto -> Imagen · Edición de imagen · Referencias · 2K",
+    "ctaPrimary": {
+      "label": "Lanzar Luma Uni-1",
+      "href": "/app/image?engine=luma-uni-1"
+    },
+    "secondaryLinks": [
+      {
+        "label": "Abrir espacio de imagen",
+        "href": "/app/image?engine=luma-uni-1"
+      },
+      {
+        "label": "Revisar precios",
+        "href": "/pricing#luma-uni-1-pricing"
+      }
+    ]
+  },
+  "bestUseCases": {
+    "title": "Mejores casos de uso",
+    "items": [
+      {
+        "title": "Conceptos 2K desde un brief visual",
+        "icon": "imageToVideo"
+      },
+      {
+        "title": "Ediciones de fuente que preservan el sujeto principal",
+        "icon": "layers"
+      },
+      {
+        "title": "Guía de producto, composición y estilo por referencias",
+        "icon": "storyboard"
+      },
+      {
+        "title": "Investigación visual web cuando el contexto importa",
+        "icon": "sparkles"
+      },
+      {
+        "title": "Imagen limpia antes de trabajar movimiento",
+        "icon": "product"
+      }
+    ]
+  },
+  "technicalOverviewTitle": "Resumen técnico",
+  "technicalOverview": [
+    {
+      "label": "Flujos",
+      "body": "Texto a imagen y edición de imagen"
+    },
+    {
+      "label": "Salida",
+      "body": "Imagen fija 2K"
+    },
+    {
+      "label": "Referencias",
+      "body": "Las solicitudes de texto pueden usar varias referencias; las ediciones usan la primera imagen como fuente"
+    },
+    {
+      "label": "Ratios",
+      "body": "Formatos anchos, cuadrados, verticales y extendidos en creación"
+    },
+    {
+      "label": "Estilos",
+      "body": "Controles auto y manga donde estén disponibles"
+    },
+    {
+      "label": "Formato",
+      "body": "PNG o JPEG en el espacio de imagen"
+    },
+    {
+      "label": "Precio",
+      "body": "La copia pública usa precios de referencia de MaxVideoAI"
+    }
+  ],
+  "promptStructure": {
+    "title": "Mini-guía de prompt",
+    "quote": "Visual + sujeto + composición + estilo + rol de referencias + qué preservar o cambiar.",
+    "description": "Uni-1 funciona mejor cuando cada referencia tiene un rol claro: producto, estilo, paleta, composición o dirección tipográfica.",
+    "steps": [
+      "Nombra el visual objetivo y el uso.",
+      "Describe sujeto, composición, luz y estilo.",
+      "Para edición, separa lo que queda de lo que cambia.",
+      "Da un rol a cada referencia.",
+      "Activa búsqueda web solo si el contexto reciente ayuda.",
+      "Revisa texto, etiquetas y detalles antes de reutilizar."
+    ]
+  },
+  "tips": {
+    "title": "Consejos y límites",
+    "items": [
+      "Usa Uni-1 solo para imágenes fijas.",
+      "Agrega referencias con intención, no como moodboard aleatorio.",
+      "No supongas tipografía perfecta; revisa palabras y etiquetas.",
+      "Para ediciones de fuente, explicita las restricciones de preservación.",
+      "La cotización en la app es el precio para cliente."
+    ]
+  },
+  "prompts": [
+    {
+      "title": "Concepto de producto",
+      "prompt": "Imagen de estudio 2K de un altavoz blanco mate sobre base de concreto cálido, luz lateral suave, zona de etiqueta limpia, composición de catálogo de gama alta, 16:9."
+    },
+    {
+      "title": "Edición de fuente",
+      "prompt": "Preserva la forma del producto y la jerarquía del logo desde la imagen fuente, cambia el fondo por un tabletop de estudio tranquilo, suaviza reflejos, conserva sombras naturales."
+    },
+    {
+      "title": "Composición multi-referencia",
+      "prompt": "Usa referencia 1 para forma de producto, referencia 2 para paleta y referencia 3 para ritmo de composición. Crea una imagen de lanzamiento limpia con espacio para titular."
+    },
+    {
+      "title": "Investigación visual",
+      "prompt": "Crea una imagen de dirección visual anclada para lanzar un casco de ciclismo premium, códigos actuales de foto retail, fondo neutro, composición centrada en producto."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "¿Luma Uni-1 es un modelo de imagen?",
+      "a": "Sí. En MaxVideoAI esta página describe solo generación de imágenes fijas y edición de imagen."
+    },
+    {
+      "q": "¿Uni-1 puede usar referencias?",
+      "a": "Sí. Las solicitudes de texto pueden usar varias referencias y las ediciones usan una fuente más referencias opcionales."
+    },
+    {
+      "q": "¿Cómo estimar el precio de Uni-1?",
+      "a": "Usa la cotización mostrada en MaxVideoAI. La copia pública usa precios públicos de referencia con margen."
+    },
+    {
+      "q": "¿Uni-1 o Uni-1 Max?",
+      "a": "Usa Uni-1 para exploración y preparación de referencias. Pasa a Max cuando una imagen seleccionada necesita más fidelidad."
+    }
+  ],
+  "custom": {
+    "heroEyebrow": "Modelo de imagen Luma Uni-1",
+    "heroSupportLine": "Ideal para imágenes 2K, ediciones de fuente y composiciones guiadas por referencias.",
+    "heroSpecChips": [
+      {
+        "label": "Texto->Imagen",
+        "icon": "textToVideo"
+      },
+      {
+        "label": "Edición de imagen",
+        "icon": "imageToVideo"
+      },
+      {
+        "label": "Salida 2K",
+        "icon": "resolution"
+      },
+      {
+        "label": "Multi-referencia"
+      },
+      {
+        "label": "PNG / JPEG"
+      }
+    ],
+    "whyTitle": "Por qué Uni-1 sirve para preparar imágenes",
+    "heroDesc1": "Uni-1 ofrece una ruta Luma centrada en imagen fija para conceptos, ediciones y preparación de referencias.",
+    "heroDesc2": "Es útil cuando el brief requiere razonamiento visual y roles de referencia, no una promesa de texto perfecto.",
+    "heroHighlights": [
+      "Flujo solo de imagen||Usa Uni-1 para crear y editar imágenes fijas.",
+      "Roles de referencia||Indica qué imagen controla producto, composición, estilo o paleta.",
+      "Opción web||Activa búsqueda web solo si el contexto actual ayuda.",
+      "Contexto de precio||Los precios mostrados siguen referencias públicas de MaxVideoAI y la app confirma la cotización final."
+    ],
+    "specTitle": "Specs de imagen Uni-1",
+    "specNote": "Estas specs describen la ruta pública del espacio de imagen MaxVideoAI.",
+    "specSections": [
+      {
+        "title": "Flujos de imagen",
+        "items": [
+          "Texto a imagen para imágenes 2K.",
+          "Edición con una imagen fuente.",
+          "Referencias opcionales para producto, estilo, composición o paleta.",
+          "Salida PNG o JPEG."
+        ]
+      },
+      {
+        "title": "Comportamiento de precio",
+        "items": [
+          "Los costos de imagen y referencias siguen precios públicos de referencia.",
+          "El margen MaxVideoAI se refleja en ejemplos públicos.",
+          "La cotización exacta de la app manda.",
+          "La copia pública no promete precio directo de proveedor más bajo."
+        ]
+      }
+    ],
+    "whatTitle": "Cómo funciona Uni-1",
+    "whatIntro1": "Elige Uni-1 en el espacio de imagen y crea desde texto o edita una fuente.",
+    "whatIntro2": "Agrega referencias solo si cada una tiene un rol claro.",
+    "whatFlowTitle": "Flujo de trabajo",
+    "whatFlowSteps": [
+      "Elegir Luma Uni-1.",
+      "Seleccionar creación o edición.",
+      "Escribir el brief de imagen fija.",
+      "Agregar referencias con rol explícito.",
+      "Revisar el precio mostrado.",
+      "Inspeccionar texto y pequeños detalles."
+    ],
+    "tipsTitle": "Fortalezas prácticas y límites",
+    "strengths": [
+      "Adecuado para imágenes 2K y preparación de referencias.",
+      "Útil cuando el prompt debe razonar sobre una composición.",
+      "Las referencias reducen ambigüedad si su rol es claro."
+    ],
+    "boundaries": [
+      "Solo imágenes fijas.",
+      "Texto exacto y etiquetas pequeñas deben revisarse.",
+      "El resultado con contexto web necesita validación humana.",
+      "Precio público basado en las referencias de MaxVideoAI."
+    ],
+    "safetyTitle": "Seguridad y semejanza",
+    "safetyRules": [
+      "No contenido sexual ni contenido con menores.",
+      "No odio, acoso ni violencia gráfica.",
+      "No imites personas reales sin consentimiento.",
+      "No incluyas datos personales privados."
+    ],
+    "relatedItems": [
+      {
+        "brand": "luma",
+        "title": "Luma Uni-1 Max",
+        "description": "Usa Max cuando una imagen seleccionada necesita más fidelidad, acabado de producto o revisión precisa.",
+        "modelSlug": "luma-uni-1-max",
+        "ctaLabel": "Ver Uni-1 Max"
+      },
+      {
+        "brand": "luma",
+        "title": "Luma Ray 3.2",
+        "description": "Usa Ray 3.2 cuando una imagen seleccionada está lista para una prueba corta de movimiento.",
+        "modelSlug": "luma-ray-3-2",
+        "ctaLabel": "Ver Ray 3.2"
+      }
+    ],
+    "finalPara1": "Luma Uni-1 es la ruta práctica de imagen 2K para creación, ediciones y preparación de referencias en MaxVideoAI.",
+    "finalButton": "Generar con Luma Uni-1"
+  },
+  "decision": {
+    "modelSlug": "luma-uni-1",
+    "hero": {
+      "eyebrow": "RUTA LUMA DE IMAGEN",
+      "title": "Luma Uni-1",
+      "subtitle": "Generación de imagen 2K con ediciones de imagen, guía multi-referencia, composición razonada y referencias web opcionales.",
+      "subtitleHighlights": [
+        "Generación de imagen 2K",
+        "ediciones de imagen",
+        "guía multi-referencia"
+      ],
+      "paragraph": "Usa Uni-1 para texto a imagen, ediciones de fuente, composiciones guiadas por referencias e investigación visual sin prometer tipografía perfecta ni precisión garantizada.",
+      "primaryCta": {
+        "label": "Generar con Luma Uni-1",
+        "href": "/app/image?engine=luma-uni-1"
+      },
+      "secondaryCta": {
+        "label": "Ver precios",
+        "href": "/es/precios#luma-uni-1-pricing"
+      },
+      "quickLinks": [
+        {
+          "label": "Abrir espacio de imagen",
+          "href": "/app/image?engine=luma-uni-1"
+        },
+        {
+          "label": "Ver precios",
+          "href": "/es/precios#luma-uni-1-pricing"
+        },
+        {
+          "label": "Ejemplos de prompts",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Ejemplo Luma Uni-1",
+      "description": "Generación 2K y edición guiada por referencias",
+      "renderLabel": "Ver imagen",
+      "badges": [
+        "2K",
+        "Edición",
+        "Referencias"
+      ],
+      "altContext": "ejemplo de imagen Luma Uni-1 guiada por referencias"
+    },
+    "features": [
+      {
+        "title": "Imágenes 2K",
+        "body": "Crea imágenes 2K únicas para conceptos, referencias y exploración de composición.",
+        "tone": "quality"
+      },
+      {
+        "title": "Ediciones fuente",
+        "body": "Usa la primera imagen como fuente y guía la revisión con el prompt.",
+        "tone": "continuity"
+      },
+      {
+        "title": "Entrada multi-referencia",
+        "body": "Adjunta referencias para forma de producto, estilo, dirección tipográfica o composición.",
+        "tone": "reference"
+      },
+      {
+        "title": "Composición razonada",
+        "body": "Ayuda a ordenar elementos visuales, pero el texto exacto necesita revisión.",
+        "tone": "quality"
+      },
+      {
+        "title": "Opción con contexto web",
+        "body": "Usa búsqueda web solo cuando el contexto visual actual ayuda a la consigna.",
+        "tone": "reference"
+      },
+      {
+        "title": "Precio de referencia",
+        "body": "Los precios mostrados usan referencias públicas de MaxVideoAI antes de generar.",
+        "tone": "price"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "Cuándo elegir Uni-1",
+        "body": "Elige Uni-1 para conceptos 2K, ediciones de fuente, preparación de referencias y exploración de composición visual.",
+        "cta": {
+          "label": "Abrir Uni-1",
+          "href": "/app/image?engine=luma-uni-1"
+        }
+      },
+      {
+        "title": "Cómo usar referencias",
+        "body": "Da un rol a cada referencia: producto, paleta, composición, estilo o jerarquía de texto. Define qué se conserva.",
+        "cta": {
+          "label": "Abrir Prompt Lab",
+          "href": "#prompting"
+        }
+      },
+      {
+        "title": "Cuándo pasar a Uni-1 Max",
+        "body": "Mueve imágenes elegidas a Max cuando el visual principal necesita más detalle, acabado de producto o revisión cuidadosa.",
+        "cta": {
+          "label": "Ver Uni-1 Max",
+          "href": "/es/modelos/luma-uni-1-max"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Texto a imagen",
+        "body": "Describe visual, sujeto, composición, estilo, ratio y cualquier texto que deba revisarse."
+      },
+      {
+        "title": "Edición fuente",
+        "body": "Sube una imagen fuente y separa instrucciones de preservar y cambiar."
+      },
+      {
+        "title": "Composición multi-referencia",
+        "body": "Usa referencias para anclar sujeto, estilo, paleta y composición."
+      },
+      {
+        "title": "Investigación visual con contexto web",
+        "body": "Activa búsqueda web solo si el contexto reciente ayuda, y revisa el resultado."
+      },
+      {
+        "title": "Paso a video",
+        "body": "Guarda la imagen más clara como imagen inicial cuando el siguiente paso sea movimiento."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Precios de Luma Uni-1 de un vistazo",
+      "subtitle": "Los precios mostrados usan referencias públicas de MaxVideoAI; el precio exacto aparece antes de generar.",
+      "footnote": "Los ejemplos de edición/referencia incluyen los conteos de imagen indicados; la cotización en la app manda.",
+      "ctaLabel": "Ver precios completos",
+      "maxDurationNote": "Una imagen",
+      "ctaHref": "/es/precios#luma-uni-1-pricing"
+    },
+    "meta": {
+      "title": "Luma Uni-1: precios de imagen, referencias y edición | MaxVideoAI",
+      "description": "Explora Luma Uni-1: generación de imagen 2K, ediciones de fuente, guía multi-referencia, investigación visual con contexto web y precios de referencia."
+    }
+  },
+  "prompting": {
+    "modelSlug": "luma-uni-1",
+    "section": {
+      "title": "Cómo escribir un buen prompt Uni-1",
+      "intro": "Trata el prompt como una consigna de imagen: visual, sujeto, composición, referencias y restricciones.",
+      "tip": "Consejo: da un rol a cada referencia.",
+      "guide": null,
+      "referencesTitle": "Cómo Luma Uni-1 usa referencias"
+    },
+    "tabs": [],
+    "tabNotes": [],
+    "globalPrinciples": [
+      "Un objetivo visual claro por solicitud.",
+      "Separa preservar y cambiar en ediciones.",
+      "Búsqueda web solo si el contexto actual importa."
+    ],
+    "engineWhy": [
+      "Los roles de referencia ayudan al modelo a razonar sobre composición e identidad.",
+      "La revisión tipográfica mantiene los visuales prudentes.",
+      "Una imagen limpia sirve como mejor fuente para lo siguiente."
+    ],
+    "demo": null,
+    "imageExamples": {
+      "title": "Prompts de imagen de Luma Uni-1",
+      "intro": "Ejemplos para imágenes de campaña, tipografía, ediciones con referencia y finales 4K.",
+      "workspaceLabel": "Abrir espacio de imagen",
+      "items": [
+        {
+          "id": "quality-1",
+          "title": "Imagen de campaña",
+          "badge": "Imagen 2K",
+          "kind": "quality",
+          "prompt": "Imagen de campaña 2K para una botella de perfume ámbar sobre acrílico blanco, luz de estudio suave, sombra limpia, headline exacto \"AURA NOIRE\" arriba a la izquierda, logo discreto abajo."
+        },
+        {
+          "id": "typography-2",
+          "title": "Póster tipográfico",
+          "badge": "Tipografía",
+          "kind": "typography",
+          "prompt": "Póster vertical 4K, grilla editorial premium, fondo grafito, título exacto grande \"MIDNIGHT LAUNCH\", subtítulo \"LIMITED DROP\", jerarquía clara, márgenes amplios, texto legible."
+        },
+        {
+          "id": "edit-3",
+          "title": "Edición con referencia",
+          "badge": "Image-to-image",
+          "kind": "edit",
+          "prompt": "Usando esta referencia de producto, mantener forma, logo y proporciones. Cambiar el entorno a estudio azul noche, mejorar reflejos, quitar polvo y marcas."
+        },
+        {
+          "id": "layout-4",
+          "title": "2K a final 4K",
+          "badge": "Final 4K",
+          "kind": "layout",
+          "prompt": "Reutilizar la composición aprobada en 2K. Salida final 4K, detalles más nítidos, tipografía idéntica, mismos colores de marca, mantener encuadre y posición del producto."
+        }
+      ]
+    }
+  },
+  "examples": {
+    "modelSlug": "luma-uni-1",
+    "section": {
+      "title": "Ejemplos de imagen Luma Uni-1",
+      "intro": "Planifica ediciones de fuente, referencias de producto y pasos desde imágenes fijas.",
+      "defaultCtaLabel": "Abrir espacio de imagen",
+      "recreateLabel": "Recrear esta imagen"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "Todo"
+      },
+      {
+        "id": "product",
+        "label": "Producto"
+      },
+      {
+        "id": "edit",
+        "label": "Edit"
+      },
+      {
+        "id": "reference",
+        "label": "Referencias"
+      },
+      {
+        "id": "campaign",
+        "label": "Direccion"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Stills limpios",
+        "body": "Luma Uni-1 para probar direccion visual sin hacer complejo el prompt.",
+        "icon": "image"
+      },
+      {
+        "id": "proof-2",
+        "title": "Edit guiado",
+        "body": "Edita una imagen fuente manteniendo producto, forma y paleta claros.",
+        "icon": "pen"
+      },
+      {
+        "id": "proof-3",
+        "title": "Referencias",
+        "body": "Usa imagenes iniciales o de estilo cuando la coherencia importa.",
+        "icon": "users"
+      },
+      {
+        "id": "proof-4",
+        "title": "Ratios simples",
+        "body": "Valida producto, cuadrado, vertical o 16:9 antes de pasar a video.",
+        "icon": "maximize"
+      },
+      {
+        "id": "proof-5",
+        "title": "Listo para video",
+        "body": "Usa los mejores stills como imagen inicial para Ray 3.2.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": [
+      {
+        "id": "product",
+        "title": "Still de producto 2K",
+        "category": "Producto",
+        "aspectRatio": "2K · 16:9",
+        "alt": "Packshot Luma Uni-1 con luz de estudio simple",
+        "tags": [
+          "product"
+        ]
+      },
+      {
+        "id": "edit",
+        "title": "Edit de imagen fuente",
+        "category": "Edit",
+        "aspectRatio": "Image edit",
+        "alt": "Edit Luma Uni-1 que conserva forma de producto y cambia mood de estudio",
+        "tags": [
+          "edit"
+        ]
+      },
+      {
+        "id": "reference",
+        "title": "Still guiado por referencias",
+        "category": "Referencias",
+        "aspectRatio": "2 refs",
+        "alt": "Still Luma Uni-1 guiado por producto y referencia de mood",
+        "tags": [
+          "reference"
+        ]
+      },
+      {
+        "id": "campaign",
+        "title": "Investigacion visual",
+        "category": "Direccion",
+        "aspectRatio": "1:1",
+        "alt": "Still Luma Uni-1 para explorar una direccion retail",
+        "tags": [
+          "campaign"
+        ]
+      }
+    ],
+    "showWhenEmpty": true
+  }
+}

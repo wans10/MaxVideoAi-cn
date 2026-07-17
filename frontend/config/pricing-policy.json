@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "supportedCurrencies": ["USD"],
+  "compatibilityProfiles": [
+    {
+      "id": "standard",
+      "vendorSubtotalRounding": "preserve",
+      "marginRounding": "up",
+      "surchargeRounding": "up",
+      "discountRounding": "nearest",
+      "totalRounding": "nearest"
+    },
+    {
+      "id": "audio-current",
+      "vendorSubtotalRounding": "nearest",
+      "marginRounding": "up",
+      "surchargeRounding": "up",
+      "discountRounding": "nearest",
+      "totalRounding": "nearest"
+    },
+    {
+      "id": "schema-current",
+      "vendorSubtotalRounding": "nearest",
+      "marginRounding": "up",
+      "surchargeRounding": "up",
+      "discountRounding": "nearest",
+      "totalRounding": "nearest",
+      "marginPercentOverride": 0
+    },
+    {
+      "id": "public-rounded-vendor-current",
+      "vendorSubtotalRounding": "nearest",
+      "marginRounding": "up",
+      "surchargeRounding": "up",
+      "discountRounding": "nearest",
+      "totalRounding": "nearest"
+    },
+    {
+      "id": "fixed-product-current",
+      "vendorSubtotalRounding": "nearest",
+      "marginRounding": "up",
+      "surchargeRounding": "up",
+      "discountRounding": "nearest",
+      "totalRounding": "nearest",
+      "marginPercentOverride": 0,
+      "surchargeAudioPercentOverride": 0,
+      "surchargeUpscalePercentOverride": 0,
+      "vendorShareMode": "zero"
+    },
+    {
+      "id": "provider-reference-current",
+      "vendorSubtotalRounding": "up",
+      "marginRounding": "up",
+      "surchargeRounding": "up",
+      "discountRounding": "nearest",
+      "totalRounding": "nearest",
+      "subtotalRounding": "up"
+    }
+  ],
+  "rules": [
+    {
+      "id": "default",
+      "marginPercent": 0.3,
+      "marginFlatCents": 0,
+      "surchargeAudioPercent": 0.2,
+      "surchargeUpscalePercent": 0.5,
+      "currency": "USD"
+    },
+    {
+      "id": "audio-current",
+      "engineId": "audio-generation",
+      "marginPercent": 1.5,
+      "marginFlatCents": 0,
+      "surchargeAudioPercent": 0.2,
+      "surchargeUpscalePercent": 0.5,
+      "currency": "USD",
+      "compatibilityProfile": "audio-current"
+    },
+    {
+      "id": "storyboard-generate",
+      "engineId": "storyboarder",
+      "mode": "storyboard",
+      "marginPercent": 2,
+      "marginFlatCents": 0,
+      "surchargeAudioPercent": 0.2,
+      "surchargeUpscalePercent": 0.5,
+      "currency": "USD"
+    },
+    {
+      "id": "storyboard-edit",
+      "engineId": "storyboarder",
+      "mode": "storyboard_edit",
+      "marginPercent": 1,
+      "marginFlatCents": 0,
+      "surchargeAudioPercent": 0.2,
+      "surchargeUpscalePercent": 0.5,
+      "currency": "USD"
+    }
+  ]
+}

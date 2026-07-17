@@ -1,0 +1,162 @@
+import type { EngineAvailability, EnginePricingDetails } from '../../../types/engines';
+
+// single confirmation pass when Fal publishes the final stable IDs.
+export const SEEDANCE_2_ENDPOINTS = {
+  standard: {
+    t2v: 'bytedance/seedance-2.0/text-to-video',
+    i2v: 'bytedance/seedance-2.0/image-to-video',
+    ref2v: 'bytedance/seedance-2.0/reference-to-video',
+    v2v: 'byteplus/dreamina-seedance-2.0/video-to-video',
+    extend: 'byteplus/dreamina-seedance-2.0/extend',
+  },
+  fast: {
+    t2v: 'bytedance/seedance-2.0/fast/text-to-video',
+    i2v: 'bytedance/seedance-2.0/fast/image-to-video',
+    ref2v: 'bytedance/seedance-2.0/fast/reference-to-video',
+    v2v: 'byteplus/dreamina-seedance-2.0-fast/video-to-video',
+    extend: 'byteplus/dreamina-seedance-2.0-fast/extend',
+  },
+} as const;
+
+export const BYTEPLUS_SEEDANCE_2_FAST_MODEL_ID = 'dreamina-seedance-2-0-fast-260128';
+export const BYTEPLUS_SEEDANCE_2_FAST_CAPS_ID = 'byteplus/dreamina-seedance-2.0-fast/text-to-video';
+export const BYTEPLUS_SEEDANCE_2_MINI_MODEL_ID = 'dreamina-seedance-2-0-mini-260615';
+export const BYTEPLUS_SEEDANCE_2_MINI_ENDPOINTS = {
+  t2v: 'byteplus/dreamina-seedance-2.0-mini/text-to-video',
+  i2v: 'byteplus/dreamina-seedance-2.0-mini/image-to-video',
+  ref2v: 'byteplus/dreamina-seedance-2.0-mini/reference-to-video',
+  v2v: 'byteplus/dreamina-seedance-2.0-mini/video-to-video',
+  extend: 'byteplus/dreamina-seedance-2.0-mini/extend',
+} as const;
+
+export const HAPPY_HORSE_ENDPOINTS = {
+  t2v: 'alibaba/happy-horse/text-to-video',
+  i2v: 'alibaba/happy-horse/image-to-video',
+  ref2v: 'alibaba/happy-horse/reference-to-video',
+  v2v: 'alibaba/happy-horse/video-edit',
+} as const;
+
+export const HAPPY_HORSE_1_1_ENDPOINTS = {
+  t2v: 'alibaba/happy-horse/v1.1/text-to-video',
+  i2v: 'alibaba/happy-horse/v1.1/image-to-video',
+  ref2v: 'alibaba/happy-horse/v1.1/reference-to-video',
+} as const;
+
+export const HAPPY_HORSE_DURATION_OPTIONS = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] as const;
+export const HAPPY_HORSE_ASPECT_RATIOS = ['16:9', '9:16', '1:1', '4:3', '3:4'] as const;
+export const HAPPY_HORSE_1_1_ASPECT_RATIOS = [
+  '16:9',
+  '9:16',
+  '1:1',
+  '4:3',
+  '3:4',
+  '21:9',
+  '9:21',
+  '5:4',
+  '4:5',
+] as const;
+
+export const SEEDANCE_2_TOKEN_DIMENSIONS = {
+  '480p': {
+    auto: { width: 854, height: 480 },
+    '21:9': { width: 1120, height: 480 },
+    '16:9': { width: 854, height: 480 },
+    '4:3': { width: 640, height: 480 },
+    '1:1': { width: 480, height: 480 },
+    '3:4': { width: 480, height: 640 },
+    '9:16': { width: 480, height: 854 },
+  },
+  '720p': {
+    auto: { width: 1280, height: 720 },
+    '21:9': { width: 1680, height: 720 },
+    '16:9': { width: 1280, height: 720 },
+    '4:3': { width: 960, height: 720 },
+    '1:1': { width: 720, height: 720 },
+    '3:4': { width: 720, height: 960 },
+    '9:16': { width: 720, height: 1280 },
+  },
+  '1080p': {
+    auto: { width: 1920, height: 1080 },
+    '21:9': { width: 2520, height: 1080 },
+    '16:9': { width: 1920, height: 1080 },
+    '4:3': { width: 1440, height: 1080 },
+    '1:1': { width: 1080, height: 1080 },
+    '3:4': { width: 1080, height: 1440 },
+    '9:16': { width: 1080, height: 1920 },
+  },
+  '4k': {
+    auto: { width: 3840, height: 2160 },
+    '21:9': { width: 4398, height: 1886 },
+    '16:9': { width: 3840, height: 2160 },
+    '4:3': { width: 3326, height: 2494 },
+    '1:1': { width: 2880, height: 2880 },
+    '3:4': { width: 2494, height: 3326 },
+    '9:16': { width: 2160, height: 3840 },
+  },
+} as const;
+
+export const SEEDANCE_2_MINI_TOKEN_DIMENSIONS = {
+  '480p': SEEDANCE_2_TOKEN_DIMENSIONS['480p'],
+  '720p': SEEDANCE_2_TOKEN_DIMENSIONS['720p'],
+} as const;
+
+const SEEDANCE_2_PUBLIC_MARKUP_MULTIPLIER = 2.5;
+const SEEDANCE_2_DEFAULT_PRICING_MARGIN_FACTOR = 1.3;
+
+function normalizeSeedance2PublicUnitPrice(byteplusNoVideoUnitPriceUsdPer1kTokens: number): number {
+  // Pricing snapshots apply the default 30% MaxVideoAI margin after token pricing.
+  // These rates make the visible member quote equal BytePlus no-video list price * 2.5.
+  return byteplusNoVideoUnitPriceUsdPer1kTokens * SEEDANCE_2_PUBLIC_MARKUP_MULTIPLIER / SEEDANCE_2_DEFAULT_PRICING_MARGIN_FACTOR;
+}
+
+export const SEEDANCE_2_NORMALIZED_UNIT_PRICE_USD_PER_1K_TOKENS = {
+  standard: normalizeSeedance2PublicUnitPrice(0.007),
+  standard1080p: normalizeSeedance2PublicUnitPrice(0.0077),
+  standard4k: normalizeSeedance2PublicUnitPrice(0.004),
+  fast: normalizeSeedance2PublicUnitPrice(0.0056),
+  mini: normalizeSeedance2PublicUnitPrice(0.0035),
+} as const;
+
+type Seedance2PricingDetailsOptions = Pick<
+  NonNullable<EnginePricingDetails['tokenPricing']>,
+  'unitPriceUsdPer1kTokensByResolution' | 'unitPriceUsdPer1kTokensByResolutionAndInputType'
+>;
+
+export function buildSeedance2PricingDetails(
+  unitPriceUsdPer1kTokens: number,
+  options?: Partial<Seedance2PricingDetailsOptions>
+): EnginePricingDetails {
+  return {
+    currency: 'USD',
+    tokenPricing: {
+      model: 'byteplus_tokens',
+      unitPriceUsdPer1kTokens,
+      unitPriceUsdPer1kTokensByResolution: options?.unitPriceUsdPer1kTokensByResolution,
+      unitPriceUsdPer1kTokensByResolutionAndInputType:
+        options?.unitPriceUsdPer1kTokensByResolutionAndInputType,
+      framesPerSecond: 24,
+      defaultAspectRatio: '16:9',
+      dimensions: SEEDANCE_2_TOKEN_DIMENSIONS,
+      rounding: 'ceil_cent',
+    },
+  };
+}
+
+export function buildSeedance2MiniPricingDetails(): EnginePricingDetails {
+  return {
+    currency: 'USD',
+    tokenPricing: {
+      model: 'byteplus_tokens',
+      unitPriceUsdPer1kTokens: SEEDANCE_2_NORMALIZED_UNIT_PRICE_USD_PER_1K_TOKENS.mini,
+      pricingSource: 'byteplus_seedance_2_0_mini_flat_markup',
+      framesPerSecond: 24,
+      defaultAspectRatio: '16:9',
+      dimensions: SEEDANCE_2_MINI_TOKEN_DIMENSIONS,
+      rounding: 'ceil_cent',
+    },
+  };
+}
+
+export const SEEDANCE_2_LAUNCH_CONFIG = {
+  availability: 'available' as EngineAvailability,
+} as const;

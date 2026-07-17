@@ -1,0 +1,530 @@
+{
+  "marketingName": "Seedream 5.0 Lite",
+  "versionLabel": "5.0 Lite",
+  "seo": {
+    "title": "Seedream 5.0 Lite | Generación y edición de imagen | MaxVideoAI",
+    "description": "Crea y edita imágenes fijas con Seedream 5.0 Lite en MaxVideoAI. Prepara conceptos, producto e imágenes de referencia antes de Seedance."
+  },
+  "overview": "Seedream 5.0 Lite es un modelo de generación y edición de imagen dentro de MaxVideoAI. Sirve para crear stills limpios, conceptos de producto, frames de personaje, series de imágenes coherentes e imágenes fuente más controladas antes de un workflow image-to-video en Seedance 2.0 o Seedance 2.0 Fast.",
+  "pricingNotes": "Seedream 5.0 Lite se factura por imagen generada correctamente, también en series de imágenes. MaxVideoAI muestra el precio activo de la cuenta antes de generar. El preset batch de $0.24 es un ejemplo de 4 imágenes generadas a $0.06 por imagen, no un precio para 15 imágenes.",
+  "hero": {
+    "title": "Seedream 5.0 Lite - generación y edición de imagen",
+    "intro": "Usa Seedream 5.0 Lite como modelo de imagen independiente para text-to-image, limpieza image-to-image, series de imágenes y referencias visuales antes de animar los frames elegidos en Seedance.",
+    "badge": "Text -> Image · Image -> Image · Series de imágenes",
+    "ctaPrimary": {
+      "label": "Abrir Seedream",
+      "href": "/app/image?engine=seedream"
+    },
+    "secondaryLinks": [
+      {
+        "label": "Abrir Image Lab",
+        "href": "/app/image"
+      },
+      {
+        "label": "Animar con Seedance 2.0",
+        "href": "/models/seedance-2-0"
+      },
+      {
+        "label": "Borrador con Seedance 2.0 Fast",
+        "href": "/models/seedance-2-0-fast"
+      }
+    ]
+  },
+  "bestUseCases": {
+    "title": "Mejores casos de uso",
+    "items": [
+      {
+        "title": "Frames de referencia limpios antes de animación image-to-video",
+        "icon": "imageToVideo"
+      },
+      {
+        "title": "Stills de producto con fondo e iluminación controlados",
+        "icon": "product"
+      },
+      {
+        "title": "Conceptos de personaje, vestuario y props para storyboard",
+        "icon": "storyboard"
+      },
+      {
+        "title": "Series para storyboard, comic y visuales de marca con una dirección común",
+        "icon": "storyboard"
+      },
+      {
+        "title": "Ediciones de imagen que reducen ruido visual antes de probar movimiento",
+        "icon": "layers"
+      }
+    ]
+  },
+  "promptStructure": {
+    "title": "Mini guía de prompt",
+    "quote": "[Sujeto] + [composición] + [iluminación] + [estilo] + [qué preservar o cambiar] + [objetivo de referencia Seedance].",
+    "description": "Seedream funciona mejor con un brief concreto de imagen fija. Describe sujeto, encuadre, materiales, luz y qué debe mantenerse estable si la imagen será referencia para Seedance.",
+    "steps": [
+      "Definir sujeto y composición",
+      "Agregar luz, entorno y materiales",
+      "En series de imágenes, indicar el número y el tema común",
+      "Indicar qué debe quedar limpio para animación",
+      "En ediciones, separar lo que se conserva de lo que cambia",
+      "Elegir el mejor still antes de pasar a Seedance"
+    ]
+  },
+  "tips": {
+    "title": "Notas del workflow de referencia",
+    "items": [
+      "Usa Seedream para crear imágenes fuente más limpias y controladas antes de animar.",
+      "Mantén el sujeto legible y evita fondos sobrecargados cuando la imagen vaya a image-to-video.",
+      "Para producto en movimiento, estabiliza primero packaging, reflejos y ángulo héroe en Seedream.",
+      "Seedream puede mejorar la consistencia y reducir fricción frente a imágenes externas aleatorias, pero Seedance sigue evaluando cada prompt e imagen fuente."
+    ]
+  },
+  "prompts": [
+    {
+      "title": "Frame de referencia de producto",
+      "prompt": "Still de estudio premium de un termo negro mate sobre pedestal grafito limpio, rim light suave, zona de logo legible, fondo despejado, ángulo héroe centrado para animación image-to-video posterior."
+    },
+    {
+      "title": "Concepto de vestuario",
+      "prompt": "Imagen de referencia de cuerpo completo de un mensajero con chaqueta de lluvia, pose neutra, silueta clara, detalles de vestuario consistentes, luz urbana nublada, diseñada como frame inicial de Seedance."
+    },
+    {
+      "title": "Edición lista para animación",
+      "prompt": "Limpiar esta imagen de producto para animación: conservar forma de botella y jerarquía de etiqueta, quitar reflejos que distraen, simplificar el fondo, mantener luz de estudio natural."
+    },
+    {
+      "title": "Serie de visuales de marca",
+      "prompt": "Generar seis visuales coherentes para el lanzamiento de una marca premium de antifaz para dormir: mismo color de producto, luz suave de mañana, dormitorio minimalista, una imagen hero de producto, una de textura, una lifestyle, una de packaging, un recorte para social ad y una referencia Seedance."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "¿Qué es Seedream 5.0 Lite?",
+      "a": "Seedream 5.0 Lite es un modelo de generación y edición de imagen disponible en MaxVideoAI para crear stills y preparar referencias."
+    },
+    {
+      "q": "¿Cómo se conecta Seedream con Seedance?",
+      "a": "Seedream es un compañero recomendado para crear una imagen de referencia antes de Seedance 2.0 o Seedance 2.0 Fast. Primero crea o limpia el still y luego usa el frame elegido como punto de partida image-to-video."
+    },
+    {
+      "q": "¿Seedream puede generar series de imágenes?",
+      "a": "Sí. Cuando pides más de una imagen, MaxVideoAI puede crear una serie coherente desde un mismo brief. Es útil para storyboards, comics, series de producto y visuales de marca."
+    },
+    {
+      "q": "¿Seedream promete los resultados de Seedance?",
+      "a": "No. Seedream ayuda a crear fuentes más limpias, pero Seedance sigue evaluando cada prompt e imagen fuente dentro de su propio workflow y reglas de seguridad."
+    }
+  ],
+  "custom": {
+    "heroEyebrow": "Modelo de imagen Seedream 5.0 Lite",
+    "heroSupportLine": "Ideal para imágenes fijas limpias, ediciones y frames fuente antes del movimiento en Seedance.",
+    "heroSpecChips": [
+      {
+        "label": "Text->Image",
+        "icon": "textToVideo"
+      },
+      {
+        "label": "Image->Image",
+        "icon": "imageToVideo"
+      },
+      {
+        "label": "Series de imágenes"
+      },
+      {
+        "label": "Entrada multi-imagen"
+      },
+      {
+        "label": "2K/3K/4K"
+      },
+      {
+        "label": "2-10 referencias"
+      }
+    ],
+    "whyTitle": "Por qué Seedream encaja con Seedance",
+    "heroDesc1": "Seedream añade un paso de imagen fija antes de animar: crear el packshot, frame de personaje o entorno, y animar solo la imagen que merece la prueba.",
+    "heroDesc2": "Es útil cuando un run de Seedance necesita una fuente más intencional que un prompt suelto o una imagen externa sin preparar.",
+    "heroHighlights": [
+      "Modelo de imagen independiente||Usa Seedream para generar y editar stills incluso si no habrá video después.",
+      "Salida batch de imagen||Genera series storyboard, comic, producto o marca cuando un prompt necesita imágenes relacionadas.",
+      "Entrada multi-imagen||Fusiona sujeto, estilo y referencias de escena desde 2-10 imágenes fuente cuando el still necesita material más controlado.",
+      "Preparación de referencia||Crea imágenes fuente más limpias y controladas antes de animar en Seedance.",
+      "Editar antes del movimiento||Ajusta producto, fondo, vestuario e iluminación antes de image-to-video.",
+      "Compañero de Seedance||Envía el still elegido a Seedance 2.0 o Seedance 2.0 Fast cuando el movimiento sea el siguiente paso."
+    ],
+    "specSections": [
+      {
+        "title": "Workflows de imagen Seedream",
+        "intro": "Usa Seedream 5.0 Lite para workflows de texto, imagen única y multi-imagen dentro del Image Lab de MaxVideoAI.",
+        "items": [
+          "Text-to-image: crear un still desde un prompt con controles de salida 2K, 3K o 4K.",
+          "Image-to-image: limpiar o editar una imagen fuente conservando detalles visuales importantes.",
+          "Entrada multi-imagen: fusionar sujeto, estilo o elementos de escena desde 2-10 imágenes de referencia.",
+          "Series de imágenes: crea visuales relacionados para storyboards, comics, series de producto o sistemas de marca."
+        ]
+      },
+      {
+        "title": "Límites y facturación",
+        "items": [
+          "Las imágenes de referencia más las salidas solicitadas deben mantenerse dentro de 15 imágenes en total.",
+          "MaxVideoAI factura Seedream por imágenes generadas correctamente; las salidas fallidas o ausentes no deberían contarse como imágenes completadas.",
+          "Los controles exponen resolución base, relación de aspecto, formato de archivo y watermark cuando están soportados.",
+          "El preset batch de $0.24 es un ejemplo de 4 imágenes generadas a $0.06 por imagen, no un precio para 15 imágenes.",
+          "Formato de salida: elige jpeg o png en la ruta activa de Image Lab."
+        ]
+      }
+    ],
+    "whatTitle": "Workflow de referencia",
+    "whatIntro1": "Empieza en Image Lab, crea o edita el still en Seedream y revisa si el frame está lo bastante claro para movimiento.",
+    "whatIntro2": "Usa Seedance 2.0 para una animación final más pulida o Seedance 2.0 Fast para pruebas rápidas.",
+    "whatFlowTitle": "Seedream -> Seedance",
+    "whatFlowSteps": [
+      "Crear o editar una imagen fija con Seedream",
+      "Revisar claridad del sujeto, simplicidad de fondo y coherencia de luz",
+      "Guardar el mejor frame como referencia de animación",
+      "Usar Seedance 2.0 Fast para pruebas de movimiento",
+      "Usar Seedance 2.0 cuando el frame aprobado necesite un video final más pulido"
+    ],
+    "tipsTitle": "Consejos y límites",
+    "tipsIntro": "Trata Seedream como el paso de trabajo visual sobre la imagen. Puede producir mejores fuentes, pero no reemplaza las comprobaciones de prompt y seguridad de Seedance.",
+    "strengths": [
+      "Crear frames limpios de producto, personaje y entorno antes de animar.",
+      "Generar series de imágenes relacionadas para storyboards, comics, variaciones de producto y sistemas de marca.",
+      "Usar entradas de texto, imagen única o multi-imagen para crear, editar y fusionar imágenes.",
+      "Usar edición para reducir ruido visual en imágenes existentes.",
+      "Mantener un sujeto claro por frame cuando la salida vaya a ser entrada image-to-video.",
+      "Usar el mismo lenguaje de sujeto, luz y estilo al pasar de Seedream a Seedance."
+    ],
+    "boundaries": [
+      "Solo imágenes fijas.",
+      "Las solicitudes multi-imagen deben usar 2-10 referencias.",
+      "Las solicitudes batch deben mantener referencias más imágenes generadas dentro de 15 imágenes en total.",
+      "Seedance sigue evaluando cada imagen fuente y prompt.",
+      "Una referencia más limpia puede mejorar consistencia, pero el tratamiento final y la calidad dependen del run de Seedance.",
+      "No uses Seedream para preparar contenido que infrinja las reglas de seguridad de MaxVideoAI."
+    ],
+    "safetyTitle": "Seguridad y parecido",
+    "safetyRules": [
+      "Sin contenido sexual ni contenido que involucre menores.",
+      "Sin solicitudes de odio, acoso o violencia gráfica.",
+      "No imites a personas reales o públicas sin consentimiento.",
+      "No incluyas datos personales privados ni documentos sensibles."
+    ],
+    "relatedItems": [
+      {
+        "brand": "bytedance",
+        "title": "Seedance 2.0",
+        "description": "Anima un still elegido de Seedream con la ruta estándar de Seedance cuando quieras un resultado image-to-video más pulido.",
+        "modelSlug": "seedance-2-0",
+        "ctaLabel": "Animar con Seedance 2.0 ->"
+      },
+      {
+        "brand": "bytedance",
+        "title": "Seedance 2.0 Fast",
+        "description": "Usa Fast para borradores de movimiento más rápidos después de crear una imagen de referencia limpia en Seedream.",
+        "modelSlug": "seedance-2-0-fast",
+        "ctaLabel": "Borrador con Seedance 2.0 Fast ->"
+      }
+    ]
+  },
+  "decision": {
+    "modelSlug": "seedream",
+    "hero": {
+      "eyebrow": "MODELO PARA PREPARAR IMÁGENES DE REFERENCIA",
+      "title": "Seedream 5.0 Lite",
+      "subtitle": "Referencias fijas limpias, cuadros de producto y preparación visual para video antes de animar en otro modelo.",
+      "subtitleHighlights": [
+        "referencias fijas limpias",
+        "cuadros de producto",
+        "preparación visual para video"
+      ],
+      "paragraph": "Usa Seedream como espacio de generación y edición de imágenes fuente: crea cuadros de producto, referencias de personaje, visuales para anuncios y sets controlados antes de enviar los mejores recursos a un modelo de video.",
+      "primaryCta": {
+        "label": "Preparar referencias con Seedream",
+        "href": "/app/image?engine=seedream"
+      },
+      "secondaryCta": {
+        "label": "Animar con Seedance",
+        "href": "/es/modelos/seedance-2-0"
+      },
+      "quickLinks": [
+        {
+          "label": "Abrir espacio de imagen",
+          "href": "/app/image?engine=seedream"
+        },
+        {
+          "label": "Ver precios",
+          "href": "/es/precios#seedream-pricing"
+        },
+        {
+          "label": "Ejemplos de prompts",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Ejemplo de referencia Seedream",
+      "description": "Imagen fija preparada para animación posterior",
+      "renderLabel": "Ver imagen",
+      "badges": [
+        "Modelo de imagen",
+        "Hasta 10 refs",
+        "2K-4K"
+      ],
+      "altContext": "imagen de referencia de producto en Seedream preparada para un flujo de video posterior"
+    },
+    "features": [
+      {
+        "title": "Preparación de referencias",
+        "body": "Crea imágenes fuente limpias antes de pasarlas a una ruta de video.",
+        "tone": "reference"
+      },
+      {
+        "title": "Texto o imagen",
+        "body": "Empieza desde un prompt o edita con imágenes de referencia cargadas.",
+        "tone": "reference"
+      },
+      {
+        "title": "Hasta 10 referencias",
+        "body": "Guía ediciones con varias fuentes cuando los detalles necesitan más control.",
+        "tone": "continuity"
+      },
+      {
+        "title": "Imágenes 2K, 3K o 4K",
+        "body": "Prepara stills con más resolución para producto, personaje y revisión de composición.",
+        "tone": "quality"
+      },
+      {
+        "title": "Hasta 15 imágenes totales",
+        "body": "Las imágenes generadas y de referencia comparten el total expuesto de Seedream.",
+        "tone": "duration"
+      },
+      {
+        "title": "Precio por imagen",
+        "body": "Los escenarios de imagen usan el helper de precios compartido, no segundos de video.",
+        "tone": "price"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "¿Cuándo conviene Seedream?",
+        "body": "Elige Seedream cuando el siguiente paso de video necesita primero referencias más limpias de producto, personaje, estilo o composición.",
+        "cta": {
+          "label": "Abrir espacio de imagen Seedream",
+          "href": "/app/image?engine=seedream"
+        }
+      },
+      {
+        "title": "¿Preparas cuadros de producto?",
+        "body": "Genera imágenes con etiquetas legibles, fondos limpios y encuadre estable antes de usarlas como recursos fuente.",
+        "cta": {
+          "label": "Abrir Prompt Lab",
+          "href": "#prompting"
+        }
+      },
+      {
+        "title": "¿Necesitas movimiento después?",
+        "body": "Seedream prepara las imágenes fijas. Elige un modelo de video cuando el set de referencias esté listo.",
+        "cta": {
+          "label": "Explorar modelos de video",
+          "href": "/es/modelos"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Imagen por prompt",
+        "body": "Describe producto, personaje, escena, superficie, lente e iluminación para una fuente limpia."
+      },
+      {
+        "title": "Edición con referencia",
+        "body": "Carga imágenes cuando debas conservar identidad, geometría de producto o detalles de marca."
+      },
+      {
+        "title": "Set de referencias",
+        "body": "Crea varias vistas: frente, perfil, detalle y contexto antes del paso de video."
+      },
+      {
+        "title": "Elección de tamaño",
+        "body": "Usa 2K para preparar rápido, 3K para revisión o 4K cuando la imagen requiera más detalle."
+      },
+      {
+        "title": "Paso a video",
+        "body": "Envía solo las mejores imágenes fijas al modelo de movimiento elegido."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Precios de imagen Seedream de un vistazo",
+      "subtitle": "Precios por escenario de imagen. Consulta el precio exacto en el espacio de imagen antes de generar.",
+      "footnote": "Todos los precios son precios mostrados por MaxVideoAI en créditos USD para escenarios de imagen predefinidos.",
+      "ctaLabel": "Ver precios completos",
+      "ctaHref": "/es/precios#seedream-pricing"
+    },
+    "meta": {
+      "title": "Seedream: precios de imagen y preparación de referencias | MaxVideoAI",
+      "description": "Prepara con Seedream imágenes de referencia, cuadros de producto, personajes fijos y sets visuales controlados antes de elegir un modelo de video."
+    }
+  },
+  "prompting": {
+    "modelSlug": "seedream",
+    "section": {
+      "title": "Cómo escribir un buen prompt de Seedream",
+      "intro": "Escribe el still como si fuera el primer frame de una toma: sujeto, composición, luz y restricciones primero.",
+      "tip": "Consejo: si la imagen pasará a Seedance, menciona el objetivo de movimiento futuro sin pedir a Seedream que la anime.",
+      "guide": null,
+      "referencesTitle": "Cómo Seedream prepara referencias"
+    },
+    "tabs": [],
+    "tabNotes": [],
+    "globalPrinciples": [
+      "Un objetivo visual claro por imagen.",
+      "En una serie, definir secuencia, número y reglas visuales compartidas.",
+      "En ediciones, decir qué preservar antes de qué cambiar.",
+      "Simplificar el fondo cuando la imagen será referencia de video."
+    ],
+    "engineWhy": [
+      "Los stills controlados dan un punto de partida más claro a modelos image-to-video.",
+      "Las referencias de producto y personaje se animan mejor cuando silueta, luz y props ya son estables.",
+      "Preparar primero la imagen separa decisiones de calidad visual de decisiones de movimiento."
+    ],
+    "demo": null,
+    "imageExamples": {
+      "title": "Prompts de imagen de Seedream 5.0 Lite",
+      "intro": "Prompts de Seedream para stills de producto, hojas de personaje, edición de imagen y batches de storyboard.",
+      "workspaceLabel": "Abrir espacio de imagen",
+      "items": [
+        {
+          "id": "image-1",
+          "title": "Still de producto",
+          "badge": "Still 2K",
+          "kind": "image",
+          "prompt": "Packshot 2K de una botella de perfume ámbar sobre acrílico blanco, luz suave de estudio, sombra limpia, etiqueta legible, fondo minimal listo como referencia."
+        },
+        {
+          "id": "references-2",
+          "title": "Hoja de personaje",
+          "badge": "2-10 refs",
+          "kind": "references",
+          "prompt": "Hoja de referencia de personaje: mismo rostro, outfit y paleta en cuatro vistas limpias, fondo neutro, detalles consistentes de chaqueta y accesorios."
+        },
+        {
+          "id": "edit-3",
+          "title": "Edición de imagen",
+          "badge": "Image edit",
+          "kind": "edit",
+          "prompt": "Usando esta imagen de producto, conservar forma, logo y proporciones. Limpiar polvo y reflejos molestos, simplificar el entorno y mantener luz natural."
+        },
+        {
+          "id": "quality-4",
+          "title": "Batch storyboard",
+          "badge": "4 imágenes",
+          "kind": "quality",
+          "prompt": "Crear cuatro imágenes coherentes para storyboard de lanzamiento: hero de producto, detalle de material, contexto lifestyle y frame final. Misma paleta, misma luz, encuadres distintos."
+        }
+      ]
+    }
+  },
+  "examples": {
+    "modelSlug": "seedream",
+    "section": {
+      "title": "Ejemplos de Seedream 5.0 Lite",
+      "intro": "Explora resultados de la comunidad y mira cómo Seedream 5.0 Lite funciona en flujos de MaxVideoAI.",
+      "defaultCtaLabel": null,
+      "recreateLabel": "Recrear este resultado →"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "Todo"
+      },
+      {
+        "id": "product",
+        "label": "Producto"
+      },
+      {
+        "id": "character",
+        "label": "Personaje"
+      },
+      {
+        "id": "edit",
+        "label": "Edit"
+      },
+      {
+        "id": "batch",
+        "label": "Batch"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Ejemplos de imagen",
+        "body": "Prompts still adaptados a Seedream 5.0 Lite.",
+        "icon": "image"
+      },
+      {
+        "id": "proof-2",
+        "title": "Tipografía",
+        "body": "Texto exacto, jerarquía y ubicación legibles.",
+        "icon": "type"
+      },
+      {
+        "id": "proof-3",
+        "title": "Ediciones con referencia",
+        "body": "Mantén producto, identidad, paleta o layout.",
+        "icon": "pen"
+      },
+      {
+        "id": "proof-4",
+        "title": "Finales 4K",
+        "body": "Valida en 2K y termina en 4K.",
+        "icon": "maximize"
+      },
+      {
+        "id": "proof-5",
+        "title": "Listo para producción",
+        "body": "Referencias propias y controles integrados.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": [
+      {
+        "id": "product",
+        "title": "Still de producto",
+        "category": "Producto · 2K",
+        "aspectRatio": "2K",
+        "alt": "Still de producto Seedream preparado como referencia limpia",
+        "tags": [
+          "product"
+        ]
+      },
+      {
+        "id": "character",
+        "title": "Hoja de personaje",
+        "category": "Personaje",
+        "aspectRatio": "2-10 refs",
+        "alt": "Hoja Seedream con varias vistas coherentes del mismo personaje",
+        "tags": [
+          "character"
+        ]
+      },
+      {
+        "id": "edit",
+        "title": "Edición limpia",
+        "category": "Edit",
+        "aspectRatio": "Image edit",
+        "alt": "Edición Seedream que conserva forma, logo y proporciones",
+        "tags": [
+          "edit"
+        ]
+      },
+      {
+        "id": "batch",
+        "title": "Batch storyboard",
+        "category": "Batch",
+        "aspectRatio": "4 imágenes",
+        "alt": "Batch Seedream de cuatro imágenes coherentes para storyboard",
+        "tags": [
+          "batch"
+        ]
+      }
+    ],
+    "showWhenEmpty": false
+  }
+}

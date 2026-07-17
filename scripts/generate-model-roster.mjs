@@ -1,0 +1,293 @@
+import { spawnSync } from 'node:child_process';
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import {
+  assertGeneratedTextCurrent,
+  serializeGeneratedJson,
+} from './lib/generated-projection-check.mjs';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.join(__dirname, '..');
+
+const ENGINE_CATALOG_PATH = path.join(ROOT, 'frontend', 'config', 'engine-catalog.json');
+const MODEL_REGISTRY_PATH = path.join(ROOT, 'frontend', 'config', 'model-registry.json');
+const DOCS_DIR = path.join(ROOT, 'docs');
+const FRONTEND_CONFIG_DIR = path.join(ROOT, 'frontend', 'config');
+const FRONTEND_ROSTER_PATH = path.join(FRONTEND_CONFIG_DIR, 'model-roster.json');
+const DOCS_ROSTER_PATH = path.join(DOCS_DIR, 'model-roster.json');
+const DOCS_ROSTER_CSV_PATH = path.join(DOCS_DIR, 'model-roster.csv');
+const VALID_AVAILABILITY = new Set(['available', 'limited', 'waitlist', 'unavailable', 'paused']);
+
+function parseArgs(argv) {
+  return {
+    write: argv.includes('--write'),
+  };
+}
+
+function runEngineCatalog(write) {
+  const pnpmCmd = process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm';
+  const args = write ? ['engine:catalog'] : ['engine:catalog', '--', '--check'];
+  const result = spawnSync(pnpmCmd, args, {
+    cwd: ROOT,
+    stdio: 'inherit',
+  });
+  if (result.status !== 0) {
+    throw new Error(`Failed to run engine catalog ${write ? 'generation' : 'check'} before roster generation.`);
+  }
+}
+
+async function loadJson(filePath) {
+  const raw = await fs.readFile(filePath, 'utf-8');
+  return JSON.parse(raw);
+}
+
+async function loadCurrentRoster() {
+  try {
+    return await loadJson(FRONTEND_ROSTER_PATH);
+  } catch (error) {
+    if (error && typeof error === 'object' && 'code' in error && error.code === 'ENOENT') {
+      return [];
+    }
+    throw error;
+  }
+}
+
+async function loadText(filePath) {
+  return fs.readFile(filePath, 'utf8').catch((error) => {
+    if (error && typeof error === 'object' && 'code' in error && error.code === 'ENOENT') return '';
+    throw error;
+  });
+}
+
+function normalizeAvailability(value, engineId) {
+  if (typeof value !== 'string') {
+    throw new Error(`Engine "${engineId}" is missing availability.`);
+  }
+  const normalized = value.trim().toLowerCase();
+  if (!VALID_AVAILABILITY.has(normalized)) {
+    throw new Error(
+      `Engine "${engineId}" has invalid availability "${value}". Expected one of: ${Array.from(VALID_AVAILABILITY).join(', ')}.`
+    );
+  }
+  return normalized;
+}
+
+function normalizeVersionLabel(entry) {
+  const direct = typeof entry.versionLabel === 'string' ? entry.versionLabel.trim() : '';
+  if (direct.length) return direct;
+  const engineVersion = typeof entry.engine?.version === 'string' ? entry.engine.version.trim() : '';
+  if (engineVersion.length) return engineVersion;
+  return '1';
+}
+
+function computeRosterEntry(entry, registryById) {
+  const engineId = typeof entry.engineId === 'string' ? entry.engineId.trim() : '';
+  const model = registryById.get(engineId.toLowerCase());
+  const marketingName = typeof entry.marketingName === 'string' ? entry.marketingName.trim() : '';
+  const brandId = typeof entry.brandId === 'string' ? entry.brandId.trim() : '';
+  const logoPolicy = typeof entry.logoPolicy === 'string' ? entry.logoPolicy.trim() : '';
+
+  if (!engineId) throw new Error('Catalog entry is missing engineId.');
+  if (!model) throw new Error(`Engine "${engineId}" is missing from model-registry.json.`);
+  if (!marketingName) throw new Error(`Engine "${engineId}" is missing marketingName.`);
+  if (!brandId) throw new Error(`Engine "${engineId}" is missing brandId.`);
+  if (!logoPolicy) throw new Error(`Engine "${engineId}" is missing logoPolicy.`);
+
+  return {
+    engineId,
+    marketingName,
+    brandId,
+    modelSlug: model.slug,
+    family: model.family ?? undefined,
+    versionLabel: normalizeVersionLabel(entry),
+    availability: normalizeAvailability(entry.availability, engineId),
+    logoPolicy,
+    surfaces: {
+      modelPage: {
+        indexable: model.publication.model.indexable,
+        includeInSitemap: model.publication.sitemap.published,
+      },
+    },
+  };
+}
+
+function ensureNoShrink(currentRoster, generatedRoster, allowedRemovedSlugs = new Set()) {
+  const currentSlugs = currentRoster.map((entry) => entry?.modelSlug).filter((slug) => typeof slug === 'string');
+  const generatedSlugs = generatedRoster.map((entry) => entry.modelSlug);
+  const generatedSet = new Set(generatedSlugs);
+  const missingSlugs = currentSlugs.filter((slug) => !generatedSet.has(slug));
+  const blockedMissingSlugs = missingSlugs.filter((slug) => !allowedRemovedSlugs.has(slug));
+
+  if (generatedRoster.length < currentRoster.length && blockedMissingSlugs.length > 0) {
+    throw new Error(
+      `Generated roster would shrink from ${currentRoster.length} to ${generatedRoster.length}. Aborting to prevent page removals.`
+    );
+  }
+  if (blockedMissingSlugs.length > 0) {
+    throw new Error(`Generated roster is missing existing slugs: ${blockedMissingSlugs.join(', ')}`);
+  }
+}
+
+function toCsv(rows) {
+  const header = [
+    'engineId',
+    'marketingName',
+    'brandId',
+    'modelSlug',
+    'family',
+    'versionLabel',
+    'availability',
+    'logoPolicy',
+    'modelPageIndexable',
+    'modelPageInSitemap',
+  ];
+  const lines = [header.join(',')];
+  rows.forEach((row) => {
+    const values = header.map((key) => {
+      const value =
+        key === 'modelPageIndexable'
+          ? row?.surfaces?.modelPage?.indexable ?? ''
+          : key === 'modelPageInSitemap'
+            ? row?.surfaces?.modelPage?.includeInSitemap ?? ''
+            : row[key] ?? '';
+      const needsQuotes = typeof value === 'string' && (value.includes(',') || value.includes('"') || value.includes('\n'));
+      if (!needsQuotes) return value;
+      return `"${value.replace(/"/g, '""')}"`;
+    });
+    lines.push(values.join(','));
+  });
+  return `${lines.join('\n')}\n`;
+}
+
+function summarizeDiff(currentRoster, generatedRoster) {
+  const currentBySlug = new Map(currentRoster.map((entry) => [entry.modelSlug, entry]));
+  const generatedBySlug = new Map(generatedRoster.map((entry) => [entry.modelSlug, entry]));
+
+  const added = [];
+  const removed = [];
+  const changed = [];
+
+  generatedBySlug.forEach((entry, slug) => {
+    const existing = currentBySlug.get(slug);
+    if (!existing) {
+      added.push(slug);
+      return;
+    }
+    if (JSON.stringify(existing) !== JSON.stringify(entry)) {
+      changed.push(slug);
+    }
+  });
+
+  currentBySlug.forEach((_entry, slug) => {
+    if (!generatedBySlug.has(slug)) {
+      removed.push(slug);
+    }
+  });
+
+  return { added, removed, changed };
+}
+
+async function writeOutputs(roster) {
+  await Promise.all([fs.mkdir(DOCS_DIR, { recursive: true }), fs.mkdir(FRONTEND_CONFIG_DIR, { recursive: true })]);
+  const payload = `${JSON.stringify(roster, null, 2)}\n`;
+  await Promise.all([
+    fs.writeFile(DOCS_ROSTER_PATH, payload, 'utf-8'),
+    fs.writeFile(FRONTEND_ROSTER_PATH, payload, 'utf-8'),
+    fs.writeFile(DOCS_ROSTER_CSV_PATH, toCsv(roster), 'utf-8'),
+  ]);
+}
+
+async function main() {
+  const { write } = parseArgs(process.argv.slice(2));
+  runEngineCatalog(write);
+
+  const [catalog, registry, currentRoster] = await Promise.all([
+    loadJson(ENGINE_CATALOG_PATH),
+    loadJson(MODEL_REGISTRY_PATH),
+    loadCurrentRoster(),
+  ]);
+  if (!Array.isArray(catalog)) {
+    throw new Error('engine-catalog.json must be an array.');
+  }
+  if (!Array.isArray(currentRoster)) {
+    throw new Error('frontend/config/model-roster.json must be an array when present.');
+  }
+  if (!registry || !Array.isArray(registry.models)) {
+    throw new Error('model-registry.json must contain a models array.');
+  }
+
+  const registryById = new Map(registry.models.map((model) => [model.id.toLowerCase(), model]));
+  const publicCatalog = catalog.filter((entry) => {
+    const model = registryById.get(String(entry.engineId).trim().toLowerCase());
+    return model?.publication.model.published === true;
+  });
+  const publicSlugs = new Set(publicCatalog.map((entry) => entry.modelSlug).filter((slug) => typeof slug === 'string'));
+  const allowedRemovedSlugs = new Set(
+    currentRoster
+      .map((entry) => entry?.modelSlug)
+      .filter((slug) => typeof slug === 'string' && !publicSlugs.has(slug))
+  );
+  const roster = publicCatalog
+    .map((entry) => computeRosterEntry(entry, registryById))
+    .sort((a, b) => {
+      if (a.brandId === b.brandId) {
+        return a.marketingName.localeCompare(b.marketingName, 'en');
+      }
+      return a.brandId.localeCompare(b.brandId, 'en');
+    });
+
+  ensureNoShrink(currentRoster, roster, allowedRemovedSlugs);
+  const generatedJson = serializeGeneratedJson(roster);
+  const generatedCsv = toCsv(roster);
+  const [frontendCurrent, docsCurrent, docsCsvCurrent] = await Promise.all([
+    loadText(FRONTEND_ROSTER_PATH),
+    loadText(DOCS_ROSTER_PATH),
+    loadText(DOCS_ROSTER_CSV_PATH),
+  ]);
+  const hasChanges =
+    frontendCurrent !== generatedJson ||
+    docsCurrent !== generatedJson ||
+    docsCsvCurrent !== generatedCsv;
+  const diff = summarizeDiff(currentRoster, roster);
+
+  if (!hasChanges) {
+    console.log(`[model-roster] No changes. Entries: ${roster.length}.`);
+    return;
+  }
+
+  if (!write) {
+    const failures = [];
+    for (const [name, expected, current] of [
+      ['frontend model roster', generatedJson, frontendCurrent],
+      ['docs model roster JSON', generatedJson, docsCurrent],
+      ['docs model roster CSV', generatedCsv, docsCsvCurrent],
+    ]) {
+      try {
+        assertGeneratedTextCurrent(name, expected, current);
+      } catch (error) {
+        failures.push(error instanceof Error ? error.message : String(error));
+      }
+    }
+    console.error('[model-roster] Drift detected in check mode. Re-run with "--write" to apply.');
+    console.error(
+      `[model-roster] Summary: +${diff.added.length} added, -${diff.removed.length} removed, ~${diff.changed.length} changed.`
+    );
+    if (diff.added.length) console.error(`[model-roster] Added slugs: ${diff.added.join(', ')}`);
+    if (diff.removed.length) console.error(`[model-roster] Removed slugs: ${diff.removed.join(', ')}`);
+    if (diff.changed.length) console.error(`[model-roster] Changed slugs: ${diff.changed.join(', ')}`);
+    for (const failure of failures) console.error(`[model-roster] ${failure}`);
+    process.exitCode = 1;
+    return;
+  }
+
+  await writeOutputs(roster);
+  console.log(
+    `[model-roster] Wrote ${roster.length} entries to frontend/config/model-roster.json and docs/model-roster.{json,csv}.`
+  );
+}
+
+main().catch((error) => {
+  console.error('[model-roster] Failed to generate roster:', error);
+  process.exitCode = 1;
+});

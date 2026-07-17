@@ -1,0 +1,374 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import test from 'node:test';
+
+import { listFalEngines } from '../frontend/src/config/falEngines.ts';
+import { applyEngineVariantPricing } from '../frontend/src/lib/pricing-addons.ts';
+import { buildPricingDefinition } from '../frontend/src/lib/pricing-definition.ts';
+import { computeCanonicalPublicSnapshot as computePricingSnapshot } from '../frontend/server/pricing/quote-public.ts';
+
+test('LTX 2.3 Pro pricing definition uses standard generate duration caps', () => {
+  const engine = listFalEngines().find((entry) => entry.id === 'ltx-2-3')?.engine;
+  assert.ok(engine);
+
+  const definition = buildPricingDefinition(engine);
+  assert.ok(definition);
+  assert.equal(definition?.durationSteps.min, 6);
+  assert.equal(definition?.durationSteps.max, 10);
+});
+
+test('LTX 2.3 Fast pricing definition keeps 20 second standard cap', () => {
+  const engine = listFalEngines().find((entry) => entry.id === 'ltx-2-3-fast')?.engine;
+  assert.ok(engine);
+
+  const definition = buildPricingDefinition(engine);
+  assert.ok(definition);
+  assert.equal(definition?.durationSteps.min, 6);
+  assert.equal(definition?.durationSteps.max, 20);
+});
+
+test('Nano Banana 2 pricing definition includes resolution tiers and web search addon', () => {
+  const engine = listFalEngines().find((entry) => entry.id === 'nano-banana-2')?.engine;
+  assert.ok(engine);
+
+  const definition = buildPricingDefinition(engine);
+  assert.ok(definition);
+  assert.equal(definition?.baseUnitPriceCents, 8);
+  assert.equal(definition?.resolutionMultipliers['0.5k'], 0.5);
+  assert.equal(definition?.resolutionMultipliers['2k'], 1.5);
+  assert.equal(definition?.resolutionMultipliers['4k'], 2);
+  assert.equal(definition?.addons?.enable_web_search?.flatCents, 1.5);
+});
+
+test('GPT Image 2 pricing definition exposes high-quality image size tiers', () => {
+  const engine = listFalEngines().find((entry) => entry.id === 'gpt-image-2')?.engine;
+  assert.ok(engine);
+
+  const definition = buildPricingDefinition(engine);
+  assert.ok(definition);
+  assert.equal(definition?.baseUnitPriceCents, 15);
+  assert.equal(definition?.resolutionMultipliers['landscape_4_3'], 1);
+  assert.equal(definition?.resolutionMultipliers['landscape_16_9'], 16 / 15);
+  assert.equal(definition?.resolutionMultipliers['square_hd'], 22 / 15);
+  assert.equal(definition?.resolutionMultipliers['3840x2160'], 41 / 15);
+});
+
+test('Seedance 2 pricing definition exposes token-priced 480p, 720p, and 1080p tiers to the estimator', () => {
+  const engine = listFalEngines().find((entry) => entry.id === 'seedance-2-0')?.engine;
+  assert.ok(engine);
+
+  const definition = buildPricingDefinition(engine);
+  assert.ok(definition);
+  assert.ok(typeof definition?.baseUnitPriceCents === 'number' && definition.baseUnitPriceCents > 0);
+  assert.ok(typeof definition?.resolutionMultipliers['480p'] === 'number');
+  assert.ok(typeof definition?.resolutionMultipliers['720p'] === 'number');
+  assert.ok(typeof definition?.resolutionMultipliers['1080p'] === 'number');
+  assert.ok((definition?.resolutionMultipliers['720p'] ?? 0) > (definition?.resolutionMultipliers['480p'] ?? 0));
+  assert.ok((definition?.resolutionMultipliers['1080p'] ?? 0) > (definition?.resolutionMultipliers['720p'] ?? 0));
+});
+
+test('Kling 3 pricing definitions match current fal vendor rates', () => {
+  const standard = listFalEngines().find((entry) => entry.id === 'kling-3-standard')?.engine;
+  const pro = listFalEngines().find((entry) => entry.id === 'kling-3-pro')?.engine;
+  assert.ok(standard);
+  assert.ok(pro);
+
+  const standardDefinition = buildPricingDefinition(standard);
+  const proDefinition = buildPricingDefinition(pro);
+
+  assert.equal(standardDefinition?.baseUnitPriceCents, 12.6);
+  assert.equal(standardDefinition?.addons?.audio_off?.perSecondCents, -4.2);
+  assert.equal(standardDefinition?.addons?.voice_control?.perSecondCents, 2.8);
+  assert.equal(proDefinition?.baseUnitPriceCents, 16.8);
+  assert.equal(proDefinition?.addons?.audio_off?.perSecondCents, -5.6);
+  assert.equal(proDefinition?.addons?.voice_control?.perSecondCents, 2.8);
+});
+
+test('Kling 3 4K pricing definition exposes the native 4K rate', () => {
+  const engine = listFalEngines().find((entry) => entry.id === 'kling-3-4k')?.engine;
+  assert.ok(engine);
+
+  const definition = buildPricingDefinition(engine);
+  assert.ok(definition);
+  assert.equal(definition.baseUnitPriceCents, 42);
+  assert.equal(definition.resolutionMultipliers['4k'], 1);
+  assert.equal(definition.addons?.audio_off, undefined);
+  assert.equal(definition.durationSteps.min, 3);
+  assert.equal(definition.durationSteps.max, 15);
+});
+
+test('Kling 3.0 Omni pricing definitions align Standard and Pro rates with Kling 3', () => {
+  const standard = listFalEngines().find((entry) => entry.id === 'kling-o3-standard')?.engine;
+  const pro = listFalEngines().find((entry) => entry.id === 'kling-o3-pro')?.engine;
+  const native4k = listFalEngines().find((entry) => entry.id === 'kling-o3-4k')?.engine;
+  assert.ok(standard);
+  assert.ok(pro);
+  assert.ok(native4k);
+
+  const standardDefinition = buildPricingDefinition(standard);
+  const proDefinition = buildPricingDefinition(pro);
+  const standardV2v = buildPricingDefinition(applyEngineVariantPricing(standard, 'v2v'));
+  const proV2v = buildPricingDefinition(applyEngineVariantPricing(pro, 'v2v'));
+  const native4kV2v = buildPricingDefinition(applyEngineVariantPricing(native4k, 'v2v'));
+
+  assert.equal(standardDefinition?.baseUnitPriceCents, 12.6);
+  assert.equal(standardDefinition?.addons?.audio_off?.perSecondCents, -4.2);
+  assert.equal(proDefinition?.baseUnitPriceCents, 16.8);
+  assert.equal(proDefinition?.addons?.audio_off?.perSecondCents, -5.6);
+  assert.equal(standardV2v?.baseUnitPriceCents, 12.6);
+  assert.equal(standardV2v?.resolutionMultipliers['1080p'], 1);
+  assert.equal(proV2v?.baseUnitPriceCents, 16.8);
+  assert.equal(proV2v?.resolutionMultipliers['1080p'], 1);
+  assert.equal(native4kV2v?.baseUnitPriceCents, 42);
+});
+
+test('Happy Horse pricing definition exposes standard and V2V rates', () => {
+  const engine = listFalEngines().find((entry) => entry.id === 'happy-horse-1-0')?.engine;
+  assert.ok(engine);
+
+  const standardDefinition = buildPricingDefinition(engine);
+  const v2vDefinition = buildPricingDefinition(applyEngineVariantPricing(engine, 'v2v'));
+
+  assert.ok(standardDefinition);
+  assert.ok(v2vDefinition);
+  assert.equal(standardDefinition.baseUnitPriceCents, 14);
+  assert.equal(standardDefinition.resolutionMultipliers['720p'], 1);
+  assert.equal(standardDefinition.resolutionMultipliers['1080p'], 2);
+  assert.equal(standardDefinition.durationSteps.min, 3);
+  assert.equal(standardDefinition.durationSteps.max, 15);
+  assert.equal(v2vDefinition.baseUnitPriceCents, 28);
+  assert.equal(v2vDefinition.resolutionMultipliers['720p'], 1);
+  assert.equal(v2vDefinition.resolutionMultipliers['1080p'], 2);
+});
+
+test('Happy Horse 1.1 pricing definition uses current 1080p provider rate', () => {
+  const engine = listFalEngines().find((entry) => entry.id === 'happy-horse-1-1')?.engine;
+  assert.ok(engine);
+
+  const definition = buildPricingDefinition(engine);
+
+  assert.ok(definition);
+  assert.equal(definition.baseUnitPriceCents, 14);
+  assert.equal(definition.resolutionMultipliers['720p'], 1);
+  assert.equal(definition.resolutionMultipliers['1080p'], 18 / 14);
+  assert.equal(definition.durationSteps.min, 3);
+  assert.equal(definition.durationSteps.max, 15);
+});
+
+test('Kling 3 4K benchmark specs mark effective lip sync support', () => {
+  const benchmarkPath = path.join(process.cwd(), 'data/benchmarks/engine-key-specs.v1.json');
+  const benchmarkData = JSON.parse(fs.readFileSync(benchmarkPath, 'utf8')) as {
+    specs?: Array<{ modelSlug?: string; keySpecs?: Record<string, unknown> }>;
+  };
+  const native4k = benchmarkData.specs?.find((entry) => entry.modelSlug === 'kling-3-4k');
+
+  assert.ok(native4k);
+  assert.equal(native4k.keySpecs?.lipSync, 'Supported');
+  assert.equal(native4k.keySpecs?.nativeAudioGeneration, 'Supported');
+});
+
+test('Happy Horse benchmark specs mark unified native audio support', () => {
+  const benchmarkPath = path.join(process.cwd(), 'data/benchmarks/engine-key-specs.v1.json');
+  const benchmarkData = JSON.parse(fs.readFileSync(benchmarkPath, 'utf8')) as {
+    specs?: Array<{ modelSlug?: string; keySpecs?: Record<string, unknown> }>;
+  };
+  const happyHorse = benchmarkData.specs?.find((entry) => entry.modelSlug === 'happy-horse-1-0');
+
+  assert.ok(happyHorse);
+  assert.equal(happyHorse.keySpecs?.textToVideo, 'Supported');
+  assert.equal(happyHorse.keySpecs?.imageToVideo, 'Supported');
+  assert.equal(happyHorse.keySpecs?.videoToVideo, 'Supported (video edit)');
+  assert.equal(happyHorse.keySpecs?.referenceImageStyle, 'Supported (1-9 reference stills)');
+  assert.equal(happyHorse.keySpecs?.lipSync, 'Supported');
+  assert.equal(happyHorse.keySpecs?.nativeAudioGeneration, 'Supported');
+});
+
+test('Happy Horse 1.1 benchmark specs mark current route limits', () => {
+  const benchmarkPath = path.join(process.cwd(), 'data/benchmarks/engine-key-specs.v1.json');
+  const benchmarkData = JSON.parse(fs.readFileSync(benchmarkPath, 'utf8')) as {
+    specs?: Array<{ modelSlug?: string; keySpecs?: Record<string, unknown> }>;
+  };
+  const happyHorse = benchmarkData.specs?.find((entry) => entry.modelSlug === 'happy-horse-1-1');
+
+  assert.ok(happyHorse);
+  assert.equal(happyHorse.keySpecs?.textToVideo, 'Supported');
+  assert.equal(happyHorse.keySpecs?.imageToVideo, 'Supported');
+  assert.equal(happyHorse.keySpecs?.videoToVideo, 'Not supported in the current Happy Horse 1.1 route');
+  assert.equal(
+    happyHorse.keySpecs?.firstLastFrame,
+    'First frame supported via Image-to-Video; last frame not supported'
+  );
+  assert.equal(happyHorse.keySpecs?.referenceImageStyle, 'Supported (1-9 reference stills)');
+  assert.equal(happyHorse.keySpecs?.maxResolution, '1080p');
+  assert.equal(happyHorse.keySpecs?.maxDuration, '15s output');
+  assert.deepEqual(happyHorse.keySpecs?.aspectRatios, ['16:9', '9:16', '1:1', '4:3', '3:4', '21:9', '9:21', '5:4', '4:5']);
+  assert.equal(happyHorse.keySpecs?.lipSync, 'Supported');
+  assert.equal(happyHorse.keySpecs?.nativeAudioGeneration, 'Supported');
+});
+
+test('Wan 2.6 benchmark specs keep reference mode and audio limits explicit', () => {
+  const benchmarkPath = path.join(process.cwd(), 'data/benchmarks/engine-key-specs.v1.json');
+  const benchmarkData = JSON.parse(fs.readFileSync(benchmarkPath, 'utf8')) as {
+    specs?: Array<{ modelSlug?: string; keySpecs?: Record<string, unknown> }>;
+  };
+  const wan26 = benchmarkData.specs?.find((entry) => entry.modelSlug === 'wan-2-6');
+
+  assert.ok(wan26);
+  assert.equal(wan26.keySpecs?.videoToVideo, 'Reference-video guidance');
+  assert.equal(wan26.keySpecs?.audioOutput, 'Text/Image modes only; off in Reference mode');
+  assert.equal(wan26.keySpecs?.lipSync, 'Supported');
+});
+
+test('Pika Text-to-Video benchmark specs avoid image route overclaims', () => {
+  const benchmarkPath = path.join(process.cwd(), 'data/benchmarks/engine-key-specs.v1.json');
+  const benchmarkData = JSON.parse(fs.readFileSync(benchmarkPath, 'utf8')) as {
+    specs?: Array<{ modelSlug?: string; keySpecs?: Record<string, unknown> }>;
+  };
+  const pika = benchmarkData.specs?.find((entry) => entry.modelSlug === 'pika-text-to-video');
+
+  assert.ok(pika);
+  assert.equal(pika.keySpecs?.textToVideo, 'Supported');
+  assert.equal(pika.keySpecs?.imageToVideo, 'Related image-start workflow');
+  assert.equal(pika.keySpecs?.firstLastFrame, 'Not supported');
+  assert.equal(pika.keySpecs?.audioOutput, 'Not supported');
+  assert.deepEqual(pika.keySpecs?.aspectRatios, ['1:1', '16:9', '9:16', '4:5', '5:4', '3:2', '2:3']);
+});
+
+test('Happy Horse is distributed across relevant best-for pages', () => {
+  const comparePath = path.join(process.cwd(), 'frontend/config/compare-config.json');
+  const compareData = JSON.parse(fs.readFileSync(comparePath, 'utf8')) as {
+    bestForPages?: Array<{ slug: string; topPicks?: string[] }>;
+  };
+  const topPicksBySlug = new Map(compareData.bestForPages?.map((entry) => [entry.slug, entry.topPicks ?? []]) ?? []);
+
+  [
+    'image-to-video',
+    'cinematic-realism',
+    'character-reference',
+    'reference-to-video',
+    'ads',
+    'ugc-ads',
+    'product-videos',
+    'lipsync-dialogue',
+  ].forEach((slug) => {
+    assert.equal(topPicksBySlug.get(slug)?.includes('happy-horse-1-1'), true, `${slug} should include Happy Horse`);
+    assert.notEqual(topPicksBySlug.get(slug)?.[0], 'happy-horse-1-1', `${slug} should not rank Happy Horse first`);
+  });
+
+  assert.deepEqual(topPicksBySlug.get('cinematic-realism')?.slice(0, 2), ['seedance-2-0', 'kling-3-pro']);
+  assert.deepEqual(topPicksBySlug.get('ads')?.slice(0, 2), ['seedance-2-0', 'kling-3-pro']);
+  assert.deepEqual(topPicksBySlug.get('character-reference')?.slice(0, 2), ['kling-3-pro', 'seedance-2-0']);
+
+  ['4k-video', 'fast-drafts', 'stylized-anime'].forEach((slug) => {
+    assert.equal(topPicksBySlug.get(slug)?.includes('happy-horse-1-1'), false, `${slug} should not include Happy Horse`);
+  });
+});
+
+test('Happy Horse benchmark score is calibrated below Seedance and Kling 3 Pro for realism and motion', () => {
+  const benchmarkPath = path.join(process.cwd(), 'data/benchmarks/engine-scores.v1.json');
+  const benchmarkData = JSON.parse(fs.readFileSync(benchmarkPath, 'utf8')) as {
+    scores?: Array<{
+      modelSlug?: string;
+      fidelity?: number;
+      visualQuality?: number;
+      motion?: number;
+      consistency?: number;
+      lipsyncQuality?: number;
+    }>;
+  };
+  const happyHorse = benchmarkData.scores?.find((entry) => entry.modelSlug === 'happy-horse-1-1');
+  const seedance = benchmarkData.scores?.find((entry) => entry.modelSlug === 'seedance-2-0');
+  const kling = benchmarkData.scores?.find((entry) => entry.modelSlug === 'kling-3-pro');
+
+  assert.ok(happyHorse);
+  assert.ok(seedance);
+  assert.ok(kling);
+  assert.ok((happyHorse.fidelity ?? 0) < (seedance.fidelity ?? 0));
+  assert.ok((happyHorse.visualQuality ?? 0) < (seedance.visualQuality ?? 0));
+  assert.ok((happyHorse.motion ?? 0) < (seedance.motion ?? 0));
+  assert.ok((happyHorse.visualQuality ?? 0) < (kling.visualQuality ?? 0));
+  assert.ok((happyHorse.motion ?? 0) < (kling.motion ?? 0));
+});
+
+test('Happy Horse 1.1 displayed quotes include MaxVideoAI margin', async () => {
+  const engine = listFalEngines().find((entry) => entry.id === 'happy-horse-1-1')?.engine;
+  assert.ok(engine);
+
+  const snapshot = await computePricingSnapshot({
+    engine,
+    durationSec: 5,
+    resolution: '1080p',
+    mode: 't2v',
+    membershipTier: 'member',
+  });
+
+  assert.equal(snapshot.base.amountCents, 90);
+  assert.equal(snapshot.margin.amountCents, 27);
+  assert.equal(snapshot.totalCents, 117);
+});
+
+test('Kling 3 displayed quotes include the MaxVideoAI margin', async () => {
+  const standard = listFalEngines().find((entry) => entry.id === 'kling-3-standard')?.engine;
+  const pro = listFalEngines().find((entry) => entry.id === 'kling-3-pro')?.engine;
+  const native4k = listFalEngines().find((entry) => entry.id === 'kling-3-4k')?.engine;
+  assert.ok(standard);
+  assert.ok(pro);
+  assert.ok(native4k);
+
+  const standardSnapshot = await computePricingSnapshot({
+    engine: standard,
+    durationSec: 5,
+    resolution: '1080p',
+    membershipTier: 'member',
+  });
+  const proSnapshot = await computePricingSnapshot({
+    engine: pro,
+    durationSec: 5,
+    resolution: '1080p',
+    membershipTier: 'member',
+  });
+  const native4kSnapshot = await computePricingSnapshot({
+    engine: native4k,
+    durationSec: 5,
+    resolution: '4k',
+    membershipTier: 'member',
+  });
+
+  assert.equal(standardSnapshot.base.amountCents, 63);
+  assert.equal(standardSnapshot.margin.amountCents, 19);
+  assert.equal(standardSnapshot.totalCents, 82);
+  assert.equal(proSnapshot.base.amountCents, 84);
+  assert.equal(proSnapshot.margin.amountCents, 26);
+  assert.equal(proSnapshot.totalCents, 110);
+  assert.equal(native4kSnapshot.base.amountCents, 210);
+  assert.equal(native4kSnapshot.margin.amountCents, 63);
+  assert.equal(native4kSnapshot.totalCents, 273);
+});
+
+test('Happy Horse displayed quotes include MaxVideoAI margin and V2V double rate', async () => {
+  const engine = listFalEngines().find((entry) => entry.id === 'happy-horse-1-0')?.engine;
+  assert.ok(engine);
+
+  const standardSnapshot = await computePricingSnapshot({
+    engine,
+    durationSec: 5,
+    resolution: '1080p',
+    mode: 't2v',
+    membershipTier: 'member',
+  });
+  const v2vSnapshot = await computePricingSnapshot({
+    engine: applyEngineVariantPricing(engine, 'v2v'),
+    durationSec: 5,
+    resolution: '1080p',
+    mode: 'v2v',
+    membershipTier: 'member',
+  });
+
+  assert.equal(standardSnapshot.base.amountCents, 140);
+  assert.equal(standardSnapshot.margin.amountCents, 42);
+  assert.equal(standardSnapshot.totalCents, 182);
+  assert.equal(v2vSnapshot.base.amountCents, 280);
+  assert.equal(v2vSnapshot.margin.amountCents, 84);
+  assert.equal(v2vSnapshot.totalCents, 364);
+});

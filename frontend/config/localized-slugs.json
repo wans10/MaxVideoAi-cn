@@ -1,0 +1,25 @@
+{
+  "models": { "en": "models", "fr": "modeles", "es": "modelos" },
+  "pricing": { "en": "pricing", "fr": "tarifs", "es": "precios" },
+  "payAsYouGoVideo": {
+    "en": "pay-as-you-go-ai-video-generator",
+    "fr": "pay-as-you-go-ai-video-generator",
+    "es": "pay-as-you-go-ai-video-generator"
+  },
+  "tools": { "en": "tools", "fr": "outils", "es": "herramientas" },
+  "gallery": { "en": "examples", "fr": "galerie", "es": "galeria" },
+  "compare": { "en": "ai-video-engines", "fr": "comparatif", "es": "comparativa" },
+  "blog": { "en": "blog", "fr": "blog", "es": "blog" },
+  "workflows": { "en": "workflows", "fr": "workflows", "es": "workflows" },
+  "company": { "en": "company", "fr": "entreprise", "es": "empresa" },
+  "about": { "en": "about", "fr": "a-propos", "es": "acerca-de" },
+  "editorialStandards": {
+    "en": "editorial-standards",
+    "fr": "normes-editoriales",
+    "es": "estandares-editoriales"
+  },
+  "contact": { "en": "contact", "fr": "contact", "es": "contact" },
+  "status": { "en": "status", "fr": "statut", "es": "estado" },
+  "changelog": { "en": "changelog", "fr": "changelog", "es": "changelog" },
+  "docs": { "en": "docs", "fr": "docs", "es": "docs" }
+}

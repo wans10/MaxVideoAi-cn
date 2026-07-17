@@ -1,0 +1,106 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import test from 'node:test';
+
+test('workspace pricing and auth gate orchestration is owned by route-local modules', () => {
+  const appSource = fs.readFileSync(
+    path.join(process.cwd(), 'frontend/app/(core)/(workspace)/app/AppClient.tsx'),
+    'utf8'
+  );
+  const readyViewPath = path.join(
+    process.cwd(),
+    'frontend/app/(core)/(workspace)/app/_components/WorkspaceAppReadyView.tsx'
+  );
+  const hookPath = path.join(
+    process.cwd(),
+    'frontend/app/(core)/(workspace)/app/_hooks/useWorkspacePricingGate.ts'
+  );
+  const topUpModalPath = path.join(
+    process.cwd(),
+    'frontend/app/(core)/(workspace)/app/_components/WorkspaceTopUpModal.tsx'
+  );
+  const authGateModalPath = path.join(
+    process.cwd(),
+    'frontend/app/(core)/(workspace)/app/_components/WorkspaceAuthGateModal.tsx'
+  );
+  const runtimeModalsPath = path.join(
+    process.cwd(),
+    'frontend/app/(core)/(workspace)/app/_components/WorkspaceRuntimeModals.tsx'
+  );
+
+  assert.equal(fs.existsSync(readyViewPath), true);
+  assert.equal(fs.existsSync(hookPath), true);
+  assert.equal(fs.existsSync(topUpModalPath), true);
+  assert.equal(fs.existsSync(authGateModalPath), true);
+  assert.equal(fs.existsSync(runtimeModalsPath), true);
+
+  const readyViewSource = fs.readFileSync(readyViewPath, 'utf8');
+  const hookSource = fs.readFileSync(hookPath, 'utf8');
+  const topUpModalSource = fs.readFileSync(topUpModalPath, 'utf8');
+  const authGateModalSource = fs.readFileSync(authGateModalPath, 'utf8');
+  const runtimeModalsSource = fs.readFileSync(runtimeModalsPath, 'utf8');
+
+  assert.match(appSource, /import \{ useWorkspacePricingGate \} from '\.\/_hooks\/useWorkspacePricingGate';/);
+  assert.match(appSource, /import \{ WorkspaceAppReadyView \} from '\.\/_components\/WorkspaceAppReadyView';/);
+  assert.match(appSource, /useWorkspacePricingGate\(\{/);
+  assert.doesNotMatch(appSource, /WorkspaceRuntimeModals/);
+
+  assert.doesNotMatch(appSource, /const \[preflight, setPreflight\] = useState/);
+  assert.doesNotMatch(appSource, /const handleConfirmTopUp = useCallback/);
+  assert.doesNotMatch(appSource, /const payload: PreflightRequest =/);
+  assert.doesNotMatch(appSource, /const singlePriceCents =/);
+  assert.doesNotMatch(appSource, /Wallet balance too low/);
+
+  assert.match(hookSource, /export function useWorkspacePricingGate/);
+  assert.match(hookSource, /runPreflight/);
+  assert.match(hookSource, /authFetch\('\/api\/member-status'\)/);
+  assert.match(hookSource, /useHostedWalletCheckout\(\{/);
+  assert.match(hookSource, /getSufficientTopUpAmountCents/);
+  assert.match(hookSource, /returnTarget: '\/app'/);
+  assert.match(hookSource, /currency: 'USD'/);
+  assert.match(hookSource, /dispatchGaEvent\('topup_started'/);
+  assert.match(hookSource, /dispatchGaEvent\('topup_failed'/);
+  assert.doesNotMatch(hookSource, /authFetch\('\/api\/wallet',\s*\{/);
+  assert.doesNotMatch(hookSource, /window\.location\.href/);
+  assert.match(hookSource, /const handleConfirmTopUp = useCallback/);
+  assert.match(
+    hookSource,
+    /const handleConfirmTopUp = useCallback\(\(\) => \{[\s\S]*?setTopUpError\(null\);[\s\S]*?startCheckout\(\);/,
+    'a new Workspace hosted attempt should clear its route-owned visible error'
+  );
+  assert.match(hookSource, /captchaResetGeneration/);
+  assert.match(hookSource, /const showComposerError = useCallback/);
+  assert.doesNotMatch(
+    hookSource,
+    /window\.addEventListener\('keydown'/,
+    'modal keyboard behavior should live in the modal accessibility hook'
+  );
+
+  assert.match(topUpModalSource, /export function WorkspaceTopUpModal/);
+  assert.match(topUpModalSource, /TurnstileChallenge/);
+  assert.match(topUpModalSource, /resetGeneration=\{checkoutCaptchaResetGeneration\}/);
+  assert.doesNotMatch(topUpModalSource, />Wallet balance too low</);
+  assert.match(topUpModalSource, /custom-topup/);
+  assert.match(
+    topUpModalSource,
+    /suggestedTopUp\.replace\('\{amount\}', suggestedTopUpAmountLabel\)/,
+    'the suggested amount should reflect the selectable minimum top-up, not the smaller wallet shortfall'
+  );
+  assert.doesNotMatch(
+    topUpModalSource,
+    /suggestedTopUp\.replace\('\{amount\}', modal\.amountLabel\)/
+  );
+
+  assert.match(authGateModalSource, /export function WorkspaceAuthGateModal/);
+  assert.match(authGateModalSource, /ButtonLink/);
+  assert.match(authGateModalSource, /buildLoginHref/);
+  assert.match(authGateModalSource, /mode: 'signup', nextPath: loginRedirectTarget/);
+  assert.match(authGateModalSource, /mode: 'signin', nextPath: loginRedirectTarget/);
+
+  assert.match(runtimeModalsSource, /WorkspaceTopUpModal/);
+  assert.match(runtimeModalsSource, /WorkspaceAuthGateModal/);
+  assert.match(runtimeModalsSource, /AssetLibraryModal/);
+  assert.match(readyViewSource, /import \{ WorkspaceRuntimeModals \} from '\.\/WorkspaceRuntimeModals';/);
+  assert.match(readyViewSource, /<WorkspaceRuntimeModals/);
+});

@@ -1,0 +1,398 @@
+{
+  "marketingName": "Nano Banana Lite",
+  "versionLabel": "Lite",
+  "seo": {
+    "title": "Nano Banana Lite - Fast 1K Google Image Generation | MaxVideoAI",
+    "description": "Generate fast 1K still images and local edits with Nano Banana Lite in MaxVideoAI, routed directly through Google's Gemini image API."
+  },
+  "overview": "Nano Banana Lite is the fast, efficient 1K member of the Google Nano Banana image family. Use it for high-volume still drafts, social concepts, local image edits, and quick visual exploration before moving selected ideas to Nano Banana 2 or Nano Banana Pro.",
+  "pricingNotes": "Nano Banana Lite is priced per 1K image. MaxVideoAI shows the exact live quote before generation.",
+  "hero": {
+    "title": "Nano Banana Lite - fast 1K image generation",
+    "intro": "Use the direct Google Lite route for fast still-image drafts, quick local edits, and high-volume creative exploration.",
+    "badge": "Text -> Image · Image -> Image · 1K only",
+    "ctaPrimary": {
+      "label": "Launch Nano Banana Lite",
+      "href": "/app/image?engine=nano-banana-lite"
+    },
+    "secondaryLinks": [
+      {
+        "label": "Open Nano Banana 2",
+        "href": "/models/nano-banana-2"
+      },
+      {
+        "label": "Open Nano Banana Pro",
+        "href": "/models/nano-banana-pro"
+      }
+    ]
+  },
+  "bestUseCases": {
+    "title": "Best use cases",
+    "items": [
+      {
+        "title": "Fast 1K social concepts",
+        "icon": "sparkles"
+      },
+      {
+        "title": "Local image edits from references",
+        "icon": "layers"
+      },
+      {
+        "title": "High-volume draft batches",
+        "icon": "storyboard"
+      }
+    ]
+  },
+  "tips": {
+    "title": "Tips and limits",
+    "items": [
+      "Use Lite when speed matters more than 2K or 4K finishing.",
+      "Do not enable Search grounding here; use Nano Banana 2 or Pro for grounded workflows.",
+      "Use references to preserve subject identity, pose, palette, or product details.",
+      "Prompts work best when the edit instruction is short and explicit."
+    ]
+  },
+  "prompts": [
+    {
+      "title": "Kinetic street still",
+      "prompt": "1K energetic street-fashion still at night, reflective rain, cyan and amber neon, dynamic low camera angle, editorial magazine lighting."
+    },
+    {
+      "title": "Local reference edit",
+      "prompt": "Keep the subject, pose, and framing from this reference, but replace the jacket with a glossy red technical shell and shift the background to blue hour city lights."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What resolution does Nano Banana Lite support?",
+      "a": "Nano Banana Lite supports 1K image output only. Use Nano Banana 2 or Nano Banana Pro for 2K and 4K outputs."
+    },
+    {
+      "q": "Does Nano Banana Lite support Search grounding?",
+      "a": "No. Lite is for fast generation and edits. Use Nano Banana 2 or Nano Banana Pro when the prompt needs Google Search grounding."
+    }
+  ],
+  "custom": {
+    "heroEyebrow": "Nano Banana Lite Image Model",
+    "heroSupportLine": "Best for fast 1K drafts, social visuals, and quick image edits.",
+    "heroSpecChips": [
+      {
+        "label": "Text->Image",
+        "icon": "textToVideo"
+      },
+      {
+        "label": "Image->Image",
+        "icon": "imageToVideo"
+      },
+      {
+        "label": "1K only",
+        "icon": "resolution"
+      },
+      {
+        "label": "No Search grounding"
+      }
+    ],
+    "whyTitle": "Why use Lite",
+    "heroDesc1": "Nano Banana Lite keeps the still-image workflow fast and focused: one resolution, direct Google routing, and no Pro-only controls in the composer.",
+    "heroDesc2": "It is the right first pass when you need many quick creative directions before choosing what deserves a higher-resolution render.",
+    "heroHighlights": [
+      "Fast drafts||Use 1K output for rapid ideation and social concept testing.",
+      "Reference edits||Upload source images to preserve subject, product, pose, or palette.",
+      "Clean family path||Move approved concepts to Nano Banana 2 or Pro when Search, 2K, or 4K matter."
+    ],
+    "specSections": [
+      {
+        "title": "Lite-specific options",
+        "items": [
+          "Direct Google model: gemini-3.1-flash-lite-image.",
+          "Resolution: 1K only.",
+          "Modes: text-to-image and image-to-image.",
+          "Search grounding is not exposed for Lite.",
+          "Reference input supports up to 14 images."
+        ]
+      }
+    ],
+    "strengths": [
+      "Use it for fast image drafts.",
+      "Keep prompts concise and visually direct.",
+      "Use references when a subject or object must stay recognizable."
+    ],
+    "boundaries": [
+      "Still images only.",
+      "1K output only.",
+      "No Search grounding.",
+      "Use Nano Banana 2 or Pro for 2K/4K."
+    ],
+    "relatedTitle": "Nano Banana family",
+    "relatedSubtitle": "Choose the Google image model by output need, not by a video-style score.",
+    "relatedItems": [
+      {
+        "brand": "Google",
+        "title": "Nano Banana 2",
+        "modelSlug": "nano-banana-2",
+        "description": "Use for 0.5K to 4K, wider ratios, and optional Search grounding.",
+        "ctaLabel": "Open Nano Banana 2"
+      },
+      {
+        "brand": "Google",
+        "title": "Nano Banana Pro",
+        "modelSlug": "nano-banana-pro",
+        "description": "Use for professional 4K finals, typography, and complex grounded assets.",
+        "ctaLabel": "Open Nano Banana Pro"
+      }
+    ],
+    "safetyTitle": "Safety and likeness",
+    "safetyRules": [
+      "No sexual content or content involving minors.",
+      "No hateful, harassing, or graphic-violence requests.",
+      "Do not impersonate real people or public figures without consent."
+    ]
+  },
+  "decision": {
+    "modelSlug": "nano-banana-lite",
+    "hero": {
+      "eyebrow": "GOOGLE FAST IMAGE MODEL",
+      "title": "Nano Banana Lite - fast 1K image generation",
+      "subtitle": "Nano Banana Lite is the fast, efficient 1K member of the Google Nano Banana image family. Use it for high-volume still drafts, social concepts, local image edits, and quick visual exploration before moving selected ideas to Nano Banana 2 or Nano Banana Pro.",
+      "subtitleHighlights": [
+        "fast, efficient 1K",
+        "local image edits",
+        "quick visual exploration"
+      ],
+      "paragraph": "Use the direct Google Lite route for fast still-image drafts, quick local edits, and high-volume creative exploration.",
+      "primaryCta": {
+        "label": "Launch Nano Banana Lite",
+        "href": "/app/image?engine=nano-banana-lite"
+      },
+      "secondaryCta": {
+        "label": "Open Nano Banana 2",
+        "href": "/models/nano-banana-2"
+      },
+      "quickLinks": [
+        {
+          "label": "Open image workspace",
+          "href": "/app/image?engine=nano-banana-lite"
+        },
+        {
+          "label": "View pricing",
+          "href": "/pricing#nano-banana-lite-pricing"
+        },
+        {
+          "label": "Prompt examples",
+          "href": "#prompting"
+        },
+        {
+          "label": "Open Nano Banana Pro",
+          "href": "/models/nano-banana-pro"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Nano Banana Lite example",
+      "description": "Use the direct Google Lite route for fast still-image drafts, quick local edits, and high-volume creative exploration.",
+      "renderLabel": "View image",
+      "badges": [
+        "Text -> Image",
+        "Image -> Image",
+        "1K only"
+      ],
+      "altContext": "Nano Banana Lite - fast 1K image generation"
+    },
+    "features": [
+      {
+        "title": "Capabilities",
+        "body": "Nano Banana Lite is the fast, efficient 1K member of the Google Nano Banana image family. Use it for high-volume still drafts, social concepts, local image edits, and quick visual exploration before moving selected ideas to Nano Banana 2 or Nano Banana Pro.",
+        "tone": "quality"
+      },
+      {
+        "title": "Workflow",
+        "body": "Use the direct Google Lite route for fast still-image drafts, quick local edits, and high-volume creative exploration.",
+        "tone": "reference"
+      },
+      {
+        "title": "Output",
+        "body": "Text -> Image · Image -> Image · 1K only",
+        "tone": "duration"
+      },
+      {
+        "title": "Live price",
+        "body": "Nano Banana Lite is priced per 1K image. MaxVideoAI shows the exact live quote before generation.",
+        "tone": "price"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "Open Nano Banana 2",
+        "body": "Nano Banana Lite is the fast, efficient 1K member of the Google Nano Banana image family. Use it for high-volume still drafts, social concepts, local image edits, and quick visual exploration before moving selected ideas to Nano Banana 2 or Nano Banana Pro.",
+        "cta": {
+          "label": "Open Nano Banana 2",
+          "href": "/models/nano-banana-2"
+        }
+      },
+      {
+        "title": "Open Nano Banana Pro",
+        "body": "Use the direct Google Lite route for fast still-image drafts, quick local edits, and high-volume creative exploration.",
+        "cta": {
+          "label": "Open Nano Banana Pro",
+          "href": "/models/nano-banana-pro"
+        }
+      },
+      {
+        "title": "Need prompt examples?",
+        "body": "Open the Prompt Lab for a structured starting point.",
+        "cta": {
+          "label": "Prompt examples",
+          "href": "#prompting"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Text-to-image",
+        "body": "Use the direct Google Lite route for fast still-image drafts, quick local edits, and high-volume creative exploration."
+      },
+      {
+        "title": "Image-to-image",
+        "body": "Nano Banana Lite is the fast, efficient 1K member of the Google Nano Banana image family. Use it for high-volume still drafts, social concepts, local image edits, and quick visual exploration before moving selected ideas to Nano Banana 2 or Nano Banana Pro."
+      },
+      {
+        "title": "Output setup",
+        "body": "Text -> Image · Image -> Image · 1K only"
+      },
+      {
+        "title": "Price check",
+        "body": "Nano Banana Lite is priced per 1K image. MaxVideoAI shows the exact live quote before generation."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Nano Banana Lite pricing at a glance",
+      "subtitle": "Nano Banana Lite is priced per 1K image. MaxVideoAI shows the exact live quote before generation.",
+      "footnote": "Nano Banana Lite is priced per 1K image. MaxVideoAI shows the exact live quote before generation.",
+      "ctaLabel": "View full pricing",
+      "ctaHref": "/pricing#nano-banana-lite-pricing"
+    },
+    "meta": {
+      "title": "Nano Banana Lite - Fast 1K Google Image Generation | MaxVideoAI",
+      "description": "Generate fast 1K still images and local edits with Nano Banana Lite in MaxVideoAI, routed directly through Google's Gemini image API."
+    }
+  },
+  "prompting": {
+    "modelSlug": "nano-banana-lite",
+    "section": {
+      "title": "How to prompt Nano Banana Lite",
+      "intro": "Keep the request tight: subject, composition, lighting, and the edit target.",
+      "tip": null,
+      "guide": null,
+      "referencesTitle": "How Nano Banana Lite uses references"
+    },
+    "tabs": [],
+    "tabNotes": [],
+    "globalPrinciples": [],
+    "engineWhy": [],
+    "demo": null,
+    "imageExamples": {
+      "title": "Nano Banana Lite image prompt examples",
+      "intro": "Use these for campaign stills, typography posters, reference edits and 2K-to-4K finals.",
+      "workspaceLabel": "Open image workspace",
+      "items": [
+        {
+          "id": "quality-1",
+          "title": "Campaign still",
+          "badge": "2K still",
+          "kind": "quality",
+          "prompt": "2K campaign still for an amber perfume bottle on white acrylic, soft studio key light, clean shadow, exact headline \"AURA NOIRE\" top-left, small logo lockup bottom edge."
+        },
+        {
+          "id": "typography-2",
+          "title": "Typography poster",
+          "badge": "Typography",
+          "kind": "typography",
+          "prompt": "Vertical 4K poster, premium editorial grid, graphite background, exact headline \"MIDNIGHT LAUNCH\", subhead \"LIMITED DROP\", crisp hierarchy, generous margins, readable text."
+        },
+        {
+          "id": "edit-3",
+          "title": "Reference edit",
+          "badge": "Image-to-image",
+          "kind": "edit",
+          "prompt": "Using this product reference, keep the shape, logo and proportions. Change the scene to a midnight-blue studio, improve reflections, remove dust and fingerprints."
+        },
+        {
+          "id": "layout-4",
+          "title": "2K to 4K final",
+          "badge": "4K final",
+          "kind": "layout",
+          "prompt": "Rerun the approved 2K composition as a 4K final. Sharpen fine details, keep typography identical, preserve brand colors, product position and the locked framing."
+        }
+      ]
+    }
+  },
+  "examples": {
+    "modelSlug": "nano-banana-lite",
+    "section": {
+      "title": "Nano Banana Lite examples",
+      "intro": "Explore real community outputs and see how Nano Banana Lite performs inside MaxVideoAI workflows.",
+      "defaultCtaLabel": null,
+      "recreateLabel": null
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "All"
+      },
+      {
+        "id": "cinematic",
+        "label": "Cinematic"
+      },
+      {
+        "id": "product",
+        "label": "Product / Ad"
+      },
+      {
+        "id": "action",
+        "label": "Action"
+      },
+      {
+        "id": "vertical",
+        "label": "Vertical"
+      },
+      {
+        "id": "audio",
+        "label": "Audio on"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Real community renders",
+        "body": "See what's possible with Nano Banana Lite.",
+        "icon": "sparkles"
+      },
+      {
+        "id": "proof-2",
+        "title": "Recreate any shot",
+        "body": "Jump into the app with one click and reuse the setup.",
+        "icon": "zap"
+      },
+      {
+        "id": "proof-3",
+        "title": "Native audio",
+        "body": "Dialogue, ambience and SFX generated in sync.",
+        "icon": "audio"
+      },
+      {
+        "id": "proof-4",
+        "title": "Multi-shot continuity",
+        "body": "Keep characters, style and scene consistency across sequences.",
+        "icon": "users"
+      },
+      {
+        "id": "proof-5",
+        "title": "Production-aware",
+        "body": "Built-in guardrails and safety filters for responsible review.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": null,
+    "showWhenEmpty": false
+  }
+}

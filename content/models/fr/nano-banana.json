@@ -1,0 +1,569 @@
+{
+  "marketingName": "Nano Banana",
+  "versionLabel": "Image",
+  "seo": {
+    "title": "Nano Banana – Génération d’images photoréalistes | MaxVideoAI",
+    "description": "Générez des stills photoréalistes et des edits avec Nano Banana. Text‑to‑image et image‑to‑image pour keyframes, thumbnails et références avant d’animer dans Sora, Veo ou Kling.",
+    "image": "https://media.maxvideoai.com/marketing/marketing/2e71a814-3eed-4965-8beb-bd22d1c243e4.png"
+  },
+  "overview": "Nano Banana est votre sidekick image photoréaliste dans MaxVideoAI. Verrouillez style, lumière et cadrage avant de rendre en vidéo — text‑to‑image + edits depuis le même wallet et le même lab de prompts.",
+  "hero": {
+    "title": "Nano Banana – Génération d’images photoréalistes",
+    "intro": "Génération rapide de stills et d’edits en langage naturel — faite pour l’exploration créative express.",
+    "badge": "Texte → Image · Image → Image · 1–8 outputs",
+    "ctaPrimary": {
+      "label": "Générer une image",
+      "href": "/app/image?engine=nano-banana"
+    },
+    "secondaryLinks": [
+      {
+        "label": "Ouvrir l’image lab",
+        "href": "/app/image"
+      },
+      {
+        "label": "Voir les tarifs live",
+        "href": "/generate"
+      },
+      {
+        "label": "Voir des exemples d’images",
+        "href": "/examples?engine=nano-banana"
+      }
+    ]
+  },
+  "bestUseCases": {
+    "title": "Meilleurs cas d’usage",
+    "items": [
+      {
+        "title": "Concepting rapide & exploration d’ambiance",
+        "icon": "zap"
+      },
+      {
+        "title": "Edits rapides (restyle / relight / swap de détails)",
+        "icon": "wand2"
+      },
+      {
+        "title": "Composites simples & blends multi‑image",
+        "icon": "layers"
+      },
+      {
+        "title": "Thumbnails, titres et texte de layout basique",
+        "icon": "type"
+      },
+      {
+        "title": "Mockups produit & variantes SKU rapides",
+        "icon": "product"
+      },
+      {
+        "title": "Boards de référence / keyframes avant vidéo",
+        "icon": "storyboard"
+      }
+    ]
+  },
+  "technicalOverviewTitle": "Résumé technique",
+  "technicalOverview": [
+    {
+      "label": "Types d’entrée",
+      "body": "Prompts texte, images de référence (JPG/PNG/WebP) et mode edit pour restyles ou cleanups."
+    },
+    {
+      "label": "Sorties",
+      "body": "Stills haute résolution optimisés pour photoréalisme et lisibilité du texte."
+    },
+    {
+      "label": "Modes",
+      "body": "Text‑to‑image ; image‑to‑image pour restyle, cleanup et remplacement d’arrière‑plan."
+    },
+    {
+      "label": "Usage typique",
+      "body": "Préparez 1–4 keyframes avant d’animer dans Sora, Veo, Kling ou Wan."
+    }
+  ],
+  "promptStructure": {
+    "title": "Mini‑guide de prompt",
+    "quote": "Plan ciné de [sujet] dans [décor], [lumière/grade], [lentille], keyframe pour [modèle vidéo].",
+    "description": "Gardez des prompts descriptifs et ancrés. Mentionnez sujet, décor, lentille, lumière et l’usage du frame.",
+    "steps": [
+      "Sujet & décor (produit, personne, pièce)",
+      "Lumière & lentille (studio, 50mm, grade doux)",
+      "Mood & composition (angle hero, fond propre)",
+      "Intention de sortie (keyframe pour Sora/Veo/Kling)",
+      "Pour les edits, décrivez la transformation"
+    ]
+  },
+  "tips": {
+    "title": "Conseils & limites",
+    "items": [
+      "Générez 2–4 keyframes puis animez‑les dans Veo/Sora/Kling.",
+      "Utilisez le mode edit pour nettoyer poussière, homogénéiser la lumière ou changer de fond.",
+      "Verrouillez les seeds pour la cohérence d’une série.",
+      "Batch (`num_images`) pour des variations rapides."
+    ]
+  },
+  "prompts": [
+    {
+      "title": "Hero produit (texte → image)",
+      "prompt": "Packshot photoréaliste en studio d’un écouteur sans fil sur surface noire brillante, rim light douce, fond minimal, 8K, photo produit."
+    },
+    {
+      "title": "Keyframe lifestyle (texte → image)",
+      "prompt": "Scène lifestyle chaleureuse d’un(e) jeune pro travaillant sur un laptop près d’une grande fenêtre à l’heure dorée, bokeh de ville doux, couleurs réalistes, lumière ciné grade."
+    },
+    {
+      "title": "Cleanup (image → image)",
+      "prompt": "Nettoyer ce mockup produit : uniformiser la lumière, retirer poussière et traces, et le placer sur un fond dégradé doux adapté à l’e‑commerce."
+    },
+    {
+      "title": "Restyle magazine (image → image)",
+      "prompt": "À partir de ce portrait, reproduire le look d’une couverture de magazine glossy : peau plus lisse, contraste légèrement plus punchy, grade subtil et fond studio neutre."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Nano Banana est‑il pour images ou vidéo ?",
+      "a": "Images. Utilisez‑le pour références photoréalistes, thumbnails et keyframes avant de passer aux modèles vidéo."
+    },
+    {
+      "q": "Combien d’images par run ?",
+      "a": "Générez plusieurs sorties par run (contrôlé par « num images » / num_images). Gardez des batches petits pour itérer vite."
+    },
+    {
+      "q": "Le mode edit nécessite‑t‑il des masques ?",
+      "a": "Non. Uploadez une ou plusieurs images et décrivez l’edit en langage naturel (quoi changer, quoi garder)."
+    }
+  ],
+  "pricingNotes": "Les tarifs live s’actualisent dans le studio. Vérifiez le chip avant rendu.",
+  "custom": {
+    "heroEyebrow": "Modèle image Nano Banana",
+    "heroSupportLine": "Idéal pour un concepting rapide, des visuels de campagne légers et des boards de référence propres avant vidéo.",
+    "heroSpecChips": [
+      {
+        "label": "Text→Image",
+        "icon": "textToVideo"
+      },
+      {
+        "label": "Image→Image (Edit)",
+        "icon": "imageToVideo"
+      },
+      {
+        "label": "Tier rapide"
+      },
+      {
+        "label": "Blends multi‑image"
+      },
+      {
+        "label": "Cohérence personnage"
+      },
+      {
+        "label": "Tests faible latence"
+      }
+    ],
+    "whyTitle": "Pourquoi Nano Banana est puissant",
+    "heroDesc1": "Générez des stills photoréalistes et des edits pour verrouiller style, lumière et cadrage avant d’animer dans Sora, Veo ou Kling.",
+    "heroDesc2": "Text‑to‑image et image‑to‑image partagent le même wallet et le même lab que vos modèles vidéo, avec 1–8 outputs par run.",
+    "heroHighlights": [
+      "Workflow vitesse‑first||Conçu pour itérer vite quand vous avez besoin de beaucoup d’options.",
+      "Edits sans tooling lourd||Décrivez le changement en clair; gardez le reste cohérent.",
+      "Créativité multi‑image||Blendez des références pour rester proche de votre intention.",
+      "Excellente “draft layer” pour la prod||Générez des boards, puis passez les gagnants sur des modèles vidéo premium."
+    ],
+    "bestUseCasesTitle": "Meilleurs cas d’usage",
+    "bestUseCases": [
+      {
+        "title": "Concepting rapide & exploration d’ambiance",
+        "icon": "zap"
+      },
+      {
+        "title": "Edits rapides (restyle / relight / swap de détails)",
+        "icon": "wand2"
+      },
+      {
+        "title": "Composites simples & blends multi‑image",
+        "icon": "layers"
+      },
+      {
+        "title": "Thumbnails, titres et texte de layout basique",
+        "icon": "type"
+      },
+      {
+        "title": "Mockups produit & variantes SKU rapides",
+        "icon": "product"
+      },
+      {
+        "title": "Boards de référence / keyframes avant vidéo",
+        "icon": "storyboard"
+      }
+    ],
+    "whatTitle": "Comment Nano Banana fonctionne dans MaxVideoAI",
+    "whatIntro1": "Choisissez text‑to‑image ou image‑to‑image, définissez le batch (1–8), écrivez votre prompt ou vos instructions d’edit, puis générez.",
+    "whatIntro2": "Utilisez‑le pour verrouiller style, lumière et cadrage avant de passer à la vidéo.",
+    "whatFlowTitle": "Workflow",
+    "whatFlowSteps": [
+      "Ouvrez l’image lab avec Nano Banana sélectionné",
+      "Choisissez Texte → Image ou Image → Image",
+      "Réglez num_images (1–8) et seed si besoin de cohérence",
+      "Ajoutez votre prompt; pour les edits, uploadez une référence propre",
+      "Vérifiez le chip de prix live et générez"
+    ],
+    "tipsTitle": "Conseils & limites",
+    "tipsIntro": "La génération d’images est la plus prévisible quand le frame reste simple, lisible et physiquement crédible.",
+    "strengths": [
+      "Stills photoréalistes rapides pour moodboards, thumbnails et keyframes",
+      "Mode edit pour cleanup, relight et swaps de fond (sans masques)",
+      "Blends multi‑image quand vous assignez un rôle à chaque référence",
+      "Texte court et lisible (titres > paragraphes)"
+    ],
+    "boundaries": [
+      "Image‑only (pas de motion)",
+      "Les edits nécessitent une image d’entrée (uploadez au moins une référence)",
+      "Le texte à l’écran peut être instable — overlay en post"
+    ],
+    "safetyTitle": "Sécurité & personnes / ressemblance",
+    "safetyRules": [
+      "Pas de contenu sexuel, et rien impliquant des mineurs.",
+      "Pas de contenu haineux, harcelant ou de violence graphique.",
+      "N’imitez pas de personnes réelles ou de figures publiques; utilisez le consentement pour toute ressemblance.",
+      "N’incluez pas de données personnelles privées (visages non consentis, adresses, numéros, documents).",
+      "Certains prompts ou images de référence peuvent être bloqués par les filtres du fournisseur."
+    ]
+  },
+  "decision": {
+    "modelSlug": "nano-banana",
+    "hero": {
+      "eyebrow": "ROUTE IMAGE GOOGLE RAPIDE",
+      "title": "Nano Banana",
+      "subtitle": "Brouillons image rapides, retouches par référence et variantes en lot pour explorer vite.",
+      "subtitleHighlights": [
+        "Brouillons image rapides",
+        "retouches par référence",
+        "variantes en lot"
+      ],
+      "paragraph": "Utilisez Nano Banana comme route Google légère pour concepts rapides, retouches simples par référence et lots d’images avant de finaliser dans Pro ou Nano Banana 2.",
+      "primaryCta": {
+        "label": "Générer avec Nano Banana",
+        "href": "/app/image?engine=nano-banana"
+      },
+      "secondaryCta": {
+        "label": "Voir les tarifs",
+        "href": "/fr/tarifs#nano-banana-pricing"
+      },
+      "quickLinks": [
+        {
+          "label": "Ouvrir l’espace image",
+          "href": "/app/image?engine=nano-banana"
+        },
+        {
+          "label": "Voir les tarifs",
+          "href": "/fr/tarifs#nano-banana-pricing"
+        },
+        {
+          "label": "Exemples de prompts",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Exemple Nano Banana",
+      "description": "Concept image rapide et route de retouche",
+      "renderLabel": "Voir l’image",
+      "badges": [
+        "Rapide",
+        "Lot",
+        "Retouche"
+      ],
+      "altContext": "exemple image rapide Nano Banana"
+    },
+    "features": [
+      {
+        "title": "Brouillons rapides",
+        "body": "Explorez des idées visuelles avant les routes finales.",
+        "tone": "price"
+      },
+      {
+        "title": "Retouches référence",
+        "body": "Chargez 1 à 4 images pour remixer ou éditer.",
+        "tone": "reference"
+      },
+      {
+        "title": "Variantes en lot",
+        "body": "Générez plusieurs sorties depuis un prompt.",
+        "tone": "duration"
+      },
+      {
+        "title": "Formats courants",
+        "body": "Utilisez ratios sociaux, carré, portrait ou large.",
+        "tone": "quality"
+      },
+      {
+        "title": "Coût léger",
+        "body": "Adapté aux moodboards et stills de storyboard.",
+        "tone": "price"
+      },
+      {
+        "title": "Workspace image",
+        "body": "Même wallet, prompts et historique que le reste de MaxVideoAI.",
+        "tone": "continuity"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "Nano Banana ou Nano Banana 2 ?",
+        "body": "Gardez Nano Banana pour les lots rapides moins chers. Passez à Nano Banana 2 pour grounding, ratios larges et contrôles plus forts.",
+        "cta": {
+          "label": "Voir Nano Banana 2",
+          "href": "/fr/modeles/nano-banana-2"
+        }
+      },
+      {
+        "title": "Besoin de variantes rapides ?",
+        "body": "Gardez un prompt court, changez une variable visuelle à la fois et lancez plusieurs sorties.",
+        "cta": {
+          "label": "Ouvrir le Prompt Lab",
+          "href": "#prompting"
+        }
+      },
+      {
+        "title": "Besoin de visuels 4K ?",
+        "body": "Passez les directions retenues dans Nano Banana Pro pour texte plus propre, finition campagne ou sortie 4K.",
+        "cta": {
+          "label": "Voir Nano Banana Pro",
+          "href": "/fr/modeles/nano-banana-pro"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Text-to-image",
+        "body": "Décrivez sujet, style, ratio et composition cible."
+      },
+      {
+        "title": "Retouche image",
+        "body": "Chargez une référence et dites ce qui change tout en gardant la structure."
+      },
+      {
+        "title": "Variantes",
+        "body": "Lancez plusieurs images pour moodboards, miniatures ou storyboards."
+      },
+      {
+        "title": "Ratio",
+        "body": "Choisissez le format de livraison avant le prompt."
+      },
+      {
+        "title": "Passage final",
+        "body": "Envoyez les pistes gagnantes vers Nano Banana 2 ou Pro."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Prix Nano Banana en un coup d’œil",
+      "subtitle": "Prix totaux par scénario image — prix exact affiché dans l’app avant génération.",
+      "footnote": "Tous les prix sont des prix affichés MaxVideoAI en crédits USD pour des scénarios prédéfinis.",
+      "ctaLabel": "Voir tous les tarifs",
+      "maxDurationNote": "Jusqu’à 8 images",
+      "ctaHref": "/fr/tarifs#nano-banana-pricing"
+    },
+    "meta": {
+      "title": "Nano Banana : tarifs, brouillons image rapides et retouches | MaxVideoAI",
+      "description": "Explorez Nano Banana : prix, brouillons image rapides, retouches par références, variantes en lot et workflows Google légers dans MaxVideoAI."
+    }
+  },
+  "prompting": {
+    "modelSlug": "nano-banana",
+    "section": {
+      "title": "Comment écrire un excellent prompt Nano Banana",
+      "intro": "Nano Banana récompense les briefs courts et littéraux. Commencez par la composition, puis la lumière/style. Pour les edits, dites ce qui change et ce qui doit rester. Pour les blends, assignez un rôle à chaque référence.",
+      "tip": "Astuce : résolution + ratio se règlent dans l’UI — votre prompt contrôle sujet, composition, lumière, style et instructions d’edit.",
+      "guide": null,
+      "referencesTitle": "Comment Nano Banana utilise les références"
+    },
+    "tabs": [
+      {
+        "id": "quick",
+        "label": "Quick",
+        "title": "Prompt rapide (itération)",
+        "description": "Utilisez 1–2 phrases quand vous voulez des variations.",
+        "copy": "[Sujet] dans [décor]. [Composition]. [Lumière]. [Ancre de style].\n\nSi edit :\nEdit : change [X]. Keep [Y] (cadrage, lumière, identité).\n\nSi multi‑image :\nRefs : Image1 = [sujet principal]. Image2 = [style/lumière]. (Optionnel) Image3 = [fond/prop]."
+      },
+      {
+        "id": "structured",
+        "label": "Structured",
+        "title": "Prompt structuré (plus fiable)",
+        "description": "Séparez l’information pour que le modèle la suive de façon cohérente.",
+        "copy": "Sujet :\n[Qui/quoi + 2–3 détails définissants.]\n\nComposition :\n[Cadrage + angle + fond + ce qui doit rester propre.]\n\nLumière :\n[Key light + mood + 2 ancrages de palette.]\n\nStyle :\n[Photoréal / illustration + texture/grain + une référence de style.]\n\nTexte (optionnel) :\n[Copy exact entre guillemets + placement + contraste.]\nExemple : “SALE — 20% OFF” en haut‑gauche, une ligne, fort contraste.\n\nEdit (si edit) :\nChange :\n- [liste des changements]\nKeep :\n- cadrage, lumière, identité, sans logo, fond propre\n\nRéférences (si multi‑image) :\nImage1 contrôle sujet/identité\nImage2 contrôle lumière\nImage3 contrôle palette/fond"
+      },
+      {
+        "id": "pro",
+        "label": "Pro",
+        "title": "Prompt Pro (brief “studio” ultra‑spécifique)",
+        "description": "À utiliser quand vous voulez un look très précis ou des résultats répétables sur une série.",
+        "copy": "Brief :\n[Objectif + usage de sortie.]\n\nSujet + matières :\n[Détails + textures + contraintes.]\n\nLayout :\n[Grille + spacing + point focal + espace négatif.]\n\nLumière + grade :\n[Key light + contraste + ancrages de palette.]\n\nTypo (optionnel) :\n[Ambiance de police + hiérarchie + copy exact + placement.]\nGardez le copy court. Évitez les paragraphes.\n\nEdits (si besoin) :\nChange list :\n- [A]\n- [B]\nKeep list :\n- cadrage, lumière, identité, fond, palette"
+      }
+    ],
+    "tabNotes": [
+      {
+        "tabId": "quick",
+        "body": "Quick = variations. À utiliser pour itérer vite."
+      },
+      {
+        "tabId": "structured",
+        "body": "Structured = cohérence. À utiliser pour des résultats fiables."
+      },
+      {
+        "tabId": "pro",
+        "body": "Pro = répétabilité. À utiliser pour des batches contrôlés."
+      }
+    ],
+    "globalPrinciples": [
+      "Composition d’abord. Style ensuite.",
+      "Prompts courts et spécifiques; évitez les longues listes.",
+      "Pour les edits : “Change X, keep Y” vaut mieux que re‑décrire toute la scène.",
+      "Si le texte compte : gardez‑le court, contrasté et entre guillemets exacts."
+    ],
+    "engineWhy": [
+      "Le tier rapide préfère les prompts courts; les prompts longs peuvent dériver.",
+      "Le multi‑image fonctionne mieux quand chaque image a un rôle clair (sujet vs lumière vs fond).",
+      "Le micro‑texte et les UI denses sont peu fiables — gardez le copy minimal et overlay en post.",
+      "Si un edit sur‑corrige, resserrez la liste “keep” (cadrage, lumière, identité)."
+    ],
+    "demo": null,
+    "imageExamples": {
+      "title": "Prompts image Nano Banana",
+      "intro": "Exemples adaptés aux stills campagne, typographie, retouches et finales 4K.",
+      "workspaceLabel": "Ouvrir l’espace image",
+      "items": [
+        {
+          "id": "quality-1",
+          "title": "Visuel campagne",
+          "badge": "2K still",
+          "kind": "quality",
+          "prompt": "Still campagne 2K pour une bouteille de parfum ambrée sur acrylique blanc, lumière studio douce, ombre propre, headline exact \"AURA NOIRE\" en haut à gauche, logo discret en bas."
+        },
+        {
+          "id": "typography-2",
+          "title": "Poster typographique",
+          "badge": "Typographie",
+          "kind": "typography",
+          "prompt": "Poster vertical 4K, grille éditoriale premium, fond graphite, grand titre exact \"MIDNIGHT LAUNCH\", sous-titre \"LIMITED DROP\", hiérarchie nette, marges généreuses, texte lisible."
+        },
+        {
+          "id": "edit-3",
+          "title": "Retouche référence",
+          "badge": "Image-to-image",
+          "kind": "edit",
+          "prompt": "À partir de cette référence produit, garder la forme, le logo et les proportions. Changer le décor en studio bleu nuit, améliorer les reflets, retirer poussières et traces."
+        },
+        {
+          "id": "layout-4",
+          "title": "2K vers 4K final",
+          "badge": "Final 4K",
+          "kind": "layout",
+          "prompt": "Reprendre la composition validée en 2K. Sortie 4K finale, détails plus nets, typographie identique, mêmes couleurs de marque, conserver cadrage et placement du produit."
+        }
+      ]
+    }
+  },
+  "examples": {
+    "modelSlug": "nano-banana",
+    "section": {
+      "title": "Exemples Nano Banana",
+      "intro": "Stills photoréalistes récents et edits utilisés comme keyframes pour des workflows vidéo.",
+      "defaultCtaLabel": "Voir des exemples d’images →",
+      "recreateLabel": "Recréer ce still →"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "Tous"
+      },
+      {
+        "id": "campaign",
+        "label": "Campagne"
+      },
+      {
+        "id": "typography",
+        "label": "Typographie"
+      },
+      {
+        "id": "reference",
+        "label": "Référence"
+      },
+      {
+        "id": "final",
+        "label": "4K final"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Exemples image",
+        "body": "Prompts stills adaptés à Nano Banana – Génération d’images photoréalistes.",
+        "icon": "image"
+      },
+      {
+        "id": "proof-2",
+        "title": "Typographie",
+        "body": "Texte exact, hiérarchie et placement restent visibles.",
+        "icon": "type"
+      },
+      {
+        "id": "proof-3",
+        "title": "Retouches référence",
+        "body": "Gardez produit, identité, palette ou layout.",
+        "icon": "pen"
+      },
+      {
+        "id": "proof-4",
+        "title": "Finales 4K",
+        "body": "Validez en 2K puis finalisez en 4K.",
+        "icon": "maximize"
+      },
+      {
+        "id": "proof-5",
+        "title": "Prêt production",
+        "body": "Références possédées et garde-fous intégrés.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": [
+      {
+        "id": "campaign",
+        "title": "Concept thumbnail rapide",
+        "category": "Brouillon",
+        "aspectRatio": "16:9",
+        "alt": "Concept visuel Nano Banana pour miniature social",
+        "tags": [
+          "campaign"
+        ]
+      },
+      {
+        "id": "typography",
+        "title": "Promo simple lisible",
+        "category": "Typographie",
+        "aspectRatio": "1:1",
+        "alt": "Image Nano Banana avec message promotionnel court",
+        "tags": [
+          "typography"
+        ]
+      },
+      {
+        "id": "reference",
+        "title": "Remix de référence",
+        "category": "Référence",
+        "aspectRatio": "4:3",
+        "alt": "Remix Nano Banana guidé par une référence visuelle",
+        "tags": [
+          "reference"
+        ]
+      },
+      {
+        "id": "final",
+        "title": "Batch de variantes",
+        "category": "Batch",
+        "aspectRatio": "4 variantes",
+        "alt": "Quatre variantes Nano Banana pour exploration rapide",
+        "tags": [
+          "final"
+        ]
+      }
+    ],
+    "showWhenEmpty": true
+  }
+}

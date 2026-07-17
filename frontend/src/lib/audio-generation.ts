@@ -1,0 +1,511 @@
+import type { PricingSnapshot } from '@maxvideoai/pricing';
+
+export const AUDIO_SURFACE = 'audio' as const;
+export const AUDIO_MIN_DURATION_SEC = 3;
+export const AUDIO_MAX_DURATION_SEC = 184;
+export const AUDIO_PROMPT_MAX_LENGTH = 2000;
+export const AUDIO_SCRIPT_MAX_LENGTH = 5000;
+export const AUDIO_VOICE_ESTIMATE_WORDS_PER_MINUTE = 150;
+export const AUDIO_SEED_AUDIO_MODEL_ID = 'bytedance/seed-audio-1.0';
+export const AUDIO_LYRIA3_CLIP_MODEL_ID = 'lyria-3-clip-preview';
+export const AUDIO_LYRIA3_PRO_MODEL_ID = 'lyria-3-pro-preview';
+export const AUDIO_LYRIA3_CLIP_MAX_DURATION_SEC = 30;
+export const AUDIO_LYRIA3_PRO_MAX_DURATION_SEC = 184;
+export const AUDIO_LYRIA3_MODEL_VALUES = ['clip', 'pro'] as const;
+export type AudioLyria3Model = (typeof AUDIO_LYRIA3_MODEL_VALUES)[number];
+export const DEFAULT_AUDIO_LYRIA3_MODEL: AudioLyria3Model = 'clip';
+export const AUDIO_LYRIA3_BPM_VALUES = [70, 90, 110, 130, 150] as const;
+export type AudioLyria3Bpm = (typeof AUDIO_LYRIA3_BPM_VALUES)[number];
+export const DEFAULT_AUDIO_LYRIA3_BPM: AudioLyria3Bpm = 110;
+export const AUDIO_LYRIA3_CLIP_DURATION_OPTIONS_SEC = [30] as const;
+export const AUDIO_LYRIA3_PRO_DURATION_OPTIONS_SEC = [30, 45, 60, 90, 120, 180, 184] as const;
+export const AUDIO_MUSIC_DURATION_OPTIONS_SEC = AUDIO_LYRIA3_PRO_DURATION_OPTIONS_SEC;
+
+export const AUDIO_SEED_AUDIO_VOICE_VALUES = [
+  'default',
+  'vivi_mixed_en_zh_ja_es_id',
+  'mindy_en_es_id_pt_zh',
+  'kian_en_zh',
+  'cedric_en_zh',
+  'sophie_en_zh',
+  'jean_en_zh',
+  'magnus_en_zh',
+  'mabel_en_zh',
+  'nadia_en_zh',
+  'opal_en_zh',
+  'pearl_en_zh',
+  'quentin_en_zh',
+  'corinne_mixed_en_zh',
+  'esther_mixed_en_zh',
+  'lyla_mixed_en_zh',
+  'tracy_es_zh',
+  'sandy_es_mixed_en_zh',
+  'felix_zh',
+  'celeste_zh',
+  'monkey_king_zh',
+] as const;
+export type AudioSeedAudioVoice = (typeof AUDIO_SEED_AUDIO_VOICE_VALUES)[number];
+
+export const AUDIO_SEED_AUDIO_OUTPUT_FORMAT_VALUES = ['mp3', 'wav', 'pcm', 'ogg_opus'] as const;
+export type AudioSeedAudioOutputFormat = (typeof AUDIO_SEED_AUDIO_OUTPUT_FORMAT_VALUES)[number];
+
+export const AUDIO_SEED_AUDIO_SAMPLE_RATE_VALUES = [8000, 16000, 24000, 32000, 44100, 48000] as const;
+export type AudioSeedAudioSampleRate = (typeof AUDIO_SEED_AUDIO_SAMPLE_RATE_VALUES)[number];
+
+export const DEFAULT_SEED_AUDIO_VOICE: AudioSeedAudioVoice = 'default';
+export const DEFAULT_SEED_AUDIO_OUTPUT_FORMAT: AudioSeedAudioOutputFormat = 'mp3';
+export const DEFAULT_SEED_AUDIO_SAMPLE_RATE: AudioSeedAudioSampleRate = 24000;
+export const DEFAULT_SEED_AUDIO_SPEED = 1;
+export const DEFAULT_SEED_AUDIO_VOLUME = 1;
+export const DEFAULT_SEED_AUDIO_PITCH = 0;
+
+const AUDIO_PRICE_LYRIA3_CLIP_CENTS_PER_AUDIO = 4;
+const AUDIO_PRICE_LYRIA3_PRO_CENTS_PER_AUDIO = 8;
+const AUDIO_PRICE_MIRELO_SFX_CENTS_PER_SECOND = 1;
+const AUDIO_PRICE_SEED_AUDIO_CENTS_PER_MINUTE = 18.75;
+
+export const AUDIO_PACK_VALUES = ['music_only', 'voice_only', 'cinematic', 'cinematic_voice'] as const;
+export type AudioPackId = (typeof AUDIO_PACK_VALUES)[number];
+
+export type AudioPricingInput = {
+  pack: AudioPackId;
+  durationSec: number;
+  voiceMode?: AudioVoiceMode | null;
+  mood?: AudioMood | null;
+  script?: string | null;
+  musicModel?: AudioLyria3Model | null;
+  musicBpm?: number | null;
+  musicEnabled?: boolean | null;
+};
+
+export const AUDIO_MOOD_VALUES = ['epic', 'tense', 'intimate', 'dark', 'dreamy', 'sci-fi', 'documentary'] as const;
+export type AudioMood = (typeof AUDIO_MOOD_VALUES)[number];
+
+export const AUDIO_INTENSITY_VALUES = ['subtle', 'standard', 'intense'] as const;
+export type AudioIntensity = (typeof AUDIO_INTENSITY_VALUES)[number];
+
+export const AUDIO_VOICE_MODE_VALUES = ['standard', 'clone'] as const;
+export type AudioVoiceMode = (typeof AUDIO_VOICE_MODE_VALUES)[number];
+
+export const AUDIO_VOICE_PROFILE_VALUES = ['balanced', 'warm', 'bright', 'deep'] as const;
+export type AudioVoiceProfile = (typeof AUDIO_VOICE_PROFILE_VALUES)[number];
+
+export const AUDIO_VOICE_GENDER_VALUES = ['female', 'male', 'neutral'] as const;
+export type AudioVoiceGender = (typeof AUDIO_VOICE_GENDER_VALUES)[number];
+
+export const AUDIO_VOICE_DELIVERY_VALUES = ['natural', 'cinematic', 'trailer', 'intimate'] as const;
+export type AudioVoiceDelivery = (typeof AUDIO_VOICE_DELIVERY_VALUES)[number];
+
+export const AUDIO_LANGUAGE_VALUES = ['auto', 'english', 'french', 'spanish', 'german'] as const;
+export type AudioLanguage = (typeof AUDIO_LANGUAGE_VALUES)[number];
+
+export const AUDIO_OUTPUT_KIND_VALUES = ['audio', 'video', 'both'] as const;
+export type AudioOutputKind = (typeof AUDIO_OUTPUT_KIND_VALUES)[number];
+
+type AudioPackConfig = {
+  engineId: string;
+  billingProductKey: string;
+  label: string;
+  description: string;
+  includesVoice: boolean;
+  audioOnly: boolean;
+  requiresVideo: boolean;
+  requiresMood: boolean;
+  requiresScript: boolean;
+  supportsMusicToggle: boolean;
+  supportsAudioExport: boolean;
+  defaultMusicEnabled: boolean;
+};
+
+const AUDIO_PACK_CONFIG: Record<AudioPackId, AudioPackConfig> = {
+  music_only: {
+    engineId: 'audio-music-only',
+    billingProductKey: 'audio-music-only',
+    label: 'Music Only',
+    description: 'Ambient or cinematic music bed as a standalone audio file.',
+    includesVoice: false,
+    audioOnly: true,
+    requiresVideo: false,
+    requiresMood: true,
+    requiresScript: false,
+    supportsMusicToggle: false,
+    supportsAudioExport: false,
+    defaultMusicEnabled: true,
+  },
+  voice_only: {
+    engineId: 'audio-voice-only',
+    billingProductKey: 'audio-voice-only',
+    label: 'Voice Over',
+    description: 'Seed Audio narration or dialogue as a standalone audio file.',
+    includesVoice: true,
+    audioOnly: true,
+    requiresVideo: false,
+    requiresMood: false,
+    requiresScript: true,
+    supportsMusicToggle: false,
+    supportsAudioExport: false,
+    defaultMusicEnabled: false,
+  },
+  cinematic: {
+    engineId: 'audio-cinematic',
+    billingProductKey: 'audio-cinematic',
+    label: 'Cinematic Audio',
+    description: 'Synced sound design, ambient layers, and a cinematic music bed.',
+    includesVoice: false,
+    audioOnly: false,
+    requiresVideo: true,
+    requiresMood: true,
+    requiresScript: false,
+    supportsMusicToggle: true,
+    supportsAudioExport: true,
+    defaultMusicEnabled: true,
+  },
+  cinematic_voice: {
+    engineId: 'audio-cinematic-voice',
+    billingProductKey: 'audio-cinematic-voice',
+    label: 'Cinematic + Voice',
+    description: 'Cinematic sound design and music, plus narration or dialogue.',
+    includesVoice: true,
+    audioOnly: false,
+    requiresVideo: true,
+    requiresMood: true,
+    requiresScript: true,
+    supportsMusicToggle: true,
+    supportsAudioExport: true,
+    defaultMusicEnabled: true,
+  },
+};
+
+export type AudioGenerateRequestBody = {
+  sourceVideoUrl?: string;
+  sourceJobId?: string;
+  pack?: string;
+  prompt?: string;
+  mood?: string;
+  intensity?: string;
+  musicModel?: string;
+  musicBpm?: number | string;
+  script?: string;
+  voiceSampleUrl?: string;
+  voiceGender?: string;
+  voiceProfile?: string;
+  voiceDelivery?: string;
+  language?: string;
+  seedAudioVoice?: string;
+  seedAudioOutputFormat?: string;
+  seedAudioSampleRate?: number | string;
+  seedAudioSpeed?: number | string;
+  seedAudioVolume?: number | string;
+  seedAudioPitch?: number | string;
+  durationSec?: number;
+  musicEnabled?: boolean;
+  exportAudioFile?: boolean;
+  locale?: string;
+};
+
+export type AudioGenerateResponse = {
+  ok: true;
+  jobId: string;
+  videoUrl: string | null;
+  audioUrl?: string | null;
+  thumbUrl: string | null;
+  outputKind: AudioOutputKind;
+  status: 'pending' | 'completed' | 'failed';
+  progress: number;
+  pricing: PricingSnapshot;
+  paymentStatus: string;
+  sourceJobId?: string | null;
+};
+
+export function getAudioPackConfig(pack: AudioPackId): AudioPackConfig {
+  return AUDIO_PACK_CONFIG[pack];
+}
+
+export function coerceAudioPackId(value: unknown): AudioPackId | null {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().toLowerCase();
+  return AUDIO_PACK_VALUES.find((entry) => entry === normalized) ?? null;
+}
+
+export function coerceAudioMood(value: unknown): AudioMood | null {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().toLowerCase();
+  return AUDIO_MOOD_VALUES.find((entry) => entry === normalized) ?? null;
+}
+
+export function coerceAudioIntensity(value: unknown): AudioIntensity | null {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().toLowerCase();
+  return AUDIO_INTENSITY_VALUES.find((entry) => entry === normalized) ?? null;
+}
+
+export function coerceAudioLyria3Model(value: unknown): AudioLyria3Model | null {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().toLowerCase();
+  return AUDIO_LYRIA3_MODEL_VALUES.find((entry) => entry === normalized) ?? null;
+}
+
+export function coerceAudioLyria3Bpm(value: unknown): AudioLyria3Bpm | null {
+  const numeric = typeof value === 'number' ? value : typeof value === 'string' && value.trim() ? Number(value.trim()) : NaN;
+  if (!Number.isFinite(numeric)) return null;
+  return AUDIO_LYRIA3_BPM_VALUES.find((entry) => entry === Math.round(numeric)) ?? null;
+}
+
+export function coerceAudioVoiceMode(value: unknown): AudioVoiceMode | null {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().toLowerCase();
+  return AUDIO_VOICE_MODE_VALUES.find((entry) => entry === normalized) ?? null;
+}
+
+export function coerceAudioVoiceProfile(value: unknown): AudioVoiceProfile | null {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().toLowerCase();
+  return AUDIO_VOICE_PROFILE_VALUES.find((entry) => entry === normalized) ?? null;
+}
+
+export function coerceAudioVoiceGender(value: unknown): AudioVoiceGender | null {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().toLowerCase();
+  return AUDIO_VOICE_GENDER_VALUES.find((entry) => entry === normalized) ?? null;
+}
+
+export function coerceAudioVoiceDelivery(value: unknown): AudioVoiceDelivery | null {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().toLowerCase();
+  return AUDIO_VOICE_DELIVERY_VALUES.find((entry) => entry === normalized) ?? null;
+}
+
+export function coerceAudioLanguage(value: unknown): AudioLanguage | null {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().toLowerCase();
+  return AUDIO_LANGUAGE_VALUES.find((entry) => entry === normalized) ?? null;
+}
+
+export function coerceSeedAudioVoice(value: unknown): AudioSeedAudioVoice | null {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim();
+  return AUDIO_SEED_AUDIO_VOICE_VALUES.find((entry) => entry === normalized) ?? null;
+}
+
+export function coerceSeedAudioOutputFormat(value: unknown): AudioSeedAudioOutputFormat | null {
+  if (typeof value !== 'string') return null;
+  const normalized = value.trim().toLowerCase();
+  return AUDIO_SEED_AUDIO_OUTPUT_FORMAT_VALUES.find((entry) => entry === normalized) ?? null;
+}
+
+export function coerceSeedAudioSampleRate(value: unknown): AudioSeedAudioSampleRate | null {
+  const numeric = typeof value === 'number' ? value : typeof value === 'string' && value.trim() ? Number(value.trim()) : NaN;
+  if (!Number.isFinite(numeric)) return null;
+  return AUDIO_SEED_AUDIO_SAMPLE_RATE_VALUES.find((entry) => entry === Math.round(numeric)) ?? null;
+}
+
+export function resolveAudioVoiceMode(input: { pack: AudioPackId; voiceSampleUrl?: string | null }): AudioVoiceMode | null {
+  if (!getAudioPackConfig(input.pack).includesVoice) return null;
+  return input.voiceSampleUrl ? 'clone' : 'standard';
+}
+
+export function resolveAudioOutputKind(input: {
+  pack: AudioPackId;
+  exportAudioFile?: boolean | null;
+}): AudioOutputKind {
+  const config = getAudioPackConfig(input.pack);
+  if (config.audioOnly) return 'audio';
+  return input.exportAudioFile ? 'both' : 'video';
+}
+
+export function estimateVoiceScriptDurationSec(script: string): number {
+  const words = script
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+  if (!words) return AUDIO_MIN_DURATION_SEC;
+  const estimatedSeconds = Math.round((words / AUDIO_VOICE_ESTIMATE_WORDS_PER_MINUTE) * 60);
+  return normalizeAudioDuration(estimatedSeconds);
+}
+
+function countAudioBillingCharacters(script?: string | null, fallbackDurationSec?: number | null): number {
+  const characterCount = script?.trim().length ?? 0;
+  if (characterCount > 0) return characterCount;
+  if (typeof fallbackDurationSec === 'number' && Number.isFinite(fallbackDurationSec) && fallbackDurationSec > 0) {
+    return Math.max(1, Math.round((fallbackDurationSec / 60) * AUDIO_VOICE_ESTIMATE_WORDS_PER_MINUTE * 6));
+  }
+  return 1;
+}
+
+function resolveLyria3ModelForPricing(durationSec: number, musicModel?: AudioLyria3Model | null): AudioLyria3Model {
+  if (musicModel) return musicModel;
+  return durationSec <= AUDIO_LYRIA3_CLIP_MAX_DURATION_SEC ? 'clip' : 'pro';
+}
+
+function buildMusicVendorCostComponent(input: { durationSec: number; musicModel?: AudioLyria3Model | null }) {
+  if (resolveLyria3ModelForPricing(input.durationSec, input.musicModel) === 'clip') {
+    return {
+      type: 'music_google_lyria3_clip',
+      label: 'Google Lyria 3 Clip',
+      model: AUDIO_LYRIA3_CLIP_MODEL_ID,
+      unit: '30_sec_clip',
+      amountCents: AUDIO_PRICE_LYRIA3_CLIP_CENTS_PER_AUDIO,
+    };
+  }
+  return {
+    type: 'music_google_lyria3_pro',
+    label: 'Google Lyria 3 Pro',
+    model: AUDIO_LYRIA3_PRO_MODEL_ID,
+    unit: 'song',
+    amountCents: AUDIO_PRICE_LYRIA3_PRO_CENTS_PER_AUDIO,
+  };
+}
+
+function buildVoiceVendorCostComponent(durationSec: number) {
+  const exactMinutes = normalizeAudioDuration(durationSec) / 60;
+  const billedMinutes = Number(exactMinutes.toFixed(2));
+  return {
+    type: 'voice_seed_audio_1_0',
+    label: 'Seed Audio 1.0',
+    model: AUDIO_SEED_AUDIO_MODEL_ID,
+    unit: 'minute',
+    units: billedMinutes,
+    amountCents: Math.max(1, Math.ceil(exactMinutes * AUDIO_PRICE_SEED_AUDIO_CENTS_PER_MINUTE - 1e-9)),
+  };
+}
+
+function buildAudioVendorCostComponents(input: {
+  pack: AudioPackId;
+  durationSec: number;
+  voiceMode?: AudioVoiceMode | null;
+  script?: string | null;
+  musicModel?: AudioLyria3Model | null;
+  musicEnabled?: boolean | null;
+}) {
+  const config = getAudioPackConfig(input.pack);
+  const durationSec = normalizeAudioDuration(input.durationSec);
+  const components: Array<{
+    type: string;
+    label: string;
+    model: string;
+    unit: string;
+    units?: number;
+    amountCents: number;
+  }> = [];
+
+  if (input.pack === 'cinematic' || input.pack === 'cinematic_voice') {
+    components.push({
+      type: 'sound_design_mirelo_sfx_v1_5',
+      label: 'Mirelo SFX V1.5',
+      model: 'mirelo-ai/sfx-v1.5/video-to-audio',
+      unit: 'sec',
+      units: durationSec,
+      amountCents: durationSec * AUDIO_PRICE_MIRELO_SFX_CENTS_PER_SECOND,
+    });
+  }
+
+  const shouldPriceMusic =
+    input.pack === 'music_only' ||
+    ((input.pack === 'cinematic' || input.pack === 'cinematic_voice') && (input.musicEnabled ?? config.defaultMusicEnabled));
+  if (shouldPriceMusic) {
+    components.push(buildMusicVendorCostComponent({
+      durationSec,
+      musicModel: input.musicModel,
+    }));
+  }
+
+  if (config.includesVoice) {
+    components.push(buildVoiceVendorCostComponent(durationSec));
+  }
+
+  return components.length ? components : [buildMusicVendorCostComponent({
+    durationSec,
+    musicModel: input.musicModel,
+  })];
+}
+
+export function buildAudioVendorCostFacts(input: {
+  pack: AudioPackId;
+  durationSec: number;
+  voiceMode?: AudioVoiceMode | null;
+  script?: string | null;
+  musicModel?: AudioLyria3Model | null;
+  musicEnabled?: boolean | null;
+}) {
+  const durationSec = normalizeAudioDuration(input.durationSec);
+  const components = buildAudioVendorCostComponents({
+    ...input,
+    durationSec,
+  });
+  return {
+    durationSec,
+    components,
+    vendorSubtotalCents: components.reduce((sum, component) => sum + component.amountCents, 0),
+    unit: components[0]!.unit,
+  };
+}
+
+export function buildAudioPricingPresentation(input: AudioPricingInput): {
+  vendorSubtotalCents: number;
+  durationSec: number;
+  base: PricingSnapshot['base'];
+  addons: PricingSnapshot['addons'];
+  meta: Record<string, unknown>;
+} {
+  const durationSec = normalizeAudioDuration(input.durationSec);
+  const voiceMode = input.voiceMode ?? null;
+  const vendorFacts = buildAudioVendorCostFacts({
+    pack: input.pack,
+    durationSec,
+    voiceMode,
+    script: input.script,
+    musicModel: input.musicModel,
+    musicEnabled: input.musicEnabled,
+  });
+  const baseComponent = vendorFacts.components[0]!;
+  const addonComponents = vendorFacts.components.slice(1);
+  const rate = durationSec > 0
+    ? Number((vendorFacts.vendorSubtotalCents / 100 / durationSec).toFixed(4))
+    : vendorFacts.vendorSubtotalCents / 100;
+  return {
+    vendorSubtotalCents: vendorFacts.vendorSubtotalCents,
+    durationSec,
+    base: {
+      seconds: durationSec,
+      rate,
+      unit: baseComponent.unit,
+      amountCents: baseComponent.amountCents,
+    },
+    addons: addonComponents.map((component) => ({
+      type: component.type,
+      amountCents: component.amountCents,
+    })),
+    meta: {
+      surface: AUDIO_SURFACE,
+      pack: input.pack,
+      mood: input.mood ?? null,
+      voiceMode,
+      pricingModel: 'audio_provider_cost_plus_margin',
+      vendorCostCents: vendorFacts.vendorSubtotalCents,
+      musicModel: input.musicModel ?? null,
+      musicBpm: input.musicBpm ?? null,
+      musicEnabled: input.musicEnabled ?? null,
+      scriptBillingCharacters: getAudioPackConfig(input.pack).includesVoice
+        ? countAudioBillingCharacters(input.script, durationSec)
+        : undefined,
+      vendorCostComponents: vendorFacts.components,
+    },
+  };
+}
+
+export function clampAudioDuration(durationSec: number): number {
+  return Math.min(AUDIO_MAX_DURATION_SEC, normalizeAudioDuration(durationSec));
+}
+
+export function normalizeAudioDuration(durationSec: number): number {
+  if (!Number.isFinite(durationSec)) return AUDIO_MIN_DURATION_SEC;
+  return Math.max(AUDIO_MIN_DURATION_SEC, Math.round(durationSec));
+}
+
+export function formatAudioDurationLabel(durationSec: number): string {
+  const seconds = normalizeAudioDuration(durationSec);
+  if (seconds < 60) return `${seconds}s`;
+  const minutes = Math.floor(seconds / 60);
+  const remainder = seconds % 60;
+  return remainder ? `${minutes}m${remainder.toString().padStart(2, '0')}s` : `${minutes}m`;
+}

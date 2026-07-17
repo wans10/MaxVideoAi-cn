@@ -1,0 +1,327 @@
+import type { PricingSnapshot } from '@maxvideoai/pricing';
+export type { PricingSnapshot } from '@maxvideoai/pricing';
+
+export type EngineStatus = 'live' | 'busy' | 'degraded' | 'maintenance' | 'early_access';
+export type LatencyTier = 'fast' | 'standard';
+export type Mode =
+  | 't2v'
+  | 'i2v'
+  | 'ref2v'
+  | 'fl2v'
+  | 'v2v'
+  | 'r2v'
+  | 'a2v'
+  | 'extend'
+  | 'retake'
+  | 'reframe'
+  | 't2i'
+  | 'i2i';
+export type Resolution =
+  | '0.5k'
+  | '540p'
+  | '480p'
+  | '720p'
+  | '1080p'
+  | '1440p'
+  | '4k'
+  | '1k'
+  | '2k'
+  | '2K'
+  | '3K'
+  | '4K'
+  | '2048x2048'
+  | '1920x1080'
+  | '1080x1920'
+  | '2304x1728'
+  | '1728x2304'
+  | '2848x1600'
+  | '1600x2848'
+  | '2496x1664'
+  | '1664x2496'
+  | '3136x1344'
+  | '3072x3072'
+  | '3456x2592'
+  | '2592x3456'
+  | '4096x2304'
+  | '2304x4096'
+  | '2496x3744'
+  | '3744x2496'
+  | '4704x2016'
+  | '4096x4096'
+  | '3520x4704'
+  | '4704x3520'
+  | '5504x3040'
+  | '3040x5504'
+  | '3328x4992'
+  | '4992x3328'
+  | '6240x2656'
+  | '512P'
+  | '768P'
+  | 'square'
+  | 'square_hd'
+  | 'landscape_hd'
+  | 'portrait_hd'
+  | 'portrait_4_3'
+  | 'portrait_16_9'
+  | 'landscape_4_3'
+  | 'landscape_16_9'
+  | 'custom'
+  | 'auto';
+export type AspectRatio =
+  | '16:9'
+  | '9:16'
+  | '9:21'
+  | '1:1'
+  | '4:1'
+  | '1:4'
+  | '8:1'
+  | '1:8'
+  | '4:5'
+  | '5:4'
+  | '4:3'
+  | '3:4'
+  | '3:2'
+  | '2:3'
+  | '21:9'
+  | 'custom'
+  | 'source'
+  | 'auto';
+export type EngineAvailability = 'available' | 'limited' | 'waitlist' | 'paused';
+
+export interface BrandAssetPolicy {
+  logoAllowed: boolean;
+  textOnly: boolean;
+  linkToGuidelines?: string;
+  usageNotes?: string;
+}
+
+export interface EngineParam {
+  min: number;
+  max: number;
+  default: number;
+  step?: number;
+}
+
+export interface EnginePricing {
+  unit: string;
+  base?: number;
+  byResolution?: Record<string, number>;
+  examples?: Record<string, number>;
+  notes?: string;
+  currency?: string;
+  addons?: Record<string, { perSecond?: number; flat?: number }>;
+}
+
+export interface TokenVideoPricingDimensions {
+  width: number;
+  height: number;
+}
+
+export type TokenVideoPricingInputType = 'no_video_input' | 'video_input';
+
+export interface TokenVideoPricing {
+  model: 'byteplus_tokens' | 'fal_tokens';
+  unitPriceUsdPer1kTokens: number;
+  unitPriceUsdPer1kTokensByInputType?: Partial<Record<TokenVideoPricingInputType, number>>;
+  unitPriceUsdPer1kTokensByResolution?: Partial<Record<Resolution, number>>;
+  unitPriceUsdPer1kTokensByResolutionAndInputType?: Partial<
+    Record<Resolution, Partial<Record<TokenVideoPricingInputType, number>>>
+  >;
+  pricingSource?: string;
+  framesPerSecond: number;
+  defaultAspectRatio?: AspectRatio;
+  dimensions: Partial<Record<Resolution, Partial<Record<AspectRatio, TokenVideoPricingDimensions>>>>;
+  rounding?: 'ceil_cent';
+}
+
+export interface EngineInputLimits {
+  imageMaxMB?: number;
+  videoMaxMB?: number;
+  videoMaxDurationSec?: number;
+  videoCodecs?: string[];
+  audioMaxMB?: number;
+  audioMaxDurationSec?: number;
+  promptMaxChars?: number;
+  promptMaxCharsSource?: 'official' | 'observed';
+}
+
+export type EngineInputFieldType = 'text' | 'number' | 'enum' | 'image' | 'video' | 'audio' | 'boolean';
+
+export interface EngineInputField {
+  id: string;
+  type: EngineInputFieldType;
+  label: string;
+  description?: string;
+  modes?: Mode[];
+  requiredInModes?: Mode[];
+  maxCount?: number;
+  minCount?: number;
+  min?: number;
+  max?: number;
+  step?: number;
+  default?: boolean | number | string;
+  values?: string[];
+  source?: 'upload' | 'url' | 'either';
+  engineParam?: string;
+  minDurationSec?: number;
+  maxDurationSec?: number;
+  slotLabelPattern?: string;
+}
+
+export interface EngineInputSchema {
+  required?: EngineInputField[];
+  optional?: EngineInputField[];
+  constraints?: {
+    supportedFormats?: string[];
+    maxImageSizeMB?: number;
+    minImageSidePx?: number;
+    maxVideoSizeMB?: number;
+    maxAudioSizeMB?: number;
+    [key: string]: unknown;
+  };
+}
+
+export type EngineModeDurationCaps =
+  | {
+      options: Array<number | string>;
+      default?: number | string;
+    }
+  | {
+      min: number;
+      default: number;
+    };
+
+export interface EngineModeUiCaps {
+  modes: Mode[];
+  duration?: EngineModeDurationCaps;
+  frames?: number[];
+  resolution?: string[];
+  resolutionLocked?: boolean;
+  aspectRatio?: string[];
+  fps?: number | number[];
+  audioToggle?: boolean;
+  acceptsImageFormats?: string[];
+  maxUploadMB?: number;
+  notes?: string;
+}
+
+export interface EngineCaps {
+  id: string;
+  label: string;
+  provider: string;
+  version?: string;
+  variant?: string;
+  // Hidden behind Labs toggle when true
+  isLab?: boolean;
+  status: EngineStatus;
+  latencyTier: LatencyTier;
+  avgDurationMs?: number | null;
+  queueDepth?: number;
+  region?: string;
+  vendorAccountId?: string;
+  modes: Mode[];
+  maxDurationSec: number;
+  resolutions: Resolution[];
+  aspectRatios: AspectRatio[];
+  fps: number[];
+  audio: boolean;
+  upscale4k: boolean;
+  extend: boolean;
+  motionControls: boolean;
+  keyframes: boolean;
+  params: Record<string, EngineParam>;
+  inputLimits: EngineInputLimits;
+  inputSchema?: EngineInputSchema;
+  pricing?: EnginePricing;
+  apiAvailability?: string;
+  updatedAt: string;
+  ttlSec: number;
+  providerMeta?: {
+    provider?: string;
+    modelSlug?: string;
+  };
+  pricingDetails?: EnginePricingDetails;
+  iconUrl?: string | null;
+  fallbackIcon?: string | null;
+  availability: EngineAvailability;
+  brandId?: string;
+  brandAssetPolicy?: BrandAssetPolicy;
+  modeCaps?: Partial<Record<Mode, EngineModeUiCaps>>;
+}
+
+export interface EnginesResponse {
+  engines: EngineCaps[];
+  engineScores?: Record<string, number>;
+}
+
+export interface PreflightRequest {
+  engine: string;
+  mode: Mode;
+  durationSec: number;
+  resolution: Resolution;
+  aspectRatio: AspectRatio;
+  fps: number;
+  seedLocked?: boolean;
+  loop?: boolean;
+  audio?: boolean;
+  voiceControl?: boolean;
+  extraInputValues?: Record<string, unknown>;
+  user?: {
+    memberTier?: string;
+  };
+}
+
+export interface ItemizationLine {
+  unit?: string;
+  rate?: number;
+  seconds?: number;
+  subtotal: number;
+  type?: string;
+  mode?: string;
+  tier?: string;
+  amount?: number;
+  rateDisplay?: string;
+}
+
+export interface PreflightResponse {
+  ok: boolean;
+  currency?: string;
+  itemization?: {
+    base: ItemizationLine;
+    addons: ItemizationLine[];
+    fees?: ItemizationLine[];
+    discounts: ItemizationLine[];
+    taxes: ItemizationLine[];
+  };
+  total?: number;
+  caps?: Partial<EngineCaps>;
+  messages?: string[];
+  ttlSec?: number;
+  pricing?: PricingSnapshot;
+  error?: {
+    code: string;
+    message: string;
+    suggestions?: Record<string, unknown>[];
+  };
+}
+
+export interface EnginePricingDetails {
+  currency: string;
+  perSecondCents?: {
+    default?: number;
+    byResolution?: Record<string, number>;
+  };
+  flatCents?: {
+    default?: number;
+    byResolution?: Record<string, number>;
+  };
+  addons?: {
+    audio?: { perSecondCents?: number; perSecondCentsByResolution?: Record<string, number>; flatCents?: number };
+    upscale4k?: { perSecondCents?: number; perSecondCentsByResolution?: Record<string, number>; flatCents?: number };
+    [key: string]:
+      | { perSecondCents?: number; perSecondCentsByResolution?: Record<string, number>; flatCents?: number }
+      | undefined;
+  };
+  maxDurationSec?: number;
+  tokenPricing?: TokenVideoPricing;
+}

@@ -1,0 +1,123 @@
+export function normalizeMediaUrl(value?: string | null): string | null {
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+  const lower = trimmed.toLowerCase();
+  if (lower.startsWith('data:') || lower.startsWith('blob:')) return trimmed;
+  if (/^https?:\/\//i.test(trimmed)) {
+    const rewritten = rewriteManagedStorageUrl(trimmed);
+    return rewritten ?? trimmed;
+  }
+  if (trimmed.startsWith('//')) {
+    const absolute = `https:${trimmed}`;
+    return rewriteManagedStorageUrl(absolute) ?? absolute;
+  }
+  if (trimmed.startsWith('/')) return trimmed;
+  if (!trimmed.includes('://')) {
+    return `/${trimmed.replace(/^\/+/, '')}`;
+  }
+  return trimmed;
+}
+
+function rewriteManagedStorageUrl(url: string): string | null {
+  const publicBase = process.env.S3_PUBLIC_BASE_URL?.trim();
+  const bucket = process.env.S3_BUCKET?.trim();
+  if (!publicBase || !bucket) return null;
+
+  try {
+    const parsed = new URL(url);
+    const base = new URL(publicBase);
+    if (parsed.host === base.host) return url;
+
+    const region = process.env.S3_REGION?.trim();
+    const managedHosts = new Set([
+      `${bucket}.s3.amazonaws.com`,
+      `${bucket}.s3.${region}.amazonaws.com`,
+    ]);
+    if (!managedHosts.has(parsed.host)) return null;
+
+    return `${publicBase.replace(/\/+$/, '')}${parsed.pathname}${parsed.search}${parsed.hash}`;
+  } catch {
+    return null;
+  }
+}
+
+export function isPlaceholderMediaUrl(value?: string | null): boolean {
+  if (typeof value !== 'string') return false;
+  const normalized = value.trim().toLowerCase();
+  if (!normalized) return false;
+  if (normalized.startsWith('data:') || normalized.startsWith('blob:')) return false;
+  return (
+    normalized.startsWith('/assets/') ||
+    normalized.includes('/assets/frames/') ||
+    normalized.includes('/assets/gallery/')
+  );
+}
+
+export function isTemporaryProviderMediaUrl(value?: string | null): boolean {
+  const normalized = normalizeMediaUrl(value);
+  if (!normalized || !/^https?:\/\//i.test(normalized)) return false;
+  try {
+    const url = new URL(normalized);
+    const host = url.hostname.toLowerCase();
+    if (!host.endsWith('volces.com')) return false;
+    return (
+      url.pathname.includes('/seedream-5-0/') ||
+      url.searchParams.has('X-Tos-Expires') ||
+      url.searchParams.has('X-Tos-Signature')
+    );
+  } catch {
+    return false;
+  }
+}
+
+const SIGNED_MEDIA_PARAM_PATTERN =
+  /[?&](x-amz-|x-goog-|x-tos-|expires=|signature=|token=|googleaccessid=|policy=|key-pair-id=)/i;
+const PRIVATE_RELATIVE_MEDIA_PATH_PATTERN = /^\/(?:api|admin|app|billing|connect|dashboard|generate|jobs|settings)(?:\/|$)/i;
+
+export function isSignedMediaUrl(value?: string | null): boolean {
+  const normalized = normalizeMediaUrl(value);
+  if (!normalized || !/^https?:\/\//i.test(normalized)) return false;
+  return SIGNED_MEDIA_PARAM_PATTERN.test(normalized);
+}
+
+export function isStablePublicMediaUrl(value?: string | null): boolean {
+  const normalized = normalizeMediaUrl(value);
+  if (!normalized) return false;
+  if (normalized.startsWith('data:') || normalized.startsWith('blob:')) return false;
+  if (isPlaceholderMediaUrl(normalized)) return false;
+  if (isTemporaryProviderMediaUrl(normalized)) return false;
+  if (isSignedMediaUrl(normalized)) return false;
+  if (PRIVATE_RELATIVE_MEDIA_PATH_PATTERN.test(normalized)) return false;
+  return normalized.startsWith('/') || /^https?:\/\//i.test(normalized);
+}
+
+export function resolvePreferredMediaUrl(...candidates: Array<string | null | undefined>): string | null {
+  let fallback: string | null = null;
+  for (const candidate of candidates) {
+    const normalized = normalizeMediaUrl(candidate);
+    if (!normalized) continue;
+    if (!fallback) {
+      fallback = normalized;
+    }
+    if (!isPlaceholderMediaUrl(normalized)) {
+      return normalized;
+    }
+  }
+  return fallback;
+}
+
+export function resolveStableMediaUrl(
+  primary?: string | null,
+  stableFallback?: string | null
+): string | null {
+  const primaryUrl = normalizeMediaUrl(primary);
+  const fallbackUrl = normalizeMediaUrl(stableFallback);
+  if (primaryUrl && !isPlaceholderMediaUrl(primaryUrl) && !isTemporaryProviderMediaUrl(primaryUrl)) {
+    return primaryUrl;
+  }
+  if (fallbackUrl && !isPlaceholderMediaUrl(fallbackUrl)) {
+    return fallbackUrl;
+  }
+  return primaryUrl && !isPlaceholderMediaUrl(primaryUrl) ? primaryUrl : null;
+}

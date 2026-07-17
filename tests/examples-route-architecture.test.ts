@@ -1,0 +1,334 @@
+import assert from 'node:assert/strict';
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import test from 'node:test';
+
+import { getModelFamilyDefinition } from '../frontend/config/model-families.ts';
+import { getExampleModelLanding } from '../frontend/lib/examples/modelLanding.ts';
+import { getExampleFamilyCurrentModelSlugs, getExampleFamilyModelSlugs } from '../frontend/lib/model-families.ts';
+import { buildSeoMetadata } from '../frontend/lib/seo/metadata.ts';
+
+const root = process.cwd();
+const pagePath = join(root, 'frontend/app/(localized)/[locale]/(marketing)/examples/page.tsx');
+const modelPagePath = join(root, 'frontend/app/(localized)/[locale]/(marketing)/examples/[model]/page.tsx');
+const utilsPath = join(root, 'frontend/app/(localized)/[locale]/(marketing)/examples/_lib/examples-route-utils.ts');
+const copyPath = join(root, 'frontend/app/(localized)/[locale]/(marketing)/examples/_lib/examples-page-copy.ts');
+const enMessagesPath = join(root, 'frontend/messages/en.json');
+const pageDataPath = join(root, 'frontend/app/(localized)/[locale]/(marketing)/examples/_lib/examples-page-data.ts');
+const hrefsPath = join(root, 'frontend/app/(localized)/[locale]/(marketing)/examples/_lib/examples-page-hrefs.ts');
+const jsonLdPath = join(root, 'frontend/app/(localized)/[locale]/(marketing)/examples/_lib/examples-page-jsonld.ts');
+const pageViewPath = join(root, 'frontend/app/(localized)/[locale]/(marketing)/examples/_components/examples-page-view.tsx');
+const mainVideoFeaturePath = join(root, 'frontend/app/(localized)/[locale]/(marketing)/examples/_components/examples-main-video-feature.tsx');
+const engineFilterNavPath = join(root, 'frontend/app/(localized)/[locale]/(marketing)/examples/_components/examples-engine-filter-nav.tsx');
+const jsonLdScriptsPath = join(root, 'frontend/app/(localized)/[locale]/(marketing)/examples/_components/examples-jsonld-scripts.tsx');
+const routeSectionsPath = join(root, 'frontend/app/(localized)/[locale]/(marketing)/examples/_components/examples-route-sections.tsx');
+
+const pageSource = readFileSync(pagePath, 'utf8');
+const modelPageSource = readFileSync(modelPagePath, 'utf8');
+const utilsSource = readFileSync(utilsPath, 'utf8');
+const copySource = readFileSync(copyPath, 'utf8');
+const enMessages = JSON.parse(readFileSync(enMessagesPath, 'utf8')) as {
+  gallery?: { meta?: { title?: string; description?: string } };
+};
+const pageDataSource = readFileSync(pageDataPath, 'utf8');
+const hrefsSource = readFileSync(hrefsPath, 'utf8');
+const jsonLdSource = readFileSync(jsonLdPath, 'utf8');
+const pageViewSource = readFileSync(pageViewPath, 'utf8');
+const mainVideoFeatureSource = readFileSync(mainVideoFeaturePath, 'utf8');
+const engineFilterNavSource = readFileSync(engineFilterNavPath, 'utf8');
+const jsonLdScriptsSource = readFileSync(jsonLdScriptsPath, 'utf8');
+const routeSectionsSource = readFileSync(routeSectionsPath, 'utf8');
+
+test('examples route delegates URL, filter, and gallery helper logic', () => {
+  assert.ok(existsSync(pagePath), 'examples route page should exist');
+  assert.ok(existsSync(utilsPath), 'examples route helper module should exist');
+  assert.ok(existsSync(copyPath), 'examples route copy helper module should exist');
+  assert.ok(existsSync(pageDataPath), 'examples page data helper module should exist');
+  assert.ok(existsSync(hrefsPath), 'examples href helper module should exist');
+  assert.ok(existsSync(jsonLdPath), 'examples JSON-LD builder module should exist');
+  assert.ok(existsSync(pageViewPath), 'examples page view component should exist');
+  assert.ok(existsSync(mainVideoFeaturePath), 'examples main video feature should exist');
+  assert.ok(existsSync(engineFilterNavPath), 'examples engine filter nav should exist');
+  assert.ok(existsSync(jsonLdScriptsPath), 'examples JSON-LD scripts should exist');
+  assert.ok(existsSync(routeSectionsPath), 'examples route sections should exist');
+
+  assert.match(pageSource, /from '\.\/_components\/examples-page-view'/, 'route should import page view');
+  assert.match(pageSource, /from '\.\/_lib\/examples-route-utils'/, 'route should import examples helpers');
+  assert.match(pageSource, /from '\.\/_lib\/examples-page-copy'/, 'route should import examples copy helpers');
+  assert.match(pageSource, /from '\.\/_lib\/examples-page-data'/, 'route should import examples data builders');
+  assert.match(pageSource, /from '\.\/_lib\/examples-page-hrefs'/, 'route should import href builders');
+  assert.match(pageSource, /from '\.\/_lib\/examples-page-jsonld'/, 'route should import JSON-LD builders');
+  assert.match(pageSource, /export async function generateMetadata/, 'route should keep metadata orchestration');
+  assert.match(pageSource, /export default async function ExamplesPage/, 'route should keep page orchestration');
+
+  assert.doesNotMatch(pageSource, /listFalEngines\(\)/, 'route should not rebuild engine maps inline');
+  assert.doesNotMatch(pageSource, /buildSlugMap\('/, 'route should not rebuild localized slug maps inline');
+  assert.doesNotMatch(pageSource, /normalizeEngineId\(/, 'route should not own engine alias normalization');
+  assert.doesNotMatch(pageSource, /orderExamplesHubFamilyIds/, 'route should not own family ordering maps');
+  assert.doesNotMatch(pageSource, /function serializeJsonLd\(/, 'JSON-LD serialization belongs in helper module');
+  assert.doesNotMatch(pageSource, /function getSort\(/, 'sort parsing belongs in helper module');
+  assert.doesNotMatch(pageSource, /const rawNextStepLinks =/, 'model landing next-step copy belongs in copy helper module');
+  assert.doesNotMatch(pageSource, /const galleryUiCopy =\s*locale ===/, 'localized gallery UI copy belongs in copy helper module');
+  assert.doesNotMatch(pageSource, /ExamplesHeroVideo/, 'main video hero rendering belongs in ExamplesMainVideoFeature');
+  assert.doesNotMatch(pageSource, /DeferredSourcePrompt/, 'main video prompt disclosure belongs in ExamplesMainVideoFeature');
+  assert.doesNotMatch(pageSource, /mainVideoCopy\.openExample/, 'main video CTAs belong in ExamplesMainVideoFeature');
+  assert.doesNotMatch(pageSource, /sticky top-16 z-\[35\]/, 'engine filter nav markup belongs in ExamplesEngineFilterNav');
+  assert.doesNotMatch(pageSource, /dangerouslySetInnerHTML/, 'JSON-LD script rendering belongs in ExamplesJsonLdScripts');
+  assert.doesNotMatch(pageSource, /halo-hero stack-gap-sm/, 'intro hero markup belongs in ExamplesIntroHero');
+  assert.doesNotMatch(pageSource, /Aller plus loin/, 'next-step section markup belongs in ExamplesNextStepsSection');
+  assert.doesNotMatch(pageSource, /<ExamplesGalleryGrid/, 'gallery section rendering belongs in ExamplesGallerySection');
+  assert.doesNotMatch(pageSource, /usesCurrentAndSupportedBlocks \? currentModelPagesLabel : modelPagesLabel/, 'model link section copy belongs in ExamplesModelLinksSection');
+  assert.doesNotMatch(pageSource, /rel="prev"/, 'pagination previous link markup belongs in ExamplesPaginationNav');
+  assert.doesNotMatch(pageSource, /rel="next"/, 'pagination next link markup belongs in ExamplesPaginationNav');
+  assert.doesNotMatch(pageSource, /<details key=\{item\.question\}/, 'FAQ disclosure markup belongs in ExamplesFaqSection');
+  assert.doesNotMatch(pageSource, /const engineFilterMap =/, 'engine filter state belongs in examples page data helpers');
+  assert.doesNotMatch(pageSource, /const filteredEntries =/, 'gallery entry projection belongs in examples page data helpers');
+  assert.doesNotMatch(pageSource, /const buildPaginationHref =/, 'pagination href building belongs in examples href helpers');
+  assert.doesNotMatch(pageSource, /const buildEngineFilterHref = \(engineId: string \| null\): string => \{/, 'filter href details belong in examples href helpers');
+  assert.doesNotMatch(pageSource, /BreadcrumbList/, 'breadcrumb schema building belongs in examples JSON-LD helpers');
+  assert.doesNotMatch(pageSource, /FAQPage/, 'FAQ schema building belongs in examples JSON-LD helpers');
+  assert.doesNotMatch(pageSource, /ItemListOrderAscending/, 'item list schema building belongs in examples JSON-LD helpers');
+  assert.doesNotMatch(pageSource, /pickFirstPlayableVideo\(clientVideos\)/, 'hero video selection belongs in examples page data helpers');
+  assert.doesNotMatch(pageSource, /<ExamplesMainVideoFeature/, 'route view should render the main video feature');
+  assert.doesNotMatch(pageSource, /<ExamplesGallerySection/, 'route view should render the gallery section');
+
+  const lineCount = pageSource.split('\n').length;
+  assert.ok(lineCount <= 400, `examples page should stay below 400 lines after route extraction, got ${lineCount}`);
+});
+
+test('examples hub metadata sends visitors to detail pages for recorded costs', () => {
+  const title = 'AI Video Examples: Prompts, Models & Recorded Costs';
+  const description =
+    'Browse real AI video examples, then open a video to inspect its prompt, settings, duration and recorded render cost before recreating it.';
+
+  assert.equal(enMessages.gallery?.meta?.title, title);
+  assert.equal(enMessages.gallery?.meta?.description, description);
+  assert.match(pageSource, /titleBranding:\s*locale === 'en' \? 'none' : 'auto'/);
+
+  const metadata = buildSeoMetadata({
+    locale: 'en',
+    title,
+    description,
+    englishPath: '/examples',
+    titleBranding: 'none',
+  });
+
+  assert.equal(typeof metadata.title === 'object' ? metadata.title.absolute : metadata.title, title);
+  assert.equal(metadata.description, description);
+});
+
+test('Kling examples landing owns motion-focused CTR metadata without a site-name suffix', () => {
+  const title = 'Kling AI Video Examples: Prompts, Motion & Product Shots';
+  const description =
+    'Explore Kling AI examples with prompts, reference-to-video, source-video V2V, start-frame settings and pricing across Kling 3.0 Omni and Kling 3.';
+  const landing = getExampleModelLanding('en', 'kling');
+
+  assert.ok(landing);
+  assert.equal(landing.metaTitle, title);
+  assert.equal(landing.metaDescription, description);
+  assert.equal(landing.heroTitle, 'Kling AI Video Examples, Prompts & Settings');
+  assert.match(modelPageSource, /UNBRANDED_EXAMPLE_MODEL_TITLE_SLUGS[\s\S]*'kling'/);
+
+  const metadata = buildSeoMetadata({
+    locale: 'en',
+    title: landing.metaTitle,
+    description: landing.metaDescription,
+    englishPath: '/examples/kling',
+    titleBranding: 'none',
+  });
+
+  assert.equal(typeof metadata.title === 'object' ? metadata.title.absolute : metadata.title, title);
+  assert.equal(metadata.description, description);
+});
+
+test('Seedance examples landing owns use-case-focused SERP metadata', () => {
+  const title = 'Seedance AI Video Examples, Prompts & Use Cases | MaxVideoAI';
+  const description =
+    'Explore real Seedance video outputs, copy prompt ideas, compare model settings, and see when to use Seedance 2.0, Fast, Mini, or 1.5 Pro.';
+  const landing = getExampleModelLanding('en', 'seedance');
+  const family = getModelFamilyDefinition('seedance');
+
+  assert.ok(landing);
+  assert.ok(family);
+  assert.equal(landing.metaTitle, title);
+  assert.equal(landing.metaDescription, description);
+  assert.doesNotMatch(landing.intro, /supported Seedance 1\.5 Pro setup for/i);
+  assert.doesNotMatch(landing.intro, /Read more/i);
+  assert.equal(family.defaultModelSlug, 'seedance-2-0');
+  assert.deepEqual(family.routeAliases, ['seedance-1-5-pro', 'seedance-2-0', 'seedance-2-0-fast', 'dreamina-seedance-2-0-mini']);
+  assert.deepEqual(getExampleFamilyModelSlugs('seedance'), [
+    'seedance-2-0',
+    'seedance-2-0-fast',
+    'dreamina-seedance-2-0-mini',
+    'seedance-1-5-pro',
+  ]);
+  assert.deepEqual(getExampleFamilyCurrentModelSlugs('seedance'), ['seedance-2-0', 'seedance-2-0-fast', 'dreamina-seedance-2-0-mini']);
+  assert.match(landing.intro, /Seedance 2\.0 Mini/i);
+  assert.match(landing.intro, /lower-cost|batch|ecommerce|UGC|reference-guided/i);
+  assert.match(landing.summary, /Seedance 2\.0.*polished|final|high-ceiling/i);
+  assert.match(landing.summary, /Seedance 2\.0 Fast.*draft|faster/i);
+  assert.match(landing.summary, /Seedance 2\.0 Mini.*lower-cost|batch|value/i);
+
+  const metadata = buildSeoMetadata({
+    locale: 'en',
+    title: landing.metaTitle,
+    description: landing.metaDescription,
+    englishPath: '/examples/seedance',
+  });
+
+  assert.equal(typeof metadata.title === 'object' ? metadata.title.absolute : metadata.title, title);
+  assert.equal(metadata.description, description);
+  assert.equal(metadata.alternates?.canonical, 'https://maxvideoai.com/examples/seedance');
+  assert.deepEqual(metadata.alternates?.languages, {
+    en: 'https://maxvideoai.com/examples/seedance',
+    fr: 'https://maxvideoai.com/fr/galerie/seedance',
+    es: 'https://maxvideoai.com/es/galeria/seedance',
+    'x-default': 'https://maxvideoai.com/examples/seedance',
+  });
+});
+
+test('examples helper module exposes the route contract', () => {
+  for (const exportName of [
+    'ENGINE_META',
+    'SITE',
+    'GALLERY_SLUG_MAP',
+    'DEFAULT_SORT',
+    'EXAMPLES_PAGE_SIZE',
+    'HUB_INITIAL_DESKTOP_GALLERY_BATCH',
+    'FAMILY_INITIAL_DESKTOP_GALLERY_BATCH',
+    'INITIAL_MOBILE_GALLERY_BATCH',
+    'HERO_POSTER_OPTIONS',
+    'GALLERY_POSTER_OPTIONS',
+    'ALLOWED_QUERY_KEYS',
+    'PREFERRED_ENGINE_ORDER',
+    'ENGINE_MODEL_LINKS_BY_GROUP',
+    'CURRENT_ENGINE_MODEL_LINKS_BY_GROUP',
+    'ENGINE_MODEL_LINKS',
+  ]) {
+    assert.match(utilsSource, new RegExp(`export const ${exportName}`), `${exportName} should be exported`);
+  }
+
+  for (const exportName of [
+    'resolveEngineLinkId',
+    'getEngineAccentOutlineStyle',
+    'getPlaceholderPoster',
+    'buildModelHref',
+    'buildCompareHref',
+    'buildPricingHref',
+    'formatModelSlugLabel',
+    'isTrackingParam',
+    'appendTrackingParams',
+    'toAbsoluteUrl',
+    'serializeJsonLd',
+    'resolveCanonicalEngineParam',
+    'resolveEngineLabel',
+    'getSort',
+    'formatPromptExcerpt',
+    'compactLeadCopy',
+    'buildMainVideoHeroLine',
+    'buildLocalizedExampleLabel',
+    'getAspectRatioStyle',
+    'isPortraitAspectRatio',
+    'getVideoMimeType',
+    'resolveFilterDescriptor',
+  ]) {
+    assert.match(utilsSource, new RegExp(`export function ${exportName}`), `${exportName} should be exported`);
+  }
+
+  assert.match(utilsSource, /export const normalizeFilterId/, 'normalizeFilterId should be exported');
+  assert.match(utilsSource, /export type EngineFilterOption/, 'EngineFilterOption should be exported');
+});
+
+test('examples page data helper owns filter, model link, and gallery projections', () => {
+  for (const exportName of [
+    'buildExamplesEngineFilterState',
+    'buildExamplesModelLinks',
+    'buildExamplesGalleryData',
+    'buildExamplesGalleryPresentation',
+    'buildExamplesMainVideoFeatureData',
+  ]) {
+    assert.match(pageDataSource, new RegExp(`export function ${exportName}\\(`), `${exportName} should be exported`);
+  }
+
+  assert.match(pageDataSource, /const engineFilterMap =/, 'page data helper should own engine filter state');
+  assert.match(pageDataSource, /PREFERRED_ENGINE_ORDER/, 'page data helper should own preferred family ordering');
+  assert.match(pageDataSource, /buildOptimizedPosterUrl/, 'page data helper should own gallery poster optimization');
+  assert.match(pageDataSource, /formatPromptExcerpt/, 'page data helper should own client prompt display shaping');
+  assert.match(pageDataSource, /pickFirstPlayableVideo/, 'page data helper should own hero video selection');
+  assert.match(pageDataSource, /buildMainVideoHeroLine/, 'page data helper should own main video hero copy shaping');
+  assert.match(
+    pageDataSource,
+    /const poster =\s*mainVideo\?\.card\.rawPosterUrl \?\? mainVideo\?\.card\.heroPosterUrl/s,
+    'main video poster should stay raw before next/image renders it'
+  );
+  assert.match(pageDataSource, /export type ExamplesModelLink/, 'page data helper should export model link shape');
+});
+
+test('examples href and JSON-LD helpers expose route contracts', () => {
+  for (const exportName of [
+    'buildExamplesEngineFilterHref',
+    'buildExamplesPaginationHref',
+    'buildExamplesQueryParams',
+    'buildExamplesNormalizedRedirectTarget',
+  ]) {
+    assert.match(hrefsSource, new RegExp(`export function ${exportName}\\(`), `${exportName} should be exported`);
+  }
+
+  assert.match(jsonLdSource, /export function buildExamplesJsonLd\(/, 'JSON-LD builder should be exported');
+  assert.match(jsonLdSource, /BreadcrumbList/, 'JSON-LD builder should own breadcrumb schema');
+  assert.match(jsonLdSource, /FAQPage/, 'JSON-LD builder should own FAQ schema');
+  assert.match(jsonLdSource, /ItemListOrderAscending/, 'JSON-LD builder should own item list ordering');
+  assert.match(jsonLdSource, /numberOfItems/, 'JSON-LD builder should preserve item list counts');
+});
+
+test('examples page copy helper exposes localized route copy builders', () => {
+  for (const exportName of [
+    'getExamplesBrowseByModelLabel',
+    'getExamplesGalleryUiCopy',
+    'getExamplesLongDescription',
+    'getKlingExamplesSectionTitles',
+    'getExamplesModelPageLabels',
+    'buildExamplesNextStepLinks',
+    'getExamplesMainVideoCopy',
+  ]) {
+    assert.match(copySource, new RegExp(`export function ${exportName}`), `${exportName} should be exported`);
+  }
+});
+
+test('examples main video feature owns the hero media card', () => {
+  assert.match(mainVideoFeatureSource, /export function ExamplesMainVideoFeature/, 'main video feature should be exported');
+  assert.match(mainVideoFeatureSource, /ExamplesHeroVideo/, 'main video feature should own hero video rendering');
+  assert.match(mainVideoFeatureSource, /AudioEqualizerBadge/, 'main video feature should own audio badge rendering');
+  assert.match(mainVideoFeatureSource, /DeferredSourcePrompt/, 'main video feature should own prompt disclosure');
+});
+
+test('examples route components own nav and JSON-LD rendering', () => {
+  assert.match(pageViewSource, /export function ExamplesPageView/, 'page view should be exported');
+  assert.match(pageViewSource, /ExamplesEngineFilterNav/, 'page view should compose engine filter nav');
+  assert.match(pageViewSource, /ExamplesMainVideoFeature/, 'page view should compose the main video feature');
+  assert.match(pageViewSource, /ExamplesGallerySection/, 'page view should compose the gallery section');
+  assert.match(pageViewSource, /detailsCtaLabel=\{galleryUiCopy\.detailsCta\}/);
+  assert.match(pageViewSource, /ExamplesJsonLdScripts/, 'page view should compose JSON-LD scripts');
+  assert.match(engineFilterNavSource, /export function ExamplesEngineFilterNav/, 'engine filter nav should be exported');
+  assert.match(engineFilterNavSource, /sticky top-16 z-\[35\]/, 'engine filter nav should own sticky filter markup');
+  assert.match(engineFilterNavSource, /getEngineAccentOutlineStyle/, 'engine filter nav should own active brand outline styling');
+  assert.match(jsonLdScriptsSource, /export function ExamplesJsonLdScripts/, 'JSON-LD scripts component should be exported');
+  assert.match(jsonLdScriptsSource, /dangerouslySetInnerHTML/, 'JSON-LD scripts component should own JSON-LD script rendering');
+  assert.match(jsonLdScriptsSource, /serializeJsonLd/, 'JSON-LD scripts component should serialize via route helper');
+  assert.match(routeSectionsSource, /export function ExamplesIntroHero/, 'intro hero section should be exported');
+  assert.match(routeSectionsSource, /export function ExamplesNextStepsSection/, 'next steps section should be exported');
+  assert.match(routeSectionsSource, /export function ExamplesModelLinksSection/, 'model links section should be exported');
+  assert.match(routeSectionsSource, /resolveExamplesPricingCallout/, 'model landing links should own compact pricing callouts');
+  assert.match(routeSectionsSource, /ltx-2-3-fast-pricing|kling-3-pro-pricing/, 'examples pricing callouts should target stable pricing anchors');
+  assert.match(routeSectionsSource, /export function ExamplesModelLandingCardsSection/, 'model landing cards section should be exported');
+  assert.match(routeSectionsSource, /export function ExamplesGallerySection/, 'gallery section should be exported');
+  assert.match(routeSectionsSource, /export function ExamplesPaginationNav/, 'pagination nav should be exported');
+  assert.match(routeSectionsSource, /export function ExamplesSummarySection/, 'summary section should be exported');
+  assert.match(routeSectionsSource, /export function ExamplesFaqSection/, 'FAQ section should be exported');
+  assert.match(routeSectionsSource, /Aller plus loin/, 'next steps section should own localized heading fallback');
+  assert.match(routeSectionsSource, /<ExamplesGalleryGrid/, 'gallery section should own gallery grid rendering');
+  assert.match(routeSectionsSource, /detailsCtaLabel=\{detailsCtaLabel\}/);
+  assert.match(routeSectionsSource, /rel="prev"/, 'pagination nav should own previous link markup');
+  assert.match(routeSectionsSource, /rel="next"/, 'pagination nav should own next link markup');
+  assert.match(routeSectionsSource, /<details key=\{item\.question\}/, 'FAQ section should own FAQ disclosure markup');
+});

@@ -1,0 +1,210 @@
+{
+  "ok": true,
+  "jobs": [
+    {
+      "jobId": "job-001",
+      "engineId": "veo-3-1-fast",
+      "engineLabel": "Google Veo 3 Fast",
+      "durationSec": 8,
+      "prompt": "Beach flyover with morning haze",
+      "thumbUrl": "/assets/gallery/sample-01.svg",
+      "videoUrl": "/assets/gallery/adraga-beach.mp4",
+      "aspectRatio": "16:9",
+      "previewFrame": "/assets/frames/thumb-16x9.svg",
+      "createdAt": "2025-10-05T18:00:00Z"
+    },
+    {
+      "jobId": "job-002",
+      "engineId": "pika-text-to-video",
+      "engineLabel": "Pika 2.2 Text to Video",
+      "durationSec": 10,
+      "prompt": "Drone sweep above snowy switchbacks",
+      "thumbUrl": "/assets/gallery/sample-02.svg",
+      "videoUrl": "/assets/gallery/drone-snow.mp4",
+      "aspectRatio": "16:9",
+      "previewFrame": "/assets/frames/thumb-16x9.svg",
+      "createdAt": "2025-10-05T17:57:00Z"
+    },
+    {
+      "jobId": "job-003",
+      "engineId": "minimax-hailuo-02-text",
+      "engineLabel": "MiniMax Hailuo 02 Standard",
+      "durationSec": 12,
+      "prompt": "Coffee shop slow pan with lens flare",
+      "thumbUrl": "/assets/gallery/sample-03.svg",
+      "aspectRatio": "16:9",
+      "previewFrame": "/assets/frames/thumb-16x9.svg",
+      "createdAt": "2025-10-05T17:54:00Z"
+    },
+    {
+      "jobId": "job-004",
+      "engineId": "sora-2",
+      "engineLabel": "OpenAI Sora 2",
+      "durationSec": 6,
+      "prompt": "Swimmer underwater tracking shot",
+      "thumbUrl": "/assets/gallery/sample-04.svg",
+      "videoUrl": "/assets/gallery/swimmer.mp4",
+      "aspectRatio": "16:9",
+      "previewFrame": "/assets/frames/thumb-16x9.svg",
+      "createdAt": "2025-10-05T17:51:00Z"
+    },
+    {
+      "jobId": "job-005",
+      "engineId": "veo-3-1-fast",
+      "engineLabel": "Google Veo 3 Fast",
+      "durationSec": 14,
+      "prompt": "Night drive through neon district",
+      "thumbUrl": "/assets/gallery/sample-05.svg",
+      "aspectRatio": "16:9",
+      "previewFrame": "/assets/frames/thumb-16x9.svg",
+      "createdAt": "2025-10-05T17:48:00Z"
+    },
+    {
+      "jobId": "job-006",
+      "engineId": "pika-text-to-video",
+      "engineLabel": "Pika 2.2 Text to Video",
+      "durationSec": 7,
+      "prompt": "Particle tunnel, glitch accents",
+      "thumbUrl": "/assets/gallery/sample-06.svg",
+      "aspectRatio": "16:9",
+      "previewFrame": "/assets/frames/thumb-16x9.svg",
+      "createdAt": "2025-10-05T17:45:00Z"
+    },
+    {
+      "jobId": "job-007",
+      "engineId": "minimax-hailuo-02-text",
+      "engineLabel": "MiniMax Hailuo 02 Standard",
+      "durationSec": 9,
+      "prompt": "Vertical aerial of coastal road",
+      "thumbUrl": "/assets/gallery/sample-portrait-01.svg",
+      "videoUrl": "/hero/minimax-video01.mp4",
+      "aspectRatio": "9:16",
+      "previewFrame": "/assets/frames/thumb-9x16.svg",
+      "createdAt": "2025-10-05T17:42:00Z"
+    },
+    {
+      "jobId": "job-008",
+      "engineId": "sora-2",
+      "engineLabel": "OpenAI Sora 2",
+      "durationSec": 11,
+      "prompt": "Portrait loop with neon reflections",
+      "thumbUrl": "/assets/gallery/sample-portrait-02.svg",
+      "videoUrl": "/assets/gallery/parking-portrait.mp4",
+      "aspectRatio": "9:16",
+      "previewFrame": "/assets/frames/thumb-9x16.svg",
+      "createdAt": "2025-10-05T17:39:00Z"
+    },
+    {
+      "jobId": "job-009",
+      "engineId": "veo-3-1-fast",
+      "engineLabel": "Google Veo 3 Fast",
+      "durationSec": 8,
+      "prompt": "Nightlife b-roll, crosswalk streaks",
+      "thumbUrl": "/assets/gallery/sample-portrait-01.svg",
+      "aspectRatio": "9:16",
+      "previewFrame": "/assets/frames/thumb-9x16.svg",
+      "createdAt": "2025-10-05T17:36:00Z"
+    },
+    {
+      "jobId": "job-010",
+      "engineId": "pika-text-to-video",
+      "engineLabel": "Pika 2.2 Text to Video",
+      "durationSec": 6,
+      "prompt": "City skyline reflected in glass",
+      "thumbUrl": "/assets/gallery/sample-portrait-02.svg",
+      "aspectRatio": "9:16",
+      "previewFrame": "/assets/frames/thumb-9x16.svg",
+      "createdAt": "2025-10-05T17:33:00Z"
+    },
+    {
+      "jobId": "job-011",
+      "engineId": "minimax-hailuo-02-text",
+      "engineLabel": "MiniMax Hailuo 02 Standard",
+      "durationSec": 10,
+      "prompt": "Studio product loop with fog",
+      "thumbUrl": "/assets/gallery/sample-square-01.svg",
+      "videoUrl": "/assets/gallery/robot-eyes.mp4",
+      "aspectRatio": "1:1",
+      "previewFrame": "/assets/frames/thumb-1x1.svg",
+      "createdAt": "2025-10-05T17:30:00Z"
+    },
+    {
+      "jobId": "job-012",
+      "engineId": "sora-2",
+      "engineLabel": "OpenAI Sora 2",
+      "durationSec": 12,
+      "prompt": "Macro lens flare over circuitry",
+      "thumbUrl": "/assets/gallery/sample-square-02.svg",
+      "aspectRatio": "1:1",
+      "previewFrame": "/assets/frames/thumb-1x1.svg",
+      "createdAt": "2025-10-05T17:27:00Z"
+    },
+    {
+      "jobId": "job-013",
+      "engineId": "veo-3-1-fast",
+      "engineLabel": "Google Veo 3 Fast",
+      "durationSec": 9,
+      "prompt": "Top-down workspace timelapse",
+      "thumbUrl": "/assets/gallery/sample-square-01.svg",
+      "aspectRatio": "1:1",
+      "previewFrame": "/assets/frames/thumb-1x1.svg",
+      "createdAt": "2025-10-05T17:24:00Z"
+    },
+    {
+      "jobId": "job-014",
+      "engineId": "pika-text-to-video",
+      "engineLabel": "Pika 2.2 Text to Video",
+      "durationSec": 8,
+      "prompt": "Colorful abstract gradient loop",
+      "thumbUrl": "/assets/gallery/sample-square-02.svg",
+      "aspectRatio": "1:1",
+      "previewFrame": "/assets/frames/thumb-1x1.svg",
+      "createdAt": "2025-10-05T17:21:00Z"
+    },
+    {
+      "jobId": "job-015",
+      "engineId": "minimax-hailuo-02-text",
+      "engineLabel": "MiniMax Hailuo 02 Standard",
+      "durationSec": 7,
+      "prompt": "Futuristic humanoid turning toward camera",
+      "thumbUrl": "/assets/gallery/sample-05.svg",
+      "videoUrl": "/assets/gallery/robot-look.mp4",
+      "aspectRatio": "16:9",
+      "previewFrame": "/assets/frames/thumb-16x9.svg",
+      "createdAt": "2025-10-05T17:18:00Z"
+    },
+    {
+      "jobId": "job-016",
+      "engineId": "sora-2",
+      "engineLabel": "OpenAI Sora 2",
+      "durationSec": 13,
+      "prompt": "Highway timelapse at golden hour",
+      "thumbUrl": "/assets/gallery/sample-02.svg",
+      "aspectRatio": "16:9",
+      "previewFrame": "/assets/frames/thumb-16x9.svg",
+      "createdAt": "2025-10-05T17:15:00Z"
+    },
+    {
+      "jobId": "job-017",
+      "engineId": "veo-3-1-fast",
+      "engineLabel": "Google Veo 3 Fast",
+      "durationSec": 11,
+      "prompt": "Snowboarder carving fresh powder",
+      "thumbUrl": "/assets/gallery/sample-04.svg",
+      "aspectRatio": "16:9",
+      "previewFrame": "/assets/frames/thumb-16x9.svg",
+      "createdAt": "2025-10-05T17:12:00Z"
+    },
+    {
+      "jobId": "job-018",
+      "engineId": "pika-text-to-video",
+      "engineLabel": "Pika 2.2 Text to Video",
+      "durationSec": 9,
+      "prompt": "City tunnel light streak experiment",
+      "thumbUrl": "/assets/gallery/sample-06.svg",
+      "aspectRatio": "16:9",
+      "previewFrame": "/assets/frames/thumb-16x9.svg",
+      "createdAt": "2025-10-05T17:09:00Z"
+    }
+  ]
+}

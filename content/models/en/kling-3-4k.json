@@ -1,0 +1,506 @@
+{
+  "marketingName": "Kling 3 4K",
+  "versionLabel": "v3 4K",
+  "seo": {
+    "title": "Kling 3 4K | Native 4K AI Video Model | MaxVideoAI",
+    "description": "Use Kling 3 4K on MaxVideoAI for native 4K text-to-video and image-to-video delivery renders with 3-15s clips, optional audio, and final master pricing.",
+    "image": "/hero/kling-3-4k-hero.jpg"
+  },
+  "overview": "Kling 3 4K is the native 4K Kling AI video route for final delivery renders, approved text-to-video prompts, image-to-video masters, locked framing, and optional native audio.",
+  "pricingNotes": "Member display estimates include the MaxVideoAI margin: about $0.55/s for native 4K output, so use this route for approved final renders.",
+  "hero": {
+    "title": "Kling 3 4K - native 4K video generation",
+    "intro": "Use Kling 3 4K when a prompt or start frame is already approved and the shot needs native 4K output for delivery, editing or large-screen review. Use Kling 3.0 Omni 4K when reference images or storyboard frames should guide the 4K shot without becoming the opening frame.",
+    "badge": "Native 4K · 3-15s · Text or image input · Audio on/off",
+    "ctaPrimary": {
+      "label": "Start generating with Kling 3 4K",
+      "href": "/app?engine=kling-3-4k"
+    },
+    "secondaryLinks": [
+      {
+        "label": "See Kling 3 Pro",
+        "href": "/models/kling-3-pro"
+      },
+      {
+        "label": "See Kling 3 Standard",
+        "href": "/models/kling-3-standard"
+      },
+      {
+        "label": "View Kling AI video examples",
+        "href": "/examples/kling"
+      }
+    ]
+  },
+  "compareLink": {
+    "label": "Compare Kling 3 Pro vs Kling 3 4K ->",
+    "href": "/ai-video-engines/kling-3-4k-vs-kling-3-pro"
+  },
+  "bestUseCases": {
+    "title": "Best use cases",
+    "items": [
+      {
+        "title": "Final 4K delivery renders",
+        "icon": "cinematic"
+      },
+      {
+        "title": "Product hero shots and premium ads",
+        "icon": "product"
+      },
+      {
+        "title": "High-resolution image-to-video approvals",
+        "icon": "layers"
+      },
+      {
+        "title": "Campaign masters for editing and cropping",
+        "icon": "scissors"
+      }
+    ]
+  },
+  "technicalOverviewTitle": "Technical overview",
+  "technicalOverview": [
+    {
+      "label": "Details",
+      "body": "Kling 3 4K uses the active native 4K route, so it should be treated as a delivery route rather than a lower-cost ideation model."
+    },
+    {
+      "label": "Duration",
+      "body": "3-15 s per render"
+    },
+    {
+      "label": "Resolution",
+      "body": "Native 4K"
+    },
+    {
+      "label": "Aspect ratio",
+      "body": "16:9, 9:16, 1:1"
+    },
+    {
+      "label": "Inputs",
+      "body": "Text-to-video; image-to-video from one source image with optional end frame. No video input on this MaxVideoAI route."
+    },
+    {
+      "label": "Audio",
+      "body": "Native audio can be toggled on or off; the active route currently shows the same 4K rate either way"
+    }
+  ],
+  "promptStructure": {
+    "title": "Prompting Kling 3 4K",
+    "quote": "Use the same approved single-prompt or multi-prompt recipe from Standard or Pro, then render the final version in native 4K.",
+    "description": "Keep the shot plan tight and avoid using 4K for early prompt exploration.",
+    "steps": [
+      "Validate composition in Standard or Pro",
+      "Move the approved single-prompt or multi-prompt plan to Kling 3 4K",
+      "Keep one clear action per shot",
+      "Use start frames for final framing",
+      "Render native 4K for delivery"
+    ]
+  },
+  "tips": {
+    "title": "Tips & limits",
+    "items": [
+      "Use Kling 3 4K after the creative direction is already approved.",
+      "Native 4K is more expensive than Kling 3 Pro 1080p.",
+      "Keep prompts concise and shot-based.",
+      "Use Standard or Pro for cheaper iteration."
+    ]
+  },
+  "prompts": [
+    {
+      "title": "Native 4K product reveal",
+      "prompt": "Native 4K cinematic product reveal: macro reflections across a polished device, slow dolly push, controlled studio lighting, crisp edges, subtle ambient audio."
+    },
+    {
+      "title": "4K travel campaign master",
+      "prompt": "16:9 native 4K travel hero shot: sunrise over a cliffside hotel, smooth drone glide, warm haze, ocean spray, refined luxury campaign feel."
+    }
+  ],
+  "faqTitle": "FAQ - Kling 3 4K in MaxVideoAI",
+  "faqs": [
+    {
+      "q": "Does Kling 3 4K generate native 4K output?",
+      "a": "Yes. Kling 3 4K is the native 4K delivery route on MaxVideoAI for selected text-to-video or image-to-video shots."
+    },
+    {
+      "q": "When should I use Kling 3 4K instead of Kling 3 Pro?",
+      "a": "Use Kling 3 Pro for most creative validation and 1080p approvals. Use Kling 3 4K only when the approved shot needs native 4K final delivery."
+    },
+    {
+      "q": "Does Kling 3 4K support image-to-video?",
+      "a": "Yes. The current MaxVideoAI route supports image-to-video from one source image, with an optional end frame where exposed by the active route."
+    },
+    {
+      "q": "Does Kling 3 4K support audio and lip sync?",
+      "a": "Yes, audio can be toggled and lip sync is supported. Keep dialogue short and face framing stable when lip sync matters."
+    },
+    {
+      "q": "How long can Kling 3 4K clips be?",
+      "a": "The route is short-form, with duration options up to 15 seconds. Confirm the final duration and quote in Generate before rendering."
+    }
+  ],
+  "custom": {
+    "quickPricingTitle": "Recommended cost ladder",
+    "quickPricingItems": [
+      "Draft in Kling 3 Standard when you need more variants at the lowest current Kling 3 rate.",
+      "Move stronger directions into Kling 3 Pro for the main 1080p quality pass.",
+      "Use Kling 3 4K only for approved delivery renders, where native 4K clarity is worth the higher per-second price."
+    ],
+    "relatedTitle": "Where Kling 3 4K fits",
+    "relatedSubtitle": "Keep 4K as the delivery step in the Kling family instead of replacing the Pro workhorse.",
+    "relatedItems": [
+      {
+        "brand": "Kling",
+        "title": "Kling 3 Pro",
+        "description": "Use Pro for the main creative pass, multi-shot control, and lower-cost 1080p approvals before final 4K export.",
+        "modelSlug": "kling-3-pro",
+        "ctaLabel": "Compare Kling 3 Pro vs 4K ->"
+      },
+      {
+        "brand": "Kling",
+        "title": "Kling 3 Standard",
+        "description": "Use Standard for prompt testing and storyboard variants before spending on Pro or 4K.",
+        "modelSlug": "kling-3-standard",
+        "ctaLabel": "Compare Standard vs 4K ->"
+      }
+    ],
+    "finalPara1": "Kling 3 4K is strongest when the creative direction is already proven. Treat it as the native 4K master route for approved shots.",
+    "finalPara2": "For most teams, the efficient workflow is Standard for exploration, Pro for the primary approval pass, then 4K only for final delivery.",
+    "finalButton": "Render a final Kling 3 4K shot",
+    "demoSummary": {
+      "subject": "Premium smartwatch product master",
+      "action": "Slow reveal of edge, reflection and screen detail",
+      "camera": "Locked 16:9 dolly push in native 4K",
+      "style": "Minimal studio, graphite surface, crisp product highlights",
+      "audio": "Audio off for editorial finishing"
+    },
+    "tipsIntro": "Best practices, cost controls and delivery limits for final native 4K renders with Kling 3 4K.",
+    "strengths": [
+      "Native 4K delivery after the creative direction is approved.",
+      "Strong fit for product masters, premium ads and large-screen review files.",
+      "Text-to-video and image-to-video workflows with optional audio.",
+      "Useful when final framing and detail matter more than iteration cost."
+    ],
+    "troubleshootingTitle": "Common 4K delivery issues -> fixes",
+    "troubleshootingItems": [
+      "Cost climbs quickly -> validate in Standard or Pro, then render only approved shots in 4K.",
+      "Framing drifts -> use a clean source image and specify locked composition.",
+      "Audio feels unnecessary -> turn audio off for editorial or music-led finishing.",
+      "Motion is too busy -> reduce to one readable action and one camera move."
+    ],
+    "boundaries": [
+      "Use text or one source image; no video input on the current MaxVideoAI Kling 3 4K route.",
+      "Native 4K is intended for selected delivery shots, not broad prompt exploration.",
+      "Clips remain short-form, up to 15 seconds per generation.",
+      "1:1, 16:9 and 9:16 are supported aspect ratios on this route.",
+      "Use the final quote in Generate before client-facing rollout or automated workflows."
+    ],
+    "safetyNote": "Built-in safeguards and best practices for responsible final delivery with Kling 3 4K.",
+    "faqs": [
+      {
+        "q": "Does Kling 3 4K generate native 4K output?",
+        "a": "Yes. Kling 3 4K is the native 4K delivery route on MaxVideoAI for selected text-to-video or image-to-video shots."
+      },
+      {
+        "q": "When should I use Kling 3 4K instead of Kling 3 Pro?",
+        "a": "Use Kling 3 Pro for most creative validation and 1080p approvals. Use Kling 3 4K only when the approved shot needs native 4K final delivery."
+      },
+      {
+        "q": "Does Kling 3 4K support image-to-video?",
+        "a": "Yes. The current MaxVideoAI route supports image-to-video from one source image, with an optional end frame where exposed by the active route."
+      },
+      {
+        "q": "Does Kling 3 4K support audio and lip sync?",
+        "a": "Yes, audio can be toggled and lip sync is supported. Keep dialogue short and face framing stable when lip sync matters."
+      },
+      {
+        "q": "How long can Kling 3 4K clips be?",
+        "a": "The route is short-form, with duration options up to 15 seconds. Confirm the final duration and quote in Generate before rendering."
+      }
+    ]
+  },
+  "decision": {
+    "modelSlug": "kling-3-4k",
+    "hero": {
+      "eyebrow": "KLING NATIVE 4K DELIVERY ROUTE",
+      "title": "Kling 3 4K",
+      "subtitle": "Native 4K delivery for approved image-to-video shots, product masters, and final campaign renders.",
+      "subtitleHighlights": [
+        "native 4K delivery",
+        "approved image-to-video shots",
+        "final campaign renders"
+      ],
+      "paragraph": "Use Kling 3 4K after the prompt or start frame is approved and the shot needs native 4K output for delivery, editing or large-screen review. Use Kling 3.0 Omni 4K when references should guide the shot without opening it.",
+      "primaryCta": {
+        "label": "Generate with Kling 3 4K",
+        "href": "/app?engine=kling-3-4k"
+      },
+      "secondaryCta": {
+        "label": "View examples",
+        "href": "/examples/kling"
+      },
+      "quickLinks": [
+        {
+          "label": "Compare vs Pro",
+          "href": "/ai-video-engines/kling-3-4k-vs-kling-3-pro"
+        },
+        {
+          "label": "View pricing",
+          "href": "/pricing#kling-3-4k-pricing"
+        },
+        {
+          "label": "Prompt examples",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Kling 3 4K example",
+      "description": "Native 4K delivery render",
+      "renderLabel": "View render",
+      "badges": [
+        "Native 4K",
+        "15s max",
+        "Delivery"
+      ],
+      "altContext": "Kling 3 native 4K delivery render"
+    },
+    "features": [
+      {
+        "title": "Native 4K output",
+        "body": "Generate delivery-grade output directly on the 4K route.",
+        "tone": "quality"
+      },
+      {
+        "title": "Text or image",
+        "body": "Use the approved prompt or image reference for the final pass.",
+        "tone": "reference"
+      },
+      {
+        "title": "Final masters",
+        "body": "Reserve 4K for approved ads, product shots and campaign masters.",
+        "tone": "continuity"
+      },
+      {
+        "title": "Audio option",
+        "body": "Use native audio when the final render needs sound context.",
+        "tone": "audio"
+      },
+      {
+        "title": "Max 15s",
+        "body": "Render short approved clips up to 15 seconds.",
+        "tone": "duration"
+      },
+      {
+        "title": "Pay-as-you-go",
+        "body": "See exact live price before you generate.",
+        "tone": "price"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "When should you use 4K?",
+        "body": "Use Kling 3 4K after the creative direction is validated. Draft in Standard or Pro before paying for final delivery.",
+        "cta": {
+          "label": "Compare 4K vs Pro",
+          "href": "/ai-video-engines/kling-3-4k-vs-kling-3-pro"
+        }
+      },
+      {
+        "title": "Preparing an image-to-video master?",
+        "body": "Lock the source frame, product details and final composition before rendering the 4K version.",
+        "cta": {
+          "label": "Open Prompt Lab",
+          "href": "#prompting"
+        }
+      },
+      {
+        "title": "Still testing prompts?",
+        "body": "Stay on Kling 3 Standard or Pro until the shot recipe is approved.",
+        "cta": {
+          "label": "View Kling 3 Standard",
+          "href": "/models/kling-3-standard"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Approved prompt",
+        "body": "Bring a validated shot plan into 4K instead of exploring from scratch."
+      },
+      {
+        "title": "Image reference",
+        "body": "Use a clean source image when product framing or visual identity matters."
+      },
+      {
+        "title": "Delivery framing",
+        "body": "Choose 16:9, 9:16 or 1:1 based on the final placement."
+      },
+      {
+        "title": "Audio decision",
+        "body": "Add audio only when the delivery file needs sound in review or export."
+      },
+      {
+        "title": "Cost control",
+        "body": "Validate lower first, then render 4K once the creative is approved."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Kling 3 4K pricing at a glance",
+      "subtitle": "Preset native 4K totals - see the exact live price in the app before you generate.",
+      "footnote": "All prices are MaxVideoAI display prices in USD credits for preset scenarios.",
+      "ctaLabel": "View full pricing",
+      "maxDurationNote": "Native 4K route",
+      "ctaHref": "/pricing#kling-3-4k-pricing"
+    },
+    "meta": {
+      "title": "Kling 3 4K: Native 4K Pricing & Examples | MaxVideoAI",
+      "description": "Use Kling 3 4K for native 4K delivery renders, approved image-to-video shots, product masters and final campaign clips up to 15 seconds."
+    }
+  },
+  "prompting": {
+    "modelSlug": "kling-3-4k",
+    "section": {
+      "title": "Prompt Lab — Kling 3 4K",
+      "intro": "Kling 3 4K works best as a final delivery pass. Start from an approved prompt or start frame, lock framing and duration, decide whether audio belongs in the master, then render only the selected shot in native 4K.",
+      "tip": "Tip: validate timing, motion and framing in Kling 3 Standard or Pro before spending on the 4K master.",
+      "guide": null,
+      "referencesTitle": "How Kling 3 4K uses references"
+    },
+    "tabs": [
+      {
+        "id": "quick",
+        "label": "Final master",
+        "title": "Final 4K delivery prompt",
+        "description": "Use this when the shot recipe is already approved.",
+        "copy": "Template (copy / paste)\nShot goal: [final delivery use: product master, campaign clip, large-screen review]\nSubject: [approved product / character / scene]\nAction: [one clean readable action]\nCamera: [locked framing + one camera move]\nStyle: [approved lighting, palette, lens feel]\nDelivery: native 4K, [duration], [aspect ratio], audio [on/off]\n\nExample:\nFinal native 4K product master for a premium smartwatch on a dark graphite plinth. One slow dolly push reveals the screen reflection and polished metal edge. Locked 16:9 framing, crisp studio highlights, black background, no extra text, no logo changes. Audio off for editorial finishing."
+      },
+      {
+        "id": "structured",
+        "label": "Reference",
+        "title": "Image-to-video master prompt",
+        "description": "Use this when a source frame controls product identity or composition.",
+        "copy": "Template (copy / paste)\nSource image role: [identity / product geometry / final framing]\nKeep: [shape, logo, color, pose, composition]\nAnimate: [single motion beat]\nCamera: [small push / orbit / locked shot]\nEnd frame: [optional landing frame if needed]\nDelivery: native 4K, [duration], audio [on/off]\n\nExample:\nUse the approved product still as the source frame. Preserve bottle shape, label placement and amber glass color. Add a subtle 4K macro orbit with controlled reflections, keep the bottle centered, land on the same clean frontal composition, no added text. Audio on with soft studio ambience only."
+      },
+      {
+        "id": "pro",
+        "label": "Audio",
+        "title": "Audio decision prompt",
+        "description": "Use this when the 4K delivery file needs sound context.",
+        "copy": "Template (copy / paste)\nAudio role: [review context / final ambience / short voice / no audio]\nVisible action tied to sound: [what creates the cue]\nAvoid: [long dialogue, competing music beds, noisy off-screen action]\nExport note: [audio on/off]\n\nExample:\nNative 4K fashion campaign master, model turns once under soft studio light. Audio on: quiet fabric movement, subtle room tone, one low cinematic hit at the turn. No dialogue, no music bed, no off-screen sounds."
+      },
+      {
+        "id": "storyboard",
+        "label": "Cost control",
+        "title": "4K escalation checklist",
+        "description": "Use this before moving from Standard or Pro into 4K.",
+        "copy": "Checklist\n1. Prompt is approved in a lower-cost Kling route.\n2. Source frame or end frame is final.\n3. Aspect ratio and duration match delivery.\n4. Audio on/off is decided.\n5. Only the approved shot moves to Kling 3 4K.\n\nExample:\nApproved Kling 3 Pro 1080p shot becomes the 4K master: same subject, same camera path, same timing, same source frame, native 4K output for final delivery."
+      }
+    ],
+    "tabNotes": [],
+    "globalPrinciples": [
+      "Use one approved shot brief instead of exploring multiple creative directions in 4K.",
+      "Lock subject, action, camera, aspect ratio and duration before rendering the final master.",
+      "Use a clean source image when product geometry, identity or framing must stay stable.",
+      "Decide audio on/off before export; treat audio as part of the delivery spec.",
+      "Control cost by drafting lower first, then moving only approved shots to Kling 3 4K."
+    ],
+    "engineWhy": [
+      "Kling 3 4K is exposed as text-to-video and image-to-video on MaxVideoAI, not as a video-input route.",
+      "Image-to-video accepts one source image, with an optional end frame where the active route exposes it.",
+      "The route is native 4K, so it fits final masters better than broad prompt exploration.",
+      "Lip sync is supported, but the prompt still needs short readable dialogue and stable face framing.",
+      "Use the final quote in Generate before client-facing delivery or bulk rendering."
+    ],
+    "demo": {
+      "title": "Demo prompt — Kling 3 4K",
+      "promptLabel": "Final 4K master",
+      "prompt": "Native 4K Kling 3 delivery render, 16:9, 6 seconds, audio off.\nA premium smartwatch rests on a dark graphite plinth in a minimal studio.\nOne slow dolly push reveals the polished edge, glass reflection and screen detail.\nLocked product framing, crisp highlights, clean black background, no added text or logo changes.\nUse this only after the composition and timing are approved in Standard or Pro.",
+      "notes": [],
+      "summary": {
+        "subject": "Premium smartwatch product master",
+        "action": "Slow reveal of edge, reflection and screen detail",
+        "camera": "Locked 16:9 dolly push in native 4K",
+        "style": "Minimal studio, graphite surface, crisp product highlights",
+        "output": "Audio off for editorial finishing"
+      },
+      "presentationOverrides": {
+        "modeLabel": "Final 4K master",
+        "outputLabel": "Audio",
+        "duration": "6s",
+        "aspectRatio": null,
+        "audioChipMode": "off",
+        "audioChipLabel": "Audio off",
+        "altContext": "Kling 3 4K product master render"
+      }
+    },
+    "imageExamples": null
+  },
+  "examples": {
+    "modelSlug": "kling-3-4k",
+    "section": {
+      "title": "Kling 3 4K delivery examples",
+      "intro": "Review approved Kling shots that deserve native 4K output: product masters, premium ads, large-screen edits, and high-resolution image-to-video approvals.",
+      "defaultCtaLabel": "View all Kling 3 4K examples ->",
+      "recreateLabel": null
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "All"
+      },
+      {
+        "id": "cinematic",
+        "label": "Cinematic"
+      },
+      {
+        "id": "product",
+        "label": "Product / Ad"
+      },
+      {
+        "id": "action",
+        "label": "Action"
+      },
+      {
+        "id": "vertical",
+        "label": "Vertical"
+      },
+      {
+        "id": "audio",
+        "label": "Audio on"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Native 4K masters",
+        "body": "See final delivery renders possible with Kling 3 4K.",
+        "icon": "maximize"
+      },
+      {
+        "id": "proof-2",
+        "title": "Recreate a master",
+        "body": "Open the app with Kling 3 4K and reuse the approved prompt.",
+        "icon": "zap"
+      },
+      {
+        "id": "proof-3",
+        "title": "Optional audio",
+        "body": "Turn audio on only when it belongs in the delivery file.",
+        "icon": "audio"
+      },
+      {
+        "id": "proof-4",
+        "title": "Locked source image",
+        "body": "Keep product, framing and composition stable in image-to-video.",
+        "icon": "image"
+      },
+      {
+        "id": "proof-5",
+        "title": "Delivery ready",
+        "body": "Reserved for approved shots where 4K detail justifies the cost.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": null,
+    "showWhenEmpty": true
+  }
+}

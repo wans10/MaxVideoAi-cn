@@ -1,0 +1,112 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+
+import { groupJobsIntoSummaries } from '../frontend/lib/job-groups';
+import type { Job } from '../frontend/types/jobs';
+
+test('image grouping prefers renderThumbUrls for preview/member thumbnails', () => {
+  const jobs: Job[] = [
+    {
+      jobId: 'img-job-1',
+      engineLabel: 'Image Engine',
+      durationSec: 2,
+      prompt: 'A landscape',
+      createdAt: '2026-02-16T00:00:00.000Z',
+      engineId: 'fal-image',
+      iterationCount: 2,
+      renderIds: ['https://cdn.example.com/full-1.png', 'https://cdn.example.com/full-2.png'],
+      renderThumbUrls: ['https://cdn.example.com/thumb-1.webp', 'https://cdn.example.com/thumb-2.webp'],
+    },
+  ];
+
+  const { groups } = groupJobsIntoSummaries(jobs, { includeSinglesAsGroups: true });
+  assert.equal(groups.length, 1);
+  const [group] = groups;
+  assert.equal(group.members[0]?.thumbUrl, 'https://cdn.example.com/thumb-1.webp');
+  assert.equal(group.members[1]?.thumbUrl, 'https://cdn.example.com/thumb-2.webp');
+  assert.equal(group.previews[0]?.thumbUrl, 'https://cdn.example.com/thumb-1.webp');
+});
+
+test('single image jobs fall back to render ids when thumbUrl is not ready yet', () => {
+  const jobs: Job[] = [
+    {
+      jobId: 'img-job-single',
+      engineLabel: 'Image Engine',
+      durationSec: 2,
+      prompt: 'A portrait',
+      createdAt: '2026-02-16T00:00:00.000Z',
+      engineId: 'fal-image',
+      status: 'completed',
+      renderIds: ['https://cdn.example.com/full-single.png'],
+      renderThumbUrls: null,
+      thumbUrl: null,
+    },
+  ];
+
+  const { groups } = groupJobsIntoSummaries(jobs, { includeSinglesAsGroups: true });
+  assert.equal(groups.length, 1);
+  const [group] = groups;
+  assert.equal(group.hero.thumbUrl, 'https://cdn.example.com/full-single.png');
+  assert.equal(group.previews[0]?.thumbUrl, 'https://cdn.example.com/full-single.png');
+  assert.equal(group.hero.status, 'completed');
+});
+
+test('single image jobs ignore placeholder thumbs when a real render exists', () => {
+  const jobs: Job[] = [
+    {
+      jobId: 'img-job-placeholder',
+      engineLabel: 'Image Engine',
+      durationSec: 2,
+      prompt: 'A city skyline',
+      createdAt: '2026-02-16T00:00:00.000Z',
+      engineId: 'fal-image',
+      status: 'completed',
+      renderIds: ['https://cdn.example.com/full-placeholder-fallback.png'],
+      renderThumbUrls: null,
+      thumbUrl: '/assets/frames/thumb-1x1.svg',
+    },
+  ];
+
+  const { groups } = groupJobsIntoSummaries(jobs, { includeSinglesAsGroups: true });
+  assert.equal(groups.length, 1);
+  const [group] = groups;
+  assert.equal(group.hero.thumbUrl, 'https://cdn.example.com/full-placeholder-fallback.png');
+  assert.equal(group.previews[0]?.thumbUrl, 'https://cdn.example.com/full-placeholder-fallback.png');
+  assert.equal(group.hero.status, 'completed');
+});
+
+test('multi-image groups keep the real image count while previewing at most four tiles', () => {
+  const renderIds = Array.from(
+    { length: 6 },
+    (_, index) => `https://cdn.example.com/full-batch-${index + 1}.png`
+  );
+  const renderThumbUrls = Array.from(
+    { length: 6 },
+    (_, index) => `https://cdn.example.com/thumb-batch-${index + 1}.webp`
+  );
+  const jobs: Job[] = [
+    {
+      jobId: 'img-job-batch',
+      engineLabel: 'Seedream',
+      durationSec: 2,
+      prompt: 'A themed image set',
+      createdAt: '2026-05-11T13:39:01.000Z',
+      engineId: 'seedream',
+      status: 'completed',
+      finalPriceCents: 32,
+      currency: 'USD',
+      iterationCount: 6,
+      renderIds,
+      renderThumbUrls,
+    },
+  ];
+
+  const { groups } = groupJobsIntoSummaries(jobs, { includeSinglesAsGroups: true });
+
+  assert.equal(groups.length, 1);
+  const [group] = groups;
+  assert.equal(group.count, 6);
+  assert.equal(group.members.length, 6);
+  assert.equal(group.previews.length, 4);
+  assert.equal(group.totalPriceCents, 32);
+});

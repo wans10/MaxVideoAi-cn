@@ -1,0 +1,600 @@
+{
+  "marketingName": "MiniMax Hailuo 02",
+  "versionLabel": "02",
+  "seo": {
+    "title": "Hailuo 02 (512p/768p) — tests texte → vidéo (6–10s)",
+    "description": "Créez des tests Hailuo 02 à faible coût en 512p/768p depuis texte (ou images). Vidéos silencieuses 6–10s pour storyboards et tests de mouvement, puis upgrade vers Veo/Kling/Wan/Sora dans MaxVideoAI.",
+    "image": "/hero/minimax-video01.jpg"
+  },
+  "overview": "MiniMax Hailuo 02 dans MaxVideoAI : clips courts et économiques, orientés physique, en 512p/768p sur 6 ou 10 s. Entrée texte ou image, frame finale optionnelle, sortie silencieuse et pricing wallet pour des tests rapides et des loops.",
+  "hero": {
+    "title": "MiniMax Hailuo 02 – Tests vidéo IA économiques avec forte physique",
+    "intro": "Tests silencieux 6–10s en 512p/768p — tests de mouvement, essais caméra et itération rapide.",
+    "badge": "512p/768p · 6–10 s · Entrée texte ou image · Sortie silencieuse",
+    "ctaPrimary": {
+      "label": "Essayer MiniMax Hailuo 02",
+      "href": "/app?engine=minimax-hailuo-02-text"
+    },
+    "secondaryLinks": [
+      {
+        "label": "Comparer MiniMax vs Pika 2.2 →",
+        "href": "/models/pika-text-to-video"
+      }
+    ]
+  },
+  "bestUseCases": {
+    "title": "Meilleurs cas d’usage",
+    "items": [
+      {
+        "title": "Tests de motion",
+        "icon": "zap"
+      },
+      {
+        "title": "Physique & motion secondaire",
+        "icon": "wind"
+      },
+      {
+        "title": "Animatics de storyboard",
+        "icon": "storyboard"
+      },
+      {
+        "title": "Tests de transitions & match cuts",
+        "icon": "repeat2"
+      },
+      {
+        "title": "Plans guidés start/end frame",
+        "icon": "image"
+      },
+      {
+        "title": "Campagnes multi‑variantes budget",
+        "icon": "coins"
+      }
+    ]
+  },
+  "technicalOverviewTitle": "Résumé technique",
+  "technicalOverview": [
+    {
+      "label": "Durée",
+      "body": "6 s ou 10 s par clip"
+    },
+    {
+      "label": "Résolution",
+      "body": "512p ou 768p"
+    },
+    {
+      "label": "Formats",
+      "body": "16:9, 9:16, 1:1"
+    },
+    {
+      "label": "Entrées",
+      "body": "Prompts texte ; image de référence optionnelle ; frame finale optionnelle"
+    },
+    {
+      "label": "Modes",
+      "body": "Text‑to‑video et Image‑to‑video"
+    },
+    {
+      "label": "Audio",
+      "body": "Sortie silencieuse (pas d’audio natif ni upload)"
+    },
+    {
+      "label": "Tarifs",
+      "body": "Budget‑friendly ; prix live via wallet dans Generate"
+    }
+  ],
+  "promptStructure": {
+    "title": "Texte→vidéo avec MiniMax Hailuo 02",
+    "quote": "Plan [durée] secondes [format] d’un [sujet] se déplaçant dans [environnement]. Caméra [mouvement] tandis que [motion secondaire] réagit naturellement (vent/fourrure/débris). Style : [réaliste/stylisé]. Pas de texte ni logos.",
+    "description": "Gardez les prompts courts et orientés motion : sujet en mouvement, décor, caméra, physique, style, et un prompt négatif.",
+    "steps": [
+      "Sujet en mouvement + style",
+      "Environnement & atmosphère",
+      "Mouvement caméra (follow/orbit/pan/push/tilt/crane)",
+      "Physique/motion secondaire (vent, tissu, particules, fourrure)",
+      "Format & durée (6 ou 10 s) + prompt négatif"
+    ]
+  },
+  "tips": {
+    "title": "Conseils & limites",
+    "items": [
+      "1–3 phrases ; des prompts trop longs peuvent créer des artefacts",
+      "Un sujet/environnement/effet principal par clip pour la clarté",
+      "Uploadez une référence + frame finale pour verrouiller la compo et l’atterrissage",
+      "512p pour les tests les plus rapides/moins chers ; 768p pour des sorties prêtes social",
+      "Ajoutez l’audio en post ou combinez avec Wan/Sora/Veo"
+    ]
+  },
+  "compareLink": {
+    "label": "Comparer MiniMax vs Pika 2.2 →",
+    "href": "/models/pika-text-to-video"
+  },
+  "prompts": [
+    {
+      "title": "Dérive rooftop venteuse (10 s, 16:9)",
+      "prompt": "10 s 16:9, glisse sur un rooftop stylisé de nuit ; manteau et cheveux réagissent aux rafales, caméra flotte près des néons, reflets dans les flaques, pas de texte/logos/UI."
+    },
+    {
+      "title": "Sprint de renard — sketch physique (6 s, 16:9)",
+      "prompt": "6 s 16:9, renard roux sprintant dans une forêt dense un jour venteux. Caméra suit bas derrière ; feuilles/poussière tourbillonnent ; mouvement de fourrure réaliste ; couleurs stylisées ; pas de texte/logos."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Pourquoi MiniMax plutôt qu’un modèle premium ?",
+      "a": "Bonne physique/motion à coût par seconde plus bas ; idéal pour volumes, explainers et tests sans brûler le budget."
+    },
+    {
+      "q": "Quel style de prompt marche le mieux ?",
+      "a": "2–3 phrases couvrant sujet, décor, caméra et physique ; une idée principale par clip."
+    },
+    {
+      "q": "Supporte‑t‑il la vidéo verticale ?",
+      "a": "Oui — 16:9, 9:16, 1:1 sont disponibles dans MaxVideoAI."
+    },
+    {
+      "q": "Supporte‑t‑il l’audio ?",
+      "a": "Non. Hailuo 02 sort en silencieux ; ajoutez le son en post ou via un modèle audio."
+    },
+    {
+      "q": "Et si j’ai besoin de 1080p ?",
+      "a": "Brouillonnez en Hailuo 02 (512p/768p), puis upscalez ou relancez dans un modèle plus haute résolution (Veo, Kling, Wan, Sora 2 Pro)."
+    }
+  ],
+  "custom": {
+    "heroDesc1": "Générez des tests rapides orientés physique en 512p/768p depuis texte ou image, avec frame finale optionnelle pour verrouiller l’atterrissage.",
+    "heroDesc2": "Choisissez 6 ou 10 secondes, 16:9/9:16/1:1, et obtenez des clips silencieux prêts pour storyboards, loops et tests de motion.",
+    "heroSupportLine": "Parfait quand vous voulez explorer mouvement et transitions à bas coût avant de reconstruire les gagnants dans des modèles premium.",
+    "whyTitle": "Pourquoi MiniMax Hailuo 02 est puissant",
+    "heroHighlights": [
+      "Cues de physique extrêmes||Vent, tissu, particules et inertie lisent très bien pour des tests rapides.",
+      "Contrôle end‑frame||Ajoutez une frame finale cible pour guider l’atterrissage du plan.",
+      "Pensé pour le volume||Idéal quand vous avez besoin de nombreuses variantes sans exploser le budget.",
+      "Tests silencieux||Faciles à sonoriser en post (ou à combiner avec un modèle audio pour les finals)."
+    ],
+    "bestUseCasesTitle": "Meilleurs cas d’usage",
+    "bestUseCases": [
+      {
+        "title": "Tests de motion",
+        "icon": "zap"
+      },
+      {
+        "title": "Physique & motion secondaire",
+        "icon": "wind"
+      },
+      {
+        "title": "Animatics de storyboard",
+        "icon": "storyboard"
+      },
+      {
+        "title": "Tests de transitions & match cuts",
+        "icon": "repeat2"
+      },
+      {
+        "title": "Plans guidés start/end frame",
+        "icon": "image"
+      },
+      {
+        "title": "Campagnes multi‑variantes budget",
+        "icon": "coins"
+      }
+    ],
+    "whatTitle": "Ce qu’est vraiment MiniMax Hailuo 02 dans MaxVideoAI",
+    "whatIntro1": "Le modèle phare MiniMax pour séquences courtes avec forte physique et bonne adhérence au prompt.",
+    "whatIntro2": "Dans MaxVideoAI, il est câblé comme modèle de brouillon rapide et silencieux en 512p/768p.",
+    "whatFlowTitle": "Flux MaxVideoAI",
+    "whatFlowSteps": [
+      "1. Choisissez MiniMax Hailuo 02.",
+      "2. Sélectionnez Texte → Vidéo ou Image → Vidéo.",
+      "3. Choisissez 6 ou 10 s, la résolution (512p/768p) et le format.",
+      "4. Optionnel : uploadez une image de référence et/ou une frame finale.",
+      "5. Collez un prompt court orienté motion (ajoutez la physique si besoin).",
+      "6. Vérifiez le prix via wallet avant rendu."
+    ],
+    "specTitle": "Specs réelles — MiniMax Hailuo 02 dans MaxVideoAI (512p/768p, 6–10 s)",
+    "specNote": "Specs telles qu’utilisées aujourd’hui dans MaxVideoAI.",
+    "specSections": [
+      {
+        "title": "Tests orientés physique",
+        "intro": "Très bon sur le mouvement physique (vent, tissu, particules). Idéal pour tests de motion et transitions.",
+        "items": [
+          "Indiquez la direction du vent/force.",
+          "Scènes simples pour une motion lisible.",
+          "Testez plusieurs transitions rapidement.",
+          "Parfait pour animatics et previz."
+        ]
+      },
+      {
+        "title": "Contrôle end‑frame",
+        "intro": "Vous pouvez guider l’atterrissage du plan en définissant une frame finale cible. Utile pour match cuts et fins propres.",
+        "items": [
+          "Spécifiez ce qui doit rester préservé.",
+          "Décrivez clairement la pose finale.",
+          "Servez‑vous‑en comme pont entre deux plans.",
+          "Associez avec un modèle premium pour les finals."
+        ]
+      }
+    ],
+    "specValueProp": "MiniMax Hailuo 02 est un modèle draft rapide et orienté physique pour des tests de motion silencieux à bas coût.",
+    "imageTitle": "Image→Vidéo avec MiniMax Hailuo 02 (+ end frames)",
+    "imageIntro": "Animez rapidement boards/renders/concepts avec frame finale optionnelle.",
+    "imageFlow": [
+      "Uploadez un keyframe ou un render.",
+      "Optionnel : uploadez une frame finale.",
+      "Choisissez 6/10 s, 512p/768p et le format.",
+      "Promptez caméra + physique; décrivez l’atterrissage sur l’end frame."
+    ],
+    "imageWhy": [
+      "Boards UX/UI transformés en explainers rapides",
+      "Affiches concept en teasers",
+      "Arrière‑plans en boucle pour streams ou sections hero"
+    ],
+    "multishotTitle": "Clips multi‑beats & loops",
+    "multishotIntro1": "6 s : 1–2 beats ; 10 s : 2–3 beats max dans un même décor.",
+    "multishotIntro2": "Concentrez‑vous sur des transitions portées par la physique dans un seul environnement.",
+    "multishotTips": [
+      "Beat 1 : mise en place ; Beat 2 : motion/transition ; Beat 3 : frame hero",
+      "Un seul décor/style par clip"
+    ],
+    "tipsTitle": "Conseils & limites",
+    "strengths": [
+      "Prompts orientés physique : indiquez direction de force + réponse matière (vent/tissu/particules/inertie/contact) plutôt que de longues listes de style.",
+      "Utilisez des mouvements caméra entre crochets ([pan], [tilt], [push in]) et un seul move par clip.",
+      "Gardez des scènes simples pour une motion lisible (un sujet hero, une action claire).",
+      "Utilisez First/Last frame pour un atterrissage propre (match cuts, transformations, transitions start→end).",
+      "Générez plusieurs variantes rapidement; choisissez la meilleure motion, puis reconstruisez les finals dans un modèle plus fidèle."
+    ],
+    "boundaries": [
+      "Résolutions draft (512p / 768p), pas de 1080p final.",
+      "6 s ou 10 s par rendu dans ce routage.",
+      "Sortie silencieuse — ajoutez le son en post.",
+      "Le micro‑texte à l’écran est peu fiable — overlay en post."
+    ],
+    "safetyTitle": "Sécurité & personnes / ressemblance",
+    "safetyRules": [
+      "Pas de contenu sexuel, et rien impliquant des mineurs.",
+      "Pas de contenu haineux, harcelant ou de violence graphique.",
+      "N’imitez pas de personnes réelles ou de figures publiques; utilisez le consentement pour toute ressemblance.",
+      "N’incluez pas de données personnelles privées (adresses, numéros, documents, visages non consentis).",
+      "Utilisez uniquement du contenu dont vous avez les droits (images/marques/IP) ; certains prompts/inputs peuvent être bloqués par les filtres de sécurité."
+    ],
+    "safetyInterpretation": [],
+    "safetyNote": null,
+    "comparisonTitle": "MiniMax Hailuo 02 vs Pika / Veo / Kling / Wan",
+    "comparisonPoints": [
+      "MiniMax Hailuo 02 : 6–10 s silencieux en 512p/768p, bonne physique, bas coût",
+      "Pika 2.2 : stylisé, silencieux 5–10 s en 720p/1080p",
+      "Veo 3.1 Fast : 4–8 s avec audio optionnel en 720p/1080p",
+      "Kling 2.5 Turbo : hero shots silencieux 1080p, 5–10 s",
+      "Wan 2.5 : 5–10 s avec audio natif/upload et plusieurs tiers"
+    ],
+    "comparisonCta": "Comparer MiniMax vs Pika 2.2 →",
+    "faqTitle": "FAQ – MiniMax Hailuo 02 dans MaxVideoAI",
+    "faqs": [
+      {
+        "q": "Pourquoi choisir MiniMax plutôt que des modèles premium ?",
+        "a": "Bonne motion/physique à coût plus bas ; idéal pour tests volumineux et expérimentations."
+      },
+      {
+        "q": "Quel style de prompt fonctionne le mieux ?",
+        "a": "Court et orienté motion : sujet, décor, caméra, physique ; une idée par clip."
+      },
+      {
+        "q": "Peut‑il faire du vertical ?",
+        "a": "Oui — 16:9, 9:16, 1:1 disponibles dans MaxVideoAI."
+      },
+      {
+        "q": "Supporte‑t‑il l’audio ?",
+        "a": "Non. Les sorties sont silencieuses ; ajoutez le son en post ou via un modèle audio."
+      },
+      {
+        "q": "Et si j’ai besoin de 1080p ?",
+        "a": "Brouillonnez en Hailuo 02 (512p/768p), puis upscalez ou relancez dans un modèle plus haute résolution (Veo/Kling/Wan/Sora 2 Pro)."
+      }
+    ],
+    "relatedTitle": "Explorer d’autres modèles",
+    "relatedSubtitle": "Comparez prix, latence et options de sortie sur MaxVideoAI.",
+    "finalPara1": "MiniMax Hailuo 02 est votre modèle rapide et orienté physique pour tester motion et transitions à bas coût.",
+    "finalPara2": "Utilisez‑le pour explorer, puis passez les gagnants sur des modèles plus premium pour l’audio et la haute résolution.",
+    "finalButton": "Ouvrir Generate",
+    "tipsIntro": "Hailuo 02 est un modèle draft orienté physique : utilisez‑le pour tests de motion, transitions et atterrissages propres.",
+    "troubleshootingTitle": "Problèmes fréquents → solutions rapides",
+    "troubleshootingItems": [
+      "Motion trop flottant → ajoutez des cues de poids/contact (“ancré”, “friction”, “objets qui ne glissent pas”), ralentissez l’action, réduisez le shake caméra.",
+      "Drift / changements en cours de clip → réduisez props et personnages secondaires; répétez les mêmes ancrages sujet + tenue + lumière.",
+      "End frame qui ne tombe pas → décrivez explicitement la pose/compo finale; retirez les actions en fin de clip.",
+      "Caméra jittery → spécifiez “tripod‑stable” ou “smooth track”; évitez “dynamic”.",
+      "Texte/logos aléatoires → ajoutez un négatif court (“no text, no logos, no UI”) et gardez la signalétique hors champ."
+    ]
+  },
+  "decision": {
+    "modelSlug": "minimax-hailuo-02-text",
+    "hero": {
+      "eyebrow": "ROUTE BROUILLON MOUVEMENT",
+      "title": "MiniMax Hailuo 02",
+      "subtitle": "Brouillons mouvement économiques pour tests physiques, image de fin et clips storyboard silencieux.",
+      "subtitleHighlights": [
+        "Brouillons mouvement économiques",
+        "tests physiques",
+        "clips storyboard silencieux"
+      ],
+      "paragraph": "Utilisez Hailuo 02 pour tester à coût réduit des mouvements de 6 à 10 secondes en 512P ou 768P, avant de passer les meilleures pistes sur une route plus haute résolution ou avec audio.",
+      "primaryCta": {
+        "label": "Créer un brouillon Hailuo 02",
+        "href": "/app?engine=minimax-hailuo-02-text"
+      },
+      "secondaryCta": {
+        "label": "Voir les exemples",
+        "href": "/fr/galerie/hailuo"
+      },
+      "quickLinks": [
+        {
+          "label": "Comparer vs Pika",
+          "href": "/fr/comparatif/minimax-hailuo-02-text-vs-pika-text-to-video"
+        },
+        {
+          "label": "Voir les tarifs",
+          "href": "/fr/tarifs#minimax-hailuo-02-text-pricing"
+        },
+        {
+          "label": "Exemples de prompts",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Exemple Hailuo 02",
+      "description": "Brouillon silencieux pour rythme et physique",
+      "renderLabel": "Voir le brouillon",
+      "badges": [
+        "Silencieux",
+        "10 s",
+        "768P"
+      ],
+      "altContext": "exemple de brouillon mouvement silencieux avec MiniMax Hailuo 02"
+    },
+    "features": [
+      {
+        "title": "Brouillons économiques",
+        "body": "Testez les idées de mouvement avant les routes finales plus coûteuses.",
+        "tone": "price"
+      },
+      {
+        "title": "Tests physiques",
+        "body": "Vérifiez mouvements d’objets, collisions et gestuelle sur des clips courts.",
+        "tone": "continuity"
+      },
+      {
+        "title": "Texte ou image",
+        "body": "Partez d’un prompt ou d’une image selon le niveau de verrouillage du plan.",
+        "tone": "reference"
+      },
+      {
+        "title": "512P ou 768P",
+        "body": "Limite brouillon de cette route ; utilisez une route plus haute résolution pour livrer.",
+        "tone": "quality"
+      },
+      {
+        "title": "6 s ou 10 s",
+        "body": "Choisissez des durées compactes pour valider timing et storyboard.",
+        "tone": "duration"
+      },
+      {
+        "title": "Sortie silencieuse",
+        "body": "Préparez musique, voix et SFX dans une passe de production suivante.",
+        "tone": "audio"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "Hailuo ou Pika ?",
+        "body": "Utilisez Hailuo pour le mouvement et la physique à petit budget. Utilisez Pika pour des loops sociaux stylisés et variantes par seed.",
+        "cta": {
+          "label": "Comparer Hailuo vs Pika",
+          "href": "/fr/comparatif/minimax-hailuo-02-text-vs-pika-text-to-video"
+        }
+      },
+      {
+        "title": "Vous testez l’image de fin ?",
+        "body": "Utilisez image-to-video et une fin claire quand la pose ou la composition finale compte.",
+        "cta": {
+          "label": "Ouvrir le Prompt Lab",
+          "href": "#prompting"
+        }
+      },
+      {
+        "title": "Besoin d’audio ou de 1080p ?",
+        "body": "Comparez avec Kling 2.6 Pro si vous cherchez plus de qualité, du son ou une sortie prête pour production.",
+        "cta": {
+          "label": "Comparer Hailuo vs Kling",
+          "href": "/fr/comparatif/kling-2-6-pro-vs-minimax-hailuo-02-text?order=minimax-hailuo-02-text"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Text-to-video",
+        "body": "Gardez le test serré : un sujet, une action, un mouvement caméra."
+      },
+      {
+        "title": "Image-to-video",
+        "body": "Utilisez une image de départ quand composition ou forme produit doit rester stable."
+      },
+      {
+        "title": "Image de fin",
+        "body": "Préparez une pose finale claire lorsque la composition d’arrivée compte."
+      },
+      {
+        "title": "Optimisation du prompt",
+        "body": "Servez-vous de l’optimisation pour brouillonner vite, puis resserrez après avoir vu le mouvement."
+      },
+      {
+        "title": "Passage final",
+        "body": "Envoyez le mouvement validé vers une route plus haute résolution ou avec audio."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Prix MiniMax Hailuo 02 en un coup d’œil",
+      "subtitle": "Prix totaux de brouillon — prix exact affiché dans l’app avant génération.",
+      "footnote": "Tous les prix sont des prix affichés MaxVideoAI en crédits USD pour des scénarios prédéfinis.",
+      "ctaLabel": "Voir tous les tarifs",
+      "maxDurationNote": "Jusqu’à 768P",
+      "ctaHref": "/fr/tarifs#minimax-hailuo-02-text-pricing"
+    },
+    "meta": {
+      "title": "MiniMax Hailuo 02 : tarifs, brouillons mouvement et exemples | MaxVideoAI",
+      "description": "Explorez MiniMax Hailuo 02 : prix, brouillons mouvement économiques, tests physiques, image-to-video et exemples storyboard silencieux sur MaxVideoAI."
+    }
+  },
+  "prompting": {
+    "modelSlug": "minimax-hailuo-02-text",
+    "section": {
+      "title": "Comment écrire un excellent prompt Hailuo 02",
+      "intro": "Hailuo 02 fonctionne mieux avec des prompts courts et des cues de motion explicites.",
+      "tip": "Astuce : durée + format se règlent dans l’UI - votre prompt contrôle sujet, action, caméra, lumière et style. Utilisez des mouvements caméra entre crochets comme [pan], [tilt], [zoom].",
+      "guide": {
+        "label": "MiniMax",
+        "href": "https://www.minimaxi.com"
+      },
+      "referencesTitle": "Comment Hailuo 02 structure un test mouvement"
+    },
+    "tabs": [
+      {
+        "id": "quick",
+        "label": "Quick",
+        "title": "Prompt rapide (itération)",
+        "description": "Utilisez 1–2 phrases quand vous voulez des variations.",
+        "copy": "[Sujet] [action] dans [scène], [mouvement caméra entre crochets], [lumière/style]."
+      },
+      {
+        "id": "structured",
+        "label": "Structured",
+        "title": "Prompt structuré (plus fiable)",
+        "description": "Séparez l’information pour que le modèle la suive de façon cohérente.",
+        "copy": "Sujet :\n[Qui/quoi + une action.]\n\nScène :\n[Lieu + moment + 2 ancrages.]\n\nCaméra :\n[Plan + angle + mouvement entre crochets, ex. [pan left], [zoom in].]\n\nLook :\n[Lumière + palette + style.]"
+      },
+      {
+        "id": "pro",
+        "label": "Pro",
+        "title": "Prompt Pro (brief de studio ultra‑spécifique)",
+        "description": "À utiliser quand vous voulez un look très précis ou une continuité entre plans.",
+        "copy": "Brief :\n[Objectif + vibe.]\n\nSujet + décor :\n[Traits clés + lieu + ancrages.]\n\nCaméra + motion :\n[Cadrage + cue de mouvement entre crochets.]\n\nEnd frame optionnelle :\n[Décrivez la frame finale cible si vous en utilisez une.]\n\nLumière + style :\n[Key light + palette.]"
+      }
+    ],
+    "tabNotes": [
+      {
+        "tabId": "quick",
+        "body": "Quick = variations. À utiliser pour itérer vite."
+      },
+      {
+        "tabId": "structured",
+        "body": "Structured = cohérence. À utiliser pour des résultats fiables."
+      },
+      {
+        "tabId": "pro",
+        "body": "Pro = contrôle de style. À utiliser pour des looks précis et répétables."
+      }
+    ],
+    "globalPrinciples": [
+      "Gardez les prompts courts et concrets.",
+      "Utilisez des cues de caméra/motion entre crochets.",
+      "Utilisez une end frame (optionnelle) pour verrouiller la transition."
+    ],
+    "engineWhy": [
+      "Le prompt optimizer peut étendre des prompts courts.",
+      "Les crochets caméra aident à guider le mouvement.",
+      "L’end frame améliore l’atterrissage et les match cuts."
+    ],
+    "demo": {
+      "title": "Démo — dérive urbaine 10 s (9:16)",
+      "promptLabel": "Brouillon silencieux",
+      "prompt": "Brouillon Hailuo 02 silencieux de 10 s en 16:9.\nUn cycliste traverse une flaque peu profonde sur un chemin en béton vide.\nL’eau éclabousse vers l’extérieur et la veste réagit au mouvement.\nTracking latéral bas avec un seul push-in doux, lumière naturelle au crépuscule, décor simple.\nSe concentrer sur la physique du mouvement. Pas de dialogue, pas de musique, pas de SFX.",
+      "notes": [
+        "Un seul environnement avec cues physiques.",
+        "Facile à boucler en background.",
+        "Sortie silencieuse prête pour votre bande‑son."
+      ],
+      "summary": {
+        "subject": "Cycliste sur chemin mouillé",
+        "action": "Traverse une flaque et ralentit",
+        "camera": "Tracking latéral bas, un push-in doux",
+        "style": "Lumière naturelle au crépuscule, décor simple",
+        "output": "Brouillon silencieux, mouvement physique uniquement"
+      },
+      "presentationOverrides": {
+        "modeLabel": "Brouillon silencieux",
+        "outputLabel": "Sortie",
+        "duration": "10 s",
+        "aspectRatio": "16:9",
+        "audioChipMode": "silent",
+        "audioChipLabel": null,
+        "altContext": "Exemple video IA Hailuo 02: Démo - dérive urbaine 10 s (9:16)"
+      }
+    },
+    "imageExamples": null
+  },
+  "examples": {
+    "modelSlug": "minimax-hailuo-02-text",
+    "section": {
+      "title": "Galerie d’exemples MiniMax Hailuo 02",
+      "intro": "Voyez des runs texte et image rendus avec la même configuration que vous avez.",
+      "defaultCtaLabel": "Voir tous les exemples MiniMax Hailuo 02 →",
+      "recreateLabel": "Recréer ce plan →"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "Tous"
+      },
+      {
+        "id": "cinematic",
+        "label": "Cinématique"
+      },
+      {
+        "id": "product",
+        "label": "Produit / Pub"
+      },
+      {
+        "id": "action",
+        "label": "Action"
+      },
+      {
+        "id": "vertical",
+        "label": "Vertical"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Rendus brouillon",
+        "body": "Voyez les tests mouvement légers possibles avec Hailuo 02.",
+        "icon": "sparkles"
+      },
+      {
+        "id": "proof-2",
+        "title": "Recréer un test",
+        "body": "Ouvrez l’app et réutilisez le prompt ou l’image de départ.",
+        "icon": "zap"
+      },
+      {
+        "id": "proof-3",
+        "title": "Sortie silencieuse",
+        "body": "Pas d’audio natif sur cette route ; ajoutez son et voix plus tard.",
+        "icon": "audio"
+      },
+      {
+        "id": "proof-4",
+        "title": "Tests physiques",
+        "body": "Vérifiez force, collisions, tissu, eau et contact au sol.",
+        "icon": "users"
+      },
+      {
+        "id": "proof-5",
+        "title": "Route de brouillon",
+        "body": "512P/768P ici ; passez les plans validés sur une route finale.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": null,
+    "showWhenEmpty": true
+  }
+}

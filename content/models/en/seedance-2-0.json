@@ -1,0 +1,610 @@
+{
+  "marketingName": "Seedance 2.0",
+  "versionLabel": "2.0",
+  "seo": {
+    "title": "Seedance 2.0 | AI Video Model, Pricing, Native Audio & Use Cases | MaxVideoAI",
+    "description": "Use Seedance 2.0 on MaxVideoAI for multi-shot video, native audio, current pricing, key capabilities, and the best use cases for current Seedance workflows."
+  },
+  "overview": "Seedance 2.0 is the current Dreamina Seedance 2.0 AI video model on MaxVideoAI for multi-shot video, native audio, and reference-guided workflows when you need the main Seedance path for polished ads, launches, and cinematic branded sequences.",
+  "pricingNotes": "Seedance 2 uses provider token pricing. MaxVideoAI applies the display price and shows the final quote before submission.",
+  "hero": {
+    "title": "Seedance 2.0 — current Seedance model for multi-shot video and native audio",
+    "intro": "Seedance 2.0 is the current Dreamina Seedance 2.0 AI video model for multi-shot video, native audio, and reference-guided workflows when you need the main Seedance path for polished ads, launches, and cinematic branded sequences. Use this page to review pricing, key capabilities, best use cases, and when this Seedance video workflow is a better fit than Fast or older Seedance versions.",
+    "badge": "3 workflows · 480p/720p/1080p/4K · Auto or 4-15s · Native audio · 9 image / 3 video / 3 audio refs",
+    "ctaPrimary": {
+      "label": "Generate with Seedance 2.0",
+      "href": "/app?engine=seedance-2-0"
+    },
+    "secondaryLinks": [
+      {
+        "label": "View Seedance AI video examples",
+        "href": "/examples/seedance"
+      },
+      {
+        "label": "Prepare references with Seedream",
+        "href": "/models/seedream"
+      },
+      {
+        "label": "See Seedance 2.0 Fast",
+        "href": "/models/seedance-2-0-fast"
+      },
+      {
+        "label": "See Seedance 2.0 Mini value route",
+        "href": "/models/dreamina-seedance-2-0-mini"
+      },
+      {
+        "label": "Compare Seedance 2.0 vs Seedance 2.0 Fast",
+        "href": "/ai-video-engines/seedance-2-0-vs-seedance-2-0-fast"
+      },
+      {
+        "label": "Compare Seedance 1.5 Pro vs Seedance 2.0",
+        "href": "/ai-video-engines/seedance-1-5-pro-vs-seedance-2-0"
+      },
+      {
+        "label": "Compare Seedance 2.0 vs Veo 3.1",
+        "href": "/ai-video-engines/seedance-2-0-vs-veo-3-1"
+      },
+      {
+        "label": "Compare Kling 3 Pro vs Seedance 2.0",
+        "href": "/ai-video-engines/kling-3-pro-vs-seedance-2-0"
+      }
+    ]
+  },
+  "compareLink": {
+    "label": "See Seedance 2.0 vs Seedance 2.0 Fast ->",
+    "href": "/ai-video-engines/seedance-2-0-vs-seedance-2-0-fast"
+  },
+  "bestUseCases": {
+    "title": "Best use cases for Seedance 2.0",
+    "items": [
+      {
+        "title": "Action scenes with collisions, debris, and more believable physical interaction",
+        "icon": "camera"
+      },
+      {
+        "title": "Multi-shot ads with consistent product and scene continuity",
+        "icon": "product"
+      },
+      {
+        "title": "Audio-led scenes with synced dialogue, ambience, and sound effects",
+        "icon": "music"
+      },
+      {
+        "title": "Storyboard-to-video using text and multimodal references",
+        "icon": "storyboard"
+      },
+      {
+        "title": "Director-style camera moves, transitions, and framing control",
+        "icon": "clapperboard"
+      },
+      {
+        "title": "Pre-visualization before final edit (concept to shot list to rough cut)",
+        "icon": "layers"
+      }
+    ]
+  },
+  "technicalOverviewTitle": "Technical overview",
+  "technicalOverview": [
+    {
+      "label": "Role",
+      "body": "ByteDance's Dreamina Seedance 2.0 AI video model with a unified multimodal audio-video architecture."
+    },
+    {
+      "label": "Inputs",
+      "body": "Three workflow types in one family: text-to-video, start image + optional end image in i2v, plus image/video/audio references in ref2v"
+    },
+    {
+      "label": "Reference limits",
+      "body": "Up to 9 images, 3 video clips, and 3 audio clips, with 12 total files across all ref2v inputs"
+    },
+    {
+      "label": "Duration",
+      "body": "Auto or 4-15 seconds per generation"
+    },
+    {
+      "label": "Resolution",
+      "body": "480p, 720p, 1080p, and 4K on the standard Dreamina Seedance 2.0 route; Fast and Mini stay on their lower-resolution caps."
+    },
+    {
+      "label": "Audio",
+      "body": "Native audio is on by default and can be disabled; MaxVideoAI shows the final quote before generation"
+    },
+    {
+      "label": "Camera and motion",
+      "body": "Advanced camera control with strong results on dolly zooms, rack focus, tracking shots, POV switches, and smooth handheld movement"
+    },
+    {
+      "label": "Notes",
+      "body": "ByteDance documentation and Dreamina product naming refer to this family as Dreamina Seedance 2.0, with text-to-video, image-to-video, reference-to-video, and optimized fast variants inside the Seedance 2 family."
+    }
+  ],
+  "promptStructure": {
+    "title": "Prompting Seedance 2.0",
+    "quote": "[Genre] + [subject] + [setting] + [action beats] + [camera language] + [audio cues] + [duration auto or 4-15s] + [shot structure].",
+    "description": "For best consistency, keep each beat explicit and define camera transitions and audio timing in the same prompt.",
+    "steps": [
+      "Define genre and core subject",
+      "Set location and visual anchors",
+      "Write 2-4 shot beats with timing",
+      "Specify camera motion and transitions",
+      "Add dialogue, ambience, and SFX cues"
+    ]
+  },
+  "tips": {
+    "title": "Production notes",
+    "items": [
+      "Keep prompts structured shot-by-shot when you want the strongest multi-shot continuity.",
+      "Use multimodal references to lock wardrobe, props, pacing, and ambience across beats.",
+      "Use Seedream 5.0 Lite when you want to create or clean a reference image before starting an image-to-video run.",
+      "Use the optional end image in i2v when you need a guided last frame.",
+      "Move to Seedance 2.0 Fast when you need cheaper draft passes before final renders.",
+      "Use Seedance 2.0 Mini only when lower-cost batch/value variants matter more than the final polished Seedance 2.0 route.",
+      "Generate shows the active route and the final quote before you submit."
+    ]
+  },
+  "prompts": [
+    {
+      "title": "Action chase (multi-shot)",
+      "prompt": "Three-shot rooftop chase at dusk, shot 1 wide tracking run, shot 2 handheld close pursuit, shot 3 crane reveal over skyline, realistic footstep impacts and city sirens, 15 seconds total."
+    },
+    {
+      "title": "Continuous spy thriller",
+      "prompt": "A spy exits a neon train station, camera follows over shoulder into a rainy alley, rack focus to a coded message, low synth score and distant PA announcements, 12 seconds."
+    },
+    {
+      "title": "3-shot commercial",
+      "prompt": "Shot 1 macro of watch crown with rim light, shot 2 wrist hero turntable in studio haze, shot 3 lifestyle close-up in city night rain, punchy transitions and polished ad soundtrack, 15 seconds."
+    },
+    {
+      "title": "Multimodal storyboard reference",
+      "prompt": "Use @Image1..@Image9 as storyboard style anchors, @Video1..@Video3 for pacing references, @Audio1..@Audio3 for rhythm and ambience, keep wardrobe continuity and cinematic 16:9 framing."
+    },
+    {
+      "title": "Audio-forward dialogue scene",
+      "prompt": "Two-character dialogue in a subway platform at night, synchronized dialogue, ambience and metallic train brakes on cue, smooth dolly and cut-in close-up, stereo mix feel, 10 seconds."
+    }
+  ],
+  "faqTitle": "FAQ – Seedance 2.0 on MaxVideoAI",
+  "faqs": [
+    {
+      "q": "What is Seedance 2.0 best for?",
+      "a": "Seedance 2.0 is best for polished Seedance AI video workflows, multi-shot ads, branded sequences, audio-led scenes, and reference-guided production where continuity matters more than draft speed."
+    },
+    {
+      "q": "Is Seedance 2.0 also Dreamina Seedance 2.0?",
+      "a": "Yes. ByteDance documentation and Dreamina product naming describe the current API family as Dreamina Seedance 2.0. On MaxVideoAI, this page remains the standard Seedance 2.0 route for final-quality work."
+    },
+    {
+      "q": "Does Seedance 2.0 include native audio?",
+      "a": "Yes. Seedance 2.0 supports native audio, including dialogue, ambience, music, and sound effects inside the same generation workflow."
+    },
+    {
+      "q": "Does Seedance 2.0 support 4K output?",
+      "a": "Yes. The standard Dreamina Seedance 2.0 route supports 4K output. Seedance 2.0 Fast and Seedance 2.0 Mini remain capped below 4K."
+    },
+    {
+      "q": "How is Seedance 2.0 different from Seedance 2.0 Fast?",
+      "a": "Seedance 2.0 is the stronger current choice for final-quality multi-shot work, native audio, and more demanding reference-driven outputs, while Seedance 2.0 Fast is better for cheaper draft passes and quicker route comparisons."
+    },
+    {
+      "q": "When should I use Seedance 2.0 instead of Seedance 1.5 Pro?",
+      "a": "Use Seedance 2.0 when you need stronger multi-shot continuity, broader reference workflows, and the current Seedance production path. Seedance 1.5 Pro still fits shorter, simpler older workflows."
+    },
+    {
+      "q": "Is Seedance 2.0 good for multi-shot video?",
+      "a": "Yes. Seedance 2.0 is specifically well suited to multi-shot outputs, guided transitions, and maintaining scene continuity across short cinematic sequences."
+    }
+  ],
+  "custom": {
+    "whyTitle": "Pricing, native audio and next steps",
+    "heroTrustLine": "Pay-as-you-go on MaxVideoAI · Price shown before you generate",
+    "heroHighlights": [
+      "Pricing and current route||Use Seedance 2.0 when you want the main current Seedance path and need the final quoted price visible before generation.",
+      "Native audio||Dialogue, ambience, music, and sound effects can stay inside the same generation flow instead of being treated as a separate afterthought.",
+      "Seedance 2.0 vs Seedance 2.0 Fast||Choose Seedance 2.0 for stronger final-quality multi-shot work, and use Fast when the job is mainly draft iteration and route comparison.",
+      "Seedance 2.0 Mini value route||Use Mini as the lower-cost batch/value alternative for ecommerce, marketing, and UGC variants.",
+      "Start with Seedance AI video examples||Open the examples page first if you want output patterns, prompt baselines, and settings before committing to a production run."
+    ],
+    "heroSupportLine": "Start with Seedance AI video examples, use Seedance 2.0 for the main current multi-shot and native-audio workflow, and compare it with Fast when you need quicker draft passes.",
+    "specTitle": "Specs",
+    "specNote": "Only officially sourced claims are listed here, with pricing and workflow details checked live inside Generate.",
+    "specSections": [
+      {
+        "title": "Multimodal input stack",
+        "intro": "Provider/model-family notes describe Dreamina Seedance 2.0 as a unified multimodal audio-video model.",
+        "items": [
+          "Text instructions + multimodal references",
+          "Up to 9 image references",
+          "Up to 3 video references",
+          "Up to 3 audio references",
+          "Up to 12 total files across the ref2v run"
+        ]
+      },
+      {
+        "title": "Output style and structure",
+        "intro": "Provider/model-family notes highlight cinematic control, native audio, realistic physics, multi-shot cuts, and up to 15 seconds per generation.",
+        "items": [
+          "480p, 720p, 1080p or 4K on Seedance 2.0 standard",
+          "Auto or 4-15s per generation",
+          "Aspect ratios: auto, 21:9, 16:9, 4:3, 1:1, 3:4, 9:16",
+          "Image-to-video supports an optional end frame",
+          "Natural transitions across multiple shots",
+          "Native audio-video joint generation",
+          "Audio toggle available with the same pricing whether audio is on or off"
+        ]
+      }
+    ],
+    "tipsTitle": "Tips and boundaries",
+    "strengths": [
+      "Strong cinematic camera direction when beats are explicit.",
+      "Improved continuity with multimodal references.",
+      "Native audio sync in short multi-shot outputs.",
+      "High utility for ads, action beats, and storyboard prototyping."
+    ],
+    "troubleshootingItems": [
+      "Cuts feel abrupt -> add transition verbs and timestamps (match cut at 5s, whip pan into Shot 2).",
+      "Continuity drifts -> add anchors (wardrobe, prop, location) and reuse references.",
+      "Audio mismatch -> shorten dialogue, pin SFX to visible action, keep one ambience bed.",
+      "Physics looks off -> simplify simultaneous actions per beat and reduce fast interactions."
+    ],
+    "boundaries": [
+      "Complex action stacks still benefit from simpler, clearly separated beats.",
+      "Reference-heavy prompts work best when each source has one clear job.",
+      "Reference audio only works when at least one image or video reference is attached.",
+      "Check the active provider route before scaling production traffic.",
+      "Use the final quote in Generate before client-facing rollout or automated workflows."
+    ],
+    "relatedItems": [
+      {
+        "brand": "bytedance",
+        "title": "Prepare references with Seedream",
+        "description": "Create or clean a still image in Seedream before using it as a controlled reference for Seedance image-to-video.",
+        "modelSlug": "seedream",
+        "ctaLabel": "Explore Seedream ->"
+      },
+      {
+        "brand": "bytedance",
+        "title": "Seedance 2.0 Fast",
+        "description": "Use the faster Seedance version for draft passes, quick timing checks, and early concept loops before you move finals into the standard version.",
+        "modelSlug": "seedance-2-0-fast",
+        "ctaLabel": "Compare Seedance 2.0 vs Fast ->"
+      },
+      {
+        "brand": "bytedance",
+        "title": "Seedance 2.0 Mini",
+        "description": "Use Mini as the lower-cost batch/value alternative for ecommerce, marketing, and UGC variants before standard Seedance 2.0 work.",
+        "modelSlug": "dreamina-seedance-2-0-mini",
+        "ctaLabel": "See Seedance 2.0 Mini value route ->"
+      },
+      {
+        "brand": "ltx",
+        "title": "LTX 2.3 Fast",
+        "description": "Compare Seedance 2.0 with LTX 2.3 when choosing between native-audio production work and lower-cost fast drafts.",
+        "modelSlug": "ltx-2-3-fast",
+        "ctaLabel": "Compare Seedance 2.0 vs LTX 2.3 ->"
+      },
+      {
+        "brand": "google-veo",
+        "title": "Google Veo 3.1",
+        "description": "Compare Seedance 2.0 against Veo 3.1 when you need another premium audio-native engine for ads, launches, and product motion.",
+        "modelSlug": "veo-3-1",
+        "ctaLabel": "Compare Seedance 2.0 vs Veo 3.1 ->"
+      },
+      {
+        "brand": "kling",
+        "title": "Kling 3 Pro",
+        "description": "Open Kling 3 Pro when you want a stronger emphasis on scene sequencing, shot control, and storyboard-style multi-prompt direction.",
+        "modelSlug": "kling-3-pro",
+        "ctaLabel": "Compare Seedance 2.0 vs Kling 3 Pro ->"
+      }
+    ]
+  },
+  "decision": {
+    "modelSlug": "seedance-2-0",
+    "hero": {
+      "eyebrow": "DREAMINA / BYTEDANCE CURRENT-GEN MODEL",
+      "title": "Seedance 2.0",
+      "subtitle": "Native audio, 4K-capable output, multi-shot continuity, and reference-guided video for polished ads, launches and cinematic branded content.",
+      "subtitleHighlights": [
+        "Native audio",
+        "4K-capable output",
+        "multi-shot continuity"
+      ],
+      "paragraph": "Use Seedance 2.0 when you need the current Dreamina Seedance production route: stronger continuity than older versions, 480p/720p/1080p/4K output, native audio in the same generation flow, and multimodal references for text-to-video or image-to-video work.",
+      "primaryCta": {
+        "label": "Generate with Seedance 2.0",
+        "href": "/app?engine=seedance-2-0"
+      },
+      "secondaryCta": {
+        "label": "View examples",
+        "href": "/examples/seedance"
+      },
+      "quickLinks": [
+        {
+          "label": "Compare vs Fast",
+          "href": "/ai-video-engines/seedance-2-0-vs-seedance-2-0-fast"
+        },
+        {
+          "label": "Compare vs Mini value route",
+          "href": "/ai-video-engines/dreamina-seedance-2-0-mini-vs-seedance-2-0?order=seedance-2-0"
+        },
+        {
+          "label": "View pricing",
+          "href": "/pricing#seedance-2-0-pricing"
+        },
+        {
+          "label": "Prompt examples",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Seedance 2.0 example",
+      "description": "Native-audio cinematic sequence",
+      "renderLabel": "View render",
+      "badges": [
+        "Audio on",
+        "15s",
+        "4K option"
+      ],
+      "altContext": "cinematic rooftop running scene"
+    },
+    "features": [
+      {
+        "title": "Native audio",
+        "body": "Dialogue, ambience and SFX generated in sync.",
+        "tone": "audio"
+      },
+      {
+        "title": "Multi-shot continuity",
+        "body": "Keep characters, style and scene continuity across short sequences.",
+        "tone": "continuity"
+      },
+      {
+        "title": "Reference-guided",
+        "body": "Use supported references to guide the output.",
+        "tone": "reference"
+      },
+      {
+        "title": "Up to 4K",
+        "body": "Use 480p, 720p, 1080p, or 4K on the standard Dreamina Seedance route.",
+        "tone": "quality"
+      },
+      {
+        "title": "Max 15s",
+        "body": "Up to 15 seconds per generation.",
+        "tone": "duration"
+      },
+      {
+        "title": "Pay-as-you-go",
+        "body": "See exact live price before you generate.",
+        "tone": "price"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "Seedance 2.0 or Fast?",
+        "body": "Use Seedance 2.0 for final-quality, native-audio, multi-shot work. Use Fast for cheaper draft passes and timing tests.",
+        "cta": {
+          "label": "Compare Seedance 2.0 vs Fast",
+          "href": "/ai-video-engines/seedance-2-0-vs-seedance-2-0-fast"
+        }
+      },
+      {
+        "title": "Upgrading from Seedance 1.5?",
+        "body": "Seedance 2.0 is the current route for stronger multi-shot continuity, native audio and broader reference workflows.",
+        "cta": {
+          "label": "Compare 1.5 vs 2.0",
+          "href": "/ai-video-engines/seedance-1-5-pro-vs-seedance-2-0?order=seedance-2-0"
+        }
+      },
+      {
+        "title": "Need prompt examples?",
+        "body": "Start with text-to-video, image-to-video, reference-guided and multi-shot prompt templates.",
+        "cta": {
+          "label": "Open Prompt Lab",
+          "href": "#prompting"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Text prompt",
+        "body": "Use the prompt for the scene brief: subject, action, camera, style and audio cues."
+      },
+      {
+        "title": "Image reference",
+        "body": "Use images to guide identity, product details, style, composition or environment."
+      },
+      {
+        "title": "Video reference",
+        "body": "Use video references for motion rhythm or camera pacing when the active route exposes them."
+      },
+      {
+        "title": "Audio reference",
+        "body": "Use audio references for rhythm, ambience or mood when the active route exposes them."
+      },
+      {
+        "title": "Continuity anchors",
+        "body": "Repeat wardrobe, props, location, lighting and final pose so short sequences stay coherent."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Seedance 2.0 pricing at a glance",
+      "subtitle": "Preset 720p, 1080p, and 4K totals - see the exact live price in the app before you generate.",
+      "footnote": "All prices are MaxVideoAI display prices in USD credits for preset scenarios.",
+      "ctaLabel": "View full pricing",
+      "ctaHref": "/pricing#seedance-2-0-pricing"
+    },
+    "meta": {
+      "title": "Seedance 2.0 AI Video: Max Length, Pricing & Best Uses",
+      "description": "See Seedance 2.0 pricing, 4K output, max video length, native audio, reference workflows and when to use it instead of Seedance Fast."
+    }
+  },
+  "prompting": {
+    "modelSlug": "seedance-2-0",
+    "section": {
+      "title": "Prompt Lab — Seedance 2.0",
+      "intro": "Seedance 2.0 works best when the brief is ordered and the workflow is explicit. Start with Subject -> Action -> Camera -> Style, then decide whether the shot should stay prompt-led, use a start/end image pair, or lean on multimodal references.",
+      "tip": null,
+      "guide": {
+        "label": "Official Seedance 2.0 page",
+        "href": "https://seed.bytedance.com/en/seedance2_0"
+      },
+      "referencesTitle": "How Seedance 2.0 uses references"
+    },
+    "tabs": [
+      {
+        "id": "quick",
+        "label": "Text",
+        "title": "Text-to-video prompt",
+        "description": "Use this when the shot starts from language, not from uploaded assets.",
+        "copy": "Subject:\n[Who/what appears + 2-3 defining traits]\n\nAction:\n[One visible action or one timed beat]\n\nCamera:\n[Shot size + angle + one move + optional transition verb]\n\nStyle:\n[Lighting + palette + texture / lens feel]\n\nAudio:\n[Ambience + 1-2 SFX cues + optional short dialogue]\n\nExample:\nA courier in a soaked yellow jacket sprints through a narrow alley at night. He jumps a puddle and looks back once. Camera: wide tracking shot into a short handheld close-up. Style: wet asphalt reflections, cold blue street light, subtle film grain. Audio: footsteps, distant siren, one short breathy line."
+      },
+      {
+        "id": "structured",
+        "label": "Start/End",
+        "title": "Image-to-video with optional end frame",
+        "description": "Use this when the first frame is fixed and you want to guide the landing frame.",
+        "copy": "Start image:\n[What must stay fixed from frame 1: subject, wardrobe, props, location]\n\nEnd image (optional):\n[What the last frame should land on: pose, composition, camera distance]\n\nMotion path:\n[How the subject moves between the two frames]\n\nCamera:\n[One move only: push-in / arc / handheld / static]\n\nStyle + lighting:\n[What must stay consistent]\n\nAudio:\n[Ambience / SFX / short dialogue if relevant]\n\nRule:\nDo not ask the end frame to become a different scene. Use it to control the landing frame, not to restart the story."
+      },
+      {
+        "id": "pro",
+        "label": "References",
+        "title": "Reference-to-video prompt",
+        "description": "Use this when identity, pacing, or ambience must stay locked.",
+        "copy": "Prompt intent:\n[What the scene should feel like and what must happen]\n\nImage refs:\n@Image1 = [character / hero product]\n@Image2 = [wardrobe / prop / palette]\n...\n\nVideo refs:\n@Video1 = [camera rhythm / action pacing]\n@Video2 = [transition logic]\n\nAudio refs:\n@Audio1 = [ambience bed]\n@Audio2 = [music rhythm / dialogue texture]\n\nContinuity anchors:\n[What must not drift across the run]\n\nOutput goal:\n[Single shot or 2-3 shot sequence, plus landing frame / payoff]\n\nRule:\nEach reference should have one clear job. Do not upload multiple files that fight for the same role."
+      },
+      {
+        "id": "storyboard",
+        "label": "Timeline",
+        "title": "Timeline / multi-shot prompt",
+        "description": "Use this when one generation contains multiple internal beats or cuts.",
+        "copy": "Duration: [auto / 4-15s]\n\nShot 1 (0-5s):\n[Framing + action + camera move]\n\nTransition:\n[match cut / whip pan / crash zoom / settle]\n\nShot 2 (5-10s):\n[Framing + action + camera move]\n\nShot 3 (10-15s):\n[Reveal / reaction / product payoff / final pose]\n\nContinuity:\n[Wardrobe + props + location + lighting]\n\nAudio plan:\n[Ambience bed + 1-3 timed SFX + optional short dialogue]\n\nUse auto duration only when the model should infer the pacing for you."
+      }
+    ],
+    "tabNotes": [
+      {
+        "tabId": "quick",
+        "body": "Text = prompt-only generation from a clean brief."
+      },
+      {
+        "tabId": "structured",
+        "body": "Start/End = guide the opening frame and the landing frame."
+      },
+      {
+        "tabId": "pro",
+        "body": "References = assign each image, video, and audio file a clear job."
+      },
+      {
+        "tabId": "storyboard",
+        "body": "Timeline = use timestamps when you want internal cuts or multi-shot structure."
+      }
+    ],
+    "globalPrinciples": [
+      "Write the core brief in Subject -> Action -> Camera -> Style order.",
+      "Keep one readable action per shot and add timestamps when you want internal cuts.",
+      "Give every reference one job: images for identity/style, videos for pacing/camera, audio for rhythm/ambience.",
+      "Use the optional end image to define the landing frame, not a second unrelated scene.",
+      "Keep dialogue short and pin SFX to visible actions."
+    ],
+    "engineWhy": [
+      "Text-to-video is strong for fresh ideation, cinematic camera language, and multi-shot beat planning.",
+      "Image-to-video is strongest when the start frame stays fixed and the optional end frame defines the landing pose or composition.",
+      "Reference-to-video is where Seedance gains its biggest continuity advantage across characters, props, pacing, and audio mood.",
+      "Native audio stays cleaner when music, ambience, dialogue, and SFX are short and tied to visible beats."
+    ],
+    "demo": {
+      "title": "Demo prompt — Seedance 2.0",
+      "promptLabel": "Text-to-video",
+      "prompt": "Subject: School bus mutating into a mechanical creature\nAction: Dark absurd transformation on a deserted street\nCamera: Wide cinematic shot with controlled motion\nStyle: Grounded American realism, horror-comedy tone\nAudio: Uneasy ambience, metal movement, tension",
+      "notes": [],
+      "summary": {
+        "subject": "School bus mutating into a mechanical creature",
+        "action": "Dark absurd transformation on a deserted street",
+        "camera": "Wide cinematic shot with controlled motion",
+        "style": "Grounded American realism, horror-comedy tone",
+        "output": "Uneasy ambience, metal movement, tension"
+      },
+      "presentationOverrides": {
+        "modeLabel": "Text-to-video",
+        "outputLabel": "Audio",
+        "duration": null,
+        "aspectRatio": null,
+        "audioChipMode": "on",
+        "audioChipLabel": null,
+        "altContext": "Seedance 2.0 AI video example: Demo prompt - Seedance 2.0"
+      }
+    },
+    "imageExamples": null
+  },
+  "examples": {
+    "modelSlug": "seedance-2-0",
+    "section": {
+      "title": "Seedance 2.0 examples",
+      "intro": "Use this gallery to review prompt patterns, scene structure, and the kinds of beats Seedance 2.0 handles well inside MaxVideoAI.",
+      "defaultCtaLabel": "View all Seedance examples ->",
+      "recreateLabel": "Recreate this shot ->"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "All"
+      },
+      {
+        "id": "cinematic",
+        "label": "Cinematic"
+      },
+      {
+        "id": "product",
+        "label": "Product / Ad"
+      },
+      {
+        "id": "action",
+        "label": "Action"
+      },
+      {
+        "id": "vertical",
+        "label": "Vertical"
+      },
+      {
+        "id": "audio",
+        "label": "Audio on"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Real community renders",
+        "body": "See what's possible with Seedance 2.0 — current Seedance model for multi-shot video and native audio.",
+        "icon": "sparkles"
+      },
+      {
+        "id": "proof-2",
+        "title": "Recreate any shot",
+        "body": "Jump into the app with one click and reuse the setup.",
+        "icon": "zap"
+      },
+      {
+        "id": "proof-3",
+        "title": "Native audio",
+        "body": "Dialogue, ambience and SFX generated in sync.",
+        "icon": "audio"
+      },
+      {
+        "id": "proof-4",
+        "title": "Multi-shot continuity",
+        "body": "Keep characters, style and scene consistency across sequences.",
+        "icon": "users"
+      },
+      {
+        "id": "proof-5",
+        "title": "Production-aware",
+        "body": "Built-in guardrails and safety filters for responsible review.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": null,
+    "showWhenEmpty": true
+  }
+}

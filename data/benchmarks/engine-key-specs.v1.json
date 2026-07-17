@@ -1,0 +1,1324 @@
+{
+  "version": "v1",
+  "last_updated": "2026-06-25",
+  "specs": [
+    {
+      "modelSlug": "sora-2",
+      "sources": [
+        "https://maxvideoai.com/models/sora-2",
+        "https://platform.openai.com/docs/models/sora-2",
+        "https://openai.com/index/sora-2/",
+        "https://openai.com/index/launching-sora-responsibly/"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not exposed in current MaxVideoAI route",
+        "firstLastFrame": "Not exposed in current MaxVideoAI route",
+        "referenceImageStyle": "Supported (single start image; no style-reference stack)",
+        "referenceVideo": "Not supported",
+        "maxResolution": "720p (1280×720 landscape; 720×1280 portrait)",
+        "maxDuration": "12s",
+        "aspectRatios": [
+          "16:9",
+          "9:16"
+        ],
+        "fpsOptions": [
+          24
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Sep 2025"
+      }
+    },
+    {
+      "modelSlug": "sora-2-pro",
+      "sources": [
+        "https://maxvideoai.com/models/sora-2-pro",
+        "https://openai.com/index/sora-2-pro/",
+        "https://openai.com/index/launching-sora-responsibly/",
+        "https://platform.openai.com/docs/models/sora-2-pro",
+        "https://cookbook.openai.com/examples/sora/sora2_prompting_guide"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not exposed in current MaxVideoAI route",
+        "firstLastFrame": "Not exposed in current MaxVideoAI route",
+        "referenceImageStyle": "Supported (single start image)",
+        "referenceVideo": "Not supported",
+        "maxResolution": "720p / 1080p",
+        "maxDuration": "4 / 8 / 12s",
+        "aspectRatios": [
+          "16:9",
+          "9:16"
+        ],
+        "fpsOptions": [
+          24
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Sep 2025"
+      }
+    },
+    {
+      "modelSlug": "veo-3-1",
+      "sources": [
+        "https://maxvideoai.com/models/veo-3-1",
+        "https://fal.ai/models/fal-ai/veo3.1",
+        "https://fal.ai/models/fal-ai/veo3.1/image-to-video",
+        "https://fal.ai/models/fal-ai/veo3.1/reference-to-video",
+        "https://fal.ai/models/fal-ai/veo3.1/first-last-frame-to-video",
+        "https://fal.ai/models/fal-ai/veo3.1/extend-video"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Supported (Extend from one source video)",
+        "firstLastFrame": "Supported",
+        "referenceImageStyle": "Image-to-Video: 1 start image; Reference-to-Video: 1-3 stills",
+        "referenceVideo": "Supported (one source clip for Extend)",
+        "maxResolution": "4K",
+        "maxDuration": "8s",
+        "aspectRatios": [
+          "16:9",
+          "9:16"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Prompt-based only",
+        "watermark": "No visible MaxVideoAI watermark; provider/model provenance markers may apply",
+        "releaseDate": "Oct 2025"
+      }
+    },
+    {
+      "modelSlug": "veo-3-1-fast",
+      "sources": [
+        "https://maxvideoai.com/models/veo-3-1-fast",
+        "https://fal.ai/models/fal-ai/veo3.1/fast",
+        "https://fal.ai/models/fal-ai/veo3.1/fast/image-to-video",
+        "https://fal.ai/models/fal-ai/veo3.1/fast/reference-to-video",
+        "https://fal.ai/models/fal-ai/veo3.1/fast/first-last-frame-to-video",
+        "https://fal.ai/models/fal-ai/veo3.1/fast/extend-video"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Supported (extend / retake workflows)",
+        "firstLastFrame": "Supported",
+        "referenceImageStyle": "Image-to-Video: 1 start image; Reference mode: 1-3 stills",
+        "referenceVideo": "Supported (source clip for extend / retake)",
+        "maxResolution": "4K",
+        "maxDuration": "8s",
+        "aspectRatios": [
+          "16:9",
+          "9:16"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Prompt-based only",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Oct 2025"
+      }
+    },
+    {
+      "modelSlug": "veo-3-1-lite",
+      "sources": [
+        "https://maxvideoai.com/models/veo-3-1-lite",
+        "https://fal.ai/models/fal-ai/veo3.1/lite",
+        "https://fal.ai/models/fal-ai/veo3.1/lite/image-to-video",
+        "https://fal.ai/models/fal-ai/veo3.1/lite/first-last-frame-to-video",
+        "https://fal.ai/models/fal-ai/veo3.1/lite/extend-video"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Supported (Extend from one source video)",
+        "firstLastFrame": "Supported (one start image + one last frame)",
+        "referenceImageStyle": "Start image only; no multi-reference stills",
+        "referenceVideo": "Supported (one source clip for Extend)",
+        "maxResolution": "1080p",
+        "maxDuration": "8s",
+        "aspectRatios": [
+          "16:9",
+          "9:16"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Prompt-based only",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "MaxVideoAI availability: Apr 2026"
+      }
+    },
+    {
+      "modelSlug": "gemini-omni-flash",
+      "sources": [
+        "https://maxvideoai.com/models/gemini-omni-flash",
+        "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/omni-flash-preview",
+        "https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/models/interactions-api",
+        "https://ai.google.dev/gemini-api/docs/omni"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Supported (short source-video edit and conversational refine)",
+        "firstLastFrame": "Not supported in current Omni route",
+        "referenceImageStyle": "Supported (up to 10 reference images)",
+        "referenceVideo": "Supported (short source video for edit; previous interaction id for refine)",
+        "maxResolution": "720p",
+        "maxDuration": "10s",
+        "aspectRatios": [
+          "16:9",
+          "9:16"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Prompt-directed only",
+        "cameraMotionControls": "Prompt-based sound, camera and edit directions",
+        "watermark": "No visible MaxVideoAI watermark; provider provenance markers may apply",
+        "releaseDate": "Google preview: Jun 30 2026"
+      }
+    },
+    {
+      "modelSlug": "ltx-2",
+      "sources": [
+        "https://maxvideoai.com/models/ltx-2",
+        "https://github.com/Lightricks/LTX-Video"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not supported",
+        "firstLastFrame": "Not supported",
+        "referenceImageStyle": "Supported",
+        "referenceVideo": "Not supported",
+        "maxResolution": "4K",
+        "maxDuration": "10s",
+        "aspectRatios": [
+          "16:9"
+        ],
+        "fpsOptions": [
+          "25 fps",
+          "50 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Oct 2025"
+      }
+    },
+    {
+      "modelSlug": "ltx-2-fast",
+      "sources": [
+        "https://maxvideoai.com/models/ltx-2-fast"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not supported",
+        "firstLastFrame": "Not supported",
+        "referenceImageStyle": "Supported",
+        "referenceVideo": "Not supported",
+        "maxResolution": "4K on 6-10s generate modes; workflow-specific limits for Audio/Extend/Retake",
+        "maxDuration": "20s route; standard generate presets are 6-10s",
+        "aspectRatios": [
+          "16:9"
+        ],
+        "fpsOptions": [
+          "25 fps",
+          "50 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Oct 2025"
+      }
+    },
+    {
+      "modelSlug": "ltx-2-3-pro",
+      "sources": [
+        "https://fal.ai/ltx-2.3",
+        "https://fal.ai/models/fal-ai/ltx-2.3/text-to-video",
+        "https://fal.ai/models/fal-ai/ltx-2.3/image-to-video",
+        "https://fal.ai/models/fal-ai/ltx-2.3/audio-to-video",
+        "https://fal.ai/models/fal-ai/ltx-2.3/extend-video",
+        "https://fal.ai/models/fal-ai/ltx-2.3/retake-video"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Supported (extend / retake workflows)",
+        "firstLastFrame": "Supported (start + end image in I2V)",
+        "referenceImageStyle": "Supported (single start image; no separate style-reference stack)",
+        "referenceVideo": "Supported (source clip for extend / retake)",
+        "maxResolution": "4K on T2V/I2V generate; workflow-specific limits for Audio/Extend/Retake",
+        "maxDuration": "Generate 6–10s; Audio/Extend/Retake up to 20s",
+        "aspectRatios": [
+          "16:9 generate",
+          "9:16 generate"
+        ],
+        "fpsOptions": [
+          "24 fps generate",
+          "25 fps generate",
+          "48 fps generate",
+          "50 fps generate"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Prompt-based only",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Data pending"
+      }
+    },
+    {
+      "modelSlug": "ltx-2-3-fast",
+      "sources": [
+        "https://fal.ai/ltx-2.3",
+        "https://fal.ai/models/fal-ai/ltx-2.3/text-to-video/fast",
+        "https://fal.ai/models/fal-ai/ltx-2.3/image-to-video/fast"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not supported",
+        "firstLastFrame": "Supported (start + end image in I2V)",
+        "referenceImageStyle": "Supported (single start image; no separate style-reference stack)",
+        "referenceVideo": "Not supported",
+        "maxResolution": "4K (6–10s); 1080p for >10s routing",
+        "maxDuration": "20s (>10s requires 1080p / 25 fps)",
+        "aspectRatios": [
+          "16:9",
+          "9:16"
+        ],
+        "fpsOptions": [
+          "24 fps",
+          "25 fps",
+          "48 fps",
+          "50 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Prompt-based only",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Data pending"
+      }
+    },
+    {
+      "modelSlug": "wan-2-6",
+      "sources": [
+        "https://maxvideoai.com/models/wan-2-6"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Reference-video guidance",
+        "firstLastFrame": "Not supported",
+        "referenceImageStyle": "Supported",
+        "referenceVideo": "Supported",
+        "maxResolution": "Up to 1080p",
+        "maxDuration": "Up to 15s (per generation)",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "fpsOptions": [
+          24
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Text/Image modes only; off in Reference mode",
+        "nativeAudioGeneration": "Not supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Dec 2025"
+      }
+    },
+    {
+      "modelSlug": "wan-2-5",
+      "sources": [
+        "https://maxvideoai.com/models/wan-2-5"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not supported",
+        "firstLastFrame": "Not supported",
+        "referenceImageStyle": "Supported",
+        "referenceVideo": "Not supported",
+        "maxResolution": "1080p",
+        "maxDuration": "10s",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Not supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Sep 2025"
+      }
+    },
+    {
+      "modelSlug": "kling-2-6-pro",
+      "sources": [
+        "https://maxvideoai.com/models/kling-2-6-pro",
+        "https://fal.ai/models/fal-ai/kling-video/v2.6/pro/text-to-video",
+        "https://replicate.com/kwaivgi/kling-v2.6"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not supported",
+        "firstLastFrame": "Not supported",
+        "referenceImageStyle": "Supported",
+        "referenceVideo": "Supported",
+        "maxResolution": "1080p",
+        "maxDuration": "10s",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "fpsOptions": [
+          24
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Advanced",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Dec 2025"
+      }
+    },
+    {
+      "modelSlug": "kling-2-5-turbo",
+      "sources": [
+        "https://maxvideoai.com/models/kling-2-5-turbo"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not supported",
+        "firstLastFrame": "Not supported",
+        "referenceImageStyle": "Supported",
+        "referenceVideo": "Not supported",
+        "maxResolution": "1080p",
+        "maxDuration": "10s",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Not supported",
+        "nativeAudioGeneration": "Not supported",
+        "lipSync": "Not supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Sep 2025"
+      }
+    },
+    {
+      "modelSlug": "kling-3-pro",
+      "sources": [
+        "https://fal.ai/models/fal-ai/kling-video/v3/pro/text-to-video",
+        "https://fal.ai/models/fal-ai/kling-video/v3/pro/text-to-video/api",
+        "https://fal.ai/models/fal-ai/kling-video/v3/pro/image-to-video/api",
+        "https://fal.ai/models/fal-ai/kling-video/lipsync/text-to-video/api"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not supported (no video input on this MaxVideoAI route)",
+        "firstLastFrame": "Supported",
+        "referenceImageStyle": "Image-to-video: 1 source image; optional end frame; Kling Elements in prompt",
+        "referenceVideo": "Not supported (no video input on this MaxVideoAI route)",
+        "maxResolution": "1080p",
+        "maxDuration": "15s",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)"
+      }
+    },
+    {
+      "modelSlug": "kling-3-standard",
+      "sources": [
+        "https://fal.ai/models/fal-ai/kling-video/v3/standard/text-to-video",
+        "https://fal.ai/models/fal-ai/kling-video/v3/standard/text-to-video/api",
+        "https://fal.ai/models/fal-ai/kling-video/v3/standard/image-to-video/api",
+        "https://fal.ai/models/fal-ai/kling-video/lipsync/text-to-video/api"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not supported (no video input on this MaxVideoAI route)",
+        "firstLastFrame": "Supported",
+        "referenceImageStyle": "Image-to-video: 1 source image; optional end frame; Kling Elements in prompt",
+        "referenceVideo": "Not supported (no video input on this MaxVideoAI route)",
+        "maxResolution": "1080p",
+        "maxDuration": "15s",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)"
+      }
+    },
+    {
+      "modelSlug": "kling-3-4k",
+      "sources": [
+        "https://fal.ai/models/fal-ai/kling-video/v3/4k/text-to-video",
+        "https://fal.ai/models/fal-ai/kling-video/v3/4k/text-to-video/api",
+        "https://fal.ai/models/fal-ai/kling-video/v3/4k/image-to-video",
+        "https://fal.ai/models/fal-ai/kling-video/v3/4k/image-to-video/api"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not supported (no video input on this MaxVideoAI route)",
+        "firstLastFrame": "Supported",
+        "referenceImageStyle": "Image-to-video: 1 source image; optional end frame",
+        "referenceVideo": "Not supported (no video input on this MaxVideoAI route)",
+        "maxResolution": "4K",
+        "maxDuration": "15s",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)"
+      }
+    },
+    {
+      "modelSlug": "kling-o3-standard",
+      "sources": [
+        "https://kling.ai/quickstart/klingai-video-3-omni-model-user-guide",
+        "https://fal.ai/models/fal-ai/kling-video/o3/standard/text-to-video",
+        "https://fal.ai/models/fal-ai/kling-video/o3/standard/image-to-video",
+        "https://fal.ai/models/fal-ai/kling-video/o3/standard/reference-to-video/api",
+        "https://fal.ai/docs/model-api-reference/video-generation-api/kling-video-o3-standard-video-to-video"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Supported (source-video reference/edit via Fal)",
+        "firstLastFrame": "I2V start image + optional end frame; optional start/end frames in Reference mode",
+        "referenceImageStyle": "Reference-to-video and V2V: @Image references plus Kling Elements; I2V: one start image",
+        "referenceVideo": "V2V source video plus video elements in Reference/V2V modes",
+        "maxResolution": "1080p",
+        "maxDuration": "15s",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Native audio/dialogue supported; element voice control not exposed yet",
+        "cameraMotionControls": "Shot type + multi-shot prompt structure + prompt-based camera control",
+        "watermark": "No (MaxVideoAI)"
+      }
+    },
+    {
+      "modelSlug": "kling-o3-pro",
+      "sources": [
+        "https://kling.ai/quickstart/klingai-video-3-omni-model-user-guide",
+        "https://fal.ai/docs/model-api-reference/video-generation-api/kling-video-o3-pro-reference-to-video",
+        "https://fal.ai/models/fal-ai/kling-video/o3/pro/image-to-video",
+        "https://fal.ai/models/fal-ai/kling-video/o3/pro/text-to-video",
+        "https://fal.ai/docs/model-api-reference/video-generation-api/kling-video-o3-pro-video-to-video"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Supported (source-video reference/edit via Fal)",
+        "firstLastFrame": "I2V start image + optional end frame; optional start/end frames in Reference mode",
+        "referenceImageStyle": "Reference-to-video and V2V: @Image references plus Kling Elements; I2V: one start image",
+        "referenceVideo": "V2V source video plus video elements in Reference/V2V modes",
+        "maxResolution": "1080p",
+        "maxDuration": "15s",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Native audio/dialogue supported; element voice control not exposed yet",
+        "cameraMotionControls": "Shot type + multi-shot prompt structure + prompt-based camera control",
+        "watermark": "No (MaxVideoAI)"
+      }
+    },
+    {
+      "modelSlug": "kling-o3-4k",
+      "sources": [
+        "https://kling.ai/quickstart/klingai-video-3-omni-model-user-guide",
+        "https://fal.ai/models/fal-ai/kling-video/o3/4k/text-to-video",
+        "https://fal.ai/models/fal-ai/kling-video/o3/4k/image-to-video",
+        "https://fal.ai/models/fal-ai/kling-video/o3/4k/reference-to-video"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not available on the current Fal 4K route",
+        "firstLastFrame": "I2V start image + optional end frame; optional start/end frames in Reference mode",
+        "referenceImageStyle": "Reference-to-video: @Image references plus Kling Elements; I2V: one start image",
+        "referenceVideo": "Video elements in Reference mode",
+        "maxResolution": "4K",
+        "maxDuration": "15s",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Native audio/dialogue supported; element voice control not exposed yet",
+        "cameraMotionControls": "Shot type + multi-shot prompt structure + prompt-based camera control",
+        "watermark": "No (MaxVideoAI)"
+      }
+    },
+    {
+      "modelSlug": "happy-horse-1-0",
+      "sources": [
+        "https://fal.ai/models/alibaba/happy-horse/text-to-video/api",
+        "https://fal.ai/models/alibaba/happy-horse/image-to-video/api",
+        "https://fal.ai/models/alibaba/happy-horse/reference-to-video/api",
+        "https://fal.ai/models/alibaba/happy-horse/video-edit/api",
+        "https://fal.ai/learn/tools/prompting-happy-horse"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Supported (video edit)",
+        "firstLastFrame": "Not supported",
+        "referenceImageStyle": "Supported (1-9 reference stills)",
+        "referenceVideo": "Supported (source clip for video edit)",
+        "maxResolution": "1080p",
+        "maxDuration": "15s output (3-60s source for video edit)",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)"
+      }
+    },
+    {
+      "modelSlug": "happy-horse-1-1",
+      "sources": [
+        "https://fal.ai/models/alibaba/happy-horse/v1.1/text-to-video/api",
+        "https://fal.ai/models/alibaba/happy-horse/v1.1/image-to-video/api",
+        "https://fal.ai/models/alibaba/happy-horse/v1.1/reference-to-video/api",
+        "https://fal.ai/models/alibaba/happy-horse/v1.1/text-to-video",
+        "https://fal.ai/models/alibaba/happy-horse/v1.1/image-to-video",
+        "https://fal.ai/models/alibaba/happy-horse/v1.1/reference-to-video"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not supported in the current Happy Horse 1.1 route",
+        "firstLastFrame": "First frame supported via Image-to-Video; last frame not supported",
+        "referenceImageStyle": "Supported (1-9 reference stills)",
+        "referenceVideo": "Not supported in the current Happy Horse 1.1 route",
+        "maxResolution": "1080p",
+        "maxDuration": "15s output",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "4:3",
+          "3:4",
+          "21:9",
+          "9:21",
+          "5:4",
+          "4:5"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)"
+      }
+    },
+    {
+      "modelSlug": "seedance-1-5-pro",
+      "sources": [
+        "https://fal.ai/models/fal-ai/bytedance/seedance/v1.5/pro/image-to-video",
+        "https://fal.ai/models/fal-ai/bytedance/seedance/v1.5/pro/image-to-video/api",
+        "https://fal.ai/models/fal-ai/bytedance/seedance/v1.5/pro/text-to-video/api"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not supported",
+        "firstLastFrame": "Supported (I2V start image + optional end frame)",
+        "referenceImageStyle": "Single start image; optional end frame in I2V",
+        "referenceVideo": "Not supported",
+        "maxResolution": "T2V: 480p/720p; I2V: 480p/720p/1080p",
+        "maxDuration": "12s",
+        "aspectRatios": [
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "lipSync": "Supported",
+        "cameraMotionControls": "camera_fixed + prompt-based controls",
+        "watermark": "No (MaxVideoAI)"
+      }
+    },
+    {
+      "modelSlug": "seedance-2-0",
+      "sources": [
+        "https://fal.ai/seedance-2.0",
+        "https://fal.ai/models/bytedance/seedance-2.0/text-to-video",
+        "https://seed.bytedance.com/en/seedance2_0",
+        "https://docs.byteplus.com/en/docs/ModelArk/1520757",
+        "https://docs.byteplus.com/en/docs/ModelArk/2291680"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+      "videoToVideo": "Supported (video edit and extend)",
+      "firstLastFrame": "Supported (1 start image + optional end image in i2v)",
+      "referenceImageStyle": "Ref2V: up to 9 image references; I2V: 1 start image",
+      "referenceVideo": "Supported (up to 3 video references, video edit, or extension clips)",
+        "maxResolution": "4K on the standard Dreamina Seedance 2.0 route",
+        "maxDuration": "15s",
+        "aspectRatios": [
+          "Auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "dualChannelAudio": null,
+        "lipSync": "Supported",
+        "pricePerSecond": null,
+        "cameraMotionControls": "Advanced",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": null
+      }
+    },
+    {
+      "modelSlug": "seedance-2-0-fast",
+      "sources": [
+        "https://fal.ai/seedance-2.0",
+        "https://fal.ai/models/bytedance/seedance-2.0/fast/text-to-video"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+      "videoToVideo": "Supported (video edit and extend)",
+      "firstLastFrame": "Supported (1 start image + optional end image in i2v)",
+      "referenceImageStyle": "Ref2V: up to 9 image references; I2V: 1 start image",
+      "referenceVideo": "Supported (up to 3 video references, video edit, or extension clips)",
+        "maxResolution": "720p",
+        "maxDuration": "15s",
+        "aspectRatios": [
+          "Auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "dualChannelAudio": null,
+        "lipSync": "Supported",
+        "pricePerSecond": null,
+        "cameraMotionControls": "Advanced",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": null
+      }
+    },
+    {
+      "modelSlug": "dreamina-seedance-2-0-mini",
+      "sources": [
+        "https://maxvideoai.com/models/dreamina-seedance-2-0-mini",
+        "Dreamina Seedance API model id: dreamina-seedance-2-0-mini-260615"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+      "videoToVideo": "Supported (video edit and extend)",
+      "firstLastFrame": "Supported (1 start image + optional end image in i2v)",
+      "referenceImageStyle": "Ref2V: up to 9 image references; I2V: 1 start image",
+      "referenceVideo": "Supported (up to 3 video references, video edit, or extension clips)",
+        "maxResolution": "480p / 720p",
+        "maxDuration": "4-15s",
+        "aspectRatios": [
+          "Auto",
+          "21:9",
+          "16:9",
+          "4:3",
+          "1:1",
+          "3:4",
+          "9:16"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Supported",
+        "nativeAudioGeneration": "Supported",
+        "dualChannelAudio": null,
+        "lipSync": "Supported",
+        "pricePerSecond": null,
+        "cameraMotionControls": "Advanced",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Jun 2026"
+      }
+    },
+    {
+      "modelSlug": "pika-text-to-video",
+      "sources": [
+        "https://maxvideoai.com/models/pika-text-to-video",
+        "https://maxvideoai.com/fr/modeles/pika-text-to-video",
+        "https://helpx.adobe.com/firefly/web/firefly-video-editor/generate-videos/generate-videos-with-pika-22.html",
+        "https://pika.art/faq"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Related image-start workflow",
+        "videoToVideo": "Not supported",
+        "firstLastFrame": "Not supported",
+        "referenceImageStyle": "Single still only; no reference-style stack",
+        "referenceVideo": "Not supported",
+        "maxResolution": "1080p",
+        "maxDuration": "10s",
+        "aspectRatios": [
+          "1:1",
+          "16:9",
+          "9:16",
+          "4:5",
+          "5:4",
+          "3:2",
+          "2:3"
+        ],
+        "fpsOptions": [
+          24
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Not supported",
+        "nativeAudioGeneration": "Not supported",
+        "lipSync": "Not supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Feb 2025"
+      }
+    },
+    {
+      "modelSlug": "minimax-hailuo-02-text",
+      "sources": [
+        "https://maxvideoai.com/models/minimax-hailuo-02-text",
+        "https://fal.ai/models/fal-ai/minimax/hailuo-02/standard/text-to-video/api",
+        "https://fal.ai/models/fal-ai/minimax/hailuo-02/standard/image-to-video/api",
+        "https://maxvideoai.com/examples/minimax-hailuo-02-text"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Not supported",
+        "firstLastFrame": "Supported",
+        "referenceImageStyle": "Supported",
+        "referenceVideo": "Not supported",
+        "maxResolution": "768p",
+        "maxDuration": "10s",
+        "aspectRatios": [
+          "16:9",
+          "9:16",
+          "1:1",
+          "2:1"
+        ],
+        "fpsOptions": [
+          24
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Not supported",
+        "nativeAudioGeneration": "Not supported",
+        "lipSync": "Not supported",
+        "cameraMotionControls": "Basic",
+        "watermark": "No (MaxVideoAI)",
+        "releaseDate": "Jun 2025"
+      }
+    },
+    {
+      "modelSlug": "luma-ray-3-2",
+      "sources": [
+        "https://maxvideoai.com/models/luma-ray-3-2",
+        "https://docs.agents.lumalabs.ai/api/python/resources/generations/",
+        "https://fal.ai/models/luma/agent/ray/v3.2/text-to-video",
+        "https://fal.ai/models/luma/agent/ray/v3.2/image-to-video"
+      ],
+      "keySpecs": {
+        "textToVideo": "Supported",
+        "imageToVideo": "Supported",
+        "videoToVideo": "Supported (Ray 3.2 Modify and Reframe source-video routes)",
+        "firstLastFrame": "Supported (I2V end frame plus Modify guide/keyframes up to 64 anchors)",
+        "referenceImageStyle": "Supported through guide frames and indexed Modify keyframes",
+        "referenceVideo": "Supported for Modify and Reframe source-video workflows",
+        "maxResolution": "1080p",
+        "maxDuration": "10s generation; source clips up to 30s for Modify/Reframe intake",
+        "aspectRatios": [
+          "9:16",
+          "3:4",
+          "1:1",
+          "4:3",
+          "16:9",
+          "21:9"
+        ],
+        "fpsOptions": [
+          "24 fps"
+        ],
+        "outputFormats": [
+          "MP4"
+        ],
+        "audioOutput": "Not supported",
+        "nativeAudioGeneration": "Not supported",
+        "lipSync": "Not supported",
+        "cameraMotionControls": "Prompt, source-video preservation, guide frames and Modify keyframes",
+        "watermark": "No (MaxVideoAI)"
+      }
+    },
+    {
+      "modelSlug": "luma-uni-1",
+      "sources": [
+        "https://maxvideoai.com/models/luma-uni-1",
+        "https://docs.agents.lumalabs.ai/guides/model/",
+        "https://fal.ai/models/luma/agent/uni-1/v1/text-to-image",
+        "https://fal.ai/models/luma/agent/uni-1/v1/edit"
+      ],
+      "keySpecs": {
+        "textToImage": "Supported",
+        "imageToImage": "Supported",
+        "imageReferences": "Up to 9 for generation; up to 8 references plus source for edit",
+        "webSearch": "Supported",
+        "maxResolution": "2048px / 2K",
+        "aspectRatios": [
+          "3:1",
+          "2:1",
+          "16:9",
+          "3:2",
+          "1:1",
+          "2:3",
+          "9:16",
+          "1:2",
+          "1:3"
+        ],
+        "outputFormats": [
+          "PNG",
+          "JPEG"
+        ],
+        "videoToVideo": "Not supported",
+        "audioOutput": "Not supported"
+      }
+    },
+    {
+      "modelSlug": "luma-uni-1-max",
+      "sources": [
+        "https://maxvideoai.com/models/luma-uni-1-max",
+        "https://docs.agents.lumalabs.ai/guides/model/",
+        "https://fal.ai/models/luma/agent/uni-1/v1/max",
+        "https://fal.ai/models/luma/agent/uni-1/v1/max/edit"
+      ],
+      "keySpecs": {
+        "textToImage": "Supported",
+        "imageToImage": "Supported",
+        "imageReferences": "Up to 9 for generation; up to 8 references plus source for edit",
+        "webSearch": "Supported",
+        "maxResolution": "2048px / 2K",
+        "aspectRatios": [
+          "3:1",
+          "2:1",
+          "16:9",
+          "3:2",
+          "1:1",
+          "2:3",
+          "9:16",
+          "1:2",
+          "1:3"
+        ],
+        "outputFormats": [
+          "PNG",
+          "JPEG"
+        ],
+        "videoToVideo": "Not supported",
+        "audioOutput": "Not supported"
+      }
+    },
+    {
+      "modelSlug": "gpt-image-2",
+      "sources": [
+        "https://fal.ai/models/openai/gpt-image-2/api",
+        "https://fal.ai/models/openai/gpt-image-2/edit/api",
+        "https://fal.ai/gpt-image-2"
+      ],
+      "keySpecs": {
+        "textToImage": "Supported",
+        "imageToImage": "Supported",
+        "maxResolution": "Up to 4K canonical sizes",
+        "outputFormats": [
+          "PNG",
+          "JPEG",
+          "WEBP"
+        ],
+        "referenceImageStyle": "Supported",
+        "releaseDate": "Apr 2026"
+      }
+    },
+    {
+      "modelSlug": "nano-banana",
+      "sources": [
+        "https://developers.googleblog.com/introducing-gemini-2-5-flash-image/",
+        "https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash-image"
+      ],
+      "keySpecs": {
+        "textToImage": "Supported",
+        "imageToImage": "Supported",
+        "maxResolution": "HD still presets",
+        "aspectRatios": [
+          "9:16",
+          "16:9",
+          "1:1",
+          "4:5",
+          "5:4",
+          "4:3",
+          "3:4",
+          "3:2",
+          "2:3",
+          "21:9"
+        ],
+        "outputFormats": [
+          "PNG",
+          "JPEG",
+          "WEBP"
+        ],
+        "audioOutput": "Not supported",
+        "releaseDate": "Aug 2025"
+      }
+    },
+    {
+      "modelSlug": "nano-banana-lite",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/image-generation",
+        "https://cloud.google.com/vertex-ai/generative-ai/docs/image/generate-images"
+      ],
+      "keySpecs": {
+        "textToImage": "Supported",
+        "imageToImage": "Supported",
+        "imageReferences": "Up to 14 references for edit workflows",
+        "maxResolution": "1K",
+        "aspectRatios": [
+          "auto",
+          "1:1",
+          "3:2",
+          "2:3",
+          "3:4",
+          "4:3",
+          "4:5",
+          "5:4",
+          "9:16",
+          "16:9",
+          "21:9"
+        ],
+        "outputFormats": [
+          "JPEG",
+          "PNG",
+          "WEBP"
+        ],
+        "audioOutput": "Not supported"
+      }
+    },
+    {
+      "modelSlug": "nano-banana-2",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/image-generation",
+        "https://cloud.google.com/vertex-ai/generative-ai/docs/image/generate-images"
+      ],
+      "keySpecs": {
+        "textToImage": "Supported",
+        "imageToImage": "Supported",
+        "imageReferences": "Up to 14 references for edit workflows",
+        "webSearch": "Supported",
+        "maxResolution": "4K",
+        "aspectRatios": [
+          "auto",
+          "21:9",
+          "16:9",
+          "3:2",
+          "4:3",
+          "5:4",
+          "1:1",
+          "4:5",
+          "3:4",
+          "2:3",
+          "9:16",
+          "4:1",
+          "1:4",
+          "8:1",
+          "1:8"
+        ],
+        "outputFormats": [
+          "JPEG",
+          "PNG",
+          "WEBP"
+        ],
+        "audioOutput": "Not supported"
+      }
+    },
+    {
+      "modelSlug": "nano-banana-pro",
+      "sources": [
+        "https://blog.google/innovation-and-ai/products/google-ai-updates-november-2025/"
+      ],
+      "keySpecs": {
+        "textToImage": "Supported",
+        "imageToImage": "Supported",
+        "imageReferences": "Up to 14 references for edit workflows",
+        "maxResolution": "4K",
+        "aspectRatios": [
+          "auto",
+          "9:16",
+          "16:9",
+          "1:1",
+          "4:5",
+          "5:4",
+          "4:3",
+          "3:4",
+          "3:2",
+          "2:3",
+          "21:9"
+        ],
+        "outputFormats": [
+          "JPEG",
+          "PNG",
+          "WEBP"
+        ],
+        "audioOutput": "Not supported",
+        "releaseDate": "Nov 2025"
+      }
+    },
+    {
+      "modelSlug": "seedream",
+      "sources": [
+        "https://www.byteplus.com/en/product/modelark",
+        "https://www.byteplus.com/en/docs/ModelArk"
+      ],
+      "keySpecs": {
+        "textToImage": "Supported",
+        "imageToImage": "Supported",
+        "imageReferences": "Up to 10 references for edit workflows",
+        "maxResolution": "4K",
+        "aspectRatios": [
+          "auto",
+          "1:1",
+          "4:3",
+          "3:4",
+          "16:9",
+          "9:16",
+          "3:2",
+          "2:3",
+          "21:9"
+        ],
+        "outputFormats": [
+          "JPEG",
+          "PNG"
+        ],
+        "audioOutput": "Not supported"
+      }
+    },
+    {
+      "modelSlug": "seedream-5-0-pro",
+      "sources": [
+        "https://www.byteplus.com/en/product/modelark",
+        "https://www.byteplus.com/en/docs/ModelArk"
+      ],
+      "keySpecs": {
+        "textToImage": "Supported",
+        "imageToImage": "Supported",
+        "imageReferences": "Up to 10 references for edit workflows",
+        "maxResolution": "4K",
+        "aspectRatios": [
+          "auto",
+          "1:1",
+          "4:3",
+          "3:4",
+          "16:9",
+          "9:16",
+          "3:2",
+          "2:3",
+          "21:9"
+        ],
+        "outputFormats": [
+          "JPEG",
+          "PNG"
+        ],
+        "audioOutput": "Not supported"
+      }
+    }
+  ]
+}

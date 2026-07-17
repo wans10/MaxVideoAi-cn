@@ -1,0 +1,371 @@
+{
+  "marketingName": "Kling 3.0 Omni 4K",
+  "versionLabel": "3.0 Omni 4K",
+  "seo": {
+    "title": "Kling 3.0 Omni 4K reference-to-video | MaxVideoAI",
+    "description": "Utilisez Kling 3.0 Omni 4K pour des vidéos Kling natives 4K guidées par références, storyboard et ancres @Image. Utilisez Standard ou Pro pour le V2V depuis vidéo source."
+  },
+  "overview": "Kling 3.0 Omni 4K est la route native 4K pour les rendus Kling guidés par références et storyboard.",
+  "pricingNotes": "Coût provider approximatif avant marge MaxVideoAI : $0.42/s.",
+  "custom": {
+    "relatedTitle": "Passer du draft à la livraison finale",
+    "relatedSubtitle": "Utilisez 4K après validation du plan de références en Standard ou Pro. Gardez le V2V depuis vidéo source sur Standard ou Pro, car la route 4K actuelle est orientée références.",
+    "relatedItems": [
+      {
+        "brand": "kling",
+        "title": "Kling 3.0 Omni Pro",
+        "description": "Utilisez Pro quand le même storyboard demande V2V depuis vidéo source, audio natif ou tests de références plus flexibles avant la sortie 4K finale.",
+        "modelSlug": "kling-o3-pro",
+        "ctaLabel": "Ouvrir Kling 3.0 Omni Pro ->"
+      },
+      {
+        "brand": "kling",
+        "title": "Kling 3 4K",
+        "description": "Utilisez Kling 3 4K quand une image importée précise doit devenir la start frame d’une animation 4K.",
+        "modelSlug": "kling-3-4k",
+        "ctaLabel": "Ouvrir Kling 3 4K ->"
+      },
+      {
+        "brand": "google-veo",
+        "title": "Google Veo 3.1",
+        "description": "Comparez avec Veo quand le réalisme court premium et l’audio natif comptent plus que le contrôle par images de référence Kling.",
+        "modelSlug": "veo-3-1",
+        "ctaLabel": "Comparer avec Veo 3.1 ->"
+      }
+    ],
+    "finalPara1": "Kling 3.0 Omni 4K est la route de livraison pour les concepts guidés par références déjà validés : gardez le storyboard et les ancres visuelles stables, puis rendez le plan final en 4K native.",
+    "finalPara2": "Pour le V2V depuis vidéo source ou les tests exploratoires de références, restez d’abord sur Standard ou Pro et passez en 4K seulement quand la direction de scène est verrouillée.",
+    "finalButton": "Générer avec Kling 3.0 Omni 4K"
+  },
+  "hero": {
+    "title": "Kling 3.0 Omni 4K pour rendus 4K guidés par références",
+    "intro": "Utilisez Kling 3.0 Omni 4K quand les images de référence ou de storyboard doivent guider un rendu Kling natif 4K sans être forcées comme frame d’ouverture. Cette route 4K n’est pas la route video-to-video depuis vidéo source.",
+    "badge": "Images de référence · 4K native · Storyboard · Pas de V2V",
+    "ctaPrimary": {
+      "label": "Générer avec Kling 3.0 Omni 4K",
+      "href": "/app?engine=kling-o3-4k"
+    }
+  },
+  "technicalOverviewTitle": "Vue technique",
+  "technicalOverview": [
+    {
+      "label": "Images de référence",
+      "body": "Importez jusqu’à 7 images de référence et mentionnez-les comme @Image1, @Image2, etc. pour guider le storyboard, le style ou la composition."
+    },
+    {
+      "label": "Pas de V2V depuis vidéo source",
+      "body": "Kling 3.0 Omni 4K est une route 4K orientée références. Elle ne supporte pas le source-video video-to-video dans la route MaxVideoAI actuelle ; utilisez 3.0 Omni Standard ou Pro quand @Video1 et keep_audio sont requis."
+    },
+    {
+      "label": "Résolution",
+      "body": "Sortie 4K native."
+    }
+  ],
+  "promptStructure": {
+    "title": "Prompting Kling 3.0 Omni 4K avec références",
+    "quote": "Utilise @Image1 comme frame storyboard validée et @Image2 comme référence de style. Rends un plan cinématographique 4K avec continuité stable.",
+    "description": "3.0 Omni 4K doit servir de passe finale après validation du workflow référence. Le prompt doit associer chaque image à un rôle créatif clair avant le rendu 4K plus coûteux.",
+    "steps": [
+      "Valider l’idée en 3.0 Omni Standard ou 3.0 Omni Pro",
+      "Choisir le mode Reference pour les images storyboard ou style",
+      "Mentionner chaque image comme @Image1, @Image2, etc.",
+      "Verrouiller mouvement, cadrage, choix audio et contraintes de continuité",
+      "Utiliser 3.0 Omni Standard ou Pro si le workflow exige @Video1, du video-to-video depuis vidéo source ou keep_audio",
+      "Utiliser Kling 3 4K seulement si l’image importée doit ouvrir le clip"
+    ]
+  },
+  "faqs": [
+    {
+      "q": "Quand utiliser Kling 3.0 Omni 4K ?",
+      "a": "Utilisez-le après validation du workflow référence lorsque vous avez besoin d’une sortie native 4K."
+    },
+    {
+      "q": "Kling 3.0 Omni 4K supporte-t-il le video-to-video ?",
+      "a": "Non. La route 4K actuelle sert aux rendus 4K natifs guidés par références, pas au V2V depuis vidéo source. Utilisez Kling 3.0 Omni Standard ou Pro quand le prompt doit citer @Video1 ou conserver l’audio source avec keep_audio."
+    }
+  ],
+  "decision": {
+    "modelSlug": "kling-o3-4k",
+    "hero": {
+      "eyebrow": "KLING 3.0 OMNI 4K",
+      "title": "Kling 3.0 Omni 4K",
+      "subtitle": "Vidéo Kling 4K native guidée par références pour directions storyboard validées. Ce n’est pas la route V2V depuis vidéo source.",
+      "subtitleHighlights": [
+        "4K native",
+        "guidage par références",
+        "pas de V2V source"
+      ],
+      "paragraph": "Utilisez Kling 3.0 Omni 4K quand des images de référence ou frames storyboard doivent guider une finale 4K native sans devenir la frame d’ouverture. Utilisez O3 Pro ou Standard quand il faut une vidéo source ou @Video1.",
+      "primaryCta": {
+        "label": "Générer avec Kling 3.0 Omni 4K",
+        "href": "/app?engine=kling-o3-4k"
+      },
+      "secondaryCta": {
+        "label": "Voir O3 Pro",
+        "href": "/fr/modeles/kling-o3-pro"
+      },
+      "quickLinks": [
+        {
+          "label": "Comparer vs O3 Pro",
+          "href": "/fr/comparatif/kling-o3-4k-vs-kling-o3-pro"
+        },
+        {
+          "label": "Voir les tarifs",
+          "href": "/fr/tarifs#kling-o3-4k-pricing"
+        },
+        {
+          "label": "Exemples de prompts",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Exemple Kling 3.0 Omni 4K",
+      "description": "Rendu de livraison 4K natif guidé par storyboard",
+      "renderLabel": "Voir le rendu",
+      "badges": [
+        "4K native",
+        "10 s",
+        "Audio off"
+      ],
+      "altContext": "rendu Kling 3.0 Omni 4K natif guidé par storyboard"
+    },
+    "features": [
+      {
+        "title": "4K native",
+        "body": "Utilisez cette route pour les rendus finaux 4K guidés par références.",
+        "tone": "quality"
+      },
+      {
+        "title": "Images de référence",
+        "body": "Utilisez les ancres @Image pour style, sujet, storyboard ou continuité visuelle.",
+        "tone": "reference"
+      },
+      {
+        "title": "Livraison storyboard",
+        "body": "Passez une direction validée en 4K après les tests moins coûteux en Pro ou Standard.",
+        "tone": "continuity"
+      },
+      {
+        "title": "Start/end optionnels",
+        "body": "Ajoutez début ou fin quand le rendu 4K doit être mieux structuré.",
+        "tone": "reference"
+      },
+      {
+        "title": "Pas de V2V source",
+        "body": "Utilisez O3 Pro ou Standard quand une vidéo source et @Video1 sont requis.",
+        "tone": "duration"
+      },
+      {
+        "title": "Prix final",
+        "body": "L’app affiche le prix exact 4K avant génération.",
+        "tone": "price"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "Quand utiliser O3 4K ?",
+        "body": "Utilisez O3 4K après validation de la direction référence ou storyboard, quand la sortie doit être en 4K native.",
+        "cta": {
+          "label": "Lancer O3 4K",
+          "href": "/app?engine=kling-o3-4k"
+        }
+      },
+      {
+        "title": "Besoin de V2V source ?",
+        "body": "N’utilisez pas 4K pour le V2V depuis vidéo source. Utilisez O3 Pro ou Standard quand @Video1 doit guider le mouvement.",
+        "cta": {
+          "label": "Voir O3 Pro",
+          "href": "/fr/modeles/kling-o3-pro"
+        }
+      },
+      {
+        "title": "Direction encore à choisir ?",
+        "body": "Brouillonnez la structure en Standard ou Pro avant de payer la route de livraison 4K native.",
+        "cta": {
+          "label": "Voir O3 Standard",
+          "href": "/fr/modeles/kling-o3-standard"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Images de référence",
+        "body": "Utilisez @Image pour style, sujet, détails produit ou frames storyboard."
+      },
+      {
+        "title": "Frames début/fin",
+        "body": "Ajoutez une ouverture ou fin quand le rendu 4K demande une limite claire."
+      },
+      {
+        "title": "Structure du prompt",
+        "body": "Soyez explicite sur caméra, action, continuité et intention de livraison."
+      },
+      {
+        "title": "Pas de vidéo source",
+        "body": "Utilisez O3 Pro ou Standard si le workflow demande @Video1."
+      },
+      {
+        "title": "Passe finale",
+        "body": "Réservez la 4K aux plans approuvés, revue client, masters campagne ou inserts montage."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Prix Kling 3.0 Omni 4K en un coup d’œil",
+      "subtitle": "Totaux 4K natifs pour rendus de livraison guidés par références.",
+      "footnote": "Tous les prix sont des prix affichés MaxVideoAI en crédits USD pour des scénarios prédéfinis.",
+      "ctaLabel": "Voir tous les tarifs",
+      "maxDurationNote": "Route référence 4K native",
+      "ctaHref": "/fr/tarifs#kling-o3-4k-pricing"
+    },
+    "meta": {
+      "title": "Kling 3.0 Omni 4K : vidéo référence 4K native | MaxVideoAI",
+      "description": "Utilisez Kling 3.0 Omni 4K pour vidéo 4K native guidée par références et storyboard. Utilisez O3 Pro ou Standard pour V2V source."
+    }
+  },
+  "prompting": {
+    "modelSlug": "kling-o3-4k",
+    "section": {
+      "title": "Prompt Lab — Kling 3.0 Omni 4K finales guidées par références",
+      "intro": null,
+      "tip": null,
+      "guide": null,
+      "referencesTitle": "Comment O3 4K utilise les références finales"
+    },
+    "tabs": [
+      {
+        "id": "quick",
+        "label": "Text",
+        "title": "Prompt final 4K sans vidéo source",
+        "description": "Pour une finale 4K guidée par texte et références.",
+        "copy": "Sujet:\\n[Produit / personnage / décor approuvé]\\n\\nAction:\\n[Un mouvement court et contrôlé]\\n\\nCaméra:\\n[Mouvement final: push-in / travelling léger / statique]\\n\\nStyle:\\n[Lumière et finition 4K]\\n\\nAudio:\\n[Ambiance générée si activée]\\n\\nExample:\\nUn produit premium flotte sur un socle graphite, mouvement push-in lent, reflets propres, textures nettes, finale 4K sans texte ajouté."
+      },
+      {
+        "id": "structured",
+        "label": "Refs",
+        "title": "Références 4K approuvées",
+        "description": "Pour mapper les images au rendu final.",
+        "copy": "@Image1 = [storyboard ou composition validée]\\n@Image2 = [style / produit / identité visuelle]\\n@Image3 = [détail matière ou couleur]\\n\\nRendu attendu:\\n[Ce que la finale 4K doit générer]\\n\\nContraintes:\\n[Pas de déformation, pas de texte ajouté, composition stable]\\n\\nExample:\\nUtilise @Image1 pour la composition, @Image2 pour le style lumière et @Image3 pour le détail produit. Rends une finale 4K stable, nette, prête montage."
+      },
+      {
+        "id": "pro",
+        "label": "Start/End",
+        "title": "Start/end frame en 4K",
+        "description": "Pour contrôler la frontière visuelle du plan final.",
+        "copy": "Opening frame optionnel:\\n[Pose ou composition initiale attendue]\\n\\nEnd frame optionnel:\\n[Landing frame final]\\n\\nAction:\\n[Mouvement unique entre les deux états]\\n\\nRègle:\\nNe pas utiliser @Video1. La route 4K actuelle est reference-to-video, pas V2V source.\\n\\nExample:\\nDépart sur @Image1, léger travelling avant, fin proche de l’end frame. Même produit, même lumière, aucune rupture de décor."
+      },
+      {
+        "id": "storyboard",
+        "label": "Final 4K",
+        "title": "Checklist de livraison 4K",
+        "description": "Pour transformer un draft validé en master.",
+        "copy": "Durée: [3-15 s]\\nRésolution: 4K native\\n\\nComposition validée:\\n[@Image1]\\n\\nStyle validé:\\n[@Image2]\\n\\nMouvement final:\\n[Simple, contrôlé, montage-ready]\\n\\nInterdits:\\n[@Video1, keep_audio, texte ajouté, changement de scène]\\n\\nExample:\\nRendre le plan approuvé en 4K native avec mouvement court, texture propre, identité stable et fin exploitable en montage."
+      }
+    ],
+    "tabNotes": [],
+    "globalPrinciples": [
+      "Assignez un rôle clair à chaque image : composition, style, produit, personnage ou détail.",
+      "Validez le mouvement en Standard ou Pro avant de payer une finale 4K.",
+      "N’utilisez pas @Video1 ni keep_audio sur la route 4K actuelle.",
+      "Décrivez caméra, action, continuité et intention de livraison dans le prompt."
+    ],
+    "engineWhy": [
+      "4K est une route de livraison, pas le meilleur endroit pour explorer une direction.",
+      "La page doit guider les références image et le storyboard, sans promettre de V2V source.",
+      "Les prompts doivent verrouiller composition, texture, caméra et fin exploitable.",
+      "Si le workflow demande @Video1, revenez en O3 Pro ou Standard."
+    ],
+    "demo": {
+      "title": "Prompt démo — O3 4K finale référence",
+      "promptLabel": "Prompt texte 4K",
+      "prompt": "Subject:\nA handmade mechanical moon, brass and porcelain, floating above an old clockmaker’s workbench.\n\nAction:\nTiny gears begin turning inside the moon. It slowly opens like a pocket watch and releases a cloud of glowing fireflies that circle the room.\n\nCamera:\nMedium close-up with a slow orbit around the floating moon, then a gentle upward tilt following the fireflies.\n\nStyle:\nCinematic workshop fantasy, warm candlelight, brass reflections, dust in the air, rich brown and gold palette, handcrafted textures, elegant and mysterious.\n\nAudio:\nSoft ticking gears, delicate metallic clicks, magical shimmer, quiet room tone.",
+      "notes": [],
+      "summary": {
+        "subject": "Lune mécanique artisanale en laiton et porcelaine",
+        "action": "S’ouvre comme une montre et libère des lucioles lumineuses",
+        "camera": "Orbite lente puis tilt vers les lucioles",
+        "style": "Atelier fantasy cinématographique, bougie chaude, reflets laiton",
+        "output": "Rendu sélectionné silencieux; le prompt contient des cues de tic-tac et shimmer"
+      },
+      "presentationOverrides": {
+        "modeLabel": "Prompt texte 4K",
+        "outputLabel": "Audio",
+        "duration": null,
+        "aspectRatio": null,
+        "audioChipMode": "media",
+        "audioChipLabel": null,
+        "altContext": "Lune mécanique Kling 3.0 Omni 4K"
+      }
+    },
+    "imageExamples": null
+  },
+  "examples": {
+    "modelSlug": "kling-o3-4k",
+    "section": {
+      "title": "Démos Kling 3.0 Omni 4K pour livraison",
+      "intro": "Consultez des rendus O3 natifs 4K guidés par storyboard ou images de référence. Utilisez ces exemples quand la direction créative est validée et que la sortie finale doit être livrée en 4K plutôt qu’en V2V depuis vidéo source.",
+      "defaultCtaLabel": "Voir les exemples Kling ->",
+      "recreateLabel": "Recréer ce rendu →"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "Tous"
+      },
+      {
+        "id": "cinematic",
+        "label": "Cinématique"
+      },
+      {
+        "id": "product",
+        "label": "Produit / Pub"
+      },
+      {
+        "id": "action",
+        "label": "Action"
+      },
+      {
+        "id": "vertical",
+        "label": "Vertical"
+      },
+      {
+        "id": "audio",
+        "label": "Audio activé"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Rendus communautaires",
+        "body": "Voyez ce qui est possible avec Kling 3.0 Omni 4K pour rendus 4K guidés par références.",
+        "icon": "sparkles"
+      },
+      {
+        "id": "proof-2",
+        "title": "Recréer un plan",
+        "body": "Ouvrez l’app en un clic et réutilisez la configuration.",
+        "icon": "zap"
+      },
+      {
+        "id": "proof-3",
+        "title": "Audio natif",
+        "body": "Dialogue, ambiance et SFX générés en synchro.",
+        "icon": "audio"
+      },
+      {
+        "id": "proof-4",
+        "title": "Continuité multi-plans",
+        "body": "Gardez personnages, style et scène cohérents.",
+        "icon": "users"
+      },
+      {
+        "id": "proof-5",
+        "title": "Prêt pour la production",
+        "body": "Garde-fous et filtres intégrés.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": null,
+    "showWhenEmpty": true
+  }
+}

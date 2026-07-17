@@ -1,0 +1,597 @@
+{
+  "marketingName": "LTX 2.3 Fast",
+  "versionLabel": "Fast",
+  "seo": {
+    "title": "LTX 2.3 Fast | AI Video Model, Specs, Pricing & Max Length | MaxVideoAI",
+    "description": "Use LTX 2.3 Fast on MaxVideoAI for lower-cost video generation, longer draft loops, current pricing, max length, and the key differences versus LTX 2.3 Pro.",
+    "image": "https://media.maxvideoai.com/renders/301cc489-d689-477f-94c4-0b051deda0bc/1bd62e34-0e55-4f49-b434-295276b991d4-job_d895c3b0-562a-4e36-ae06-4ce083a47126.jpg"
+  },
+  "overview": "LTX 2.3 Fast is the current fast LTX model on MaxVideoAI for lower-cost video generation, longer draft loops, and faster iteration before you move selected outputs into LTX 2.3 Pro.",
+  "hero": {
+    "title": "LTX 2.3 Fast — current fast LTX model for longer drafts, testing and iteration",
+    "intro": "Use LTX 2.3 Fast for lower-cost video generation, longer draft loops, and faster iteration when you want to test ideas, compare prompt behavior, or explore longer clips before moving selected outputs into LTX 2.3 Pro. This page covers the model’s pricing, max length, best use cases, and how it compares to LTX 2.3 Pro for current LTX workflows.",
+    "badge": "T2V + I2V | 6-20 s | 1080p to 4K",
+    "ctaPrimary": {
+      "label": "Generate with LTX 2.3 Fast",
+      "href": "/app?engine=ltx-2-3-fast"
+    },
+    "secondaryLinks": [
+      {
+        "label": "View LTX examples",
+        "href": "/examples/ltx"
+      },
+      {
+        "label": "See LTX 2.3 Pro",
+        "href": "/models/ltx-2-3-pro"
+      },
+      {
+        "label": "Compare LTX 2.3 Fast vs LTX 2.3 Pro",
+        "href": "/ai-video-engines/ltx-2-3-fast-vs-ltx-2-3-pro"
+      },
+      {
+        "label": "Compare LTX 2.3 Fast vs Seedance 2.0 Fast",
+        "href": "/ai-video-engines/ltx-2-3-fast-vs-seedance-2-0-fast"
+      }
+    ]
+  },
+  "bestUseCases": {
+    "title": "Best use cases for Fast",
+    "items": [
+      {
+        "title": "Rapid concept and hook testing",
+        "icon": "zap"
+      },
+      {
+        "title": "Vertical social drafts",
+        "icon": "smartphone"
+      },
+      {
+        "title": "Start-to-end image transitions",
+        "icon": "camera"
+      },
+      {
+        "title": "Budget-aware campaign variants",
+        "icon": "layers"
+      },
+      {
+        "title": "Quick product motion tests",
+        "icon": "product"
+      },
+      {
+        "title": "Story beats before final polish",
+        "icon": "storyboard"
+      }
+    ]
+  },
+  "technicalOverviewTitle": "Technical overview",
+  "technicalOverview": [
+    {
+      "label": "Duration",
+      "body": "6 s to 20 s for Text-to-Video and Image-to-Video"
+    },
+    {
+      "label": "Long-duration constraint",
+      "body": "Durations above 10 s require 1080p at 25 fps in the current public routing"
+    },
+    {
+      "label": "Resolution",
+      "body": "1080p, 1440p or 2160p (4K) on supported 6-10 s configurations; >10 s routes use 1080p / 25 fps"
+    },
+    {
+      "label": "Aspect ratios",
+      "body": "16:9 and 9:16"
+    },
+    {
+      "label": "Frame rate",
+      "body": "24, 25, 48 or 50 fps"
+    },
+    {
+      "label": "Inputs",
+      "body": "Text prompts or a start image, with an optional end image for Image-to-Video transitions"
+    },
+    {
+      "label": "Audio",
+      "body": "Native audio toggle for generate modes"
+    },
+    {
+      "label": "Pricing",
+      "body": "Pay-as-you-go; displayed generate pricing starts around $0.05/s at 1080p, $0.10/s at 1440p, and $0.21/s at 4K"
+    }
+  ],
+  "promptStructure": {
+    "title": "Prompting LTX 2.3 Fast",
+    "quote": "Subject: [who/what]. Action: [single beat]. Camera: [move]. Look: [lighting + color]. Duration: [6-20s]. Format: [16:9 or 9:16]. Audio: [ambience, music or silence].",
+    "description": "Keep prompts tighter than you would for a premium final. LTX 2.3 Fast is best when you define one clear motion idea, one camera move, and one visual mood.",
+    "steps": [
+      "Lead with one subject and one action.",
+      "Describe the camera move before secondary styling.",
+      "Specify 16:9 or 9:16 based on the destination format.",
+      "Use 6 to 10 seconds for the broadest quality/fps/resolution flexibility.",
+      "When using Image-to-Video, let the start image carry identity and use the prompt for motion."
+    ]
+  },
+  "tips": {
+    "title": "Tips & limits",
+    "items": [
+      "Use LTX 2.3 Fast for idea volume, then rerun winning concepts in LTX 2.3 Pro when you need more workflow flexibility.",
+      "For 12 to 20 seconds, accept the 1080p and 25 fps constraint instead of fighting it.",
+      "Use an end image only when the destination frame matters for the cut.",
+      "Audio is available here, but Audio-to-Video, Extend and Retake are not."
+    ]
+  },
+  "compareLink": {
+    "label": "Compare LTX 2.3 Fast vs LTX 2.3 Pro ->",
+    "href": "/ai-video-engines/ltx-2-3-fast-vs-ltx-2-3-pro"
+  },
+  "prompts": [
+    {
+      "title": "Fast social product hook",
+      "prompt": "A 9:16 beauty shot of a skincare bottle on a wet mirror surface, quick push-in, clean reflections, soft high-key lighting, 6 seconds, crisp sonic accent at the end."
+    },
+    {
+      "title": "Image-to-Video start/end transition",
+      "prompt": "Animate the uploaded start image of a parked sports car into a smooth evening city pull-away, then land on the uploaded end image as taillights streak across the frame."
+    },
+    {
+      "title": "Longer draft beat",
+      "prompt": "A 16:9 office walkthrough for an internal explainer teaser, one smooth camera move through a bright workspace, realistic motion, light ambience, 14 seconds at 1080p."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is LTX 2.3 Fast best for?",
+      "a": "LTX 2.3 Fast is best for lower-cost testing, longer draft loops, social variants, and prompt exploration before you commit selected outputs to LTX 2.3 Pro."
+    },
+    {
+      "q": "How is LTX 2.3 Fast different from LTX 2.3 Pro?",
+      "a": "LTX 2.3 Fast is the simpler, faster current LTX path for text-to-video and image-to-video generation, while LTX 2.3 Pro is the stronger option when you need more advanced workflows like Audio-to-Video, Extend, and Retake."
+    },
+    {
+      "q": "What is the max length for LTX 2.3 Fast?",
+      "a": "LTX 2.3 Fast currently supports 6 to 20 second clips. Above 10 seconds, current public routing is constrained to 1080p at 25 fps."
+    },
+    {
+      "q": "Is LTX 2.3 Fast better for testing than Pro?",
+      "a": "Yes. LTX 2.3 Fast is the better current choice when the goal is to test prompt behavior, compare variants quickly, and keep cost lower during early iteration."
+    },
+    {
+      "q": "When should I use LTX 2.3 Fast instead of LTX 2?",
+      "a": "Use LTX 2.3 Fast when you want the current fast LTX workflow, longer draft coverage, and a clearer path into the LTX 2.3 family. LTX 2 is better treated as an older supported option, not the main fast choice."
+    }
+  ],
+  "custom": {
+    "heroDesc1": "LTX 2.3 Fast is the generate-first version of the new LTX 2.3 family. It keeps the broad text/image generation surface, native audio and start/end image support, but drops the editing workflows that belong to LTX 2.3 Pro.",
+    "heroDesc2": "That makes it a cleaner fit for rapid concepting, social aspect-ratio variants and quick hook testing, especially when you want more clip length than ultra-short engines usually allow.",
+    "heroSupportLine": "Start with examples, use Fast for testing and longer drafts, then move selected outputs into LTX 2.3 Pro when the workflow needs more control.",
+    "heroSpecChips": [
+      {
+        "label": "Text→Video",
+        "icon": "textToVideo"
+      },
+      {
+        "label": "Image→Video",
+        "icon": "imageToVideo"
+      },
+      {
+        "label": "Start + end image",
+        "icon": "imageToVideo"
+      },
+      {
+        "label": "6–20s",
+        "icon": "duration"
+      },
+      {
+        "label": "4K",
+        "icon": "resolution"
+      },
+      {
+        "label": "Audio",
+        "icon": "audio"
+      }
+    ],
+    "whyTitle": "Pricing, max length and next steps",
+    "heroHighlights": [
+      "Pricing and max length||Use Fast for lower-cost testing across 6 to 20 second clips, with the current 1080p at 25 fps limit applying above 10 seconds.",
+      "Fast vs Pro||Choose Fast for testing, longer draft loops and quicker iteration, then move to Pro when the workflow needs deeper control.",
+      "Start with examples||Open the LTX examples page first if you want reusable prompt patterns, settings and image-to-video baselines before generating.",
+      "Best use cases||Fast is a strong fit for prompt testing, vertical variants, longer drafts and lower-cost motion exploration."
+    ],
+    "specTitle": "Real Specs - LTX 2.3 Fast in MaxVideoAI",
+    "specNote": "Specs reflect the live public Fast routing exposed today.",
+    "specSections": [
+      {
+        "title": "Fast generate workflows",
+        "intro": "Fast is optimized around Text-to-Video and Image-to-Video only. It is the easiest LTX 2.3 entry point when the goal is to test more ideas, faster.",
+        "items": [
+          "Use Text-to-Video for broad ideation.",
+          "Use Image-to-Video when the first frame or product identity matters.",
+          "Use 9:16 for social-first variants.",
+          "Keep the prompt focused on one motion beat."
+        ]
+      },
+      {
+        "title": "What Fast does not include",
+        "intro": "The product boundary is important for clear UX. Audio-to-Video, Extend and Retake stay on LTX 2.3 Pro so Fast remains simpler and more predictable.",
+        "items": [
+          "No uploaded-audio-driven video mode.",
+          "No source-video extension workflow.",
+          "No selective retake workflow.",
+          "Move to LTX 2.3 Pro when those controls matter."
+        ]
+      }
+    ],
+    "whatTitle": "How LTX 2.3 Fast works in MaxVideoAI",
+    "whatIntro1": "Pick LTX 2.3 Fast, stay in the standard generate flow, then switch between text-driven and image-driven input by adding or removing the start image.",
+    "whatIntro2": "The page intentionally avoids Pro editing modes so the options stay coherent with the public Fast routing.",
+    "whatFlowTitle": "Workflow",
+    "whatFlowSteps": [
+      "Pick LTX 2.3 Fast as the engine.",
+      "Use text only for Text-to-Video or add a start image for Image-to-Video.",
+      "Optionally add an end image to define the last frame of the transition.",
+      "Choose duration, aspect ratio, resolution and fps, keeping the >10 s constraint in mind.",
+      "Check the live price and use Fast for broad iteration before upgrading winners."
+    ],
+    "tipsTitle": "Practical strengths and boundaries",
+    "strengths": [
+      "Good cost/speed balance for concept exploration, hook testing and aspect-ratio variants.",
+      "Useful when you want a lighter-weight LTX page without extend/retake complexity.",
+      "Start/end image support makes it practical for simple transformation cuts and reveal transitions."
+    ],
+    "boundaries": [
+      "No Audio-to-Video, Extend or Retake on the Fast route.",
+      "Durations above 10 seconds are constrained to 1080p at 25 fps.",
+      "Fast is best used for generation, not source-video repair workflows."
+    ],
+    "safetyTitle": "Safety and likeness guidance",
+    "safetyRules": [
+      "Do not generate sexual content or anything involving minors.",
+      "Do not impersonate real people or public figures without authorization.",
+      "Do not upload private or sensitive personal data.",
+      "Keep prompts brand-safe and rights-cleared when audio is involved."
+    ],
+    "safetyInterpretation": [],
+    "safetyNote": null,
+    "multishotTitle": "Longer fast beats",
+    "multishotIntro1": "Fast can run longer than the LTX 2.3 Pro generate path, which is useful for simple walkthroughs and pacing tests.",
+    "multishotIntro2": "Just remember that >10 second runs trade some flexibility for routing stability.",
+    "multishotTips": [
+      "Use 6 to 10 seconds for the highest flexibility.",
+      "Use 12 to 20 seconds only when the extra room is worth the 1080p/25 fps constraint."
+    ],
+    "imageTitle": "Image-to-Video start/end control",
+    "imageIntro": "Fast still supports a start image plus an optional end image, which makes it useful for simple transition planning without moving to a heavier workflow.",
+    "imageFlow": [
+      "Upload the start image that should anchor the first frame.",
+      "Optionally upload an end image when the last frame matters.",
+      "Use the prompt to define the motion and pacing between those two states."
+    ],
+    "imageWhy": [
+      "Useful for product reveals",
+      "Good for controlled portrait motion",
+      "Helpful for ad cutdowns and social transition tests"
+    ],
+    "comparisonTitle": "When to pick LTX 2.3 Fast",
+    "comparisonPoints": [
+      "Choose Fast for idea volume, social variants and first-pass motion tests.",
+      "Move to LTX 2.3 Pro when you need Audio-to-Video, Extend or Retake.",
+      "Use Fast when the job is generation-only and simplicity is more important than editing controls."
+    ],
+    "comparisonCta": "Compare LTX 2.3 Fast vs Pro ->",
+    "relatedTitle": "Explore other engines",
+    "relatedSubtitle": "Compare LTX 2.3 Fast with LTX 2.3, Veo Fast and older LTX fast tiers while keeping the same page structure.",
+    "finalPara1": "Ready for a lighter LTX generation workflow? Open LTX 2.3 Fast in Generate.",
+    "finalPara2": "Use Fast for speed, then move the winning prompt to LTX 2.3 Pro if the project needs deeper editing tools.",
+    "finalButton": "Open LTX 2.3 Fast in Generate ->",
+    "troubleshootingTitle": "Common problems -> fast fixes",
+    "troubleshootingItems": [
+      "Longer runs look less flexible -> keep >10 second clips only for cases where the extra length is worth the 1080p/25 fps cap.",
+      "Image-to-Video feels weak -> improve the start image composition before adding more prompt detail.",
+      "Start-to-end transition feels forced -> make the end image closer to the same visual world.",
+      "The clip feels too busy -> reduce to one action and one camera move.",
+      "You need source-video editing -> move to LTX 2.3 Pro instead of overloading Fast."
+    ]
+  },
+  "decision": {
+    "modelSlug": "ltx-2-3-fast",
+    "hero": {
+      "eyebrow": "LTX FAST DRAFT ROUTE",
+      "title": "LTX 2.3 Fast",
+      "subtitle": "Fast visual exploration for prompt testing, lower-cost draft loops, and vertical/social drafts.",
+      "subtitleHighlights": [
+        "visual exploration",
+        "prompt testing",
+        "vertical/social drafts"
+      ],
+      "paragraph": "Use LTX 2.3 Fast for fast text-to-video and image-to-video exploration when you need to test prompts, compare looks, and prepare social drafts before choosing a final production route.",
+      "primaryCta": {
+        "label": "Draft with LTX 2.3 Fast",
+        "href": "/app?engine=ltx-2-3-fast"
+      },
+      "secondaryCta": {
+        "label": "View examples",
+        "href": "/examples/ltx"
+      },
+      "quickLinks": [
+        {
+          "label": "Compare vs Pro",
+          "href": "/ai-video-engines/ltx-2-3-fast-vs-ltx-2-3-pro"
+        },
+        {
+          "label": "View pricing",
+          "href": "/pricing#ltx-2-3-fast-pricing"
+        },
+        {
+          "label": "Prompt examples",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "LTX 2.3 Fast example",
+      "description": "Fast visual exploration draft",
+      "renderLabel": "View draft",
+      "badges": [
+        "Fast route",
+        "10s",
+        "16:9"
+      ],
+      "altContext": "LTX 2.3 Fast cinematic draft example"
+    },
+    "features": [
+      {
+        "title": "Visual exploration",
+        "body": "Move through look, style and scene options quickly.",
+        "tone": "quality"
+      },
+      {
+        "title": "Prompt testing",
+        "body": "Compare prompt wording before committing to a final route.",
+        "tone": "reference"
+      },
+      {
+        "title": "Image-to-video drafts",
+        "body": "Use a start image when the draft needs a visual anchor.",
+        "tone": "reference"
+      },
+      {
+        "title": "Vertical/social drafts",
+        "body": "Sketch short concepts for social formats and creative reviews.",
+        "tone": "continuity"
+      },
+      {
+        "title": "Max 20s",
+        "body": "Draft clips up to 20 seconds per generation.",
+        "tone": "duration"
+      },
+      {
+        "title": "Pay-as-you-go",
+        "body": "See exact live price before you generate.",
+        "tone": "price"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "Fast or LTX 2.3 Pro?",
+        "body": "Use Fast for visual exploration and prompt tests. Use Pro when you need the broader production workflow exposed by the Pro route.",
+        "cta": {
+          "label": "Compare Fast vs Pro",
+          "href": "/ai-video-engines/ltx-2-3-fast-vs-ltx-2-3-pro"
+        }
+      },
+      {
+        "title": "Testing social concepts?",
+        "body": "Draft vertical ideas, ad hooks and style directions before spending time on a final candidate.",
+        "cta": {
+          "label": "Open Prompt Lab",
+          "href": "#prompting"
+        }
+      },
+      {
+        "title": "Choosing a fast draft engine?",
+        "body": "Compare LTX Fast with Seedance Fast when speed and iteration cost matter more than final polish.",
+        "cta": {
+          "label": "Compare with Seedance Fast",
+          "href": "/ai-video-engines/ltx-2-3-fast-vs-seedance-2-0-fast"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Text prompt",
+        "body": "Test subject, style, camera and format instructions with short prompt variants."
+      },
+      {
+        "title": "Start image",
+        "body": "Use image-to-video when a visual seed should define composition or product framing."
+      },
+      {
+        "title": "Vertical draft",
+        "body": "Frame early social concepts around 9:16 or 16:9 review needs."
+      },
+      {
+        "title": "Look comparison",
+        "body": "Run prompt variants to compare lighting, color and motion direction."
+      },
+      {
+        "title": "Production handoff",
+        "body": "Move the strongest draft into the appropriate final route once the concept is clear."
+      }
+    ],
+    "pricingCopy": {
+      "title": "LTX 2.3 Fast draft pricing",
+      "subtitle": "Preset draft totals - see the exact live price in the app before you generate.",
+      "footnote": "All prices are MaxVideoAI display prices in USD credits for preset scenarios.",
+      "ctaLabel": "View full pricing",
+      "maxDurationNote": "Longer drafts at 1080p",
+      "ctaHref": "/pricing#ltx-2-3-fast-pricing"
+    },
+    "meta": {
+      "title": "LTX 2.3 Fast: Pricing, Max Length & Fast vs Pro",
+      "description": "Compare LTX 2.3 Fast pricing, max length, resolution limits and when to use Fast instead of LTX 2.3 Pro for draft loops and prompt testing."
+    }
+  },
+  "prompting": {
+    "modelSlug": "ltx-2-3-fast",
+    "section": {
+      "title": "How to Write a Great LTX 2.3 Fast Prompt",
+      "intro": "LTX 2.3 Fast is a generate-first engine, so keep the prompt short, visual and direct.",
+      "tip": "Tip: the UI already handles duration, aspect ratio, resolution, fps and the long-duration routing constraint. Focus the prompt on one subject, one move and one mood.",
+      "guide": null,
+      "referencesTitle": "How LTX 2.3 Fast uses references"
+    },
+    "tabs": [
+      {
+        "id": "quick",
+        "label": "Quick",
+        "title": "Quick prompt (fastest draft)",
+        "description": "Use this for rapid variants and hook testing.",
+        "copy": "[Subject + one action], [camera move], [lighting/style], [optional sound cue], [16:9 or 9:16 vibe]."
+      },
+      {
+        "id": "structured",
+        "label": "Structured",
+        "title": "Structured prompt (repeatable)",
+        "description": "Use labeled sections when several people will reuse the same prompt logic.",
+        "copy": "Subject:\n[Who/what]\n\nAction:\n[One clean motion beat]\n\nCamera:\n[Shot + one move]\n\nLook:\n[Lighting + palette]\n\nAudio:\n[Ambience/music cue if needed]"
+      },
+      {
+        "id": "pro",
+        "label": "Image flow",
+        "title": "Image-to-Video prompt",
+        "description": "Best when the still frame should stay recognizable.",
+        "copy": "Start frame:\n[What the uploaded image already shows]\n\nMotion:\n[What should move]\n\nCamera:\n[Push / pan / drift / orbit]\n\nResolve:\n[Optional end-image target]"
+      },
+      {
+        "id": "storyboard",
+        "label": "Storyboard",
+        "title": "Storyboard prompt (generate-only sequence)",
+        "description": "Use this for short multi-beat clips without switching workflows.",
+        "copy": "Shot 1: [setup]\nShot 2: [core action]\nShot 3: [resolve]\n\nLook:\n[Lighting + grade]\n\nAudio:\n[Ambience + one cue]"
+      }
+    ],
+    "tabNotes": [
+      {
+        "tabId": "quick",
+        "body": "Quick = fastest path to usable drafts."
+      },
+      {
+        "tabId": "structured",
+        "body": "Structured = best when multiple teammates need to reuse the prompt."
+      },
+      {
+        "tabId": "pro",
+        "body": "Pro = use only when you need stronger continuity inside a generate-only flow."
+      },
+      {
+        "tabId": "storyboard",
+        "body": "Storyboard = helpful for simple multi-beat social sequences."
+      }
+    ],
+    "globalPrinciples": [
+      "One subject, one action and one move beat longer wish-list prompts.",
+      "Use start images for identity and prompts for motion.",
+      "Reserve 12 to 20 second runs for cases where the extra pacing room really matters."
+    ],
+    "engineWhy": [
+      "Fast responds well to concise prompts.",
+      "Image-to-Video works best when the still already contains the desired composition.",
+      "Start/end image transitions are most reliable when the two frames are clearly related."
+    ],
+    "demo": {
+      "title": "Demo prompt - fast cinematic draft",
+      "promptLabel": "Fast draft check",
+      "prompt": "A powerful boxer walks alone through a dark arena tunnel toward the ring, athletic frame wrapped in a hooded robe, shoulders relaxed but dangerous. Low front tracking shot, slow push-in, hard rim light, drifting haze, muted crowd rumble and one sharp impact cue, 10 seconds, 16:9.",
+      "notes": [
+        "Built for a fast motion check",
+        "One subject, one move and one atmosphere",
+        "Easy to rerun before a Pro pass"
+      ],
+      "summary": {
+        "subject": "Boxer in a dark tunnel",
+        "action": "Walks toward the ring with controlled tension",
+        "camera": "Low front tracking, slow push-in",
+        "style": "Hard rim light, subtle haze, cinematic arena mood",
+        "output": "Muted crowd rumble and one short impact cue"
+      },
+      "presentationOverrides": {
+        "modeLabel": "Fast draft check",
+        "outputLabel": "Audio",
+        "duration": "10s",
+        "aspectRatio": null,
+        "audioChipMode": "on",
+        "audioChipLabel": null,
+        "altContext": "LTX 2.3 Fast boxer draft"
+      }
+    },
+    "imageExamples": null
+  },
+  "examples": {
+    "modelSlug": "ltx-2-3-fast",
+    "section": {
+      "title": "LTX 2.3 Fast examples",
+      "intro": "Representative LTX 2.3 Fast examples for reviewing prompt structure, draft pacing and image-to-video setup before generating.",
+      "defaultCtaLabel": "View all LTX 2.3 Fast examples ->",
+      "recreateLabel": "Recreate this shot ->"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "All"
+      },
+      {
+        "id": "cinematic",
+        "label": "Cinematic"
+      },
+      {
+        "id": "product",
+        "label": "Product / Ad"
+      },
+      {
+        "id": "action",
+        "label": "Action"
+      },
+      {
+        "id": "vertical",
+        "label": "Vertical"
+      },
+      {
+        "id": "audio",
+        "label": "Audio on"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Real community renders",
+        "body": "See what's possible with LTX 2.3 Fast — current fast LTX model for longer drafts, testing and iteration.",
+        "icon": "sparkles"
+      },
+      {
+        "id": "proof-2",
+        "title": "Recreate any shot",
+        "body": "Jump into the app with one click and reuse the setup.",
+        "icon": "zap"
+      },
+      {
+        "id": "proof-3",
+        "title": "Native audio",
+        "body": "Dialogue, ambience and SFX generated in sync.",
+        "icon": "audio"
+      },
+      {
+        "id": "proof-4",
+        "title": "Multi-shot continuity",
+        "body": "Keep characters, style and scene consistency across sequences.",
+        "icon": "users"
+      },
+      {
+        "id": "proof-5",
+        "title": "Production-aware",
+        "body": "Built-in guardrails and safety filters for responsible review.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": null,
+    "showWhenEmpty": true
+  }
+}

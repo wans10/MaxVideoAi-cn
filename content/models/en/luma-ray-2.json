@@ -1,0 +1,489 @@
+{
+  "marketingName": "Luma Ray 2",
+  "versionLabel": "Ray 2",
+  "seo": {
+    "title": "Luma Ray 2 Specs, Pricing and Legacy Workflows | MaxVideoAI",
+    "description": "Use Luma Ray 2 in MaxVideoAI as a previous-generation Luma route for cinematic shots, image-to-video, source-video modify, and delivery reframes. Start new Luma work on Ray 3.2 when Modify keyframes or Reframe matter.",
+    "image": "/hero/luma-dream.jpg"
+  },
+  "overview": "Luma Ray 2 is a previous-generation Luma route in MaxVideoAI. Keep it for legacy prompts, older comparisons, and Ray 2-compatible generation, while new Luma video work should start on Ray 3.2 for Modify keyframes and Reframe.",
+  "hero": {
+    "title": "Luma Ray 2 - cinematic generation, modify, and reframe on one page",
+    "intro": "Use Ray 2 when you need to revisit older Luma prompts or keep Ray 2-compatible text-to-video, image-to-video, source-video Modify, and Reframe runs. For new Luma production, Ray 3.2 is the current route.",
+    "badge": "Legacy Luma route - T2V + I2V + Modify + Reframe",
+    "ctaPrimary": {
+      "label": "Start generating with Luma Ray 2",
+      "href": "/app?engine=lumaRay2"
+    },
+    "secondaryLinks": [
+      {
+        "label": "Compare Ray 2 vs Ray 2 Flash ->",
+        "href": "/ai-video-engines/luma-ray-2-vs-luma-ray-2-flash"
+      },
+      {
+        "label": "Browse all Luma examples ->",
+        "href": "/examples/luma"
+      }
+    ]
+  },
+  "bestUseCases": {
+    "title": "Best use cases",
+    "items": [
+      {
+        "title": "Premium cinematic concept films",
+        "icon": "camera"
+      },
+      {
+        "title": "Fashion and product hero motion",
+        "icon": "product"
+      },
+      {
+        "title": "Still-to-video with guided endings",
+        "icon": "storyboard"
+      },
+      {
+        "title": "Source-video look changes without new blocking",
+        "icon": "wand2"
+      },
+      {
+        "title": "Landscape-to-vertical social repackaging",
+        "icon": "smartphone"
+      },
+      {
+        "title": "Loop-ready luxury and ambient shots",
+        "icon": "repeat2"
+      }
+    ]
+  },
+  "technicalOverviewTitle": "Technical overview",
+  "technicalOverview": [
+    {
+      "label": "Generate workflows",
+      "body": "Text-to-Video and Image-to-Video with 5 s or 9 s clips"
+    },
+    {
+      "label": "Edit workflows",
+      "body": "Modify and Reframe use an uploaded source video instead of fixed 5 s or 9 s presets"
+    },
+    {
+      "label": "Resolution",
+      "body": "540p, 720p, or 1080p for generate modes"
+    },
+    {
+      "label": "Aspect ratios",
+      "body": "16:9, 9:16, 4:3, 3:4, 21:9, and 9:21 on generate; Reframe also adds 1:1"
+    },
+    {
+      "label": "Image controls",
+      "body": "Image-to-Video supports one start image plus an optional end image; Modify and Reframe can also take an optional reference still"
+    },
+    {
+      "label": "Modify options",
+      "body": "Modify presets exposed in MaxVideoAI: adhere_1 to adhere_3, flex_1 to flex_3, and reimagine_1 to reimagine_3"
+    },
+    {
+      "label": "Reframe options",
+      "body": "Target aspect ratio plus optional grid anchors and crop-window coordinates"
+    },
+    {
+      "label": "Pricing",
+      "body": "Displayed pricing starts around $0.50 for 5 s at 540p on generate, about $0.12/s for Modify, and about $0.20/s for Reframe"
+    }
+  ],
+  "promptStructure": {
+    "title": "How to prompt Luma Ray 2 by workflow",
+    "quote": "Mode: Modify. Goal: keep the camera path and timing from the source clip. Change: metallic silk wardrobe, cooler highlights, cleaner showroom background. Strength: flex_2.",
+    "description": "Treat Ray 2 as four related workflows, not one generic prompt box. The right prompt depends on whether you are generating a new shot, animating a still, modifying an existing clip, or reframing one for a new format.",
+    "steps": [
+      "For Text-to-Video, write one clear subject, one camera move, one lighting direction, then choose duration, resolution, and format.",
+      "For Image-to-Video, let the uploaded still anchor the first frame and use the prompt to define motion and scene evolution.",
+      "Add an end image only when the final composition matters more than free-form motion.",
+      "For Modify, tell Ray 2 what must stay from the source clip and what should change, then pick the right adherence or reimagine preset.",
+      "For Reframe, describe the priority subject and intended crop outcome instead of rewriting the whole scene.",
+      "Use short, shot-level language. Ray 2 performs best when the instruction is cinematic but controlled."
+    ]
+  },
+  "tips": {
+    "title": "Tips and limits",
+    "items": [
+      "Use Ray 2 when quality matters more than raw iteration speed.",
+      "Start in Text-to-Video or Image-to-Video, then move into Modify only when the blocking is already working.",
+      "Use adhere presets when continuity matters; move toward flex or reimagine only when you want stronger visual change.",
+      "Use Reframe for delivery variants, especially 9:16 and 1:1 crops derived from an approved landscape master.",
+      "Keep generate runs for net-new shots and edit runs for preserving strong footage while changing styling or format."
+    ]
+  },
+  "compareLink": {
+    "label": "Compare Ray 2 vs Ray 2 Flash ->",
+    "href": "/ai-video-engines/luma-ray-2-vs-luma-ray-2-flash"
+  },
+  "prompts": [
+    {
+      "title": "Text-to-Video luxury lobby shot",
+      "prompt": "Elegant boutique hotel lobby at dusk, warm practical lighting reflecting on polished marble, slow dolly forward, restrained cinematic pacing, 9s, 16:9 at 1080p."
+    },
+    {
+      "title": "Image-to-Video editorial still",
+      "prompt": "Animate the uploaded editorial still into a subtle forward move with soft fabric motion and stable facial identity, keep the studio lighting premium, 5s."
+    },
+    {
+      "title": "Modify with style shift",
+      "prompt": "Keep the source clip timing and camera path, refresh the wardrobe into metallic silk, cool the highlights, simplify the set dressing, flex_2.",
+      "notes": "Upload the source video first, then choose the modify preset that matches the strength of the change."
+    },
+    {
+      "title": "Vertical reframe for social",
+      "prompt": "Reframe the uploaded landscape fashion clip into a clean 9:16 crop, keep the face and shoulders prioritized, maintain motion continuity across the full shot."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What workflows does Luma Ray 2 expose in MaxVideoAI?",
+      "a": "Ray 2 keeps the active Luma workflow family inside one model page: text-to-video, image-to-video, modify, and reframe."
+    },
+    {
+      "q": "Which options are exposed in Modify?",
+      "a": "Modify uses a source video plus an optional prompt and optional reference still. MaxVideoAI exposes strength presets from adhere_1 through reimagine_3."
+    },
+    {
+      "q": "Which options are exposed in Reframe?",
+      "a": "Reframe uses a source video, a target aspect ratio, an optional prompt, an optional reference still, plus optional grid and crop-window controls."
+    },
+    {
+      "q": "When should I choose Ray 2 over Ray 2 Flash?",
+      "a": "Choose Ray 2 when you want the flagship Luma tier for higher-confidence finals, while Ray 2 Flash is better for faster drafts and cheaper iteration."
+    }
+  ],
+  "custom": {
+    "heroDesc1": "Luma Ray 2 is no longer just a narrow text-to-video page inside MaxVideoAI. It now follows the same workflow-first pattern used on the richer LTX and Veo pages: one public model, multiple active Luma workflows.",
+    "heroDesc2": "That matters in production. You can generate a shot from text, animate a still, modify a winning source clip, and reframe the approved master for social without changing the model family or relearning the controls.",
+    "heroSupportLine": "Best for premium cinematic work when you want generation and source-video edits inside one Luma surface.",
+    "heroSpecChips": [
+      {
+        "label": "Text->Video",
+        "icon": "textToVideo"
+      },
+      {
+        "label": "Image->Video",
+        "icon": "imageToVideo"
+      },
+      {
+        "label": "Modify from source clip",
+        "icon": "videoToVideo"
+      },
+      {
+        "label": "Reframe to 1:1 or 9:16",
+        "icon": "aspectRatio"
+      },
+      {
+        "label": "Generate: 5s or 9s",
+        "icon": "duration"
+      },
+      {
+        "label": "540p to 1080p on generate",
+        "icon": "resolution"
+      }
+    ],
+    "whyTitle": "Why Luma Ray 2 is strategically useful",
+    "heroHighlights": [
+      "One model, real workflow coverage||Generate new clips, animate stills, modify existing footage, and reframe approved shots from the same Luma page.",
+      "Modify is not hidden anymore||The adherence, flex, and reimagine presets are exposed directly so teams can steer how far the edit should move from the source clip.",
+      "Reframe is practical, not cosmetic||Square and vertical outputs matter when the approved master has to ship across paid social, mobile, and commerce placements.",
+      "Cleaner family story||Ray 2 stays the premium tier, Ray 2 Flash stays the fast tier, but both models now expose the real public workflow surface."
+    ],
+    "specTitle": "Real specs - Luma Ray 2 in MaxVideoAI",
+    "specNote": "These specs describe the active Luma routing exposed in MaxVideoAI today, not a reduced placeholder surface.",
+    "specSections": [
+      {
+        "title": "Generate workflows",
+        "intro": "Text-to-Video and Image-to-Video are the creation modes: 5 or 9 seconds, 540p to 1080p, multiple cinematic aspect ratios, optional loop, and optional end-image guidance for image-driven runs.",
+        "items": [
+          "Use Text-to-Video for net-new cinematic beats.",
+          "Use Image-to-Video when the first frame must stay on-brand.",
+          "Add an end image only when the landing composition matters.",
+          "Use loop for ambient or product motion tests."
+        ]
+      },
+      {
+        "title": "Modify and Reframe",
+        "intro": "The workflow expansion is not just marketing copy. Ray 2 now exposes source-video editing directly, which changes how useful the model is in production.",
+        "items": [
+          "Modify preserves timing and camera path while changing look, styling, or scene interpretation.",
+          "Adhere presets stay close to the source clip, while flex and reimagine allow more creative drift.",
+          "Reframe keeps the motion but changes delivery format, with square and vertical outputs supported.",
+          "Optional crop and grid controls help keep the priority subject inside the new frame."
+        ]
+      }
+    ],
+    "whatTitle": "How Luma Ray 2 works in MaxVideoAI",
+    "whatIntro1": "Choose Luma Ray 2, then stay in Generate Video for text or still-led creation, or switch to Modify / Reframe when you are working from an uploaded source clip.",
+    "whatIntro2": "This keeps the family simple at the model level while still exposing the active Luma workflows where they belong: inside the model page and workspace.",
+    "whatFlowTitle": "Workflow",
+    "whatFlowSteps": [
+      "Pick Luma Ray 2 as the engine.",
+      "Stay on Generate Video for text and image workflows, or switch to Modify / Reframe for source-video edits.",
+      "On generate runs, choose 5s or 9s, then pick resolution and aspect ratio.",
+      "Upload the relevant asset for the active workflow: start image, optional end image, or source video.",
+      "For Modify, pick the right adherence or reimagine preset.",
+      "Review the live price before generation, then iterate only on the workflow that matters."
+    ],
+    "tipsTitle": "Practical strengths and boundaries",
+    "strengths": [
+      "High-value Luma workflow surface: generate, modify, and reframe in one place.",
+      "Useful when premium cinematic quality matters but the delivery plan also requires source-video edits.",
+      "Better family clarity than exposing separate public modify or reframe pseudo-models."
+    ],
+    "boundaries": [
+      "5s and 9s plus 540p to 1080p apply to the generate modes, not to source-video edit durations.",
+      "Modify and Reframe still depend on the quality and clarity of the uploaded source clip.",
+      "Ray 2 is the premium tier, so Flash remains the better option for fast early-stage iteration."
+    ],
+    "finalPara1": "Luma Ray 2 is the premium half of the new two-model Luma family, but it now behaves like a complete workflow page instead of a reduced placeholder. That is the right compromise: simple model lineup, broad Luma workflow coverage.",
+    "finalButton": "Generate with Luma Ray 2"
+  },
+  "decision": {
+    "modelSlug": "luma-ray-2",
+    "hero": {
+      "eyebrow": "PREVIOUS-GENERATION LUMA ROUTE",
+      "title": "Luma Ray 2",
+      "subtitle": "Previous-generation Luma route for supported Generate, Modify and Reframe workflows.",
+      "subtitleHighlights": [
+        "Previous-generation Luma",
+        "Modify",
+        "Reframe"
+      ],
+      "paragraph": "Use Luma Ray 2 when you need a legacy-compatible Luma render or an older Ray 2 workflow. Start new Luma Modify, guide/keyframe and Reframe work on Ray 3.2, then keep Ray 2 for historical prompts, fallback checks and older examples.",
+      "primaryCta": {
+        "label": "Open legacy Ray 2",
+        "href": "/app?engine=lumaRay2"
+      },
+      "secondaryCta": {
+        "label": "Open Ray 3.2",
+        "href": "/models/luma-ray-3-2"
+      },
+      "quickLinks": [
+        {
+          "label": "Current Luma: Ray 3.2",
+          "href": "/models/luma-ray-3-2"
+        },
+        {
+          "label": "Compare vs Flash",
+          "href": "/ai-video-engines/luma-ray-2-vs-luma-ray-2-flash"
+        },
+        {
+          "label": "View pricing",
+          "href": "/pricing#luma-ray-2-pricing"
+        },
+        {
+          "label": "Prompt examples",
+          "href": "#prompting"
+        }
+      ]
+    },
+    "media": {
+      "caption": "Luma Ray 2 example",
+      "description": "Previous-generation Luma workflow",
+      "renderLabel": "View render",
+      "badges": [
+        "Legacy route",
+        "Modify + Reframe",
+        "1080p"
+      ],
+      "altContext": "cinematic Luma Ray 2 video example"
+    },
+    "features": [
+      {
+        "title": "Legacy Luma route",
+        "body": "Use Ray 2 for older prompts, historical examples and compatibility checks.",
+        "tone": "quality"
+      },
+      {
+        "title": "Text or image start",
+        "body": "Generate from a prompt or animate one still with optional end-frame guidance.",
+        "tone": "reference"
+      },
+      {
+        "title": "Modify source clips",
+        "body": "Keep the blocking and timing that already work while changing look or detail.",
+        "tone": "continuity"
+      },
+      {
+        "title": "Reframe delivery cuts",
+        "body": "Turn an approved source clip into vertical, square or wide delivery variants.",
+        "tone": "reference"
+      },
+      {
+        "title": "5s or 9s generate",
+        "body": "Choose short controlled generation runs up to 1080p.",
+        "tone": "duration"
+      },
+      {
+        "title": "Ray 3.2 for new edits",
+        "body": "Use Ray 3.2 first when guide frames, keyframes or current Reframe behavior matter.",
+        "tone": "price"
+      }
+    ],
+    "decisionCards": [
+      {
+        "title": "Ray 2 or Ray 3.2?",
+        "body": "Use Ray 3.2 for current Luma Modify, keyframe guidance and Reframe work. Keep Ray 2 for legacy prompts, old examples and compatibility coverage.",
+        "cta": {
+          "label": "Open Ray 3.2",
+          "href": "/models/luma-ray-3-2"
+        }
+      },
+      {
+        "title": "Modifying existing footage?",
+        "body": "Use Ray 2 Modify only when you need the older route. For new source-video edits, Ray 3.2 should be the first Luma option.",
+        "cta": {
+          "label": "Open Prompt Lab",
+          "href": "#prompting"
+        }
+      },
+      {
+        "title": "Need stronger generation?",
+        "body": "Use Seedance, Kling or Veo when the job is flagship generation, sound-capable video or broader reference control rather than a Luma legacy workflow.",
+        "cta": {
+          "label": "Compare Ray 2 vs Veo Fast",
+          "href": "/ai-video-engines/luma-ray-2-vs-veo-3-1-fast"
+        }
+      }
+    ],
+    "referenceWorkflows": [
+      {
+        "title": "Text-to-video",
+        "body": "Write a compact subject, camera, lighting and motion brief for a new cinematic shot."
+      },
+      {
+        "title": "Image-to-video",
+        "body": "Use one start image to anchor composition, product shape or identity before adding motion."
+      },
+      {
+        "title": "End frame",
+        "body": "Add a closing image only when the landing pose or final composition matters."
+      },
+      {
+        "title": "Modify",
+        "body": "Upload a source video, name what must stay, name what changes, then choose an adherence strength."
+      },
+      {
+        "title": "Reframe",
+        "body": "Prioritize the subject and delivery format instead of rewriting the whole scene."
+      }
+    ],
+    "pricingCopy": {
+      "title": "Legacy Luma Ray 2 pricing at a glance",
+      "subtitle": "Preset Ray 2 generate totals by duration and resolution - use Ray 3.2 for current Luma edit and Reframe work.",
+      "footnote": "Generate pricing uses preset duration/resolution tiers. Modify and Reframe are quoted live from source-clip settings.",
+      "ctaLabel": "View full pricing",
+      "maxDurationNote": "Up to 1080p",
+      "ctaHref": "/pricing#luma-ray-2-pricing"
+    },
+    "meta": {
+      "title": "Luma Ray 2 Legacy: Pricing, Modify & Reframe | MaxVideoAI",
+      "description": "Explore Luma Ray 2 as a previous-generation Luma route, with legacy pricing, examples, Modify, Reframe, Ray 2 Flash context and Ray 3.2 migration guidance."
+    }
+  },
+  "prompting": {
+    "modelSlug": "luma-ray-2",
+    "section": {
+      "title": "Prompt Lab — Luma Ray 2",
+      "intro": null,
+      "tip": null,
+      "guide": null,
+      "referencesTitle": "How Luma Ray 2 uses Generate, Modify and Reframe"
+    },
+    "tabs": [],
+    "tabNotes": [],
+    "globalPrinciples": [],
+    "engineWhy": [],
+    "demo": {
+      "title": "Demo prompt — Luma Ray 2",
+      "promptLabel": "Ray 2 workflow",
+      "prompt": "9s Luma Ray 2 render in 16:9, silent output.\nA premium product sits on a golden-hour cafe table with clean reflections and a soft background.\nSlow forward dolly, stable camera, one readable motion beat, cinematic depth of field.\nPreserve product framing, avoid unreadable text, added logos or overly fast motion.\nFor Modify/Reframe, keep the approved source motion and specify only what changes.",
+      "notes": [],
+      "summary": {
+        "subject": "Product hero in a golden-hour cafe",
+        "action": "Camera glides toward the product and reveals reflections",
+        "camera": "Slow dolly, stable framing, shallow depth of field",
+        "style": "Premium cinematic look, controlled highlights, no added branding",
+        "output": "Silent Ray 2 render, ready for delivery review"
+      },
+      "presentationOverrides": {
+        "modeLabel": "Ray 2 workflow",
+        "outputLabel": "Output",
+        "duration": "9s",
+        "aspectRatio": "16:9",
+        "audioChipMode": "silent",
+        "audioChipLabel": null,
+        "altContext": "Luma Ray 2 product render"
+      }
+    },
+    "imageExamples": null
+  },
+  "examples": {
+    "modelSlug": "luma-ray-2",
+    "section": {
+      "title": "Luma Ray 2 examples",
+      "intro": "Use the examples rail to compare net-new generation, still animation, modify passes, and delivery reframes inside the same Ray 2 family.",
+      "defaultCtaLabel": "View all Luma examples ->",
+      "recreateLabel": "Recreate this shot ->"
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "All"
+      },
+      {
+        "id": "cinematic",
+        "label": "Cinematic"
+      },
+      {
+        "id": "product",
+        "label": "Product / Ad"
+      },
+      {
+        "id": "action",
+        "label": "Action"
+      },
+      {
+        "id": "vertical",
+        "label": "Vertical"
+      }
+    ],
+    "proofItems": [
+      {
+        "id": "proof-1",
+        "title": "Premium Luma renders",
+        "body": "Compare generation, start-image motion, Modify and Reframe inside Ray 2.",
+        "icon": "sparkles"
+      },
+      {
+        "id": "proof-2",
+        "title": "Recreate a render",
+        "body": "Open Ray 2 in the app and reuse prompt, aspect ratio and duration.",
+        "icon": "zap"
+      },
+      {
+        "id": "proof-3",
+        "title": "Silent output",
+        "body": "Ray 2 does not generate native audio on this MaxVideoAI route.",
+        "icon": "audio"
+      },
+      {
+        "id": "proof-4",
+        "title": "Start image and edit",
+        "body": "Animate a start frame, modify a source clip or reframe an approved master.",
+        "icon": "users"
+      },
+      {
+        "id": "proof-5",
+        "title": "Ray 2 final route",
+        "body": "Use Ray 2 for selected shots and final delivery variants.",
+        "icon": "shield"
+      }
+    ],
+    "fallbackItems": null,
+    "showWhenEmpty": true
+  }
+}

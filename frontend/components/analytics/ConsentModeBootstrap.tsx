@@ -1,0 +1,118 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import Script from 'next/script';
+import { suppressLoadedAnalyticsForExcludedRoute } from '@/lib/analytics-client';
+import {
+  ANALYTICS_CONSENT_STORAGE_KEY,
+  hasAnalyticsConsentInBrowser,
+} from '@/lib/analytics/consent-client';
+import { getAnalyticsRouteContext } from '@/lib/analytics-route';
+
+const GA_ID =
+  process.env.NEXT_PUBLIC_GA_ID ??
+  process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ??
+  process.env.NEXT_PUBLIC_GA4_ID ??
+  '';
+
+const DISABLE_GA =
+  process.env.NEXT_PUBLIC_DISABLE_GA === '1' ||
+  process.env.NODE_ENV === 'test';
+
+function isLighthouseRun() {
+  if (typeof navigator === 'undefined') return false;
+  const ua = navigator.userAgent || '';
+  if (ua.includes('Chrome-Lighthouse')) return true;
+  try {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('lh-mode') === '1';
+  } catch {
+    return false;
+  }
+}
+
+type ConsentEventDetail = {
+  categories?: {
+    analytics?: boolean;
+  };
+};
+
+export default function ConsentModeBootstrap() {
+  const pathname = usePathname();
+  const [analyticsConsentGranted, setAnalyticsConsentGranted] = useState(false);
+  const routeContext = getAnalyticsRouteContext(pathname);
+
+  useEffect(() => {
+    if (!routeContext.excludedFromGa4) return;
+    suppressLoadedAnalyticsForExcludedRoute({ gaId: GA_ID });
+  }, [routeContext.excludedFromGa4]);
+
+  useEffect(() => {
+    const syncFromStorage = () => setAnalyticsConsentGranted(hasAnalyticsConsentInBrowser());
+
+    const handleConsentUpdated = (event: Event) => {
+      const detail = (event as CustomEvent<ConsentEventDetail>).detail;
+      if (detail?.categories && typeof detail.categories.analytics === 'boolean') {
+        setAnalyticsConsentGranted(Boolean(detail.categories.analytics));
+        return;
+      }
+      syncFromStorage();
+    };
+
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key && event.key !== ANALYTICS_CONSENT_STORAGE_KEY) return;
+      syncFromStorage();
+    };
+
+    syncFromStorage();
+    window.addEventListener('consent:updated', handleConsentUpdated as EventListener);
+    window.addEventListener('storage', handleStorage);
+    return () => {
+      window.removeEventListener('consent:updated', handleConsentUpdated as EventListener);
+      window.removeEventListener('storage', handleStorage);
+    };
+  }, []);
+
+  if (!GA_ID) return null;
+  if (DISABLE_GA) return null;
+  if (isLighthouseRun()) return null;
+  if (routeContext.excludedFromGa4) return null;
+  if (!analyticsConsentGranted) return null;
+
+  return (
+    <>
+      <Script id="gcm-default" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+
+          gtag('consent', 'default', {
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            ad_storage: 'denied',
+            analytics_storage: 'denied',
+            functionality_storage: 'granted',
+            security_storage: 'granted'
+          });
+
+          gtag('set', 'url_passthrough', true);
+        `}
+      </Script>
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+      <Script id="ga-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}', {
+            anonymize_ip: true,
+            allow_google_signals: false,
+            send_page_view: false${process.env.NODE_ENV !== 'production' ? `,
+            debug_mode: true` : ''}
+          });
+        `}
+      </Script>
+    </>
+  );
+}
