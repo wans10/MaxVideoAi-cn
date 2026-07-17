@@ -262,8 +262,8 @@
           "Price before you generate",
           "Pay-as-you-go · no subscription"
         ],
-        "title": "Stop guessing which AI video model to use.",
-        "subtitle": "Compare Seedance, Kling, Veo, LTX and more, preview real outputs, see the cost before you generate, and choose the right AI video engine for every shot.",
+        "title": "别再盲猜该用哪款 AI 视频模型了。",
+        "subtitle": "横向对比 Seedance、可灵 (Kling)、Veo、LTX 等多款模型，预览真实生成效果，生成前即刻掌控成本，为每一个镜头挑选最合适的 AI 视频引擎。",
         "primaryCta": "Generate",
         "secondaryCta": "See examples",
         "examplesCta": "Compare engines",
