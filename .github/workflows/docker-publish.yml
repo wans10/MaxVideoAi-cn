@@ -3,7 +3,7 @@ name: Build and Publish Production Docker Image
 on:
   push:
     branches:
-      - feat/zh-cn
+      - feat/llm-hub
     tags:
       - 'v*.*.*'
   workflow_dispatch:
