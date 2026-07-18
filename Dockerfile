@@ -123,6 +123,9 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 RUN apk add --no-cache libc6-compat
 
+# Install sharp directly in runner to bypass Next.js standalone tracing exclusions
+RUN npm install sharp@0.34.5
+
 # Copy Next.js standalone server outputs
 COPY --from=builder --chown=nextjs:nodejs /app/frontend/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/frontend/.next/static ./frontend/.next/static
