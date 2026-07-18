@@ -1,4 +1,5 @@
 import type { Mode } from '@/types/engines';
+import { getResultProviderMode } from '@/lib/result-provider';
 import { isGoogleVertexOmniEngine, isGoogleVertexOmniModeSupported } from './google-vertex-omni/model-map';
 import { isGoogleVertexVeoEngine, isGoogleVertexVeoModeSupported } from './google-vertex-veo/model-map';
 import { isKlingDirectEngine, isKlingDirectModeSupported } from './kling-direct/model-map';
@@ -35,6 +36,11 @@ export type VideoProviderRoutingPlan =
   | {
       kind: 'fal_only';
       primaryProvider: 'fal';
+      fallbackEnabled: false;
+    }
+  | {
+      kind: 'llmhub_only';
+      primaryProvider: 'llmhub';
       fallbackEnabled: false;
     }
   | {
@@ -83,7 +89,11 @@ export function resolveVideoProviderRoutingPlan(params: {
   isAdmin: boolean;
   env?: RoutingEnv;
 }): VideoProviderRoutingPlan {
-  const falOnly: VideoProviderRoutingPlan = { kind: 'fal_only', primaryProvider: 'fal', fallbackEnabled: false };
+  const defaultProviderMode = getResultProviderMode();
+  const falOnly: VideoProviderRoutingPlan =
+    defaultProviderMode === 'LLMHUB'
+      ? { kind: 'llmhub_only', primaryProvider: 'llmhub', fallbackEnabled: false }
+      : { kind: 'fal_only', primaryProvider: 'fal', fallbackEnabled: false };
   if (isGoogleVertexOmniEngine(params.engineId)) {
     if (!isGoogleVertexOmniModeSupported(params.engineId, params.mode)) {
       return { kind: 'google_vertex_unavailable', reason: 'unsupported_mode' };

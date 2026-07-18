@@ -1,1 +1,1 @@
-export type ResultProviderMode = 'TEST' | 'FAL' | 'HYBRID';
+export type ResultProviderMode = 'TEST' | 'FAL' | 'HYBRID' | 'LLMHUB';

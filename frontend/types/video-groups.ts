@@ -1,4 +1,4 @@
-export type ResultProvider = 'test' | 'fal';
+export type ResultProvider = 'test' | 'fal' | 'llmhub';
 
 export type VideoAspect = '16:9' | '1:1' | '9:16';
 

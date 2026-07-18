@@ -134,6 +134,8 @@ export const ENV = {
   DEFAULT_CURRENCY: getOptionalEnv('DEFAULT_CURRENCY'),
   ENABLED_CURRENCIES: getOptionalEnv('ENABLED_CURRENCIES'),
   FX_MARGIN_BPS: getOptionalEnv('FX_MARGIN_BPS'),
+  LLMHUB_API_KEY: getOptionalEnv('LLMHUB_API_KEY'),
+  LLMHUB_BASE_URL: getOptionalEnv('LLMHUB_BASE_URL', 'https://api.llmhub.com.cn/v1'),
   RECEIPTS_PRICE_ONLY,
 };
 

@@ -14,6 +14,7 @@ import { parseCursorParam, formatCursorValue } from './_lib/jobs-route-cursor';
 import { IMAGE_ENGINE_ALIASES, buildSurfaceFilterClause } from './_lib/jobs-surface-filter';
 import { expireStaleAudioJob, isStaleAudioJob } from './_lib/jobs-stale-audio';
 import { refreshStaleFalJobs } from './_lib/jobs-fal-refresh';
+import { refreshStaleLlmhubJobs } from './_lib/jobs-llmhub-refresh';
 import { APP_JOBS_SELECT, type JobRow, type JobsRouteParam } from './_lib/jobs-route-types';
 
 export const dynamic = 'force-dynamic';
@@ -182,6 +183,7 @@ export async function GET(req: NextRequest) {
     }
 
     rows = await refreshStaleFalJobs({ rows, shouldRefreshStaleFalJobs, userId });
+    rows = await refreshStaleLlmhubJobs({ rows, shouldRefreshStaleLlmhubJobs: shouldRefreshStaleFalJobs, userId });
 
     const hasMore = rows.length > limit;
     let items = hasMore ? rows.slice(0, -1) : rows;

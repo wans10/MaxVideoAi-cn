@@ -2,6 +2,7 @@ import type { GeneratePayload, GenerateResult } from '@/lib/fal';
 import type { Mode, PricingSnapshot } from '@/types/engines';
 import type { VideoProviderRoutingPlan } from '@/server/video-providers/router';
 import { submitFalGenerateTask } from './fal-submission';
+import { submitLlmhubGenerateTask } from './llmhub-submission';
 import { submitGoogleVertexOmniGenerateTask } from './google-vertex-omni-submission';
 import { submitGoogleVertexVeoGenerateTask } from './google-vertex-veo-submission';
 import { submitKlingDirectGenerateTask } from './kling-direct-submission';
@@ -227,6 +228,33 @@ export async function submitGenerateProviderTask(params: {
       return { kind: 'accepted_response', body: googleSubmission.body };
     }
     return { kind: 'generation_result', generationResult: googleSubmission.generationResult };
+  }
+
+  if (params.providerKey === 'llmhub') {
+    const providerJobTracker = createProviderJobTracker({
+      jobId: params.jobId,
+      providerKey: 'llmhub',
+      engineId: params.engineId,
+      prompt: params.prompt,
+      inputSummary: params.falInputSummary,
+    });
+    const llmhubSubmission = await submitLlmhubGenerateTask({
+      llmhubPayload: params.falPayload,
+      jobId: params.jobId,
+      engineId: params.engineId,
+      engineLabel: params.engineLabel,
+      batchId: params.batchId,
+      durationSec: params.durationSec,
+      pendingReceipt: params.pendingReceipt,
+      paymentMode: params.paymentMode,
+      walletChargeReserved: params.walletChargeReserved,
+      persistProviderJobId: providerJobTracker.persistProviderJobId,
+      logMetricFn: params.logMetricFn,
+    });
+    if (!llmhubSubmission.ok) {
+      return { kind: 'error_response', status: llmhubSubmission.status, body: llmhubSubmission.body };
+    }
+    return { kind: 'generation_result', generationResult: llmhubSubmission.generationResult };
   }
 
   const providerJobTracker = createProviderJobTracker({

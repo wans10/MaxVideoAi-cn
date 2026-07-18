@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { isDatabaseConfigured, query } from '@/lib/db';
 import { shouldUseFalApis } from '@/lib/result-provider';
+import { ENV } from '@/lib/env';
 import type { PricingSnapshot } from '@/types/engines';
 import { ensureBillingSchema } from '@/lib/schema';
 import { resolveFalModelId } from '@/lib/fal-catalog';
@@ -307,6 +308,90 @@ export async function GET(_req: NextRequest, props: { params: Promise<{ jobId: s
     parsedRenderThumbUrls = enriched.renderThumbUrls ?? parsedRenderThumbUrls;
   } catch (error) {
     console.warn('[api/jobs] media output detail enrichment failed', { jobId, error });
+  }
+
+  // Optionally poll LLMHUB once if pending and we have provider job id
+  if (
+    surface !== 'audio' &&
+    job.provider === 'llmhub' &&
+    job.provider_job_id &&
+    job.status !== 'completed' &&
+    job.status !== 'failed'
+  ) {
+    try {
+      const apiKey = ENV.LLMHUB_API_KEY;
+      if (apiKey) {
+        const baseUrl = ENV.LLMHUB_BASE_URL || 'https://api.llmhub.com.cn/v1';
+        const endpoint = `${baseUrl}/video/generations/${job.provider_job_id}`;
+        const response = await fetch(endpoint, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${apiKey}`,
+          },
+        });
+        if (response.ok) {
+          const statusInfo = (await response.json()) as {
+            task_id: string;
+            status: 'queued' | 'in_progress' | 'completed' | 'failed';
+            url?: string;
+            error?: { code?: number; message?: string };
+          };
+          if (statusInfo) {
+            if (statusInfo.status === 'failed') {
+              const errMsg = statusInfo.error?.message || 'Render failed at LLMHub gateway';
+              await updateJobFromFalWebhook({
+                request_id: job.provider_job_id,
+                status: 'failed',
+                response: { error: errMsg, status: 'failed' },
+                result: { error: errMsg, status: 'failed' },
+                auto_refund_eligible: true,
+                failure_origin: 'provider_terminal',
+              });
+            } else if (statusInfo.status === 'completed' && statusInfo.url) {
+              await updateJobFromFalWebhook({
+                request_id: job.provider_job_id,
+                status: 'completed',
+                result: {
+                  video: {
+                    url: statusInfo.url,
+                  },
+                },
+              });
+            } else if (statusInfo.status === 'in_progress' || statusInfo.status === 'queued') {
+              await updateJobFromFalWebhook({
+                request_id: job.provider_job_id,
+                status: statusInfo.status === 'in_progress' ? 'in_progress' : 'queued',
+              });
+            }
+            const refreshedRows = await query<DbJobRow>(JOB_DETAIL_SELECT, [jobId]);
+            if (refreshedRows[0]) {
+              job = refreshedRows[0];
+              normalizedVideoUrl = normalizeMediaUrl(job.video_url);
+              normalizedPreviewVideoUrl = normalizeMediaUrl(job.preview_video_url);
+              normalizedAudioUrl = normalizeMediaUrl(job.audio_url);
+              normalizedThumbUrl = normalizeMediaUrl(job.thumb_url);
+              parsedRenders = parseStoredImageRenders(job.render_ids);
+              parsedRenderIds = extractRenderIds(parsedRenders.entries);
+              parsedRenderThumbUrls = extractRenderThumbUrls(parsedRenders);
+              surface = deriveJobSurface({
+                surface: job.surface,
+                settingsSnapshot: job.settings_snapshot,
+                jobId: job.job_id,
+                engineId: job.engine_id,
+                videoUrl: job.video_url,
+                renderIds: job.render_ids,
+              });
+            }
+          }
+        }
+      }
+    } catch (refreshError) {
+      console.warn('[api/jobs] failed to apply LLMHub completed result', {
+        jobId,
+        providerJobId: job.provider_job_id,
+        error: refreshError,
+      });
+    }
   }
 
   // Optionally poll FAL once if pending and we have provider job id

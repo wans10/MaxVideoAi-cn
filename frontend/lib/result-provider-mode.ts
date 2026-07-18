@@ -5,6 +5,7 @@ export function normalizeResultProvider(input?: string | null): ResultProvider |
   if (!input) return null;
   const value = input.trim().toLowerCase();
   if (value === 'fal' || value === 'fold') return 'fal';
+  if (value === 'llmhub' || value === 'hub') return 'llmhub';
   if (value === 'test' || value === 'mock' || value === 'demo') return 'test';
   return null;
 }
